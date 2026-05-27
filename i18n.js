@@ -21,6 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('selected_language', activeLang);
     }
     
+    // Clone and mount language selector for mobile view
+    const desktopLangDropdown = document.querySelector('.nav-links .lang-dropdown');
+    if (desktopLangDropdown && !document.querySelector('.mobile-lang-dropdown')) {
+        const mobileLangDropdown = desktopLangDropdown.cloneNode(true);
+        mobileLangDropdown.classList.remove('lang-dropdown');
+        mobileLangDropdown.classList.add('mobile-lang-dropdown');
+        
+        // Update IDs in the cloned element to avoid duplicates
+        const activeLabel = mobileLangDropdown.querySelector('#activeLangLabel');
+        if (activeLabel) activeLabel.id = 'mobileActiveLangLabel';
+        
+        const navbar = document.querySelector('.navbar');
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        if (navbar && mobileBtn) {
+            navbar.insertBefore(mobileLangDropdown, mobileBtn);
+            console.log("Dynamically created mobile language switcher");
+        }
+    }
+    
     // Expose language switcher globally
     window.changeLanguage = function(langCode) {
         if (!supportedLanguages.includes(langCode)) return;
@@ -70,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
             activeLabel.textContent = lang.toUpperCase();
         }
         
+        // Also update mobile active label if it exists
+        const mobileActiveLabel = document.getElementById('mobileActiveLangLabel');
+        if (mobileActiveLabel) {
+            mobileActiveLabel.textContent = lang.toUpperCase();
+        }
+        
         // Highlight active language item in dropdown list
         const langOptions = document.querySelectorAll('.lang-item');
         langOptions.forEach(opt => {
@@ -84,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 4. Set up Navbar Dropdown Toggle event listeners
     function setupDropdownListeners() {
-        const trigger = document.querySelector('.lang-dropdown-trigger');
-        const menu = document.querySelector('.lang-dropdown-menu');
+        const trigger = document.querySelector('.nav-links .lang-dropdown-trigger');
+        const menu = document.querySelector('.nav-links .lang-dropdown-menu');
         
         if (trigger && menu) {
             // Toggle dropdown open state
@@ -98,6 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Close dropdown when clicking outside
             document.addEventListener('click', () => {
                 menu.classList.remove('active');
+            });
+        }
+        
+        // Mobile language switcher toggle
+        const mobileTrigger = document.querySelector('.mobile-lang-dropdown .lang-dropdown-trigger');
+        const mobileMenu = document.querySelector('.mobile-lang-dropdown .lang-dropdown-menu');
+        
+        if (mobileTrigger && mobileMenu) {
+            mobileTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                mobileMenu.classList.toggle('active');
+            });
+            
+            document.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
             });
         }
         
