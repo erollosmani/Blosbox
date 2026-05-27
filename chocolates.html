@@ -94,6 +94,10 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
             position: relative;
         }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
         .swiper-slide img {
             width: 100%;
             height: 100%;
@@ -197,8 +201,68 @@
                 </div>
             </div>
         </div>
-        
-        
+        <!-- Floating Catalog Download -->
+        <a href="Catalogue/BlosBox Catalog.pdf" class="floating-catalog" target="_blank" aria-label="Download Catalog">
+            <i class="fas fa-file-pdf"></i> Catalog
+        </a>
+
+        <a href="#quote" class="floating-cta" aria-label="Request a Quote">
+            <i class="fas fa-quote-right"></i>
+        </a>
+    </section>
+
+    <!-- Muted brown band: Highlights / Features -->
+    <section class="highlights">
+        <div class="kraft-text">
+            <h4>Crafting the Unforgettable</h4>
+            <p>Where Exceptional Materials Meet Masterful Design</p>
+        </div>
+    </section>
+
+    <!-- Dark bottom band: Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
+                <p>Email: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
+                <p>Phone: <a href="tel:+38975222228">+389 75 222228</a> | <a href="tel:+38970222203">+389 70 222203</a> | <a href="tel:+38978222203">+389 78 222203</a></p>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blosbox Luxury Packaging. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-chocolates", {
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        observer: true,
+        observeParents: true,
+        on: {
+          click: function(swiper, event) {
+            if (event.target.tagName.toLowerCase() === "img") {
+              openLightbox(event.target.src);
+            }
+          }
+        }
+      });
+    </script>
 </body>
 </html>
 
