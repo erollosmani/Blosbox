@@ -136,38 +136,51 @@
         </a>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
                 <li class="dropdown">
-                    <a href="products.html">Products / Industries <span class="caret">▾</span></a>
+                    <a href="products.html" data-i18n="nav_products">Products / Industries <span class="caret">▾</span></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown dropdown-submenu">
-                            <a href="jewellery.html">Jewellery</a>
+                            <a href="jewellery.html" data-i18n="nav_jewellery">Jewellery</a>
                             <ul class="dropdown-menu">
-                                <li><a href="textured.html">Textured</a></li>
-                                <li><a href="pearl.html">Pearl</a></li>
-                                <li><a href="luxe.html">Luxe</a></li>
+                                <li><a href="textured.html" data-i18n="nav_textured">Textured</a></li>
+                                <li><a href="pearl.html" data-i18n="nav_pearl">Pearl</a></li>
+                                <li><a href="luxe.html" data-i18n="nav_luxe">Luxe</a></li>
                             </ul>
                         </li>
-                        <li><a href="watches.html">Watches</a></li>
-                        <li><a href="fashion.html">Fashion Accessories</a></li>
-                        <li><a href="leather.html">Leather Goods</a></li>
-                        <li><a href="electronics.html">Electronics</a></li>
-                        <li><a href="chocolates.html">Chocolates</a></li>
-                        <li><a href="gifts.html">Corporate Gifts</a></li>
-                        <li><a href="cosmetics.html">Cosmetics & Fragrance</a></li>
-                        <li><a href="other.html">Other Luxury Markets</a></li>
+                        <li><a href="watches.html" data-i18n="nav_watches">Watches</a></li>
+                        <li><a href="fashion.html" data-i18n="nav_fashion">Fashion Accessories</a></li>
+                        <li><a href="leather.html" data-i18n="nav_leather">Leather Goods</a></li>
+                        <li><a href="electronics.html" data-i18n="nav_electronics">Electronics</a></li>
+                        <li><a href="chocolates.html" data-i18n="nav_chocolates">Chocolates</a></li>
+                        <li><a href="gifts.html" data-i18n="nav_gifts">Corporate Gifts</a></li>
+                        <li><a href="cosmetics.html" data-i18n="nav_cosmetics">Cosmetics & Fragrance</a></li>
+                        <li><a href="other.html" data-i18n="nav_other">Other Luxury Markets</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="custom.html">Custom Solutions <span class="caret">▾</span></a>
+                    <a href="custom.html" data-i18n="nav_custom">Custom Solutions <span class="caret">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="bespoke.html">Bespoke Design & Prototyping</a></li>
-                        <li><a href="printing.html">Printing, Foil, Embossing</a></li>
-                        <li><a href="customization.html">Size & Material Customization</a></li>
+                        <li><a href="bespoke.html" data-i18n="nav_bespoke">Bespoke Design & Prototyping</a></li>
+                        <li><a href="printing.html" data-i18n="nav_printing">Printing, Foil, Embossing</a></li>
+                        <li><a href="customization.html" data-i18n="nav_customization">Size & Material Customization</a></li>
                     </ul>
                 </li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact Us</a></li>
+                <li class="dropdown lang-dropdown">
+                    <a href="#" class="lang-dropdown-trigger">🌐 <span id="activeLangLabel">EN</span> <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu lang-dropdown-menu">
+                        <li><a href="#" class="lang-item active" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="#" class="lang-item" data-lang="fr">🇫🇷 Français</a></li>
+                        <li><a href="#" class="lang-item" data-lang="sq">🇦🇱 Shqip</a></li>
+                        <li><a href="#" class="lang-item" data-lang="it">🇮🇹 Italiano</a></li>
+                        <li><a href="#" class="lang-item" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="#" class="lang-item" data-lang="nl">🇳🇱 Nederlands</a></li>
+                        <li><a href="#" class="lang-item" data-lang="sv">🇸🇪 Svenska</a></li>
+                        <li><a href="#" class="lang-item" data-lang="mk">🇲🇰 Македонски</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <div class="mobile-menu-btn">☰</div>
@@ -237,7 +250,7 @@
     <footer class="footer" id="contact">
         <div class="footer-top">
             <div class="footer-contact">
-                <h3>Contact Us</h3>
+                <h3 data-i18n="footer_contact_title">Contact Us</h3>
                 <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
                 <p>Email: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
                 <p>Phone: <a href="tel:+38975222228">+389 75 222228</a> | <a href="tel:+38970222203">+389 70 222203</a> | <a href="tel:+38978222203">+389 78 222203</a></p>
@@ -249,10 +262,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Blosbox Luxury Packaging. All rights reserved.</p>
+            <p data-i18n="footer_rights">&copy; 2026 Blosbox Luxury Packaging. All rights reserved.</p>
         </div>
     </footer>
     
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js?v=12"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
