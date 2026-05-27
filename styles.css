@@ -176,7 +176,7 @@ a {
    ========================================================================== */
 .hero {
     background-color: var(--cream-main);
-    height: calc(100vh - 10.5vh - 8vh);
+    height: calc(100vh - 10.5vh - 8vh - 12px);
     display: block;
     text-align: center;
     padding: 5vh 5% 2rem 5%;
