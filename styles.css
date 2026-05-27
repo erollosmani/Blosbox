@@ -313,13 +313,13 @@ a {
 .highlights {
     background-color: var(--brown-accent);
     color: var(--dark-top);
-    height: 8vh;
+    height: auto;
     min-height: 8vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 5%;
+    padding: 1.5rem 5%;
 }
 
 .kraft-text {
