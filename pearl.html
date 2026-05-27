@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blosbox | Pearl Jewellery Packaging</title>
+    <!-- Modern luxury fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper JS for 3D Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css?v=12">
+    
+    <style>
+        /* Gallery specific styles */
+        .hero {
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+            display: block;
+            
+            
+            background-color: var(--cream-main);
+        }
+
+        /* The text that will be wiped away */
+        .intro-wipe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--cream-main);
+            display: block;
+            
+            
+            z-index: 10;
+            animation: wipeAway 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            animation-delay: 1.2s; /* wait before wiping */
+            pointer-events: none;
+        }
+        
+        .intro-text h1 {
+            font-size: 3.5rem;
+            color: var(--dark-top);
+            text-align: center;
+            animation: fadeOut 0.8s forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes wipeAway {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); display: none; }
+        }
+        
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Swiper styling */
+        .swiper {
+            width: 100%;
+            height: 100%;
+            padding-top: 30px;
+            padding-bottom: 50px;
+            opacity: 0;
+            animation: fadeInGallery 1s forwards;
+            animation-delay: 1.5s;
+        
+            }
+        
+        @keyframes fadeInGallery {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 75vw; /* Much bigger center slide */
+            max-width: 1200px; /* Allow it to get huge on large screens */
+            height: 75vh; /* Taller slide filling the frame */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+            display: block;
+            
+            
+            background-color: #fff;
+            transition: transform 0.4s ease;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .swiper-slide {
+                width: 85vw;
+                height: 60vh;
+            }
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            z-index: 100 !important;
+            color: var(--brown-accent);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            /* Move arrows slightly outside */
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: var(--brown-accent);
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <!-- Top dark band: Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="Logo.png" alt="Blosbox Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products / Industries <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown dropdown-submenu">
+                            <a href="jewellery.html">Jewellery</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="textured.html">Textured</a></li>
+                                <li><a href="pearl.html">Pearl</a></li>
+                                <li><a href="luxe.html">Luxe</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="watches.html">Watches</a></li>
+                        <li><a href="fashion.html">Fashion Accessories</a></li>
+                        <li><a href="leather.html">Leather Goods</a></li>
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="chocolates.html">Chocolates</a></li>
+                        <li><a href="gifts.html">Corporate Gifts</a></li>
+                        <li><a href="cosmetics.html">Cosmetics & Fragrance</a></li>
+                        <li><a href="other.html">Other Luxury Markets</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="custom.html">Custom Solutions <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="bespoke.html">Bespoke Design & Prototyping</a></li>
+                        <li><a href="printing.html">Printing, Foil, Embossing</a></li>
+                        <li><a href="customization.html">Size & Material Customization</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">☰</div>
+    </header>
+
+    <!-- Large cream band: Hero Section with Gallery -->
+    <section class="hero">
+        
+        <!-- Text that wipes away -->
+        <div class="intro-wipe">
+            <div class="intro-text">
+                <h1>Pearl Collection</h1>
+            </div>
+        </div>
+
+        <!-- 3D Image Gallery -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_04_Image_0002.jpg" alt="Pearl 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_10_Image_0002.jpg" alt="Pearl 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_12_Image_0002.jpg" alt="Pearl 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_17_Image_0002.jpg" alt="Pearl 4">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_18_Image_0002.jpg" alt="Pearl 5">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_19_Image_0002.jpg" alt="Pearl 6">
+                </div>
+                <div class="swiper-slide">
+                    <img src="Pearl/Photo%20Jewellery_Page_20_Image_0002.jpg" alt="Pearl 7">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <!-- Floating Catalog Download -->
+        <a href="Catalogue/BlosBox Catalog.pdf" class="floating-catalog" target="_blank" aria-label="Download Catalog">
+            <i class="fas fa-file-pdf"></i> Catalog
+        </a>
+
+        <a href="#quote" class="floating-cta" aria-label="Request a Quote">
+            <i class="fas fa-quote-right"></i>
+        </a>
+    
+        
+    
+    </section>
+
+    <!-- Muted brown band: Highlights / Features -->
+    <section class="highlights">
+                <div class="industries-grid" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; width: 100%;">
+            <a href="textured.html" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; flex: 1; white-space: nowrap; max-width: 200px;">Textured</a>
+            <a href="pearl.html" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; flex: 1; white-space: nowrap; max-width: 200px;">Pearl</a>
+            <a href="luxe.html" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem; flex: 1; white-space: nowrap; max-width: 200px;">Luxe</a>
+        </div>
+    </section>
+
+    <!-- Dark bottom band: Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
+                <p>Email: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
+                <p>Phone: <a href="tel:+38975222228">+389 75 222228</a> | <a href="tel:+38970222203">+389 70 222203</a> | <a href="tel:+38978222203">+389 78 222203</a></p>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Blosbox Luxury Packaging. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js?v=12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        watchSlidesProgress: true,
+        loop: true,
+        observer: true, 
+        observeParents: true,
+        coverflowEffect: {
+          rotate: 0,
+          stretch: -180,
+          depth: 250,
+          modifier: 1,
+          scale: 0.70,
+          slideShadows: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        on: {
+          click: function(swiper, event) {
+            if (event.target.tagName.toLowerCase() === "img") {
+              openLightbox(event.target.src);
+            }
+          }
+        }
+      });
+    </script>
+
+    
+</body>
+</html>

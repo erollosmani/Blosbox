@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blosbox | Chocolates Packaging</title>
+    <!-- Modern luxury fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS for Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        .hero {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 0 !important;
+            height: calc(100vh - 10.5vh - 8vh) !important;
+            overflow: hidden !important;
+        }
+        .chocolates-split {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            width: 92%;
+            max-width: 1400px;
+            height: 80%;
+            gap: 4rem;
+            align-items: center;
+        }
+        .chocolates-text {
+            text-align: left;
+        }
+        .chocolates-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .chocolates-text .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-style: italic;
+            color: var(--brown-accent);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            display: block;
+        }
+        .chocolates-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--dark-top);
+        }
+        .chocolates-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        .chocolates-text .detail-item {
+            margin-bottom: 1.2rem;
+        }
+        .chocolates-text .detail-item h3 {
+            font-size: 1.1rem;
+            color: var(--brown-accent);
+            margin-bottom: 0.3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .chocolates-text .detail-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        .btn-quote-inline {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: var(--dark-top);
+            color: var(--brown-accent);
+            border: 1px solid var(--dark-top);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-quote-inline:hover {
+            background-color: transparent;
+            color: var(--dark-top);
+        }
+        
+        /* Swiper Gallery Styles */
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--brown-accent) !important;
+        }
+
+        @media (max-width: 1024px) {
+            .chocolates-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                overflow-y: auto;
+                height: 90%;
+            }
+            .hero {
+                height: auto !important;
+                min-height: calc(100vh - 10.5vh - 8vh) !important;
+                padding: 4rem 0 !important;
+            }
+            .swiper-container {
+                height: 400px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=12">
+</head>
+<body>
+    
+    <!-- Top dark band: Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="Logo.png" alt="Blosbox Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Products / Industries <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown dropdown-submenu">
+                            <a href="jewellery.html">Jewellery</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="textured.html">Textured</a></li>
+                                <li><a href="pearl.html">Pearl</a></li>
+                                <li><a href="luxe.html">Luxe</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="watches.html">Watches</a></li>
+                        <li><a href="fashion.html">Fashion Accessories</a></li>
+                        <li><a href="leather.html">Leather Goods</a></li>
+                        <li><a href="electronics.html">Electronics</a></li>
+                        <li><a href="chocolates.html">Chocolates</a></li>
+                        <li><a href="gifts.html">Corporate Gifts</a></li>
+                        <li><a href="cosmetics.html">Cosmetics & Fragrance</a></li>
+                        <li><a href="other.html">Other Luxury Markets</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="custom.html">Custom Solutions <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="bespoke.html">Bespoke Design & Prototyping</a></li>
+                        <li><a href="printing.html">Printing, Foil, Embossing</a></li>
+                        <li><a href="customization.html">Size & Material Customization</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">☰</div>
+    </header>
+
+    <!-- Large cream band: Hero Section -->
+    <section class="hero">
+        <div class="chocolates-split">
+            <div class="chocolates-text">
+                <h1>The "Gourmet Prestige" Approach</h1>
+                <span class="subtitle">Best for high-end chocolatiers and artisan brands.</span>
+                
+                <h2>Exquisite Housing for Gourmet Creations</h2>
+                <p>The finest chocolates deserve a presentation that reflects their artistry. At BLOSBOX, we engineer rigid chocolate boxes that serve as a testament to your brand’s quality.</p>
+                
+
+                
+                <a href="#quote" class="btn-quote-inline">Request a Quote</a>
+            </div>
+            
+            <div class="swiper-container">
+                <div class="swiper swiper-chocolates">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Chocolates/Chocolate1.jpg" alt="Chocolate Packaging 1"></div>
+                        <div class="swiper-slide"><img src="Chocolates/Chocolate2.jpg" alt="Chocolate Packaging 2"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+</body>
+</html>
+

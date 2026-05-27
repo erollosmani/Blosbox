@@ -1,0 +1,11 @@
+# Ignore large zip file
+Web site Blos box.zip
+
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE/Editor config
+.vscode/
+.idea/

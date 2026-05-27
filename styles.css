@@ -1,0 +1,878 @@
+/* ==========================================================================
+   Color Palette & Variables
+   Matching the provided structural image
+   ========================================================================== */
+:root {
+    --dark-top: #302C27;
+    --cream-main: #F1EADD;
+    --brown-accent: #A48C77;
+    --dark-bottom: #2D2924;
+    
+    --text-light: #F9F7F3;
+    --text-dark: #1E1B18;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    
+    --transition-speed: 0.3s;
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--cream-main);
+    /* Set up the body to hold the exact proportions if possible */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: var(--font-heading);
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   Top Dark Band (Navigation) - Thinner by 30%
+   ========================================================================== */
+.navbar {
+    background-color: var(--dark-top);
+    color: var(--text-light);
+    height: 10.5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 6vh;
+    max-height: 60px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links > li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links > li > a {
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color var(--transition-speed) ease;
+    padding: 1rem 0;
+}
+
+.nav-links > li > a:hover {
+    color: var(--brown-accent);
+}
+
+.caret {
+    font-size: 0.8rem;
+    margin-left: 3px;
+    transition: transform var(--transition-speed) ease;
+    display: inline-block;
+}
+
+.dropdown:hover .caret {
+    transform: rotate(180deg);
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--brown-accent);
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--dark-top);
+    min-width: 220px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    transition: background-color var(--transition-speed) ease, padding-left var(--transition-speed) ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(164, 140, 119, 0.1);
+    color: var(--brown-accent);
+    padding-left: 2.5rem;
+}
+
+.dropdown:hover > .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Nested Dropdowns */
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+}
+.dropdown-submenu > a::after {
+    content: "▸";
+    float: right;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   Large Cream Band (Hero Section)
+   ========================================================================== */
+.hero {
+    background-color: var(--cream-main);
+    height: calc(100vh - 10.5vh - 8vh);
+    display: block;
+    text-align: center;
+    padding: 5vh 5% 2rem 5%;
+    position: relative;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.hero-index {
+    background-image: url('BlosBox Handcrafting.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 4rem 2rem;
+}
+
+/* About Page Content */
+.about-content {
+    width: 100%; /* Stretch to absolute edges */
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem 2.5%; /* Small side padding for readability */
+}
+
+.about-text {
+    font-size: 1.1rem; /* Slightly larger to fill the width majestically */
+    line-height: 1.6;
+    color: var(--dark-top);
+    width: 100%;
+}
+
+.about-text p {
+    margin-bottom: 0.8rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-image {
+    max-height: 30vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--dark-top);
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #55514A;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--dark-top);
+    color: var(--brown-accent);
+    padding: 1.2rem 3rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--dark-top);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--dark-top);
+}
+
+.industries-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.industries-grid .btn-primary {
+    flex: 1;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.72rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 850px) {
+    .industries-grid {
+        flex-wrap: wrap;
+    }
+    .industries-grid .btn-primary {
+        flex: 1 1 40%;
+        max-width: none;
+        font-size: 0.85rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* ==========================================================================
+   Muted Brown Band (Highlights) - Thinner by 20%
+   ========================================================================== */
+.highlights {
+    background-color: var(--brown-accent);
+    color: var(--dark-top);
+    height: 8vh;
+    min-height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.kraft-text {
+    text-align: center;
+}
+
+.kraft-text h4 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.kraft-text p {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Dark Bottom Band (Footer) - Double thickness
+   ========================================================================== */
+.footer {
+    background-color: var(--dark-bottom);
+    color: rgba(249, 247, 243, 0.6);
+    min-height: 30vh; /* Changed from fixed height to min-height for flexibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 5% 1rem 5%; /* Reduced top padding to move content up */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.8rem;
+}
+
+.footer-contact h3 {
+    font-family: var(--font-body);
+    color: var(--brown-accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-contact p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.footer-contact a {
+    color: var(--text-light);
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-contact a:hover {
+    color: var(--brown-accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.6rem;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.social-links a:hover {
+    color: var(--brown-accent);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-logo {
+    color: var(--brown-accent);
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   Floating CTA
+   ========================================================================== */
+.floating-cta {
+    position: absolute;
+    bottom: 7px;
+    right: 40px;
+    z-index: 999;
+    background-color: var(--brown-accent);
+    color: var(--text-light);
+    width: 65px;
+    height: 45px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.floating-cta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background-color: var(--dark-top);
+    color: var(--brown-accent);
+    border-color: var(--brown-accent);
+}
+
+.cta-icon {
+    font-size: 1.8rem;
+}
+
+/* Floating Catalog Download */
+.floating-catalog {
+    position: absolute;
+    bottom: 7px;
+    left: 40px;
+    z-index: 999;
+    background-color: var(--dark-top);
+    color: var(--brown-accent);
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--brown-accent);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.floating-catalog:hover {
+    background-color: var(--brown-accent);
+    color: var(--text-light);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+
+
+@media (max-width: 768px) {
+    .floating-catalog {
+        bottom: 20px;
+        left: 20px;
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+    }
+    .floating-cta {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .nav-links {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .footer {
+        height: auto; /* Allow height to expand on mobile */
+        padding: 2.5rem 5% 1.5rem 5%;
+        gap: 2rem;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-contact {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 0 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--dark-top);
+        padding: 2rem 0;
+        gap: 0;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        border-top: 1px solid rgba(164, 140, 119, 0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links > li {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-links > li > a {
+        display: block;
+        padding: 1.2rem 2.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        background-color: rgba(0,0,0,0.15);
+        border-top: none;
+    }
+
+    .dropdown-menu li a {
+        padding-left: 3.5rem;
+    }
+    
+    .dropdown.active > .dropdown-menu {
+        display: block;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero::before {
+        width: 90%;
+        height: 90%;
+    }
+    
+    .highlights {
+        flex-direction: column;
+        padding: 3rem 2rem;
+    }
+    
+    .floating-cta {
+        bottom: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+/* ==========================================================================
+   Contact Modal
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 44, 39, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background-color: var(--cream-main);
+    width: 90%;
+    max-width: 500px;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    border: 1px solid rgba(164, 140, 119, 0.3);
+    border-radius: 4px;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 1.5rem;
+    color: var(--dark-top);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-close:hover {
+    color: var(--brown-accent);
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 2.5rem;
+    color: var(--dark-top);
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.modal-info {
+    margin-bottom: 3rem;
+}
+
+.modal-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.modal-info a {
+    color: var(--dark-top);
+    font-weight: 700;
+    border-bottom: 1px solid var(--brown-accent);
+    transition: all 0.3s ease;
+}
+
+.modal-info a:hover {
+    color: var(--brown-accent);
+    border-bottom-color: var(--dark-top);
+}
+
+.modal-social {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.modal-social a {
+    font-size: 2rem;
+    color: var(--dark-top);
+    transition: all 0.3s ease;
+}
+
+.modal-social a:hover {
+    color: var(--brown-accent);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+    .modal-container {
+        padding: 3rem 1.5rem;
+    }
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+}
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* ==========================================================================
+   Mobile Layout Adjustments
+   ========================================================================== */
+@media (max-width: 850px) {
+    .hero {
+        height: auto !important;
+        min-height: 60vh !important;
+        overflow-y: visible !important;
+        padding: 4rem 5% 6rem 5% !important;
+    }
+    
+    .highlights {
+        height: auto !important;
+        min-height: 8vh !important;
+        padding: 2rem 5% !important;
+    }
+
+    .about-content {
+        padding: 0 !important;
+    }
+}
+
+/* ==========================================================================
+   Lightbox / Zoom Feature
+   ========================================================================== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    box-shadow: 0 0 60px rgba(0,0,0,0.6);
+    border: 2px solid rgba(164, 140, 119, 0.2);
+    border-radius: 4px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox-img.zoomed {
+    transform: scale(2.5) !important;
+    cursor: grab;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+
+.lightbox-img.zoomed:active {
+    cursor: grabbing;
+}
+
+
+.lightbox-close {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 100005;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.swiper-slide {
+    cursor: zoom-in;
+}
+
+
+
+
