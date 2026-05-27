@@ -59,7 +59,22 @@ const translations = {
     jewellery_title: "Jewellery Packaging",
     jewellery_p1: "Discover our exclusive range of rigid boxes designed specifically for fine jewellery. Each box is made from recyclable cardboard, combining sustainability with uncompromising strength. To elevate the experience, our packaging is wrapped in luxuriously designed papers — available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.",
     jewellery_p2: "We understand that every jewel tells a unique story, which is why we are open to customizing packaging according to your specific needs, ensuring your pieces are presented with elegance, prestige, and individuality.",
-    jewellery_explore: "Click below to Explore our premium finishes"
+    jewellery_explore: "Click below to Explore our premium finishes",
+    chocolates_title: "The \"Gourmet Prestige\" Approach",
+    chocolates_subtitle: "Best for high-end chocolatiers and artisan brands.",
+    chocolates_h2: "Exquisite Housing for Gourmet Creations",
+    chocolates_p: "The finest chocolates deserve a presentation that reflects their artistry. At BLOSBOX, we engineer rigid chocolate boxes that serve as a testament to your brand’s quality.",
+    customization_title: "A Library of Finishes",
+    customization_p: "The exterior wrap defines the soul of your packaging. Choose from our curated collection of premium materials.",
+    textured_title: "Textured Collection",
+    pearl_title: "Pearl Collection",
+    luxe_title: "Luxe Collection",
+    under_construction_title: "UNDER CONSTRUCTION",
+    under_construction_subtitle: "Preparing for Luxury",
+    products_title: "Our Industries",
+    products_p: "BLOSBOX crafts premium packaging tailored to the unique demands of the world's most prestigious markets. Our expertise spans across multiple luxury sectors, ensuring that every box we produce perfectly complements the product it holds.",
+    custom_title: "Custom Solutions",
+    custom_p: "We transform your brand's vision into tactile reality through our comprehensive suite of bespoke services. From initial structural design to the final exquisite finish, our custom solutions are engineered for brands that refuse to settle for the ordinary."
   },
   
   fr: {
@@ -118,7 +133,22 @@ const translations = {
     jewellery_title: "Emballages de Joaillerie",
     jewellery_p1: "Découvrez notre gamme exclusive de coffrets rigides conçus spécifiquement pour la haute joaillerie. Chaque écrin est fabriqué à partir de carton recyclable, alliant écoresponsabilité et résistance. Nos emballages sont habillés de papiers texturés, perlés ou velours raffinés.",
     jewellery_p2: "Nous savons que chaque bijou raconte une histoire unique, c'est pourquoi nous personnalisons vos emballages selon vos besoins pour présenter vos pièces avec prestige.",
-    jewellery_explore: "Cliquez ci-dessous pour Explorer nos finitions de prestige"
+    jewellery_explore: "Cliquez ci-dessous pour Explorer nos finitions de prestige",
+    chocolates_title: "L'Approche \"Gourmet Prestige\"",
+    chocolates_subtitle: "Idéal pour les chocolatiers haut de gamme et les marques artisanales.",
+    chocolates_h2: "Écrins exquis pour créations gourmandes",
+    chocolates_p: "Les chocolats les plus fins méritent une présentation à la hauteur de leur art. Chez BLOSBOX, nous concevons des boîtes à chocolat rigides qui témoignent de la qualité de votre marque.",
+    customization_title: "Une bibliothèque de finitions",
+    customization_p: "L'habillage extérieur définit l'âme de votre emballage. Choisissez parmi notre collection de matériaux haut de gamme.",
+    textured_title: "Collection Texturée",
+    pearl_title: "Collection Perlée",
+    luxe_title: "Collection Luxe",
+    under_construction_title: "EN CONSTRUCTION",
+    under_construction_subtitle: "Préparation pour le Luxe",
+    products_title: "Nos Secteurs",
+    products_p: "BLOSBOX fabrique des emballages haut de gamme adaptés aux exigences uniques des marchés les plus prestigieux du monde. Notre expertise s'étend sur plusieurs secteurs du luxe, garantissant que chaque boîte que nous produisons s'accorde parfaitement avec le produit qu'elle contient.",
+    custom_title: "Solutions Sur Mesure",
+    custom_p: "Nous transformons la vision de votre marque en réalité tactile grâce à notre gamme complète de services sur mesure. Du design structurel initial à la finition finale exquise, nos solutions personnalisées sont conçues pour les marques qui refusent l'ordinaire."
   },
   
   sq: {
@@ -177,7 +207,22 @@ const translations = {
     jewellery_title: "Paketim për Bizhuteri",
     jewellery_p1: "Zbuloni gamën tonë ekskluzive të kutive të ngurta të dizajnuara posaçërisht për bizhuteri të imta. Çdo kuti është e bërë nga karton i riciklueshëm, duke kombinuar qëndrueshmërinë me forcën pa kompromis. Paketimet tona janë të veshura me letra të dizajnuara me luks.",
     jewellery_p2: "Ne kuptojmë se çdo xhevahir tregon një histori unike, prandaj jemi të hapur për personalizimin e paketimit sipas nevojave tuaja specifike, duke siguruar prestigj.",
-    jewellery_explore: "Klikoni më poshtë për të Eksploruar përfundimet tona premium"
+    jewellery_explore: "Klikoni më poshtë për të Eksploruar përfundimet tona premium",
+    chocolates_title: "Metoda \"Gourmet Prestige\"",
+    chocolates_subtitle: "Më e mira për çokollatierë të nivelit të lartë dhe marka artizanale.",
+    chocolates_h2: "Paketime të shkëlqyera për krijime gurmanësh",
+    chocolates_p: "Çokollatat më të mira meritojnë një prezantim që pasqyron artin e tyre. Në BLOSBOX, ne projektojmë kuti të ngurta çokollate që shërbejnë si dëshmi e cilësisë së markës suaj.",
+    customization_title: "Një bibliotekë e përfundimeve",
+    customization_p: "Veshja e jashtme përcakton shpirtin e paketimit tuaj. Zgjidhni nga koleksioni ynë i kuruar i materialeve premium.",
+    textured_title: "Koleksioni i Teksturuar",
+    pearl_title: "Koleksioni Perlë",
+    luxe_title: "Koleksioni Luks",
+    under_construction_title: "NË NDËRTIM E SIPËR",
+    under_construction_subtitle: "Duke u përgatitur për Luks",
+    products_title: "Industritë Tona",
+    products_p: "BLOSBOX prodhon paketim premium të përshtatur për kërkesat unike të tregjeve më prestigjioze në botë. Ekspertiza jonë shtrihet në disa sektorë luksi, duke siguruar që çdo kuti që prodhojmë plotëson në mënyrë të përsosur produktin që mban.",
+    custom_title: "Zgjidhje me Porosi",
+    custom_p: "Ne e shndërrojmë vizionin e markës suaj në realitet të prekshëm përmes paketës sonë gjithëpërfshirëse të shërbimeve me porosi. Nga dizajni fillestar strukturor deri te përfundimi i hollë final, zgjidhjet tona me porosi janë projektuar për markat që nuk pranojnë të zakonshmen."
   },
   
   it: {
@@ -236,7 +281,22 @@ const translations = {
     jewellery_title: "Packaging per Gioielli",
     jewellery_p1: "Scopri la nostra gamma esclusiva di scatole rigide progettate specificamente per la gioielleria raffinata. Ogni scatola è realizzata in cartone riciclabile, unendo la sostenibilità a una resistenza senza compromessi. I nostri imballaggi sono rivestiti con carte di pregio.",
     jewellery_p2: "Sappiamo che ogni gioiello racconta una storia unica, per questo offriamo la personalizzazione dei packaging in base alle vostre esigenze specifiche per presentare i vostri pezzi con prestigio.",
-    jewellery_explore: "Clicca qui sotto per Esplorare le nostre finiture di pregio"
+    jewellery_explore: "Clicca qui sotto per Esplorare le nostre finiture di pregio",
+    chocolates_title: "L'Approccio \"Gourmet Prestige\"",
+    chocolates_subtitle: "Ideale per cioccolatieri di alta gamma e marchi artigianali.",
+    chocolates_h2: "Eleganti custodie per creazioni gourmet",
+    chocolates_p: "I cioccolatini più raffinati meritano una presentazione che ne rifletta l'artigianalità. In BLOSBOX, progettiamo scatole di cioccolato rigide che testimoniano la qualità del tuo marchio.",
+    customization_title: "Una libreria di finiture",
+    customization_p: "Il rivestimento esterno definisce l'anima del tuo packaging. Scegli dalla nostra collezione curata di materiali pregiati.",
+    textured_title: "Collezione Goffrata",
+    pearl_title: "Collezione Perlata",
+    luxe_title: "Collezione Lusso",
+    under_construction_title: "IN COSTRUZIONE",
+    under_construction_subtitle: "Preparazione al Lusso",
+    products_title: "I Nostri Settori",
+    products_p: "BLOSBOX realizza packaging premium su misura per le esigenze uniche dei mercati più prestigiosi del mondo. La nostra esperienza spazia in molteplici settori del lusso, garantendo che ogni scatola prodotta si completi perfettamente con il prodotto che contiene.",
+    custom_title: "Soluzioni su Misura",
+    custom_p: "Trasformiamo la visione del tuo marchio in realtà tattile attraverso la nostra gamma completa di servizi su misura. Dalla progettazione strutturale iniziale alla finitura finale, le nostre solutions personalizzate sono progettate per i marchi che non si accontentano dell'ordinario."
   },
   
   de: {
@@ -295,7 +355,22 @@ const translations = {
     jewellery_title: "Schmuckverpackungen",
     jewellery_p1: "Entdecken Sie unser exklusives Sortiment an starren Schachteln, die speziell für edlen Schmuck entwickelt wurden. Jede Schachtel wird aus recycelbarem Karton hergestellt und verbindet Nachhaltigkeit mit kompromissloser Stärke. Unsere Verpackungen sind mit edlen Papieren umhüllt.",
     jewellery_p2: "Wir wissen, dass jedes Schmuckstück eine einzigartige Geschichte erzählt. Deshalb passen wir Ihre Verpackungen flexibel an Ihre Wünsche an, um Ihre Stücke mit Prestige zu präsentieren.",
-    jewellery_explore: "Klicken Sie unten, um unsere Premium-Veredelungen zu entdecken"
+    jewellery_explore: "Klicken Sie unten, um unsere Premium-Veredelungen zu entdecken",
+    chocolates_title: "Der \"Gourmet Prestige\"-Ansatz",
+    chocolates_subtitle: "Ideal für Premium-Chocolatiers und handwerkliche Marken.",
+    chocolates_h2: "Erlesene Verpackungen für Gourmet-Kreationen",
+    chocolates_p: "Feinste Pralinen verdienen eine Präsentation, die ihre Handwerkskunst widerspiegelt. Bei BLOSBOX entwickeln wir feste Schokoladenverpackungen, die von der Qualität Ihrer Marke zeugen.",
+    customization_title: "Eine Bibliothek von Veredelungen",
+    customization_p: "Die äußere Hülle definiert die Seele Ihrer Verpackung. Wählen Sie aus unserer kuratierten Kollektion von Premium-Materialien.",
+    textured_title: "Strukturierte Kollektion",
+    pearl_title: "Perlmutt-Kollektion",
+    luxe_title: "Luxe-Kollektion",
+    under_construction_title: "IN ARBEIT",
+    under_construction_subtitle: "Vorbereitung auf Luxus",
+    products_title: "Unsere Branchen",
+    products_p: "BLOSBOX fertigt Premium-Verpackungen, die auf die einzigartigen Anforderungen der weltweit prestigeträchtigsten Märkte zugeschnitten sind. Unsere Expertise erstreckt sich über mehrere Luxussektoren und stellt sicher, dass jede von uns hergestellte Box das darin enthaltene Produkt perfekt ergänzt.",
+    custom_title: "Sonderlösungen",
+    custom_p: "Wir verwandeln die Vision Ihrer Marke durch unser umfassendes Angebot an maßgeschneiderten Dienstleistungen in fühlbare Realität. Vom ersten strukturellen Entwurf bis zur endgültigen, exquisiten Veredelung sind unsere maßgeschneiderten Lösungen für Marken konzipiert, die sich nicht mit dem Gewöhnlichen zufrieden geben."
   },
   
   nl: {
@@ -354,7 +429,22 @@ const translations = {
     jewellery_title: "Juwelenverpakkingen",
     jewellery_p1: "Ontdek ons exclusieve assortiment stevige dozen die speciaal zijn ontworpen voor fijne juwelen. Elke doos is gemaakt van recyclebaar karton en combineert duurzaamheid met compromisloze sterkte. Onze verpakkingen zijn bekleed met luxe papier.",
     jewellery_p2: "We begrijpen dat elk sieraad een uniek verhaal vertelt, daarom bieden we maatwerk aan om uw stukken met prestige te presenteren.",
-    jewellery_explore: "Klik hieronder om onze premium afwerkingen te ontdekken"
+    jewellery_explore: "Klik hieronder om onze premium afwerkingen te ontdekken",
+    chocolates_title: "De \"Gourmet Prestige\"-Aanpak",
+    chocolates_subtitle: "Ideaal voor hoogwaardige chocolatiers en ambachtelijke merken.",
+    chocolates_h2: "Exquise verpakkingen voor gastronomische creaties",
+    chocolates_p: "De fijnste chocolaatjes verdienen een presentatie die hun vakmanschap weerspiegelt. Bij BLOSBOX ontwerpen we stevige chocoladedozen die getuigen van de kwaliteit van uw merk.",
+    customization_title: "Een bibliotheek van afwerkingen",
+    customization_p: "De buitenkant definieert de ziel van uw verpakking. Kies uit onze gecureerde collectie van hoogwaardige materialen.",
+    textured_title: "Gestructureerde Collectie",
+    pearl_title: "Parelmoer Collectie",
+    luxe_title: "Luxe Collectie",
+    under_construction_title: "IN OPBOUW",
+    under_construction_subtitle: "Voorbereiding op Luxe",
+    products_title: "Onze Sectoren",
+    products_p: "BLOSBOX produceert luxe verpakkingen die zijn afgestemd op de unieke eisen van 's werelds meest prestigieuze markten. Onze expertise strekt zich uit over meerdere luxesectoren, waardoor we ervoor zorgen dat elke doos die we produceren perfect aansluit bij het product dat erin zit.",
+    custom_title: "Maatwerkoplossingen",
+    custom_p: "We transformeren de visie van uw merk in tastbare realiteit via ons uitgebreide aanbod van maatwerkdiensten. Van het eerste structurele ontwerp tot de uiteindelijke verfijnde afwerking: onze maatwerkoplossingen zijn ontworpen voor merken die weigeren genoegen te nemen met het gewone."
   },
   
   sv: {
@@ -413,7 +503,22 @@ const translations = {
     jewellery_title: "Smyckesförpackningar",
     jewellery_p1: "Upptäck vårt exklusiva sortiment av styva askar, speciellt framtagna för fina smycken. Varje ask tillverkas av återvinningsbar kartong och kombinerar hållbarhet med kompromisslös styrka. Våra förpackningar kläds i exklusiva papper.",
     jewellery_p2: "Vi förstår att varje smycke berättar en unik historia. Därför skräddarsyr vi förpackningar efter dina specifika behov för att presentera dina smycken med prestige.",
-    jewellery_explore: "Klicka nedan för att utforska våra premiumytbehandlingar"
+    jewellery_explore: "Klicka nedan för att utforska våra premiumytbehandlingar",
+    chocolates_title: "Metoden \"Gourmet Prestige\"",
+    chocolates_subtitle: "Bäst för exklusiva chokladtillverkare och hantverksvarumärken.",
+    chocolates_h2: "Utsökta askar för gourmetkreationer",
+    chocolates_p: "De finaste chokladbitarna förtjänar en presentation som speglar deras konstnärlighet. På BLOSBOX konstruerar vi styva chokladaskar som vittnar om ditt varumärkes kvalitet.",
+    customization_title: "Ett bibliotek av ytbehandlingar",
+    customization_p: "Det yttre omslaget definierar själen i din förpackning. Välj från vår handplockade kollektion av premiummaterial.",
+    textured_title: "Strukturerad Kollektion",
+    pearl_title: "Pärlemorkollektion",
+    luxe_title: "Luxekollektion",
+    under_construction_title: "UNDER KONSTRUKTION",
+    under_construction_subtitle: "Förbereder för Lyx",
+    products_title: "Våra Branscher",
+    products_p: "BLOSBOX tillverkar premiumförpackningar skräddarsydda för de unika kraven på världens mest prestigefyllda marknader. Vår expertis sträcker sig över flera lyxsektorer, vilket säkerställer att varje ask vi tillverkar perfekt kompletterar produkten den innehåller.",
+    custom_title: "Speciallösningar",
+    custom_p: "Vi förvandlar ditt varumärkes vision till påtaglig verklighet genom vårt omfattande utbud av skräddarsydda tjänster. Från initial strukturell design till den slutliga utsökta ytbehandlingen är våra skräddarsydda lösningar konstruerade för varumärken som vägrar nöja sig med det vanliga."
   },
   
   mk: {
@@ -472,6 +577,21 @@ const translations = {
     jewellery_title: "Амбалажа за Накит",
     jewellery_p1: "Откријте го нашиот ексклузивен асортиман на цврсти кутии дизајнирани специјално за луксузен накит. Секоја кутија е изработена од картон што може да се рециклира, комбинирајќи ја одржливоста со безкомпромисна цврстина. Нашите пакувања се обложени со премиум хартии.",
     jewellery_p2: "Разбираме дека секој накит раскажува уникатна приказна, затоа нудиме целосно прилагодување на пакувањето според вашите специфични потреби за презентација со престиж.",
-    jewellery_explore: "Кликнете подолу за да ги истражите нашите премиум финиши"
+    jewellery_explore: "Кликнете подолу за да ги истражите нашите премиум финиши",
+    chocolates_title: "Пристапот \"Gourmet Prestige\"",
+    chocolates_subtitle: "Најдобро за врвни производители на чоколади и занаетчиски брендови.",
+    chocolates_h2: "Исклучително пакување за гурмански креации",
+    chocolates_p: "Најфините чоколади заслужуваат презентација што ја одразува нивната уметност. Во БЛОСБОКС, ние создаваме цврсти кутии за чоколади кои служат како доказ за квалитетот на вашиот бренд.",
+    customization_title: "Библиотека на финиши",
+    customization_p: "Надворешната обвивка ја дефинира душата на вашето пакување. Изберете од нашата селектирана колекција на премиум материјали.",
+    textured_title: "Текстурирана Колекција",
+    pearl_title: "Перла Колекција",
+    luxe_title: "Лукс Колекција",
+    under_construction_title: "ВО ИЗРАБОТКА",
+    under_construction_subtitle: "Подготовка за Луксуз",
+    products_title: "Нашите Индустрии",
+    products_p: "БЛОСБОКС изработува премиум амбалажа прилагодена на уникатните барања на најпрестижните светски пазари. Нашата експертиза опфаќа повеќе луксузни сектори, осигурувајќи дека секоја кутија што ја произведуваме совршено одговара на производот што го содржи.",
+    custom_title: "Прилагодени Решенија",
+    custom_p: "Ја преточуваме визијата на вашиот бренд во опиплива реалност преку нашиот сеопфатен пакет на услуги по мерка. Од почетниот структурен дизајн до конечниот извонреден финиш, нашите прилагодени решенија се создадени за брендови кои одбиваат да се задоволат со обичното."
   }
 };
