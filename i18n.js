@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("i18n Engine Loaded");
     
     // Supported languages
-    const supportedLanguages = ['en', 'fr', 'sq', 'it', 'de', 'nl', 'sv', 'mk'];
+    const supportedLanguages = ['en', 'fr', 'de', 'it', 'sv', 'nl', 'sq', 'mk'];
     
     // 1. Determine active language
     let activeLang = localStorage.getItem('selected_language');
