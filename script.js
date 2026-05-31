@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 const parentLi = link.parentElement;
                 const isDropdownTrigger = parentLi && parentLi.classList.contains('dropdown');
-                if (!isDropdownTrigger && window.innerWidth <= 850) {
+                if (!isDropdownTrigger && navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                     mobileBtn.innerHTML = '☰';
                 }
@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
+            
+            // Auto-collapse mobile drawer menu when an anchor link is clicked
+            const navLinks = document.querySelector('.nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                if (mobileBtn) mobileBtn.innerHTML = '☰';
+            }
+
             if (this.classList.contains('floating-cta') || targetId === '#quote') {
                 e.preventDefault();
                 showContactModal();
