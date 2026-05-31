@@ -10,6 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             mobileBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
         });
+
+        // Auto-collapse mobile drawer menu when a leaf link or anchor (like Contact Us) is clicked
+        const drawerLinks = navLinks.querySelectorAll('a');
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const parentLi = link.parentElement;
+                const isDropdownTrigger = parentLi && parentLi.classList.contains('dropdown');
+                if (!isDropdownTrigger && window.innerWidth <= 850) {
+                    navLinks.classList.remove('active');
+                    mobileBtn.innerHTML = '☰';
+                }
+            });
+        });
     }
 
     // Mobile Dropdown Toggle
