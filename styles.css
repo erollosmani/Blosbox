@@ -1073,8 +1073,8 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--brown-accent);
-    color: var(--text-light);
+    background-color: transparent;
+    color: var(--brown-accent);
     border: 1px solid var(--brown-accent);
     padding: 0.5rem 1.2rem;
     font-family: var(--font-body);
@@ -1088,8 +1088,8 @@ a {
 }
 
 .footer-quote-btn:hover {
-    background-color: transparent;
-    color: var(--brown-accent);
+    background-color: var(--brown-accent);
+    color: var(--text-light);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
