@@ -191,8 +191,8 @@ const translations = {
     
     hero_title: "Nga Vizioni te Eleganca e Prekshme",
     about_title: "Rreth Nesh",
-    about_p1: "Gjashtë vjet më parë, BLOSBOX filloi me vetëm katër duar dhe një valixhe të vetme. Babai im dhe unë e filluam këtë rrugëtim pa asnjë makinë të vetme, duke shitur kutitë tona të bëja me dorë derë më derë, një klient në një kohë. Përmes përkushtimit të palodhshëm dhe rritjes së qëndrueshme vit pas viti, ne jemi shndërruar në një fabrikë moderne ku 80% e prodhimit tonë tani është e automatizuar.",
-    about_p2: "Sot, BLOSBOX prodhon paketim premium për një gamë të gjerë industrish — nga bizhuteritë, orët dhe aksesorët e modës deri te parfumet, kozmetika, produktet e lëkurës, çokollatat, verërat, pijet dhe dhuratat korporative. Me mbi 1,000,000 kuti të dorëzuara te markat dhe shitësit me pakicë, ne vazhdojmë të ndërthurim shpirtin e origjinës sonë të punuar me dorë me saktësinë e teknologjisë moderne.",
+    about_p1: "Gjashtë vjet më parë, BLOSBOX filloi me vetëm katër duar dhe një valixhe të vetme. Babai im dhe unë e filluam këtë rrugëtim pa asnjë makinë të vetme, duke shitur kutitë tona të punuara në dorë derë më derë e klient pas klienti. Të përkushtuar e të palodhshëm me rritje të vazhdueshme vit pas viti, u shndërruam në një fabrikë moderne ku 80% e prodhimit tonë tani më është e automatizuar.",
+    about_p2: "Sot, BLOSBOX prodhon paketim premium për një gamë të gjerë industrish — nga bizhuteritë, orët dhe aksesorët e modës deri te parfumet, kozmetika, produktet e lëkurës, çokollatat, verërat, pijet dhe dhuratat korporative. Me mbi 1,000,000 kuti të dorëzuara te klientet tanë, ne vazhdojmë të ndërthurim shpirtin e origjinës sonë të punuar me dorë me saktësinë e teknologjisë moderne.",
     about_legacy: "Trashëgimia & Rritja",
     bespoke_title: "Nga Vizioni te Eleganca e Prekshme",
     bespoke_intro: "Produkti juaj është i jashtëzakonshëm; përshtypja e parë nuk duhet të jetë më pak. Atelier ynë i dizajnit punon si një zgjatim i markës suaj, duke përkthyer identitetin tuaj në art strukturor. Ne nuk besojmë në dimensione standarde—ne besojmë në përshtatjen e përsosur.",
