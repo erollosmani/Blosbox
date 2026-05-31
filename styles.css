@@ -1062,3 +1062,35 @@ a {
         font-size: 1.8rem !important;
     }
 }
+
+
+/* Static Footer Catalog Button */
+.footer-catalog-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: var(--brown-accent);
+    border: 1px solid var(--brown-accent);
+    padding: 0.5rem 1.2rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer-catalog-btn:hover {
+    background-color: var(--brown-accent);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer-catalog-btn:active {
+    transform: translateY(0);
+}
