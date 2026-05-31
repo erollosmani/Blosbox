@@ -5,21 +5,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Supported languages
     const supportedLanguages = ['en', 'fr', 'de', 'it', 'sv', 'nl', 'sq', 'mk'];
     
-    // 1. Determine active language
-    let activeLang = localStorage.getItem('selected_language');
-    
-    if (!activeLang) {
-        // Detect browser language
-        const browserLang = navigator.language || navigator.userLanguage;
-        const shortLang = browserLang.substring(0, 2).toLowerCase();
-        
-        if (supportedLanguages.includes(shortLang)) {
-            activeLang = shortLang;
-        } else {
-            activeLang = 'en'; // Default fallback
+    // Helper to get query parameter
+    function getQueryParam(name) {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        } catch (e) {
+            return null;
         }
-        localStorage.setItem('selected_language', activeLang);
     }
+
+    // Helper for safe localStorage access
+    function getStoredLanguage() {
+        try {
+            return localStorage.getItem('selected_language');
+        } catch (e) {
+            return null;
+        }
+    }
+    
+    function setStoredLanguage(lang) {
+        try {
+            localStorage.setItem('selected_language', lang);
+        } catch (e) {
+            // Silently absorb restricted environments exceptions
+        }
+    }
+
+    // 1. Determine active language (safe URL query param first, then localStorage fallback)
+    let activeLang = getQueryParam('lang');
+    if (!activeLang) {
+        activeLang = getStoredLanguage();
+    }
+    
+    if (!activeLang || !supportedLanguages.includes(activeLang)) {
+        // Detect browser language
+        try {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const shortLang = browserLang.substring(0, 2).toLowerCase();
+            
+            if (supportedLanguages.includes(shortLang)) {
+                activeLang = shortLang;
+            } else {
+                activeLang = 'en'; // Default fallback
+            }
+        } catch (e) {
+            activeLang = 'en';
+        }
+    }
+    setStoredLanguage(activeLang);
     
     // Clone and mount language selector for mobile view
     const desktopLangDropdown = document.querySelector('.nav-links .lang-dropdown');
@@ -45,11 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!supportedLanguages.includes(langCode)) return;
         
         console.log("Switching language to:", langCode);
-        localStorage.setItem('selected_language', langCode);
+        setStoredLanguage(langCode);
         activeLang = langCode;
         
         applyTranslations(langCode);
         updateLanguageSelectorUI(langCode);
+        updateInternalLinks(langCode);
         
         // Explicitly close dropdown menus and active states after selecting a language
         const menus = document.querySelectorAll('.lang-dropdown-menu');
@@ -153,8 +188,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // 5. Update all internal .html links with active lang query parameters
+    function updateInternalLinks(lang) {
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.includes('://') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                try {
+                    // Extract page path and query params
+                    const parts = href.split('?');
+                    const basePath = parts[0];
+                    const searchParams = new URLSearchParams(parts[1] || '');
+                    
+                    searchParams.set('lang', lang);
+                    link.setAttribute('href', basePath + '?' + searchParams.toString());
+                } catch (e) {
+                    // Fail-safe simple query parameter append
+                    const cleanHref = href.split('?')[0];
+                    link.setAttribute('href', cleanHref + '?lang=' + lang);
+                }
+            }
+        });
+    }
+    
     // Initial run
     applyTranslations(activeLang);
     updateLanguageSelectorUI(activeLang);
+    updateInternalLinks(activeLang);
     setupDropdownListeners();
 });
