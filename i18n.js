@@ -120,22 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 4. Set up Navbar Dropdown Toggle event listeners
     function setupDropdownListeners() {
-        const trigger = document.querySelector('.nav-links .lang-dropdown-trigger');
-        const menu = document.querySelector('.nav-links .lang-dropdown-menu');
-        
-        if (trigger && menu) {
-            // Toggle dropdown open state
-            trigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                menu.classList.toggle('active');
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', () => {
-                menu.classList.remove('active');
-            });
-        }
         
         // Mobile language switcher toggle
         const mobileTrigger = document.querySelector('.mobile-lang-dropdown .lang-dropdown-trigger');
