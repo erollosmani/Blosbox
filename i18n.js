@@ -50,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         applyTranslations(langCode);
         updateLanguageSelectorUI(langCode);
+        
+        // Explicitly close dropdown menus and active states after selecting a language
+        const menus = document.querySelectorAll('.lang-dropdown-menu');
+        menus.forEach(menu => {
+            menu.classList.remove('active');
+        });
+        
+        const dropdowns = document.querySelectorAll('.lang-dropdown, .mobile-lang-dropdown');
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
     };
     
     // 2. Scan DOM and translate
