@@ -1048,3 +1048,17 @@ a {
 
 
 
+
+
+/* Responsive adjustments for smaller mobile viewports to prevent long translated words from overflowing */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+}
