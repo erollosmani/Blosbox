@@ -28,6 +28,7 @@ const translations = {
     
     catalog_btn: "Catalog",
     request_quote_btn: "Request a Quote",
+    get_quote_btn: "Get a Quote",
     
     // index.html
     hero_title: "From Vision to Tangible Elegance",
@@ -110,6 +111,7 @@ const translations = {
     
     catalog_btn: "Catalogue",
     request_quote_btn: "Demander un Devis",
+    get_quote_btn: "Obtenir un Devis",
     
     hero_title: "De la Vision à l'Élégance Tangible",
     about_title: "À Propos de Nous",
@@ -188,6 +190,7 @@ const translations = {
     
     catalog_btn: "Katalogu",
     request_quote_btn: "Kërko një Ofertë",
+    get_quote_btn: "Merr një Ofertë",
     
     hero_title: "Nga Vizioni te Eleganca e Prekshme",
     about_title: "Rreth Nesh",
@@ -266,6 +269,7 @@ const translations = {
     
     catalog_btn: "Catalogo",
     request_quote_btn: "Richiedi un Preventivo",
+    get_quote_btn: "Ottieni un Preventivo",
     
     hero_title: "Dalla Visione all'Eleganza Tangibile",
     about_title: "Chi Siamo",
@@ -344,6 +348,7 @@ const translations = {
     
     catalog_btn: "Katalog",
     request_quote_btn: "Angebot Anfordern",
+    get_quote_btn: "Angebot Einholen",
     
     hero_title: "Von der Vision zur Fühlbaren Eleganz",
     about_title: "Über Uns",
@@ -422,6 +427,7 @@ const translations = {
     
     catalog_btn: "Catalogus",
     request_quote_btn: "Offerte Aanvragen",
+    get_quote_btn: "Offerte Aanvragen",
     
     hero_title: "Van Visie naar Tastbare Elegantie",
     about_title: "Over Ons",
@@ -500,6 +506,7 @@ const translations = {
     
     catalog_btn: "Katalog",
     request_quote_btn: "Begär en Offert",
+    get_quote_btn: "Få en Offert",
     
     hero_title: "Från Vision till Påtaglig Elegans",
     about_title: "Om Oss",
@@ -578,6 +585,7 @@ const translations = {
     
     catalog_btn: "Каталог",
     request_quote_btn: "Побарај Понуда",
+    get_quote_btn: "Побарај Понуда",
     
     hero_title: "Од Визија до Опиплива Елеганција",
     about_title: "За Нас",
