@@ -59,27 +59,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    function createContactModal() {
-        if (document.getElementById('contactModal')) return;
-        const modalHtml = `
-            <div class="modal-overlay" id="contactModal">
-                <div class="modal-container">
-                    <div class="modal-close" id="closeModal">✕</div>
-                    <div class="modal-content">
-                        <h2>Request a Quote</h2>
-                        <div class="modal-info">
-                            <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
-                            <p>Email: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
-                            <p>Phone: <a href="tel:+38975222228">+389 75 222228</a></p>
-                        </div>
+    // Note: createContactModal is moved below out of DOMContentLoaded to run synchronously on load
+});
+
+function createContactModal() {
+    if (document.getElementById('contactModal')) return;
+    const modalHtml = `
+        <div class="modal-overlay" id="contactModal">
+            <div class="modal-container">
+                <div class="modal-close" id="closeModal">✕</div>
+                <div class="modal-content">
+                    <h2 data-i18n="request_quote_btn">Request a Quote</h2>
+                    <div class="modal-info">
+                        <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
+                        <p>Email: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
+                        <p>Phone: <a href="tel:+38975222228">+389 75 222228</a></p>
                     </div>
                 </div>
             </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', modalHtml);
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+    // Bind event listeners to close the modal
+    const modal = document.getElementById('contactModal');
+    const closeBtn = document.getElementById('closeModal');
+    if (modal && closeBtn) {
+        closeBtn.onclick = (e) => {
+            e.stopPropagation();
+            modal.classList.remove('active');
+        };
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        };
+        
+        // Keydown Escape handler for close accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
     }
-    createContactModal();
-});
+}
+createContactModal();
+
 
 function showContactModal() {
     const modal = document.getElementById('contactModal');
