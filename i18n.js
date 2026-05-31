@@ -82,8 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                     el.setAttribute('placeholder', langData[key]);
                 } else {
-                    // Update innerHTML to preserve basic formatting tags like strong, br, etc.
-                    el.innerHTML = langData[key];
+                    // Preserve the caret span (e.g. dropdown indicator arrow) if present inside the element
+                    const caret = el.querySelector('.caret');
+                    if (caret) {
+                        el.innerHTML = langData[key] + ' ' + caret.outerHTML;
+                    } else {
+                        el.innerHTML = langData[key];
+                    }
                 }
             }
         });
