@@ -96,6 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdowns.forEach(dropdown => {
             dropdown.classList.remove('active');
         });
+
+        // Close the mobile navigation drawer if open
+        const navLinks = document.querySelector('.nav-links');
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            if (mobileBtn) mobileBtn.innerHTML = '☰';
+        }
     };
     
     // 2. Scan DOM and translate
@@ -160,6 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 4. Set up Navbar Dropdown Toggle event listeners
     function setupDropdownListeners() {
+        // Prevent desktop language trigger click from scrolling page to the top
+        const desktopTrigger = document.querySelector('.nav-links .lang-dropdown-trigger');
+        if (desktopTrigger) {
+            desktopTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
+        }
         
         // Mobile language switcher toggle
         const mobileTrigger = document.querySelector('.mobile-lang-dropdown .lang-dropdown-trigger');
@@ -194,6 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
         links.forEach(link => {
             const href = link.getAttribute('href');
             if (href && !href.startsWith('#') && !href.includes('://') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                // Parse page path to ensure we only target HTML pages or directory links (not PDFs or assets)
+                const cleanPath = href.split('?')[0].split('#')[0];
+                const isHtml = cleanPath.endsWith('.html') || !cleanPath.includes('.');
+                if (!isHtml) return;
+                
                 try {
                     // Extract page path and query params
                     const parts = href.split('?');
