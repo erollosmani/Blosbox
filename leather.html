@@ -3,10 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blosbox | Under Construction</title>
+    <title>Blosbox | Leather Goods Packaging</title>
     <!-- Modern luxury fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS for Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        .hero {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 5vh 5% !important;
+            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            overflow: hidden !important;
+            box-sizing: border-box !important;
+        }
+        .leather-split {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            width: 92%;
+            max-width: 1400px;
+            height: 100%;
+            gap: 3rem;
+            align-items: center;
+        }
+        .leather-text {
+            text-align: left;
+        }
+        .leather-text h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+        .leather-text .subtitle {
+            font-family: 'Lato', sans-serif;
+            font-style: italic;
+            color: var(--brown-accent);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+        .leather-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-top);
+        }
+        .leather-text p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        /* Swiper Gallery Styles */
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--brown-accent) !important;
+        }
+
+        @media (max-width: 1024px) {
+            .leather-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                overflow-y: auto;
+                height: 90%;
+            }
+            .hero {
+                height: auto !important;
+                min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+                padding: 4rem 0 !important;
+            }
+            .swiper-container {
+                height: 340px;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="styles.css?v=28">
 </head>
 <body>
@@ -69,13 +159,34 @@
     </header>
 
     <!-- Large cream band: Hero Section -->
-    <section class="hero" >
-        <div style="text-align: center;">
-            <h1 style="font-size: 4rem; color: var(--dark-top); letter-spacing: 2px;"><span data-i18n="under_construction_title">UNDER CONSTRUCTION</span></h1>
-            <p style="font-family: 'Lato', sans-serif; font-size: 1.2rem; color: var(--brown-accent); margin-top: 1rem; text-transform: uppercase; letter-spacing: 4px;"><span data-i18n="under_construction_subtitle">Preparing for Luxury</span></p>
+    <section class="hero">
+        <div class="leather-split">
+            <div class="leather-text">
+                <h1 data-i18n="leather_title">The "Tactile Heritage" Approach</h1>
+                <span class="subtitle" data-i18n="leather_subtitle">Best for premium leather artisans and fashion accessory designers.</span>
+                
+                <h2 data-i18n="leather_h2">Exquisite Housing for Luxury Leather Goods</h2>
+                <p><span data-i18n="leather_p">Our luxury packaging is designed and customized to fit your specific customer needs. Made from eco-friendly, recyclable papers, each box combines structural strength with refined textures to elevate the presentation of premium wallets, belts, and accessories.</span></p>
+            </div>
+            
+            <div class="swiper-container">
+                <div class="swiper swiper-leather">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Leather Goods/Belt_box_luxe.jpg_202606281721.jpeg" alt="Belt Box Luxe"></div>
+                        <div class="swiper-slide"><img src="Leather Goods/Belt_box_luxe1.jpg_202606281730.jpeg" alt="Belt Box Luxe Detail"></div>
+                        <div class="swiper-slide"><img src="Leather Goods/Wallet_box_luxe.jpg_202606281738.jpeg" alt="Wallet Box Luxe"></div>
+                        <div class="swiper-slide"><img src="Leather Goods/Wallet_box_textured.jpg_202606281804.jpeg" alt="Wallet Box Textured"></div>
+                        <div class="swiper-slide"><img src="Leather Goods/Wallet_box_textured_brown.jpg_202606281754.jpeg" alt="Wallet Box Textured Brown"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
         </div>
-
-</section>
+    </section>
 
     <!-- Muted brown band: Highlights / Features -->
     <section class="highlights">
@@ -107,18 +218,31 @@
         </div>
     </footer>
 
-        
-
     <script src="translations.js?v=28"></script>
     <script src="i18n.js?v=28"></script>
     <script src="script.js?v=28"></script>
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-leather", {
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        observer: true,
+        observeParents: true,
+        on: {
+          click: function(swiper, event) {
+            if (event.target.tagName.toLowerCase() === "img") {
+              openLightbox(event.target.src);
+            }
+          }
+        }
+      });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
