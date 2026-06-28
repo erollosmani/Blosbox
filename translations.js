@@ -509,7 +509,7 @@ const translations = {
     watches_h2: "Exclusieve Dozen voor Luxe Horloges",
     watches_p: "Een fijn horloge verdient een presentatie die de precisie en het erfgoed weerspiegelt. Bij BLOSBOX ontwerpen we rigide horlogedozen die getuigen van het streven van uw merk naar uitmuntendheid en vakmanschap.",
     leather_title: "De \"Tactile Heritage\"-Aanpak",
-    leather_subtitle: "Beste voor luxe horlogemakers en premium horlogemerken.",
+    leather_subtitle: "Beste voor premium leerbewerkers en ontwerpers van modeaccessoires.",
     leather_h2: "Exclusieve Dozen voor Luxe Lederwaren",
     leather_p: "Onze luxe verpakkingen worden ontworpen en op maat gemaakt naar de specifieke wensen van uw klanten. Vervaardigd uit milieuvriendelijk, recyclebaar papier, combineren ze structurele stevigheid met verfijnde texturen.",
     customization_title: "Een bibliotheek van afwerkingen",
