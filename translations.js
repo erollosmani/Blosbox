@@ -249,7 +249,7 @@ const translations = {
     watches_p: "Një orë e përkryer meriton një prezantim që reflekton saktësinë dhe trashëgiminë e saj. Në BLOSBOX, ne projektojmë kuti të ngurta premium për ora, të dizajnuara për të nxjerrë në pah mjeshtërinë e koleksionit tuaj të orëve. Çdo kuti është ndërtuar për të siguruar mekanizmat tuaja delikate, duke shërbyer njëkohësisht si një dëshmi e sofistikuar e mjeshtërisë së pakompromis të markës suaj.",
     leather_title: "Metoda \"Tactile Heritage\"",
     leather_subtitle: "Më e mira për artizanët e lëkurës dhe dizajnerët e aksesorëve të modës.",
-    leather_h2: "Strehë e Shkëlqyer për Produkte Luksoze prej Lëkure",
+    leather_h2: "Strehim Ekskluziv për Artikuj Luksozë prej Lëkure",
     leather_p: "Krijimet e bukura prej lëkure meritojnë një prezantim që pasqyron teksturën dhe trashëgiminë e tyre. Në BLOSBOX, ne projektojmë kuti të forta premium të dizajnuara për të pasqyruar artin e punës tuaj. Çdo kuti është ndërtuar për të mbrojtur pjesët tuaja të qepura duke shërbyer si një dëshmi e sofistikuar e cilësisë së pakompromis të markës suaj.",
     customization_title: "Një bibliotekë e përfundimeve",
     customization_p: "Veshja e jashtme përcakton shpirtin e paketimit tuaj. Zgjidhni nga koleksioni ynë i kuruar i materialeve premium.",
