@@ -30,6 +30,20 @@
         }
         .cosmetics-text {
             text-align: left;
+            max-height: 100%;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        /* Custom scrollbar for premium look */
+        .cosmetics-text::-webkit-scrollbar {
+            width: 4px;
+        }
+        .cosmetics-text::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .cosmetics-text::-webkit-scrollbar-thumb {
+            background: var(--brown-accent);
+            border-radius: 2px;
         }
         .cosmetics-text h1 {
             font-size: 2.4rem;
@@ -176,8 +190,23 @@
     <section class="hero">
         <div class="cosmetics-split">
             <div class="cosmetics-text">
-                <h2 data-i18n="cosmetics_h2">Exquisite Housing for Premium Cosmetics & Fragrances</h2>
-                <p><span data-i18n="cosmetics_p">Elevate your beauty creations with luxury packaging designed to protect and impress. At BLOSBOX, we craft rigid boxes with refined textures and custom details, creating a perfect sensory experience for high-end perfumes, cosmetics, and skincare.</span></p>
+                <h2 data-i18n="cosmetics_h2">Luxury Cosmetic Packaging</h2>
+                <p><span data-i18n="cosmetics_p">Create a lasting first impression with custom luxury cosmetic packaging designed to reflect the quality of your brand. We manufacture premium rigid cardboard cosmetic boxes with durable construction, precise craftsmanship, and fully customized designs that elevate the unboxing experience.</span></p>
+                
+                <div class="detail-item">
+                    <h3 data-i18n="cosmetics_item1_title">Custom Gift Sets: </h3>
+                    <p><span data-i18n="cosmetics_item1_desc">Bespoke rigid boxes designed to showcase multiple cosmetic products in elegant retail and promotional presentations.</span></p>
+                </div>
+                <div class="detail-item">
+                    <h3 data-i18n="cosmetics_item2_title">Custom Inserts: </h3>
+                    <p><span data-i18n="cosmetics_item2_desc">Foam, cardboard, or molded pulp inserts that securely hold each product in place.</span></p>
+                </div>
+                <div class="detail-item">
+                    <h3 data-i18n="cosmetics_item3_title">Sustainable Materials: </h3>
+                    <p><span data-i18n="cosmetics_item3_desc">High-quality recyclable cardboard and eco-friendly production options.</span></p>
+                </div>
+                
+                <p style="margin-top: 1rem;"><span data-i18n="cosmetics_p2">From skincare collections and makeup palettes to fragrance gift sets, we manufacture luxury cosmetic boxes that protect your products while strengthening your brand's premium image.</span></p>
             </div>
             
             <div class="swiper-container">
