@@ -38,25 +38,18 @@
             width: 100%;
             max-width: 1100px;
             margin: 0 auto;
+            align-items: start;
         }
         .photo-item {
             width: 100%;
-            height: 300px;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .photo-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.22);
         }
         .photo-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+            height: auto;
+            display: block;
         }
         .jewellery-text {
             max-width: 800px;
@@ -86,9 +79,6 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
                 max-width: 450px;
-            }
-            .photo-item {
-                height: 250px;
             }
         }
     </style>
@@ -156,9 +146,9 @@
             <h1 data-i18n="jewellery_title">Jewellery Packaging</h1>
             
             <div class="photos-grid">
-                <div class="photo-item"><img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Premium jewellery box" onclick="openLightbox(this.src)"></div>
-                <div class="photo-item"><img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Jewelry box with necklace inside" onclick="openLightbox(this.src)"></div>
-                <div class="photo-item"><img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Jewellery packaging box" onclick="openLightbox(this.src)"></div>
+                <div class="photo-item"><img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Premium jewellery box"></div>
+                <div class="photo-item"><img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Jewelry box with necklace inside"></div>
+                <div class="photo-item"><img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Jewellery packaging box"></div>
             </div>
 
             <div class="jewellery-text">
