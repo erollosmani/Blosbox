@@ -7,12 +7,81 @@
     <!-- Modern luxury fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS for Gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css?v=29">
     <style>
-        @media (min-width: 851px) {
-            .hero h1 {
-                font-size: 3rem;
-                margin-bottom: 1rem;
+        .hero {
+            padding: 4rem 5% !important;
+            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            overflow-y: auto !important;
+        }
+        .jewellery-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.2rem;
+            box-sizing: border-box;
+        }
+        .jewellery-container h1 {
+            font-size: 3rem;
+            color: var(--dark-top);
+            margin: 0;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        /* Swiper Gallery Styles */
+        .swiper-container {
+            width: 100%;
+            max-width: 650px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            position: relative;
+            margin: 0 auto;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--brown-accent) !important;
+        }
+        .jewellery-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.65;
+            color: var(--dark-top);
+            font-weight: 300;
+        }
+        .jewellery-text p {
+            margin-bottom: 1.2rem;
+        }
+        .jewellery-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto !important;
+                padding: 3rem 5% !important;
+            }
+            .jewellery-container h1 {
+                font-size: 2.4rem;
+            }
+            .swiper-container {
+                height: 300px;
             }
         }
     </style>
@@ -75,20 +144,31 @@
     </header>
 
     <!-- Large cream band: Hero Section -->
-    <section class="hero" >
-        <div class="about-content" style="max-width: 900px; text-align: center; margin: 0 auto;">
+    <section class="hero">
+        <div class="jewellery-container">
             <h1 data-i18n="jewellery_title">Jewellery Packaging</h1>
-            <div class="about-text" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                <p data-i18n="jewellery_p1">Discover our exclusive range of rigid boxes designed specifically for fine jewellery. Each box is made from recyclable cardboard, combining sustainability with uncompromising strength. To elevate the experience, our packaging is wrapped in luxuriously designed papers — available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.</p>
-                <p style="margin-top: 1.5rem;" data-i18n="jewellery_p2">We understand that every jewel tells a unique story, which is why we are open to customizing packaging according to your specific needs, ensuring your pieces are presented with elegance, prestige, and individuality.</p>
-                <div class="explore-section" style="margin-top: 6rem;">
-                    <p style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--brown-accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;"><span data-i18n="jewellery_explore">Click below to Explore our premium finishes</span></p>
-                    <i class="fas fa-chevron-down bounce" style="font-size: 1.5rem; color: var(--brown-accent);"></i>
+            
+            <div class="swiper-container">
+                <div class="swiper swiper-jewellery">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Jewelry box with necklace inside"></div>
+                        <div class="swiper-slide"><img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Jewellery packaging box"></div>
+                        <div class="swiper-slide"><img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Premium jewellery box"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
-        </div>
 
-</section>
+            <div class="jewellery-text">
+                <p data-i18n="jewellery_p1">Discover our exclusive range of rigid boxes designed specifically for fine jewellery. Each box is made from recyclable cardboard, combining sustainability with uncompromising strength. To elevate the experience, our packaging is wrapped in luxuriously designed papers — available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.</p>
+                <p data-i18n="jewellery_p2">We understand that every jewel tells a unique story, which is why we are open to customizing packaging according to your specific needs, ensuring your pieces are presented with elegance, prestige, and individuality.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Muted brown band: Highlights / Features -->
     <section class="highlights">
@@ -121,16 +201,31 @@
         </div>
     </footer>
 
-    
-
     <script src="translations.js?v=29"></script>
     <script src="i18n.js?v=29"></script>
     <script src="script.js?v=29"></script>
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".swiper-jewellery", {
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        observer: true,
+        observeParents: true,
+        on: {
+          click: function(swiper, event) {
+            if (event.target.tagName.toLowerCase() === "img") {
+              openLightbox(event.target.src);
+            }
+          }
+        }
+      });
+    </script>
 </body>
 </html>
-
-
-
-
