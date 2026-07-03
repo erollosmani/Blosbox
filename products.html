@@ -9,10 +9,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css?v=29">
     <style>
-        @media (min-width: 851px) {
-            .hero h1 {
-                font-size: 3.5rem;
-                margin-bottom: 1.5rem;
+        .hero {
+            padding: 4rem 5% 2rem 5% !important;
+            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            overflow-y: auto !important;
+        }
+        .products-container {
+            max-width: 1200px;
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            align-items: center;
+            width: 100%;
+        }
+        .products-container h1 {
+            font-size: 3.5rem;
+            color: var(--dark-top);
+            margin: 0;
+        }
+        .industries-photos-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.6rem;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .industry-photo-card {
+            flex: 1;
+            height: 180px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            display: block;
+        }
+        .industry-photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+        .industry-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        @media (max-width: 850px) {
+            .hero {
+                height: auto !important;
+                padding: 3rem 5% !important;
+            }
+            .products-container h1 {
+                font-size: 2.8rem;
+            }
+            .industries-photos-grid {
+                flex-wrap: wrap;
+            }
+            .industry-photo-card {
+                flex: 1 1 40%;
+                height: 150px;
             }
         }
     </style>
@@ -75,15 +134,36 @@
     </header>
 
     <!-- Large cream band: Hero Section (Products Content) -->
-    <section class="hero" >
-        <div class="about-content" style="max-width: 900px; text-align: center; margin: 0 auto;">
+    <section class="hero">
+        <div class="products-container">
             <h1 data-i18n="products_title">Our Industries</h1>
-            <div class="about-text" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
-                <p><span data-i18n="products_p">BLOSBOX crafts premium packaging tailored to the unique demands of the world\'s most prestigious markets. Our expertise spans across multiple luxury sectors, ensuring that every box we produce perfectly complements the product it holds.</span></p>
+            <div class="about-text" style="font-size: 1.1rem; line-height: 1.6; max-width: 900px; margin: 0 auto;">
+                <p><span data-i18n="products_p">BLOSBOX crafts premium packaging tailored to the unique demands of the world's most prestigious markets. Our expertise spans across multiple luxury sectors, ensuring that every box we produce perfectly complements the product it holds.</span></p>
+            </div>
+            
+            <!-- Clickable Photos Grid -->
+            <div class="industries-photos-grid">
+                <a href="jewellery.html" class="industry-photo-card">
+                    <img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Jewellery Packaging">
+                </a>
+                <a href="watches.html" class="industry-photo-card">
+                    <img src="Watches/Black leatherlike watch luxury box.jpg" alt="Watches Packaging">
+                </a>
+                <a href="leather.html" class="industry-photo-card">
+                    <img src="Leather Goods/Wallet_box_luxe.jpg_202606281738.jpeg" alt="Leather Goods Packaging">
+                </a>
+                <a href="chocolates.html" class="industry-photo-card">
+                    <img src="Chocolates/Chocolate1.jpg" alt="Chocolates Packaging">
+                </a>
+                <a href="gifts.html" class="industry-photo-card">
+                    <img src="Corporate Gifts/Coorporate_gift_box.jpeg" alt="Corporate Gifts Packaging">
+                </a>
+                <a href="cosmetics.html" class="industry-photo-card">
+                    <img src="Cosmetics/Parfume_box.jpeg" alt="Cosmetics Packaging">
+                </a>
             </div>
         </div>
-
-</section>
+    </section>
 
     <!-- Muted brown band: Highlights / Features -->
     <section class="highlights">
@@ -119,17 +199,8 @@
         </div>
     </footer>
 
-    
-
     <script src="translations.js?v=29"></script>
     <script src="i18n.js?v=29"></script>
     <script src="script.js?v=29"></script>
-
-    
 </body>
 </html>
-
-
-
-
-
