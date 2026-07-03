@@ -7,8 +7,6 @@
     <!-- Modern luxury fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper JS for Gallery -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css?v=29">
     <style>
         .hero {
@@ -17,12 +15,12 @@
             overflow-y: auto !important;
         }
         .jewellery-container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2.2rem;
+            gap: 2.5rem;
             box-sizing: border-box;
         }
         .jewellery-container h1 {
@@ -32,29 +30,33 @@
             letter-spacing: 2px;
             text-align: center;
         }
-        /* Swiper Gallery Styles */
-        .swiper-container {
+        /* Static Photos Grid Styles */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             width: 100%;
-            max-width: 650px;
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            position: relative;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        .swiper {
+        .photo-item {
             width: 100%;
-            height: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            cursor: pointer;
         }
-        .swiper-slide img {
+        .photo-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.22);
+        }
+        .photo-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: var(--brown-accent) !important;
         }
         .jewellery-text {
             max-width: 800px;
@@ -80,8 +82,13 @@
             .jewellery-container h1 {
                 font-size: 2.4rem;
             }
-            .swiper-container {
-                height: 300px;
+            .photos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 450px;
+            }
+            .photo-item {
+                height: 250px;
             }
         }
     </style>
@@ -148,19 +155,10 @@
         <div class="jewellery-container">
             <h1 data-i18n="jewellery_title">Jewellery Packaging</h1>
             
-            <div class="swiper-container">
-                <div class="swiper swiper-jewellery">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Premium jewellery box"></div>
-                        <div class="swiper-slide"><img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Jewelry box with necklace inside"></div>
-                        <div class="swiper-slide"><img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Jewellery packaging box"></div>
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
+            <div class="photos-grid">
+                <div class="photo-item"><img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Premium jewellery box" onclick="openLightbox(this.src)"></div>
+                <div class="photo-item"><img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Jewelry box with necklace inside" onclick="openLightbox(this.src)"></div>
+                <div class="photo-item"><img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Jewellery packaging box" onclick="openLightbox(this.src)"></div>
             </div>
 
             <div class="jewellery-text">
@@ -208,28 +206,6 @@
     <script src="translations.js?v=29"></script>
     <script src="i18n.js?v=29"></script>
     <script src="script.js?v=29"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".swiper-jewellery", {
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        observer: true,
-        observeParents: true,
-        on: {
-          click: function(swiper, event) {
-            if (event.target.tagName.toLowerCase() === "img") {
-              openLightbox(event.target.src);
-            }
-          }
-        }
-      });
-    </script>
+
 </body>
 </html>
