@@ -32,7 +32,7 @@ const translations = {
     
     // index.html
     hero_title: "From Vision to Tangible Elegance",
-    hero_promo: "Try Before You Buy – Get Free Luxury Box Samples",
+    hero_promo: "Try Before You Buy<br>Get Free Samples",
     // bespoke.html
     about_title: "About Us",
     about_p1: "Six years ago, BLOSBOX began with just four hands and a single briefcase. My father and I started this journey without a single machine, selling our handmade boxes door-to-door, one client at a time. Through tireless dedication and steady year-over-year growth, we have transformed into a state-of-the-art facility where 80% of our production is now automated.",
@@ -143,7 +143,7 @@ const translations = {
     get_quote_btn: "Obtenir un Devis",
     
     hero_title: "De la Vision à l'Élégance Tangible",
-    hero_promo: "Essayez avant d'acheter – Obtenez des échantillons gratuits de boîtes de luxe",
+    hero_promo: "Essayez avant d'acheter<br>Obtenez des échantillons gratuits",
     about_title: "À Propos de Nous",
     about_p1: "Il y a six ans, BLOSBOX a commencé avec seulement quatre mains et une seule mallette. Mon père et moi avons entamé ce voyage sans aucune machine, vendant nos boîtes faites à la main en porte-à-porte, un client à la fois. Grâce à un dévouement inlassable et à une croissance constante année après année, nous nous sommes transformés en une usine de pointe où 80 % de notre production est désormais automatisée.",
     about_p2: "Aujourd'hui, BLOSBOX fabrique des emballages haut de gamme pour un large éventail de secteurs — de la bijouterie, l'horlogerie et les accessoires de mode aux parfums, cosmétiques, maroquinerie, chocolats, vins, boissons et cadeaux d'affaires. Avec plus de 1 000 000 de boîtes livrées aux marques et détaillants, nous continuons à marier l'âme de nos origines faites main avec la précision de la technologie moderne.",
@@ -251,7 +251,7 @@ const translations = {
     get_quote_btn: "Merr një Ofertë",
     
     hero_title: "Nga Vizioni te Eleganca e Prekshme",
-    hero_promo: "Provo para se të Blesh – Merr Mostra Falas të Kutive Luksoze",
+    hero_promo: "Provo para se të Blesh<br>Merr Mostra Falas",
     about_title: "Rreth Nesh",
     about_p1: "Gjashtë vjet më parë, BLOSBOX filloi me vetëm katër duar dhe një valixhe të vetme. Babai im dhe unë e filluam këtë rrugëtim pa asnjë makinë të vetme, duke shitur kutitë tona të punuara në dorë derë më derë e klient pas klienti. Të përkushtuar e të palodhshëm me rritje të vazhdueshme vit pas viti, u shndërruam në një fabrikë moderne ku 80% e prodhimit tonë tani më është e automatizuar.",
     about_p2: "Sot, BLOSBOX prodhon paketim premium për një gamë të gjerë industrish — nga bizhuteritë, orët dhe aksesorët e modës deri te parfumet, kozmetika, produktet e lëkurës, çokollatat, verërat, pijet dhe dhuratat korporative. Me mbi 1,000,000 kuti të dorëzuara te klientet tanë, ne vazhdojmë të ndërthurim shpirtin e origjinës sonë të punuar me dorë me saktësinë e teknologjisë moderne.",
@@ -359,7 +359,7 @@ const translations = {
     get_quote_btn: "Ottieni un Preventivo",
     
     hero_title: "Dalla Visione all'Eleganza Tangibile",
-    hero_promo: "Prova prima di acquistare – Ottieni campioni gratuiti di scatole di lusso",
+    hero_promo: "Prova prima di acquistare<br>Ottieni campioni gratuiti",
     about_title: "Chi Siamo",
     about_p1: "Sei anni fa, BLOSBOX è nata con solo quattro mani e una valigetta. Mio padre e io abbiamo iniziato questo viaggio senza macchinari, vendendo le nostre scatole fatte a mano porta a porta, un cliente alla volta. Attraverso una dedizione instancabile e una crescita costante anno dopo anno, ci siamo trasformati in uno stabilimento all'avanguardia in cui l'80% della produzione è ora automatizzato.",
     about_p2: "Oggi, BLOSBOX realizza packaging di lusso per un'ampia gamma di settori — dalla gioielleria, orologeria e accessori moda a profumi, cosmetici, pelletteria, cioccolatini, vini, liquori e regali aziendali. Con oltre 1.000.000 di scatole consegnate a marchi e rivenditori, continuiamo a fondere l'anima delle nostre origini artigianali con la precisione della tecnologia moderna.",
@@ -467,7 +467,7 @@ const translations = {
     get_quote_btn: "Angebot Einholen",
     
     hero_title: "Von der Vision zur Fühlbaren Eleganz",
-    hero_promo: "Erst testen, dann kaufen – Sichern Sie sich kostenlose Luxus-Musterboxen",
+    hero_promo: "Erst testen, dann kaufen<br>Kostenlose Muster anfordern",
     about_title: "Über Uns",
     about_p1: "Vor sechs Jahren begann BLOSBOX mit nur vor vier Händen und einer einzigen Aktentasche. Mein Vater und ich begannen diese Reise ohne eine einzige Maschine. Wir verkauften unsere handgemachten Schachteln von Tür zu Tür, ein Kunde nach dem anderen. Durch unermüdlichen Einsatz und stetiges Wachstum haben wir uns in eine hochmoderne Produktionsstätte verwandelt, in der 80 % unserer pfroduktion heute automatisiert sind.",
     about_p2: "Heute fertigt BLOSBOX Premium-Verpackungen für eine Vielzahl von Branchen – von Schmuck, Uhren und Modeaccessoires bis hin zu Parfüm, Kosmetik, Lederwaren, Pralinen, Wein, Spirituosen und Firmengeschenken. Mit über 1.000.000 ausgelieferten Kartons an Marken und Einzelhändler verbinden wir weiterhin die Seele unserer handgemachten Ursprünge mit der Präzision moderner Technologie.",
@@ -575,7 +575,7 @@ const translations = {
     get_quote_btn: "Offerte Aanvragen",
     
     hero_title: "Van Visie naar Tastbare Elegantie",
-    hero_promo: "Probeer voordat u koopt – Ontvang gratis monsters van luxe dozen",
+    hero_promo: "Probeer voordat u koopt<br>Ontvang gratis monsters",
     about_title: "Over Ons",
     about_p1: "Zes jaar geleden begon BLOSBOX met slechts vier handen en één aktetas. Mijn vader en ik begonnen deze reis zonder machines, door onze handgemaakte dozen deur-tot-deur te verkopen, één klant tegelijk. Door onvermoeibare inzet en gestage groei zijn we uitgegroeid tot een ultramoderne fabriek waarin 80% van de productie nu is geautomatiseerd.",
     about_p2: "Tegenwoordig produceert BLOSBOX luxe verpakkingen voor een breed scala aan sectoren — van juwelen, horloges en modeaccessoires tot parfum, cosmetica, lederwaren, chocolade, wijn, sterke drank en relatiegeschenken. Met meer dan 1.000.000 geleverde dozen aan merken en winkeliers combineren we de ziel van ons handgemaakte begin met de precisie van moderne technologie.",
@@ -683,7 +683,7 @@ const translations = {
     get_quote_btn: "Få en Offert",
     
     hero_title: "Från Vision till Påtaglig Elegans",
-    hero_promo: "Prova innan du köper – Få gratis prover på lyxiga kartonger",
+    hero_promo: "Prova innan du köper<br>Få gratis prover",
     about_title: "Om Oss",
     about_p1: "För sex år sedan började BLOSBOX med bara fyra händer och en enda portfölj. Min far och jag påbörjade denna resa helt utan maskiner, genom att sälja våra handgjorda askar dörr-till-dörr, en kund i taget. Genom ett outtröttligt engagemang och stadig årlig tillväxt har vi utvecklats till en toppmodern anläggning där 80 % av vår produktion nu är automatiserad.",
     about_p2: "Idag tillverkar BLOSBOX premiumförpackningar för ett brett spektrum av branscher – från smycken, klockor och modeaccessoarer till parfym, kosmetika, lädervaror, choklad, vin, sprit och företagsgåvor. Med över 1 000 000 levererade askar till varumärken och återförsäljare fortsätter vi att förena själen i vårt handgjorda ursprung med precisionen i modern teknologi.",
@@ -791,7 +791,7 @@ const translations = {
     get_quote_btn: "Побарај Понуда",
     
     hero_title: "Од Визија до Опиплива Елеганција",
-    hero_promo: "Пробајте пред да купите – Добијте бесплатни мостри од луксузни кутии",
+    hero_promo: "Пробајте пред да купите<br>Добијте бесплатни мостри",
     about_title: "За Нас",
     about_p1: "Пред шест години, БЛОСБОКС започна со само четири раце и еден куфер. Мојот татко и јас го започнавме ова патување без ниту една машина, продавајќи ги нашите рачно изработени кутии од врата до врата, еден клиент по друг. Преку неуморна посветеност и постојан раст од година во година, се трансформиравме во најсовремен погон каде што 80% од нашето производство сега е целосно автоматизирано.",
     about_p2: "Денес, БЛОСБОКС изработува премиум амбалажа за широк спектар на индустрии — од накит, часовници и модни додатоци до парфеми, козметика, кожни производи, чоколади, вина, пијалаци и корпоративни подароци. Со над 1.000.000 испорачани кутии до брендови и трговци на мало, продолжуваме да ја спојуваме душата на рачно изработеното потекло со прецизноста на модерната технологија.",
