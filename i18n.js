@@ -161,8 +161,104 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Update document lang attribute
             document.documentElement.setAttribute('lang', lang);
+
+            // Update Dynamic SEO Meta Tags & Hreflang links
+            updateSeoMetadata(lang, langData);
         } catch (e) {
             console.error("Error applying translations:", e);
+        }
+    }
+
+    // Dynamic SEO, Hreflang & OpenGraph updater
+    function updateSeoMetadata(lang, langData) {
+        try {
+            let path = window.location.pathname.split('/').pop().toLowerCase();
+            if (!path || path === '' || path === '/') {
+                path = 'index.html';
+            }
+            const rawKey = path.replace('.html', '') || 'home';
+            const pageKey = (rawKey === 'index') ? 'home' : rawKey;
+            
+            // 1. Dynamic Page Title
+            const titleKey = 'meta_title_' + pageKey;
+            if (langData[titleKey]) {
+                document.title = langData[titleKey];
+            }
+            
+            // 2. Meta Description & OpenGraph Description
+            const descKey = 'meta_desc_' + pageKey;
+            if (langData[descKey]) {
+                let metaDesc = document.querySelector('meta[name="description"]');
+                if (!metaDesc) {
+                    metaDesc = document.createElement('meta');
+                    metaDesc.name = 'description';
+                    document.head.appendChild(metaDesc);
+                }
+                metaDesc.setAttribute('content', langData[descKey]);
+                
+                let ogDesc = document.querySelector('meta[property="og:description"]');
+                if (!ogDesc) {
+                    ogDesc = document.createElement('meta');
+                    ogDesc.setAttribute('property', 'og:description');
+                    document.head.appendChild(ogDesc);
+                }
+                ogDesc.setAttribute('content', langData[descKey]);
+            }
+            
+            // 3. OpenGraph Title & Locale
+            if (langData[titleKey]) {
+                let ogTitle = document.querySelector('meta[property="og:title"]');
+                if (!ogTitle) {
+                    ogTitle = document.createElement('meta');
+                    ogTitle.setAttribute('property', 'og:title');
+                    document.head.appendChild(ogTitle);
+                }
+                ogTitle.setAttribute('content', langData[titleKey]);
+            }
+            
+            let ogLocale = document.querySelector('meta[property="og:locale"]');
+            if (!ogLocale) {
+                ogLocale = document.createElement('meta');
+                ogLocale.setAttribute('property', 'og:locale');
+                document.head.appendChild(ogLocale);
+            }
+            const localeMap = { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', sv: 'sv_SE', nl: 'nl_NL', sq: 'sq_AL', mk: 'mk_MK' };
+            ogLocale.setAttribute('content', localeMap[lang] || 'en_US');
+
+            // 4. Update Canonical Link
+            const baseUrl = window.location.origin + window.location.pathname;
+            let canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (!canonicalLink) {
+                canonicalLink = document.createElement('link');
+                canonicalLink.setAttribute('rel', 'canonical');
+                document.head.appendChild(canonicalLink);
+            }
+            canonicalLink.setAttribute('href', baseUrl + '?lang=' + lang);
+            
+            // 5. Update/Inject Hreflang Tags for all supported languages
+            supportedLanguages.forEach(l => {
+                let hreflangLink = document.querySelector(`link[rel="alternate"][hreflang="${l}"]`);
+                if (!hreflangLink) {
+                    hreflangLink = document.createElement('link');
+                    hreflangLink.setAttribute('rel', 'alternate');
+                    hreflangLink.setAttribute('hreflang', l);
+                    document.head.appendChild(hreflangLink);
+                }
+                hreflangLink.setAttribute('href', baseUrl + '?lang=' + l);
+            });
+            
+            // x-default hreflang
+            let xDefaultLink = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+            if (!xDefaultLink) {
+                xDefaultLink = document.createElement('link');
+                xDefaultLink.setAttribute('rel', 'alternate');
+                xDefaultLink.setAttribute('hreflang', 'x-default');
+                document.head.appendChild(xDefaultLink);
+            }
+            xDefaultLink.setAttribute('href', baseUrl);
+            
+        } catch (e) {
+            console.error("Error updating SEO metadata:", e);
         }
     }
     
