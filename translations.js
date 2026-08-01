@@ -75,7 +75,7 @@ const translations = {
     bespoke_bullet1_title: "Consultative Design:",
     bespoke_bullet1_text: " We collaborate with your team to select premium textures, weights, and finishes that evoke the right emotion.",
     bespoke_bullet2_title: "Structural Artistry:",
-    bespoke_bullet2_text: " Our engineers ensure that beauty never compromises strength. We design for the \"snap\" of a lid and the smooth resistance of a premium slide.",
+    bespoke_bullet2_text: " Our engineers ensure that beauty never compromises strength. We design for the precise \"snap\" of a lid, the smooth resistance of a premium slide, and the satisfying, secure click of a concealed magnetic closure.",
     bespoke_bullet3_title: "Physical Prototypes:",
     bespoke_bullet3_text: " Before a single sheet is printed, we provide high-fidelity physical samples. Feel the weight, test the fit, and perfect the details until the experience is flawless.",
     
