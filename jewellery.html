@@ -38,105 +38,110 @@
     <link rel="stylesheet" href="styles.css?v=30">
     <style>
         .hero {
-            padding: 4rem 5% !important;
-            height: auto !important;
-            min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            position: relative;
+            padding: 0 5% !important;
+            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+            background-color: var(--cream-main);
         }
-        .jewellery-container {
-            max-width: 1200px;
+        .jewellery-split {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            max-width: 1250px;
+            height: 100%;
+            max-height: 75vh;
             margin: 0 auto;
+        }
+        .jewellery-text-col {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 2.5rem;
-            box-sizing: border-box;
+            justify-content: center;
+            text-align: left;
         }
-        .jewellery-container h1 {
-            font-size: 3rem;
+        .jewellery-text-col h1 {
+            font-size: 2.8rem;
             color: var(--dark-top);
-            margin: 0;
-            letter-spacing: 2px;
-            text-align: center;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
         }
-
-        /* Interactive Photos Grid */
-        .photos-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+        .jewellery-text-col p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: var(--dark-top);
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+        }
+        .jewellery-cards-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            justify-content: center;
+            align-items: flex-end;
             width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: start;
+            height: 100%;
         }
-        .photo-card {
+        .jewellery-vcard {
             position: relative;
             width: 100%;
+            max-width: 310px;
+            height: 155px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.14);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
             cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
-        .photo-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+        .jewellery-vcard:hover {
+            transform: scale(1.03);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.28);
         }
-        .photo-card img {
+        .jewellery-vcard img {
             width: 100%;
-            height: 320px;
+            height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
         }
-        .photo-card:hover img {
-            transform: scale(1.06);
+        .jewellery-vcard:hover img {
+            transform: scale(1.08);
         }
-        .photo-card-overlay {
+        .vcard-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 1.2rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+            padding: 0.6rem 0.8rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 75%, transparent 100%);
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             color: #fff;
-            transition: background 0.3s ease;
+            gap: 0.15rem;
         }
-        .collection-badge {
+        .vcard-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 1px;
-            color: #fff;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
         }
-        .click-hint {
-            font-size: 0.85rem;
-            opacity: 0.9;
+        .vcard-hint {
+            font-size: 0.65rem;
             color: #e0c9a6;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .jewellery-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.65;
-            color: var(--dark-top);
-            font-weight: 300;
-        }
-        .jewellery-text p {
-            margin-bottom: 1.2rem;
-        }
-        .jewellery-text p:last-child {
-            margin-bottom: 0;
+            font-weight: 600;
         }
 
         /* Full Screen Gallery Popup Modal */
@@ -227,17 +232,25 @@
             object-fit: cover;
         }
 
-        @media (max-width: 768px) {
-            .jewellery-container h1 {
-                font-size: 2.4rem;
+        @media (max-width: 1024px) {
+            .hero {
+                height: auto !important;
+                min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+                padding: 3rem 5% !important;
+                overflow-y: auto !important;
             }
-            .photos-grid {
+            .jewellery-split {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
-                max-width: 450px;
+                gap: 2.5rem;
+                max-height: none;
+                height: auto;
             }
-            .photo-card img {
-                height: 250px;
+            .jewellery-cards-col {
+                align-items: center;
+            }
+            .jewellery-vcard {
+                max-width: 400px;
+                height: 180px;
             }
             .gallery-modal-header {
                 padding: 1rem 1.5rem;
@@ -318,40 +331,34 @@
 
     <!-- Large cream band: Hero Section -->
     <section class="hero">
-        <div class="jewellery-container">
-            <h1 data-i18n="jewellery_title">Jewellery Packaging</h1>
-            
-            <!-- Clickable Collection Cards -->
-            <div class="photos-grid">
-                <div class="photo-card" onclick="openGallery('textured')">
-                    <img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Textured Collection">
-                    <div class="photo-card-overlay">
-                        <span class="collection-badge" data-i18n="nav_textured">Textured</span>
-                        <span class="click-hint"><i class="fas fa-expand"></i> Click to View Gallery</span>
-                    </div>
-                </div>
-                <div class="photo-card" onclick="openGallery('pearl')">
-                    <img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Pearl Collection">
-                    <div class="photo-card-overlay">
-                        <span class="collection-badge" data-i18n="nav_pearl">Pearl</span>
-                        <span class="click-hint"><i class="fas fa-expand"></i> Click to View Gallery</span>
-                    </div>
-                </div>
-                <div class="photo-card" onclick="openGallery('luxe')">
-                    <img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Luxe Collection">
-                    <div class="photo-card-overlay">
-                        <span class="collection-badge" data-i18n="nav_luxe">Luxe</span>
-                        <span class="click-hint"><i class="fas fa-expand"></i> Click to View Gallery</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="jewellery-text">
+        <div class="jewellery-split">
+            <div class="jewellery-text-col">
+                <h1 data-i18n="jewellery_title">Jewellery Packaging</h1>
                 <p data-i18n="jewellery_p1">Discover our exclusive range of rigid boxes designed specifically for fine jewellery. Each box is made from recyclable cardboard, combining sustainability with uncompromising strength. To elevate the experience, our packaging is wrapped in luxuriously designed papers — available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.</p>
                 <p data-i18n="jewellery_p2">We understand that every jewel tells a unique story, which is why we are open to customizing packaging according to your specific needs, ensuring your pieces are presented with elegance, prestige, and individuality.</p>
-                <div class="explore-section" style="margin-top: 3rem; margin-bottom: 1rem;">
-                    <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--brown-accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem;"><span data-i18n="jewellery_explore">Click any collection above to explore our premium finishes</span></p>
-                    <i class="fas fa-chevron-down bounce" style="font-size: 1.4rem; color: var(--brown-accent);"></i>
+            </div>
+            
+            <div class="jewellery-cards-col">
+                <div class="jewellery-vcard" onclick="openGallery('textured')">
+                    <img src="Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Textured Collection">
+                    <div class="vcard-overlay">
+                        <span class="vcard-title" data-i18n="nav_textured">Textured</span>
+                        <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
+                    </div>
+                </div>
+                <div class="jewellery-vcard" onclick="openGallery('pearl')">
+                    <img src="Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Pearl Collection">
+                    <div class="vcard-overlay">
+                        <span class="vcard-title" data-i18n="nav_pearl">Pearl</span>
+                        <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
+                    </div>
+                </div>
+                <div class="jewellery-vcard" onclick="openGallery('luxe')">
+                    <img src="Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Luxe Collection">
+                    <div class="vcard-overlay">
+                        <span class="vcard-title" data-i18n="nav_luxe">Luxe</span>
+                        <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -359,10 +366,9 @@
 
     <!-- Muted brown band: Highlights / Features -->
     <section class="highlights">
-        <div class="industries-grid" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; width: 100%;">
-            <button onclick="openGallery('textured')" class="btn-primary" data-i18n="nav_textured" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; white-space: nowrap; max-width: 200px; cursor: pointer; border: none;">Textured</button>
-            <button onclick="openGallery('pearl')" class="btn-primary" data-i18n="nav_pearl" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; white-space: nowrap; max-width: 200px; cursor: pointer; border: none;">Pearl</button>
-            <button onclick="openGallery('luxe')" class="btn-primary" data-i18n="nav_luxe" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; white-space: nowrap; max-width: 200px; cursor: pointer; border: none;">Luxe</button>
+        <div class="kraft-text">
+            <h4 data-i18n="footer_motto_title">Crafting the Unforgettable</h4>
+            <p data-i18n="footer_motto_sub">Where Exceptional Materials Meet Masterful Design</p>
         </div>
     </section>
 
