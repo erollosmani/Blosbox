@@ -80,17 +80,17 @@ const translations = {
     bespoke_bullet3_text: " Before a single sheet is printed, we provide high-fidelity physical samples. Feel the weight, test the fit, and perfect the details until the experience is flawless.",
     
     // printing.html
-    printing_title: "The \"Sensory Experience\" Approach",
-    printing_intro: "Our rigid jewellery boxes can be customized with a variety of premium printing techniques to highlight your brand:",
-    printing_item1_title: "Offset Printing",
-    printing_item1_text: " — ideal for high-quality colour depth and sharp detail.",
-    printing_item2_title: "Digital Printing",
-    printing_item2_text: " — flexible and efficient for smaller runs or quick turnaround projects.",
-    printing_item3_title: "Hot Foil Stamping",
-    printing_item3_text: " — adds brilliance with metallic or matte foils applied under heat and pressure.",
-    printing_item4_title: "Embossing & Debossing",
-    printing_item4_text: " — creates raised or recessed designs for a tactile, luxurious effect.",
-    printing_item5_title: "Selective Varnish",
+    printing_title: "Hot Foil Press, Embossing & Debossing Finishes",
+    printing_intro: "Elevate your luxury rigid boxes with custom printing techniques, hot foil press, and tactile finishing effects:",
+    printing_item1_title: "Offset & Digital Printing",
+    printing_item1_text: " — ideal for high-quality colour depth, sharp detail, and flexible production runs.",
+    printing_item2_title: "Hot Foil Press & Stamping",
+    printing_item2_text: " — precision hot foil press application adding metallic or matte foil brilliance under heat and pressure.",
+    printing_item3_title: "Embossing & Embossing Effect",
+    printing_item3_text: " — creates a raised 3D embossing effect for tactile brand logos and textured patterns.",
+    printing_item4_title: "Debossing & Debossing Effect",
+    printing_item4_text: " — creates a recessed debossing effect for deep, elegant indentations and subtle luxury branding.",
+    printing_item5_title: "Selective UV Varnish",
     printing_item5_text: " — applies gloss or matte varnish only to chosen areas, enhancing contrast and detail.",
     
     // jewellery.html
