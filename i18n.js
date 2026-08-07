@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 1. Determine active language (safe URL query param first, then localStorage fallback)
+    // 1. Determine active language (safe URL query param first, then localStorage fallback, default to English)
     let activeLang = 'en';
     try {
         activeLang = getQueryParam('lang');
@@ -41,19 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (!activeLang || !supportedLanguages.includes(activeLang)) {
-            // Detect browser language
-            try {
-                const browserLang = navigator.language || navigator.userLanguage;
-                const shortLang = browserLang.substring(0, 2).toLowerCase();
-                
-                if (supportedLanguages.includes(shortLang)) {
-                    activeLang = shortLang;
-                } else {
-                    activeLang = 'en'; // Default fallback
-                }
-            } catch (e) {
-                activeLang = 'en';
-            }
+            activeLang = 'en'; // Default to English for all first-time visitors
         }
         setStoredLanguage(activeLang);
     } catch (e) {
