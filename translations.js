@@ -95,8 +95,9 @@ const translations = {
     
     // jewellery.html
     jewellery_title: "Jewellery Packaging",
-    jewellery_p1: "Discover our exclusive range of rigid boxes designed specifically for fine jewellery. Each box is made from recyclable cardboard, combining sustainability with uncompromising strength. To elevate the experience, our packaging is wrapped in luxuriously designed papers — available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.",
-    jewellery_p2: "We understand that every jewel tells a unique story, which is why we are open to customizing packaging according to your specific needs, ensuring your pieces are presented with elegance, prestige, and individuality.",
+    jewellery_p1: "Discover our exclusive range of Jewellery Rigid Boxes and premium Jewellery Boxes, designed specifically for fine jewellery. Our luxury Jewellery Packaging is crafted from recyclable rigid cardboard, combining sustainability with uncompromising strength. Each box is wrapped in beautifully designed papers, available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.",
+    jewellery_p2: "Whether you are looking for elegant jewellery boxes for rings, necklaces, bracelets, or complete jewellery collections, our rigid packaging is designed to enhance both presentation and protection. Every jewellery box is made to reflect the quality of the pieces it contains while creating a memorable unboxing experience.",
+    jewellery_p3: "We understand that every jewel tells a unique story, which is why we offer fully customizable jewellery packaging tailored to your specific requirements. From bespoke jewellery rigid boxes to branded finishes, we ensure your pieces are presented with elegance, prestige, and individuality.",
     jewellery_explore: "Click below to Explore our premium finishes",
     chocolates_title: "The \"Gourmet Prestige\" Approach",
     chocolates_subtitle: "Best for high-end chocolatiers and artisan brands.",
