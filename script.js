@@ -147,17 +147,17 @@ let touchEndX = 0;
 function openLightbox(src) {
     // 1. Automatically collect original gallery images inside Swiper (excluding duplicates)
     const imgElements = Array.from(document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) img'));
-    lb_images = imgElements.map(img => img.src);
+    const swiperImages = imgElements.map(img => img.src);
     
-    // Fallback if no images are found on the page
-    if (lb_images.length === 0) {
+    if (swiperImages.length > 0 && (swiperImages.includes(src) || swiperImages.some(i => i.endsWith(src.substring(src.lastIndexOf('/')))))) {
+        lb_images = swiperImages;
+    } else if (!lb_images || lb_images.length === 0) {
         lb_images = [src];
     }
     
     // 2. Find matching index
     lb_currentIndex = lb_images.indexOf(src);
     if (lb_currentIndex === -1) {
-        // Fallback matching by basename if absolute URLs differ
         const baseSrc = src.substring(src.lastIndexOf('/'));
         lb_currentIndex = lb_images.findIndex(imgSrc => imgSrc.endsWith(baseSrc));
         if (lb_currentIndex === -1) {
@@ -178,7 +178,7 @@ function openLightbox(src) {
             <div class="lightbox-arrow lightbox-arrow-prev" id="lightboxPrev" style="position:fixed; top:50%; left:20px; transform:translateY(-50%); width:50px; height:50px; background:rgba(255,255,255,0.15); color:#fff; display:flex; justify-content:center; align-items:center; border-radius:50%; font-size:30px; cursor:pointer; z-index:2147483648; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); transition:all 0.3s ease; user-select:none;">‹</div>
             <div class="lightbox-arrow lightbox-arrow-next" id="lightboxNext" style="position:fixed; top:50%; right:20px; transform:translateY(-50%); width:50px; height:50px; background:rgba(255,255,255,0.15); color:#fff; display:flex; justify-content:center; align-items:center; border-radius:50%; font-size:30px; cursor:pointer; z-index:2147483648; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); transition:all 0.3s ease; user-select:none;">›</div>
             <div id="lbContainer" style="width:100%; height:100%; display:flex; justify-content:center; align-items:center; overflow:hidden; touch-action:none; background:#000; position:relative;">
-                <img id="lbImg" src="" draggable="false" style="width:auto; height:auto; max-width:90%; max-height:90%; transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1); cursor:zoom-in; user-select:none; touch-action:none; transform: translate3d(0,0,0) scale(1); display:block; margin:auto;">
+                <img id="lbImg" src="" draggable="false" style="width:auto; height:auto; max-width:90%; max-height:90%; transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1); cursor:grab; user-select:none; touch-action:none; transform: translate3d(0,0,0) scale(3); display:block; margin:auto;">
             </div>
             <div class="lightbox-counter" id="lightboxCounter" style="position:fixed; bottom:25px; left:50%; transform:translateX(-50%); color:#fff; font-family:'Lato',sans-serif; font-size:16px; font-weight:300; background:rgba(0,0,0,0.5); padding:6px 16px; border-radius:20px; z-index:2147483648; backdrop-filter:blur(5px); border:1px solid rgba(255,255,255,0.1); letter-spacing:1px; user-select:none;"></div>
         `;
@@ -283,7 +283,7 @@ function openLightbox(src) {
     }
 
     document.addEventListener('keydown', handleLightboxKeys);
-    showLightboxImage(lb_currentIndex);
+    showLightboxImage(lb_currentIndex, true);
 
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -310,20 +310,27 @@ function closeLB() {
 function navigateLightbox(direction) {
     if (lb_images.length <= 1) return;
     let nextIndex = (lb_currentIndex + direction + lb_images.length) % lb_images.length;
-    showLightboxImage(nextIndex);
+    showLightboxImage(nextIndex, true);
 }
 
-function showLightboxImage(index) {
+function showLightboxImage(index, startZoomed = true) {
     lb_currentIndex = index;
     const img = document.getElementById('lbImg');
     if (!img) return;
 
-    img.setAttribute('data-zoomed', 'false');
-    img.style.cursor = 'zoom-in';
     lb_currentX = 0; lb_currentY = 0; lb_initialX = 0; lb_initialY = 0;
-    img.style.transform = 'translate3d(0, 0, 0) scale(1)';
-
     img.src = lb_images[lb_currentIndex];
+
+    const scale = window.innerWidth <= 850 ? 3.5 : 3;
+    if (startZoomed) {
+        img.setAttribute('data-zoomed', 'true');
+        img.style.cursor = 'grab';
+        img.style.transform = `translate3d(0, 0, 0) scale(${scale})`;
+    } else {
+        img.setAttribute('data-zoomed', 'false');
+        img.style.cursor = 'zoom-in';
+        img.style.transform = 'translate3d(0, 0, 0) scale(1)';
+    }
 
     const counter = document.getElementById('lightboxCounter');
     const prevBtn = document.getElementById('lightboxPrev');

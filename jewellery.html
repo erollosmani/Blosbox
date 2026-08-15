@@ -485,67 +485,9 @@
         const data = galleryData[key];
         if (!data) return;
 
-        const modal = document.getElementById("galleryModal");
-        const modalTitle = document.getElementById("modalTitle");
-        const wrapper = document.getElementById("swiperWrapper");
-
-        // Set Title
-        const activeLang = localStorage.getItem("selectedLanguage") || "en";
-        let titleText = data.defaultTitle;
-        if (typeof translations !== "undefined" && translations[activeLang] && translations[activeLang][data.titleKey]) {
-          titleText = translations[activeLang][data.titleKey] + " Collection";
-        }
-        modalTitle.textContent = titleText;
-
-        // Build Slides HTML
-        wrapper.innerHTML = data.images.map((imgSrc, idx) => `
-          <div class="swiper-slide">
-            <img src="${imgSrc}" alt="${key} ${idx + 1}" style="cursor: zoom-in;">
-          </div>
-        `).join("");
-
-        // Show Modal
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-
-        // Init Swiper
-        if (swiperInstance) {
-          swiperInstance.destroy(true, true);
-        }
-
-        swiperInstance = new Swiper(".mySwiper", {
-          effect: "coverflow",
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: "auto",
-          watchSlidesProgress: true,
-          loop: true,
-          observer: true,
-          observeParents: true,
-          coverflowEffect: {
-            rotate: 0,
-            stretch: -180,
-            depth: 250,
-            modifier: 1,
-            scale: 0.70,
-            slideShadows: true,
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          on: {
-            click: function(swiper, event) {
-              if (event.target.tagName.toLowerCase() === "img") {
-                openLightbox(event.target.src);
-              }
-            }
-          }
-        });
+        const baseUrl = window.location.href;
+        lb_images = data.images.map(imgSrc => new URL(imgSrc, baseUrl).href);
+        openLightbox(lb_images[0]);
       }
 
       function closeGallery() {
