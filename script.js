@@ -1,6 +1,6 @@
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Blosbox Script v12 Loaded");
+    console.log("Blosbox Script v36 Loaded");
     
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
