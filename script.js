@@ -261,6 +261,25 @@ function openLightbox(src) {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipeGesture();
         }, { passive: true });
+
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const scale = window.innerWidth <= 850 ? 3.5 : 3;
+            if (e.deltaY < 0) {
+                if (img.getAttribute('data-zoomed') !== 'true') {
+                    img.setAttribute('data-zoomed', 'true');
+                    img.style.cursor = 'grab';
+                    img.style.transform = `translate3d(${lb_currentX}px, ${lb_currentY}px, 0) scale(${scale})`;
+                }
+            } else if (e.deltaY > 0) {
+                if (img.getAttribute('data-zoomed') === 'true') {
+                    img.setAttribute('data-zoomed', 'false');
+                    img.style.cursor = 'zoom-in';
+                    lb_currentX = 0; lb_currentY = 0;
+                    img.style.transform = 'translate3d(0, 0, 0) scale(1)';
+                }
+            }
+        }, { passive: false });
     }
 
     document.addEventListener('keydown', handleLightboxKeys);

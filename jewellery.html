@@ -500,7 +500,7 @@
         // Build Slides HTML
         wrapper.innerHTML = data.images.map((imgSrc, idx) => `
           <div class="swiper-slide">
-            <img src="${imgSrc}" alt="${key} ${idx + 1}">
+            <img src="${imgSrc}" alt="${key} ${idx + 1}" style="cursor: zoom-in;">
           </div>
         `).join("");
 
@@ -537,6 +537,13 @@
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
+          },
+          on: {
+            click: function(swiper, event) {
+              if (event.target.tagName.toLowerCase() === "img") {
+                openLightbox(event.target.src);
+              }
+            }
           }
         });
       }
