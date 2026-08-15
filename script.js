@@ -178,7 +178,7 @@ function openLightbox(src) {
             <div class="lightbox-arrow lightbox-arrow-prev" id="lightboxPrev" style="position:fixed; top:50%; left:20px; transform:translateY(-50%); width:50px; height:50px; background:rgba(255,255,255,0.15); color:#fff; display:flex; justify-content:center; align-items:center; border-radius:50%; font-size:30px; cursor:pointer; z-index:2147483648; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); transition:all 0.3s ease; user-select:none;">‹</div>
             <div class="lightbox-arrow lightbox-arrow-next" id="lightboxNext" style="position:fixed; top:50%; right:20px; transform:translateY(-50%); width:50px; height:50px; background:rgba(255,255,255,0.15); color:#fff; display:flex; justify-content:center; align-items:center; border-radius:50%; font-size:30px; cursor:pointer; z-index:2147483648; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); transition:all 0.3s ease; user-select:none;">›</div>
             <div id="lbContainer" style="width:100%; height:100%; display:flex; justify-content:center; align-items:center; overflow:hidden; touch-action:none; background:#000; position:relative;">
-                <img id="lbImg" src="" draggable="false" style="width:auto; height:auto; max-width:90%; max-height:90%; transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1); cursor:grab; user-select:none; touch-action:none; transform: translate3d(0,0,0) scale(3); display:block; margin:auto;">
+                <img id="lbImg" src="" draggable="false" style="width:auto; height:auto; max-width:90%; max-height:90%; transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1); cursor:zoom-in; user-select:none; touch-action:none; transform: translate3d(0,0,0) scale(1); display:block; margin:auto;">
             </div>
             <div class="lightbox-counter" id="lightboxCounter" style="position:fixed; bottom:25px; left:50%; transform:translateX(-50%); color:#fff; font-family:'Lato',sans-serif; font-size:16px; font-weight:300; background:rgba(0,0,0,0.5); padding:6px 16px; border-radius:20px; z-index:2147483648; backdrop-filter:blur(5px); border:1px solid rgba(255,255,255,0.1); letter-spacing:1px; user-select:none;"></div>
         `;
@@ -283,7 +283,7 @@ function openLightbox(src) {
     }
 
     document.addEventListener('keydown', handleLightboxKeys);
-    showLightboxImage(lb_currentIndex, true);
+    showLightboxImage(lb_currentIndex, false);
 
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -310,10 +310,10 @@ function closeLB() {
 function navigateLightbox(direction) {
     if (lb_images.length <= 1) return;
     let nextIndex = (lb_currentIndex + direction + lb_images.length) % lb_images.length;
-    showLightboxImage(nextIndex, true);
+    showLightboxImage(nextIndex, false);
 }
 
-function showLightboxImage(index, startZoomed = true) {
+function showLightboxImage(index, startZoomed = false) {
     lb_currentIndex = index;
     const img = document.getElementById('lbImg');
     if (!img) return;
