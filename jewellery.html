@@ -39,7 +39,7 @@
     
     <!-- Swiper JS CSS for 3D Carousel Modal -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="styles.css?v=38">
+    <link rel="stylesheet" href="styles.css?v=39">
     <style>
         .hero {
             position: relative;
@@ -53,42 +53,80 @@
         }
         .jewellery-split {
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 4rem;
+            grid-template-columns: 1fr 320px;
+            gap: 2.5rem;
             align-items: center;
             width: 100%;
-            max-width: 1250px;
+            max-width: 1320px;
             height: 100%;
-            max-height: 75vh;
+            max-height: 80vh;
             margin: 0 auto;
         }
         .jewellery-text-col {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             text-align: left;
-            padding: 0;
+            padding: 0 15px 0 0;
             margin: 0;
+            max-height: 100%;
+            overflow-y: auto;
+        }
+        .jewellery-text-col::-webkit-scrollbar {
+            width: 5px;
+        }
+        .jewellery-text-col::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.18);
+            border-radius: 3px;
+        }
+        .jewellery-text-col::-webkit-scrollbar-thumb:hover {
+            background: var(--brown-accent);
         }
         .jewellery-text-col h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.2rem;
             line-height: 1.25;
             color: var(--dark-top);
-            margin: 0 0 1.2rem 0;
+            margin: 0 0 0.8rem 0;
             padding: 0;
             font-weight: 400;
             letter-spacing: 0;
             text-align: left;
         }
-        .jewellery-text-col p {
-            font-size: 1.02rem;
-            line-height: 1.6;
+        .jewellery-text-col h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            line-height: 1.3;
             color: var(--dark-top);
-            margin: 0 0 1.1rem 0;
+            margin: 0.8rem 0 0.35rem 0;
+            padding: 0;
+            font-weight: 600;
+            text-align: left;
+        }
+        .jewellery-text-col p {
+            font-size: 0.94rem;
+            line-height: 1.55;
+            color: var(--dark-top);
+            margin: 0 0 0.75rem 0;
             padding: 0;
             font-weight: 300;
             text-align: left;
+        }
+        .jewellery-text-col .cap-intro {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .jewellery-text-col .detail-item {
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            font-weight: 300;
+            color: var(--dark-top);
+        }
+        .jewellery-text-col .detail-item strong {
+            color: var(--brown-accent, #5c4033);
+            font-weight: 600;
         }
         .jewellery-cards-col {
             display: flex;
@@ -101,8 +139,8 @@
         }
         .jewellery-vcard {
             position: relative;
-            width: 100%;
-            max-width: 310px;
+            width: 320px;
+            max-width: 100%;
             height: 155px;
             border-radius: 12px;
             overflow: hidden;
@@ -346,9 +384,28 @@
         <div class="jewellery-split">
             <div class="jewellery-text-col">
                 <h1 data-i18n="jewellery_title">Jewellery Packaging</h1>
-                <p data-i18n="jewellery_p1">Discover our exclusive range of Jewellery Rigid Boxes and premium Jewellery Boxes, designed specifically for fine jewellery. Our luxury Jewellery Packaging is crafted from recyclable rigid cardboard, combining sustainability with uncompromising strength. Each box is wrapped in beautifully designed papers, available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.</p>
-                <p data-i18n="jewellery_p2">Whether you are looking for elegant jewellery boxes for rings, necklaces, bracelets, or complete jewellery collections, our rigid packaging is designed to enhance both presentation and protection. Every jewellery box is made to reflect the quality of the pieces it contains while creating a memorable unboxing experience.</p>
-                <p data-i18n="jewellery_p3">We understand that every jewel tells a unique story, which is why we offer fully customizable jewellery packaging tailored to your specific requirements. From bespoke jewellery rigid boxes to branded finishes, we ensure your pieces are presented with elegance, prestige, and individuality.</p>
+                <p data-i18n="jewellery_p1">Discover our exclusive range of custom jewellery boxes and premium jewellery packaging, designed specifically for fine luxury brands. Crafted from recyclable rigid cardboard, our luxury packaging combines sustainability with uncompromising strength. Each box can be wrapped in beautifully designed papers, available in a variety of textures, pearlescent finishes, velvet touches, and an array of sophisticated colours.</p>
+                
+                <h2 data-i18n="jewellery_h2">Bespoke Rigid Boxes for Fine Jewellery</h2>
+                <p data-i18n="jewellery_p2">Whether you are sourcing elegant boxes for rings, necklaces, bracelets, or packaging for complete jewellery collections, our custom rigid boxes are engineered to enhance both presentation and protection. Every jewellery box is manufactured to reflect the prestige of the pieces it contains, ensuring a memorable unboxing experience for your clients.</p>
+                
+                <h2 data-i18n="jewellery_h3">Fully Customizable Packaging Solutions</h2>
+                <p data-i18n="jewellery_p3">We understand that every jewel tells a unique story. That is why we offer fully customizable B2B manufacturing tailored to your specific brand requirements. From the structural design to the interior protection, we ensure your pieces are presented with elegance and individuality.</p>
+
+                <p class="cap-intro" data-i18n="jewellery_cap_intro">Our custom manufacturing capabilities include:</p>
+
+                <div class="detail-item">
+                    <strong data-i18n="jewellery_item1_title">Custom Jewellery Rigid Boxes: </strong>
+                    <span data-i18n="jewellery_item1_text">Tailored dimensions built for uncompromising structural integrity.</span>
+                </div>
+                <div class="detail-item">
+                    <strong data-i18n="jewellery_item2_title">Premium Exterior Finishes: </strong>
+                    <span data-i18n="jewellery_item2_text">Custom branding options including hot foil stamping, velvet touches, and textured wraps.</span>
+                </div>
+                <div class="detail-item">
+                    <strong data-i18n="jewellery_item3_title">Secure Interior Protection: </strong>
+                    <span data-i18n="jewellery_item3_text">Precision-cut, fabric-laminated foam inserts to perfectly secure rings, delicate chains, and statement pieces.</span>
+                </div>
             </div>
             
             <div class="jewellery-cards-col">
@@ -427,9 +484,9 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=38"></script>
-    <script src="i18n.js?v=38"></script>
-    <script src="script.js?v=38"></script>
+    <script src="translations.js?v=39"></script>
+    <script src="i18n.js?v=39"></script>
+    <script src="script.js?v=39"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
     <script>
