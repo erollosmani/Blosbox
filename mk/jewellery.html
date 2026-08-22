@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYTLZTHLP9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SYTLZTHLP9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo%20FAV%20Icon.png">
+    <link rel="apple-touch-icon" href="../Logo%20FAV%20Icon.png">
+
+    <title>Пакувања за Накит & Луксузни Кутии за Накит | Blosbox</title>
+
+    <meta name="description" content="Премиум цврсти кутии за накит со кадифени влошки и печатено лого со фолија.">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blosbox.com/jewellery.html">
+    <meta property="og:description" content="Премиум цврсти кутии за накит со кадифени влошки и печатено лого со фолија.">
+
+    <!-- Modern luxury fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper JS CSS for 3D Carousel Modal -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../styles.css?v=39">
+    <style>
+        .hero {
+            position: relative;
+            padding: 0 5% !important;
+            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+            background-color: var(--cream-main);
+        }
+        .jewellery-split {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2.5rem;
+            align-items: center;
+            width: 100%;
+            max-width: 1320px;
+            height: 100%;
+            max-height: 80vh;
+            margin: 0 auto;
+        }
+        .jewellery-text-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 0 15px 0 0;
+            margin: 0;
+            max-height: 100%;
+            overflow-y: auto;
+        }
+        .jewellery-text-col::-webkit-scrollbar {
+            width: 5px;
+        }
+        .jewellery-text-col::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.18);
+            border-radius: 3px;
+        }
+        .jewellery-text-col::-webkit-scrollbar-thumb:hover {
+            background: var(--brown-accent);
+        }
+        .jewellery-text-col h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            line-height: 1.25;
+            color: var(--dark-top);
+            margin: 0 0 0.8rem 0;
+            padding: 0;
+            font-weight: 400;
+            letter-spacing: 0;
+            text-align: left;
+        }
+        .jewellery-text-col h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            color: var(--dark-top);
+            margin: 0.8rem 0 0.35rem 0;
+            padding: 0;
+            font-weight: 600;
+            text-align: left;
+        }
+        .jewellery-text-col p {
+            font-size: 0.94rem;
+            line-height: 1.55;
+            color: var(--dark-top);
+            margin: 0 0 0.75rem 0;
+            padding: 0;
+            font-weight: 300;
+            text-align: left;
+        }
+        .jewellery-text-col .cap-intro {
+            font-weight: 600;
+            margin-top: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .jewellery-text-col .detail-item {
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            font-weight: 300;
+            color: var(--dark-top);
+        }
+        .jewellery-text-col .detail-item strong {
+            color: var(--brown-accent, #5c4033);
+            font-weight: 600;
+        }
+        .jewellery-cards-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            height: 100%;
+        }
+        .jewellery-vcard {
+            position: relative;
+            width: 320px;
+            max-width: 100%;
+            height: 155px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            cursor: pointer;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .jewellery-vcard:hover {
+            transform: scale(1.03);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.28);
+        }
+        .jewellery-vcard img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .jewellery-vcard:hover img {
+            transform: scale(1.08);
+        }
+        .vcard-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.6rem 0.8rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 75%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            gap: 0.15rem;
+        }
+        .vcard-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+        .vcard-hint {
+            font-size: 0.65rem;
+            color: #e0c9a6;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Full Screen Gallery Popup Modal */
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 12, 10, 0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            box-sizing: border-box;
+        }
+        .gallery-modal.active {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+        .gallery-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            color: #fff;
+            z-index: 10001;
+        }
+        .gallery-modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--cream-main, #f5f0eb);
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+        .gallery-modal-close {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+        .gallery-modal-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.1);
+        }
+        .gallery-modal-body {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-bottom: 2rem;
+        }
+
+        /* Swiper Styling inside Modal */
+        .gallery-modal .swiper {
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+            padding-bottom: 40px;
+        }
+        .gallery-modal .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 75vw;
+            max-width: 1100px;
+            height: 70vh;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            background-color: #fff;
+        }
+        .gallery-modal .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                height: auto !important;
+                min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+                padding: 3rem 5% !important;
+                overflow-y: auto !important;
+            }
+            .jewellery-split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                max-height: none;
+                height: auto;
+            }
+            .jewellery-cards-col {
+                align-items: center;
+            }
+            .jewellery-vcard {
+                max-width: 400px;
+                height: 180px;
+            }
+            .gallery-modal-header {
+                padding: 1rem 1.5rem;
+            }
+            .gallery-modal-title {
+                font-size: 1.4rem;
+            }
+            .gallery-modal .swiper-slide {
+                width: 88vw;
+                height: 60vh;
+            }
+        }
+        .swiper-button-next, .swiper-button-prev {
+            z-index: 100 !important;
+            color: var(--brown-accent);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 50%;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.4rem;
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--brown-accent);
+        }
+    </style>
+
+    <link rel="canonical" href="https://blosbox.com/mk/jewellery.html">
+    <link rel="alternate" hreflang="en" href="https://blosbox.com/jewellery.html">
+    <link rel="alternate" hreflang="de" href="https://blosbox.com/de/jewellery.html">
+    <link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/jewellery.html">
+    <link rel="alternate" hreflang="it" href="https://blosbox.com/it/jewellery.html">
+    <link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/jewellery.html">
+    <link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/jewellery.html">
+    <link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/jewellery.html">
+    <link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/jewellery.html">
+    <link rel="alternate" hreflang="x-default" href="https://blosbox.com/jewellery.html">
+</head>
+<body>
+    
+    <!-- Top dark band: Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="../Logo.png" alt="Blosbox Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_home">Почетна</a></li>
+                <li><a href="about.html" data-i18n="nav_about">За Нас</a></li>
+                <li class="dropdown">
+                    <a href="products.html" data-i18n="nav_products">Производи / Индустрии <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jewellery.html" data-i18n="nav_jewellery">Накит</a></li>
+                        <li><a href="watches.html" data-i18n="nav_watches">Часовници</a></li>
+                        <li><a href="leather.html" data-i18n="nav_leather">Кожна Галантерија</a></li>
+                        <li><a href="chocolates.html" data-i18n="nav_chocolates">Чоколади</a></li>
+                        <li><a href="gifts.html" data-i18n="nav_gifts">Корпоративни Подароци</a></li>
+                        <li><a href="cosmetics.html" data-i18n="nav_cosmetics">Козметика & Парфеми</a></li>
+                        <li><a href="other.html" data-i18n="nav_other">Други Луксузни Пазари</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="custom.html" data-i18n="nav_custom">Прилагодени Решенија <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="bespoke.html" data-i18n="nav_bespoke">Дизајн по мерка & Прототипи</a></li>
+                        <li><a href="printing.html" data-i18n="nav_printing">Печат, Фолија, Втиснување</a></li>
+                        <li><a href="customization.html" data-i18n="nav_customization">Прилагодување на Материјал & Големина</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact" data-i18n="nav_contact">Контакт</a></li>
+                <li class="dropdown lang-dropdown">
+                    <a href="#" class="lang-dropdown-trigger">🌐 <span id="activeLangLabel">EN</span> <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu lang-dropdown-menu">
+                        <li><a href="#" class="lang-item active" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="#" class="lang-item" data-lang="fr">🇫🇷 Français</a></li>
+                        <li><a href="#" class="lang-item" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="#" class="lang-item" data-lang="it">🇮🇹 Italiano</a></li>
+                        <li><a href="#" class="lang-item" data-lang="sv">🇸🇪 Svenska</a></li>
+                        <li><a href="#" class="lang-item" data-lang="nl">🇳🇱 Nederlands</a></li>
+                        <li><a href="#" class="lang-item" data-lang="sq">🇦🇱 Shqip</a></li>
+                        <li><a href="#" class="lang-item" data-lang="mk">🇲🇰 Македонски</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">☰</div>
+    </header>
+
+    <!-- Large cream band: Hero Section -->
+    <section class="hero">
+        <div class="jewellery-split">
+            <div class="jewellery-text-col">
+                <h1 data-i18n="jewellery_title">Амбалажа за Накит</h1>
+                <p data-i18n="jewellery_p1">Откријте го нашиот ексклузивен асортиман на кутии за накит по нарачка и премиум амбалажа за накит, дизајнирани специјално за луксузни брендови. Изработени од цврст картон што може да се рециклира, нашите луксузни пакувања комбинираат одржливост со бескомпромисна цврстина. Секоја кутија може да биде обложена со прекрасно дизајнирани хартии, достапни во различни текстури, бисерни завршини, кадифени допири и софистицирани бои.</p>
+                
+                <h2 data-i18n="jewellery_h2">Цврсти Кутии по Нарачка за Луксузен Накит</h2>
+                <p data-i18n="jewellery_p2">Независно дали барате елегантни кутии за прстени, ѓердани, нараквици или пакувања за цели колекции на накит, нашите цврсти кутии се дизајнирани да ја подобрат и презентацијата и заштитата. Секоја кутија за накит е изработена да го одрази престижот на производите што ги содржи, обезбедувајќи незаборавно искуство при отпакување за вашите клиенти.</p>
+                
+                <h2 data-i18n="jewellery_h3">Целосно Прилагодливи Решенија за Амбалажа</h2>
+                <p data-i18n="jewellery_p3">Разбираме дека секој парче накит раскажува уникатна приказна. Затоа нудиме целосно прилагодливо B2B производство прилагодено на вашите специфични барања. Од структурниот дизајн до внатрешната заштита, ние се грижиме вашиот накит да биде претставен со елеганција и индивидуалност.</p>
+
+                <p class="cap-intro" data-i18n="jewellery_cap_intro">Нашите производни капацитети по нарачка вклучуваат:</p>
+
+                <div class="detail-item">
+                    <strong data-i18n="jewellery_item1_title">Цврсти Кутии за Накит по Нарачка: </strong>
+                    <span data-i18n="jewellery_item1_text">Прилагодени димензии изградини за бескомпромисна структурна стабилност.</span>
+                </div>
+                <div class="detail-item">
+                    <strong data-i18n="jewellery_item2_title">Премиум Надворешни Завршини: </strong>
+                    <span data-i18n="jewellery_item2_text">Опции за брендирање вклучувајќи топол печат со фолија, кадифен допир и текстурирани хартии.</span>
+                </div>
+                <div class="detail-item">
+                    <strong data-i18n="jewellery_item3_title">Сигурна Внатрешна Заштита: </strong>
+                    <span data-i18n="jewellery_item3_text">Прецизно исечени сунѓерести влошки обложени со ткаенина за совршено обезбедување на прстени, деликатни синџири и вреден накит.</span>
+                </div>
+            </div>
+            
+            <div class="jewellery-cards-col">
+                <div class="jewellery-vcard" onclick="openGallery('textured')">
+                    <img src="../Jewellery/and_the_quality_of_the_202607022057.jpeg" alt="Textured Collection">
+                    <div class="vcard-overlay">
+                        <span class="vcard-title" data-i18n="nav_textured">Текстуриран</span>
+                        <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
+                    </div>
+                </div>
+                <div class="jewellery-vcard" onclick="openGallery('pearl')">
+                    <img src="../Jewellery/Jewelry_box_with_necklace_inside_202607031850.jpeg" alt="Pearl Collection">
+                    <div class="vcard-overlay">
+                        <span class="vcard-title" data-i18n="nav_pearl">Перла</span>
+                        <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
+                    </div>
+                </div>
+                <div class="jewellery-vcard" onclick="openGallery('luxe')">
+                    <img src="../Jewellery/IMG_0297.JPG_202607031829.jpeg" alt="Luxe Collection">
+                    <div class="vcard-overlay">
+                        <span class="vcard-title" data-i18n="nav_luxe">Лукс</span>
+                        <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Muted brown band: Highlights / Features -->
+    <section class="highlights">
+        <div class="kraft-text">
+            <h4 data-i18n="footer_motto_title">Создавање на Незаборавното</h4>
+            <p data-i18n="footer_motto_sub">Where Exceptional Materials Meet Masterful Design</p>
+        </div>
+    </section>
+
+    <!-- Popup Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal">
+        <div class="gallery-modal-header">
+            <h2 id="modalTitle" class="gallery-modal-title">Collection Gallery</h2>
+            <button class="gallery-modal-close" onclick="closeGallery()" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="gallery-modal-body">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="swiperWrapper">
+                    <!-- Slides injected dynamically via JS -->
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark bottom band: Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <h3 data-i18n="footer_contact_title">Контактирајте Не</h3>
+                <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
+                <p>Email: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
+                <p>Phone: <a href="tel:+38975222228">+389 75 222228</a> | <a href="tel:+38970222203">+389 70 222203</a> | <a href="tel:+38978222203">+389 78 222203</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/blosbox/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/blospackaging" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/blosbox/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="#quote" class="footer-quote-btn"><i class="fas fa-quote-right"></i> <span data-i18n="get_quote_btn">Побарај Понуда</span></a>
+            <a href="../Catalogue/BlosBox Catalog.pdf" class="footer-catalog-btn" target="_blank"><i class="fas fa-file-pdf"></i> <span data-i18n="catalog_btn">Каталог</span></a>
+            <p data-i18n="footer_rights">© 2026 Blosbox Луксузна Амбалажа. Сите права се задржани.</p>
+        </div>
+    </footer>
+
+    <script src="../translations.js?v=39"></script>
+    <script src="../i18n.js?v=39"></script>
+    <script src="../script.js?v=39"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <script>
+      const galleryData = {
+        textured: {
+          titleKey: "nav_textured",
+          defaultTitle: "Textured Collection",
+          images: [
+            "../Textured/Photo%20Jewellery_Page_02_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_03_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_07_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_08_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_11_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_13_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_15_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_22_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_23_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_25_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_26_Image_0002.jpg",
+            "../Textured/Photo%20Jewellery_Page_27_Image_0002.jpg"
+          ]
+        },
+        pearl: {
+          titleKey: "nav_pearl",
+          defaultTitle: "Pearl Collection",
+          images: [
+            "../Pearl/Photo%20Jewellery_Page_04_Image_0002.jpg",
+            "../Pearl/Photo%20Jewellery_Page_10_Image_0002.jpg",
+            "../Pearl/Photo%20Jewellery_Page_12_Image_0002.jpg",
+            "../Pearl/Photo%20Jewellery_Page_17_Image_0002.jpg",
+            "../Pearl/Photo%20Jewellery_Page_18_Image_0002.jpg",
+            "../Pearl/Photo%20Jewellery_Page_19_Image_0002.jpg",
+            "../Pearl/Photo%20Jewellery_Page_20_Image_0002.jpg"
+          ]
+        },
+        luxe: {
+          titleKey: "nav_luxe",
+          defaultTitle: "Luxe Collection",
+          images: [
+            "../Luxe/Brown%20Velvet.jpg",
+            "../Luxe/Photo%20Jewellery_Page_06_Image_0002.jpg",
+            "../Luxe/Photo%20Jewellery_Page_09_Image_0002.jpg",
+            "../Luxe/Photo%20Jewellery_Page_16_Image_0002.jpg",
+            "../Luxe/Photo%20Jewellery_Page_21_Image_0002.jpg",
+            "../Luxe/Photo%20Jewellery_Page_24_Image_0002.jpg"
+          ]
+        }
+      };
+
+      let swiperInstance = null;
+
+      function openGallery(key) {
+        const data = galleryData[key];
+        if (!data) return;
+
+        const baseUrl = window.location.href;
+        lb_images = data.images.map(imgSrc => new URL(imgSrc, baseUrl).href);
+        openLightbox(lb_images[0]);
+      }
+
+      function closeGallery() {
+        const modal = document.getElementById("galleryModal");
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // Close on Escape key
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+          closeGallery();
+        }
+      });
+
+      // Close on backdrop click (click outside slides)
+      document.getElementById("galleryModal").addEventListener("click", function(e) {
+        if (e.target.id === "galleryModal" || e.target.classList.contains("gallery-modal-body")) {
+          closeGallery();
+        }
+      });
+    </script>
+
+</body>
+</html>
