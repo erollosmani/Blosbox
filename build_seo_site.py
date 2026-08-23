@@ -134,6 +134,19 @@ def main():
     print("Parsed translations for languages:", list(translations.keys()))
     
     html_files = [f for f in os.listdir(root_dir) if f.endswith('.html') and not f.startswith('.')]
+    
+    # 1. First, update root HTML files with clean canonical & hreflang tags
+    for filename in html_files:
+        src_path = os.path.join(root_dir, filename)
+        with open(src_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        updated_content = update_hreflang_and_canonical(content, 'en', filename)
+        with open(src_path, 'w', encoding='utf-8') as f:
+            f.write(updated_content)
+    print(f"Updated root HTML files ({len(html_files)} pages) with clean hreflang tags")
+
+    # 2. Generate localized static subfolders
     languages = ['de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk']
     
     for lang in languages:
