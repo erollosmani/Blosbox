@@ -253,6 +253,17 @@ a {
     color: #1a1613 !important;
 }
 
+.hero-cat-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.hero-cat-link:hover strong {
+    color: var(--primary-accent) !important;
+    text-decoration: underline !important;
+}
+
 /* About Page Content */
 .about-content {
     width: 100%; /* Stretch to absolute edges */
