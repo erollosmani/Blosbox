@@ -65,7 +65,7 @@ const translations = {
     // index.html
     hero_title: "From Vision to Tangible Elegance",
     hero_promo: "Try Before You Buy<br>Get Free Samples",
-    hero_intro_text: "At Blosbox, we specialize in the art of presentation. We design and manufacture premium luxury rigid boxes and gift boxes tailored to your brand's unique identity. From custom fabric-laminated foam inserts to specialized exterior finishes, our bespoke solutions elevate the unboxing experience for every client.",
+    hero_intro_text: "At <strong>Blosbox</strong>, we specialize in the art of presentation. We design and manufacture premium luxury rigid boxes and gift boxes tailored to your brand's unique identity. From custom fabric-laminated foam inserts to specialized exterior finishes, our bespoke solutions elevate the unboxing experience for every client.",
     hero_cat1_title: "Jewellery & Timepieces: ",
     hero_cat1_text: "Exquisite jewellery packaging, custom jewellery boxes, and premium watch packaging designed for absolute security and stunning display.",
     hero_cat2_title: "Cosmetics & Fragrance: ",
@@ -231,7 +231,7 @@ const translations = {
     
     hero_title: "De la Vision à l'Élégance Tangible",
     hero_promo: "Essayez avant d'acheter<br>Obtenez des échantillons gratuits",
-    hero_intro_text: "Chez Blosbox, nous sommes spécialisés dans l'art de la présentation. Nous concevons et fabriquons des coffrets rigides de luxe et des emballages cadeaux haut de gamme adaptés à l'identité unique de votre marque. Des calages en mousse laminés de tissu aux finitions extérieures de prestige, nos solutions sur mesure subliment l'expérience d'ouverture.",
+    hero_intro_text: "Chez <strong>Blosbox</strong>, nous sommes spécialisés dans l'art de la présentation. Nous concevons et fabriquons des coffrets rigides de luxe et des emballages cadeaux haut de gamme adaptés à l'identité unique de votre marque. Des calages en mousse laminés de tissu aux finitions extérieures de prestige, nos solutions sur mesure subliment l'expérience d'ouverture.",
     hero_cat1_title: "Joaillerie & Horlogerie : ",
     hero_cat1_text: "Écrins à bijoux d'exception, boîtes à bijoux personnalisées et emballages pour montres de luxe garantissant sécurité et présentation remarquable.",
     hero_cat2_title: "Cosmétiques & Parfums : ",
@@ -391,7 +391,7 @@ const translations = {
     
     hero_title: "Nga Vizioni te Eleganca e Prekshme",
     hero_promo: "Provo para se të Blesh<br>Merr Mostra Falas",
-    hero_intro_text: "Në Blosbox, ne jemi të specializuar në artin e prezantimit. Ne projektojmë dhe prodhojmë kuti të ngurta luksoze premium dhe kuti dhuratash të përshtatura me identitetin e markës suaj. Nga incertet me spongjo të plastifikuara me pëlhurë te përfundimet e jashtme premium, zgjidhjet tona me porosi lartësojnë përvojën e hapjes për çdo klient.",
+    hero_intro_text: "Në <strong>Blosbox</strong>, ne jemi të specializuar në artin e prezantimit. Ne projektojmë dhe prodhojmë kuti të ngurta luksoze premium dhe kuti dhuratash të përshtatura me identitetin e markës suaj. Nga incertet me spongjo të plastifikuara me pëlhurë te përfundimet e jashtme premium, zgjidhjet tona me porosi lartësojnë përvojën e hapjes për çdo klient.",
     hero_cat1_title: "Bizhuteri & Orë: ",
     hero_cat1_text: "Paketime ekskluzive për bizhuteri, kuti me porosi për bizhuteri dhe paketime premium për orë të dizajnuara për siguri maksimale dhe prezantim mahnitës.",
     hero_cat2_title: "Kozmetikë & Parfume: ",
@@ -551,7 +551,7 @@ const translations = {
     
     hero_title: "Dalla Visione all'Eleganza Tangibile",
     hero_promo: "Prova prima di acquistare<br>Ottieni campioni gratuiti",
-    hero_intro_text: "In Blosbox siamo specializzati nell'arte della presentazione. Progettiamo e produciamo scatole rigide di lusso e confezioni regalo di alta gamma adattate all'identità unica del tuo brand. Da inlay in schiuma rivestiti in tessuto a finiture esterne di pregio, le nostre soluzioni su misura esaltano l'esperienza di unboxing.",
+    hero_intro_text: "In <strong>Blosbox</strong> siamo specializzati nell'arte della presentazione. Progettiamo e produciamo scatole rigide di lusso e confezioni regalo di alta gamma adattate all'identità unica del tuo brand. Da inlay in schiuma rivestiti in tessuto a finiture esterne di pregio, le nostre soluzioni su misura esaltano l'esperienza di unboxing.",
     hero_cat1_title: "Gioielleria & Orologeria: ",
     hero_cat1_text: "Raffinati astucci per gioielli, scatole personalizzate per gioielli e confezioni per orologi di lusso per la massima sicurezza ed eleganza.",
     hero_cat2_title: "Cosmetica & Profumi: ",
@@ -711,7 +711,7 @@ const translations = {
     
     hero_title: "Von der Vision zur Fühlbaren Eleganz",
     hero_promo: "Erst testen, dann kaufen<br>Kostenlose Muster anfordern",
-    hero_intro_text: "Bei Blosbox sind wir auf die Kunst der Präsentation spezialisiert. Wir entwerfen und fertigen erstklassige Luxus-Magnetboxen und Geschenkboxen, die individuell auf die Identität Ihrer Marke zugeschnitten sind. Von maßgeschneiderten stoffkaschierten Schaumstoffeinlagen bis hin zu veredelten Außenflächen erhöhen unsere Lösungen das Auspackerlebnis für jeden Kunden.",
+    hero_intro_text: "Bei <strong>Blosbox</strong> sind wir auf die Kunst der Präsentation spezialisiert. Wir entwerfen und fertigen erstklassige Luxus-Magnetboxen und Geschenkboxen, die individuell auf die Identität Ihrer Marke zugeschnitten sind. Von maßgeschneiderten stoffkaschierten Schaumstoffeinlagen bis hin zu veredelten Außenflächen erhöhen unsere Lösungen das Auspackerlebnis für jeden Kunden.",
     hero_cat1_title: "Schmuck & Uhren: ",
     hero_cat1_text: "Exklusive Schmuckverpackungen, individuelle Schmuckschatullen und erstklassige Uhrenverpackungen für maximale Sicherheit und elegante Präsentation.",
     hero_cat2_title: "Kosmetik & Düfte: ",
@@ -871,7 +871,7 @@ const translations = {
     
     hero_title: "Van Visie naar Tastbare Elegantie",
     hero_promo: "Probeer voordat u koopt<br>Ontvang gratis monsters",
-    hero_intro_text: "Bij Blosbox zijn we gespecialiseerd in de kunst van het presenteren. Wij ontwerpen en produceren hoogwaardige luxe rigide dozen en geschenkverpakkingen op maat van de unieke identiteit van uw merk. Van stoffen schuiminlays tot luxe buitenafwerkingen, onze oplossingen verhogen de uitpakervaring voor elke klant.",
+    hero_intro_text: "Bij <strong>Blosbox</strong> zijn we gespecialiseerd in de kunst van het presenteren. Wij ontwerpen en produceren hoogwaardige luxe rigide dozen en geschenkverpakkingen op maat van de unieke identiteit van uw merk. Van stoffen schuiminlays tot luxe buitenafwerkingen, onze oplossingen verhogen de uitpakervaring voor elke klant.",
     hero_cat1_title: "Sieraden & Horloges: ",
     hero_cat1_text: "Exclusieve sieradenverpakkingen, op maat gemaakte sieradendozen en premium horlogedozen ontworpen voor optimale veiligheid en weergave.",
     hero_cat2_title: "Cosmetica & Parfums: ",
@@ -1031,7 +1031,7 @@ const translations = {
     
     hero_title: "Från Vision till Påtaglig Elegans",
     hero_promo: "Prova innan du köper<br>Få gratis prover",
-    hero_intro_text: "På Blosbox specialiserar vi oss på konsten att presentera produkter. Vi designar och tillverkar förstklassiga styva lyxaskar och presentkartonger skräddarsydda efter ditt varumärkes unika identitet. Från tyglaminerad skuminredning till exklusiva ytbehandlingar höjer våra lösningar uppackningsupplevelsen för varje kund.",
+    hero_intro_text: "På <strong>Blosbox</strong> specialiserar vi oss på konsten att presentera produkter. Vi designar och tillverkar förstklassiga styva lyxaskar och presentkartonger skräddarsydda efter ditt varumärkes unika identitet. Från tyglaminerad skuminredning till exklusiva ytbehandlingar höjer våra lösningar uppackningsupplevelsen för varje kund.",
     hero_cat1_title: "Smycken & Klockor: ",
     hero_cat1_text: "Exklusiva smyckesförpackningar, skräddarsydda smyckesaskar och förstklassiga klockaskar designade för maximal säkerhet och presentation.",
     hero_cat2_title: "Kosmetika & Parfym: ",
@@ -1191,7 +1191,7 @@ const translations = {
     
     hero_title: "Од Визија до Опиплива Елеганција",
     hero_promo: "Пробајте пред да купите<br>Добијте бесплатни мостри",
-    hero_intro_text: "Во Blosbox, ние сме специјализирани за уметноста на презентацијата. Дизајнираме и произведуваме премиум луксузни цврсти кутии (Luksuzni cvrsti kutii / Ambalaza) и подарочни кутии прилагодени на уникатниот идентитет на вашиот бренд. Од сунѓери обложени со ткаенина до премиум надворешни завршини, нашите решенија го издигнуваат искуството при отпакување.",
+    hero_intro_text: "Во <strong>Blosbox</strong>, ние сме специјализирани за уметноста на презентацијата. Дизајнираме и произведуваме премиум луксузни цврсти кутии (Luksuzni cvrsti kutii / Ambalaza) и подарочни кутии прилагодени на уникатниот идентитет на вашиот бренд. Од сунѓери обложени со ткаенина до премиум надворешни завршини, нашите решенија го издигнуваат искуството при отпакување.",
     hero_cat1_title: "Накит & Часовници (Nakit & Casovnici): ",
     hero_cat1_text: "Премиум амбалажа за накит (Ambalaza za nakit), кутии за накит (Kutii za nakit) и пакувања за часовници (Kutii za casovnici) за сигурност и извонреден приказ.",
     hero_cat2_title: "Козметика & Парфеми (Kozmetika & Parfemi): ",
