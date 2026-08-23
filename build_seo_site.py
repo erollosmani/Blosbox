@@ -33,14 +33,15 @@ def add_asset_prefix(html_content):
     html_content = re.sub(r'src="i18n\.js(\?v=\d+)?"', r'src="../i18n.js\1"', html_content)
     html_content = re.sub(r'src="script\.js(\?v=\d+)?"', r'src="../script.js\1"', html_content)
     
-    html_content = re.sub(r'href="Logo%20FAV%20Icon\.png"', r'href="../Logo%20FAV%20Icon.png"', html_content)
-    html_content = re.sub(r'src="Logo\.png"', r'src="../Logo.png"', html_content)
-    html_content = re.sub(r'src="Logo%20FAV%20Icon\.png"', r'src="../Logo%20FAV%20Icon.png"', html_content)
-    html_content = re.sub(r'src="Son%20and%20Father\.png"', r'src="../Son%20and%20Father.png"', html_content)
-    html_content = re.sub(r'src="Blosbox%20main\.jpeg"', r'src="../Blosbox%20main.jpeg"', html_content)
-    html_content = re.sub(r'src="BlosBox%20Handcrafting\.jpeg"', r'src="../BlosBox%20Handcrafting.jpeg"', html_content)
+    html_content = re.sub(r'href="Logo%20FAV%20Icon\.(png|webp)"', r'href="../Logo%20FAV%20Icon.webp"', html_content)
+    html_content = re.sub(r'src="Logo\.(png|webp)"', r'src="../Logo.webp"', html_content)
+    html_content = re.sub(r'src="Logo%20FAV%20Icon\.(png|webp)"', r'src="../Logo%20FAV%20Icon.webp"', html_content)
+    html_content = re.sub(r'src="Son%20and%20Father\.(png|webp)"', r'src="../Son%20and%20Father.webp"', html_content)
+    html_content = re.sub(r'src="Son and Father\.(png|webp)"', r'src="../Son and Father.webp"', html_content)
+    html_content = re.sub(r'src="Blosbox%20main\.(jpeg|jpg|webp)"', r'src="../Blosbox%20main.webp"', html_content)
+    html_content = re.sub(r'src="BlosBox%20Handcrafting\.(jpeg|jpg|webp)"', r'src="../BlosBox%20Handcrafting.webp"', html_content)
     
-    dirs = ['Jewellery', 'Chocolates', 'Watches', 'Leather%20Goods', 'Leather Goods', 'Cosmetics', 'Corporate%20Gifts', 'Corporate Gifts', 'Catalogue', 'Textured', 'Pearl', 'Luxe']
+    dirs = ['Jewellery', 'Chocolates', 'Watches', 'Leather%20Goods', 'Leather Goods', 'Cosmetics', 'Corporate%20Gifts', 'Corporate Gifts', 'Catalogue', 'Textured', 'Pearl', 'Luxe', 'Planning', 'Printing Foil Embossing', 'Printing%20Foil%20Embossing', 'Bespoke design & prototyping', 'Bespoke%20design%20%26%20prototyping', 'Size and Material Customization', 'Size%20and%20Material%20Customization', 'Other']
     for d in dirs:
         html_content = re.sub(r'src="' + d + r'/', r'src="../' + d + r'/', html_content)
         html_content = re.sub(r'href="' + d + r'/', r'href="../' + d + r'/', html_content)
