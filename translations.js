@@ -391,7 +391,7 @@ const translations = {
     
     hero_title: "Nga Vizioni te Eleganca e Prekshme",
     hero_promo: "Provo para se të Blesh<br>Merr Mostra Falas",
-    hero_intro_text: "Në <strong>Blosbox</strong>, ne jemi të specializuar në artin e prezantimit. Ne projektojmë dhe prodhojmë kuti të forta luksoze premium dhe kuti dhuratash të përshtatura me identitetin e markës suaj. Nga incertet me spongjo të plastifikuara me pëlhurë te përfundimet e jashtme premium, zgjidhjet tona me porosi lartësojnë përvojën e hapjes për çdo klient.",
+    hero_intro_text: "Në <strong>Blosbox</strong>, ne jemi të specializuar në artin e prezantimit. Ne projektojmë dhe prodhojmë kuti të forta luksoze premium dhe kuti dhuratash të përshtatura me identitetin e markës suaj. Nga incertet me spongjo të veshura me pëlhurë te përfundimet e jashtme premium, zgjidhjet tona me porosi lartësojnë përvojën e hapjes për çdo klient.",
     hero_cat1_title: "Bizhuteri & Orë: ",
     hero_cat1_text: "Paketime ekskluzive për bizhuteri, kuti me porosi për bizhuteri dhe paketime premium për orë të dizajnuara për siguri maksimale dhe prezantim mahnitës.",
     hero_cat2_title: "Kozmetikë & Parfume: ",
@@ -439,7 +439,7 @@ const translations = {
     jewellery_item2_title: "Përfundime Premium të Jashtme: ",
     jewellery_item2_text: "Opsione personalizimi duke përfshirë shtypjen me fletë metalike (foil stamping), prekje kadifeje dhe mbështjellje me teksturë.",
     jewellery_item3_title: "Mbrojtje e Sigurt e Brendshme: ",
-    jewellery_item3_text: "Incerte me spongjo me prerje precize dhe të plastifikuara me pëlhurë për të siguruar në mënyrë perfekte unazat, zinxhirët delikatë dhe bizhuteritë më vlera të mëdha.",
+    jewellery_item3_text: "Incerte me spongjo me prerje precize dhe të veshura me pëlhurë për të siguruar në mënyrë perfekte unazat, zinxhirët delikatë dhe bizhuteritë më vlera të mëdha.",
     jewellery_explore: "Klikoni më poshtë për të Eksploruar përfundimet tona premium",
     chocolates_title: "Metoda \"Gourmet Prestige\"",
     chocolates_subtitle: "Më e mira për çokollatierë të nivelit të lartë dhe marka artizanale.",
