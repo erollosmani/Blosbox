@@ -194,7 +194,7 @@ a {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    padding: 2.5rem 5% !important;
+    padding: 2rem 5% !important;
     height: calc(100vh - 10.5vh - 8vh - 12px) !important;
     box-sizing: border-box !important;
     overflow: hidden;
@@ -202,33 +202,38 @@ a {
 
 .hero-info-panel {
     max-width: 470px;
-    background: rgba(245, 240, 233, 0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    max-height: calc(100% - 2rem);
+    overflow-y: auto;
+    background: rgba(245, 240, 233, 0.68);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 1.6rem 1.8rem;
     border-radius: 6px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     color: var(--dark-top);
     text-align: left;
     z-index: 20;
     margin-right: 2%;
+    margin-top: auto;
+    margin-bottom: auto;
     border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
-.hero-intro {
-    font-size: 0.94rem;
-    line-height: 1.55;
-    margin-bottom: 1.1rem;
-    font-weight: 400;
+.hero-intro,
+.hero-cat-item {
+    font-size: 0.92rem;
+    line-height: 1.5;
     color: var(--dark-top);
 }
 
+.hero-intro {
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
 .hero-cat-item {
-    font-size: 0.91rem;
-    line-height: 1.5;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.8rem;
     font-weight: 300;
-    color: var(--dark-top);
 }
 
 .hero-cat-item:last-child {
@@ -237,7 +242,8 @@ a {
 
 .hero-cat-item strong {
     font-weight: 700;
-    color: #1c1815;
+    font-size: 0.92rem;
+    color: #1a1613;
 }
 
 /* About Page Content */
