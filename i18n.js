@@ -281,10 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const langItems = document.querySelectorAll('.lang-item');
             langItems.forEach(item => {
                 try {
-                    item.addEventListener('click', (e) => {
-                        e.preventDefault();
+                    item.addEventListener('click', () => {
                         const lang = item.getAttribute('data-lang');
-                        window.changeLanguage(lang);
+                        if (lang) {
+                            setStoredLanguage(lang);
+                        }
                     });
                 } catch (err) {}
             });
