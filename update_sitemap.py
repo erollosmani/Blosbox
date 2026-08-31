@@ -6,6 +6,7 @@ def generate_sitemap():
         ("index.html", "1.0"),
         ("about.html", "0.8"),
         ("products.html", "0.8"),
+        ("custom.html", "0.8"),
         ("bespoke.html", "0.8"),
         ("printing.html", "0.8"),
         ("customization.html", "0.8"),
@@ -15,10 +16,7 @@ def generate_sitemap():
         ("chocolates.html", "0.9"),
         ("gifts.html", "0.9"),
         ("cosmetics.html", "0.9"),
-        ("other.html", "0.7"),
-        ("textured.html", "0.7"),
-        ("pearl.html", "0.7"),
-        ("luxe.html", "0.7")
+        ("other.html", "0.7")
     ]
     
     languages = ["en", "de", "fr", "it", "sv", "nl", "sq", "mk"]

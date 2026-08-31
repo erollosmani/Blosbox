@@ -338,6 +338,118 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/products.html"/>
   </url>
   <url>
+    <loc>https://blosbox.com/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/de/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/fr/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/it/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/sv/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/nl/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/sq/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
+    <loc>https://blosbox.com/mk/custom.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/custom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/custom.html"/>
+  </url>
+  <url>
     <loc>https://blosbox.com/bespoke.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1456,341 +1568,5 @@
     <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/other.html"/>
     <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/other.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/other.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/de/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/fr/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/it/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/sv/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/nl/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/sq/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/mk/textured.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/textured.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/textured.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/de/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/fr/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/it/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/sv/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/nl/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/sq/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/mk/pearl.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/pearl.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/pearl.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/de/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/fr/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/it/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/sv/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/nl/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/sq/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
-  </url>
-  <url>
-    <loc>https://blosbox.com/mk/luxe.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://blosbox.com/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://blosbox.com/de/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://blosbox.com/it/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/luxe.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blosbox.com/luxe.html"/>
   </url>
 </urlset>
