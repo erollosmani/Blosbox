@@ -212,38 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const localeMap = { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', sv: 'sv_SE', nl: 'nl_NL', sq: 'sq_AL', mk: 'mk_MK' };
             ogLocale.setAttribute('content', localeMap[lang] || 'en_US');
-
-            // 4. Update Canonical Link
-            const baseUrl = window.location.origin + window.location.pathname;
-            let canonicalLink = document.querySelector('link[rel="canonical"]');
-            if (!canonicalLink) {
-                canonicalLink = document.createElement('link');
-                canonicalLink.setAttribute('rel', 'canonical');
-                document.head.appendChild(canonicalLink);
-            }
-            canonicalLink.setAttribute('href', baseUrl + '?lang=' + lang);
-            
-            // 5. Update/Inject Hreflang Tags for all supported languages
-            supportedLanguages.forEach(l => {
-                let hreflangLink = document.querySelector(`link[rel="alternate"][hreflang="${l}"]`);
-                if (!hreflangLink) {
-                    hreflangLink = document.createElement('link');
-                    hreflangLink.setAttribute('rel', 'alternate');
-                    hreflangLink.setAttribute('hreflang', l);
-                    document.head.appendChild(hreflangLink);
-                }
-                hreflangLink.setAttribute('href', baseUrl + '?lang=' + l);
-            });
-            
-            // x-default hreflang
-            let xDefaultLink = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
-            if (!xDefaultLink) {
-                xDefaultLink = document.createElement('link');
-                xDefaultLink.setAttribute('rel', 'alternate');
-                xDefaultLink.setAttribute('hreflang', 'x-default');
-                document.head.appendChild(xDefaultLink);
-            }
-            xDefaultLink.setAttribute('href', baseUrl);
             
         } catch (e) {
             console.error("Error updating SEO metadata:", e);
@@ -325,40 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // 5. Update all internal .html links with active lang query parameters
+    // 5. Internal link management (preserve clean static URLs)
     function updateInternalLinks(lang) {
-        try {
-            const links = document.querySelectorAll('a');
-            links.forEach(link => {
-                try {
-                    const href = link.getAttribute('href');
-                    if (href && !href.startsWith('#') && !href.includes('://') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-                        // Parse page path to ensure we only target HTML pages or directory links (not PDFs or assets)
-                        const cleanPath = href.split('?')[0].split('#')[0];
-                        const isHtml = cleanPath.endsWith('.html') || !cleanPath.includes('.');
-                        if (!isHtml) return;
-                        
-                        try {
-                            // Extract page path and query params
-                            const parts = href.split('?');
-                            const basePath = parts[0];
-                            const searchParams = new URLSearchParams(parts[1] || '');
-                            
-                            searchParams.set('lang', lang);
-                            link.setAttribute('href', basePath + '?' + searchParams.toString());
-                        } catch (e) {
-                            // Fail-safe simple query parameter append
-                            const cleanHref = href.split('?')[0];
-                            link.setAttribute('href', cleanHref + '?lang=' + lang);
-                        }
-                    }
-                } catch (innerErr) {
-                    console.error("Error updating single link:", link, innerErr);
-                }
-            });
-        } catch (e) {
-            console.error("Error updating internal links:", e);
-        }
+        // Preserves clean static URLs for search engines and direct subfolder routing
     }
     
     // Initial run
