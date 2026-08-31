@@ -161,7 +161,9 @@ const translations = {
     under_construction_title: "UNDER CONSTRUCTION",
     under_construction_subtitle: "Preparing for Luxury",
     products_title: "Our Industries",
-    products_p: "BLOSBOX crafts premium packaging tailored to the unique demands of the world's most prestigious markets. Our expertise spans across multiple luxury sectors, ensuring that every box we produce perfectly complements the product it holds.",
+    products_p1: "BLOSBOX crafts custom luxury boxes and packaging designed for brands that demand perfection.",
+    products_p2: "As a trusted B2B partner, our expertise spans across multiple premium sectors, allowing us to manufacture custom jewellery, watch, cosmetics and fragrance, and chocolate boxes that meet exact specifications.",
+    products_p3: "Whether you require durable fashion industry boxes or sophisticated corporate gift boxes, our rigid construction and tailored inserts ensure that every box perfectly complements the high-end product it holds.",
     custom_title: "Custom Solutions",
     custom_p: "We transform your brand's vision into tactile reality through our comprehensive suite of bespoke services. From initial structural design to the final exquisite finish, our custom solutions are engineered for brands that refuse to settle for the ordinary."
   },
@@ -323,7 +325,9 @@ const translations = {
     under_construction_title: "EN CONSTRUCTION",
     under_construction_subtitle: "Préparation pour le Luxe",
     products_title: "Nos Secteurs",
-    products_p: "BLOSBOX fabrique des emballages haut de gamme adaptés aux exigences uniques des marchés les plus prestigieux du monde. Notre expertise s'étend sur plusieurs secteurs du luxe, garantissant que chaque boîte que nous produisons s'accorde parfaitement avec le produit qu'elle contient.",
+    products_p1: "BLOSBOX fabrique des boîtes et emballages de luxe sur mesure, conçus pour les marques qui exigent la perfection.",
+    products_p2: "En tant que partenaire B2B de confiance, notre expertise s'étend à plusieurs secteurs haut de gamme, nous permettant de fabriquer des coffrets sur mesure pour la bijouterie, l'horlogerie, la cosmétique, les parfums et les chocolats, répondant à des spécifications rigoureuses.",
+    products_p3: "Que vous ayez besoin de coffrets durables pour l'industrie de la mode ou de coffrets cadeaux d'entreprise sophistiqués, notre construction rigide et nos calages sur mesure garantissent que chaque boîte sublime le produit d'exception qu'elle renferme.",
     custom_title: "Solutions Sur Mesure",
     custom_p: "Nous transformons la vision de votre marque en réalité tactile grâce à notre gamme complète de services sur mesure. Du design structurel initial à la finition finale exquise, nos solutions personnalisées sont conçues pour les marques qui refusent l'ordinaire."
   },
@@ -485,7 +489,9 @@ const translations = {
     under_construction_title: "NË NDËRTIM E SIPËR",
     under_construction_subtitle: "Duke u përgatitur për Luks",
     products_title: "Industritë Tona",
-    products_p: "BLOSBOX prodhon paketim premium të përshtatur për kërkesat unike të tregjeve më prestigjioze në botë. Ekspertiza jonë shtrihet në disa sektorë luksi, duke siguruar që çdo kuti që prodhojmë plotëson në mënyrë të përsosur produktin që mban.",
+    products_p1: "BLOSBOX prodhon kuti dhe paketim luksoz të personalizuar, të dizajnuara për marka që kërkojnë përsosmëri.",
+    products_p2: "Si një partner i besueshëm B2B, ekspertiza jonë shtrihet në shumë sektorë premium, duke na mundësuar prodhimin e kutive të personalizuara për bizhuteri, orë, kozmetikë, parfume dhe çokollata sipas specifikimeve të sakta.",
+    products_p3: "Pavarësisht nëse keni nevojë për kuti të qëndrueshme për industrinë e modës apo kuti të sofistikuara për dhurata korporative, konstruksioni ynë i ngurtë dhe ndarjet e brendshme të përshtatura sigurojnë që çdo kuti plotëson në mënyrë të përsosur produktin e nivelit të lartë që mban.",
     custom_title: "Zgjidhje me Porosi",
     custom_p: "Ne e shndërrojmë vizionin e markës suaj në realitet të prekshëm përmes paketës sonë gjithëpërfshirëse të shërbimeve me porosi. Nga dizajni fillestar strukturor deri te përfundimi i hollë final, zgjidhjet tona me porosi janë projektuar për markat që nuk pranojnë të zakonshmen."
   },
@@ -647,7 +653,9 @@ const translations = {
     under_construction_title: "IN COSTRUZIONE",
     under_construction_subtitle: "Preparazione al Lusso",
     products_title: "I Nostri Settori",
-    products_p: "BLOSBOX realizza packaging premium su misura per le esigenze uniche dei mercati più prestigiosi del mondo. La nostra esperienza spazia in molteplici settori del lusso, garantendo che ogni scatola prodotta si completi perfettamente con il prodotto che contiene.",
+    products_p1: "BLOSBOX realizza scatole e packaging di lusso su misura per marchi che esigono la perfezione.",
+    products_p2: "Come partner B2B di fiducia, la nostra esperienza spazia in molteplici settori premium, consentendoci di produrre scatole personalizzate per gioielleria, orologi, cosmetici, profumi e cioccolato secondo specifiche esatte.",
+    products_p3: "Che necessitiate di scatole resistenti per il settore della moda o di sofisticate scatole regalo aziendali, la nostra struttura rigida e gli inserti su misura assicurano che ogni scatola valorizzi perfettamente il prodotto di alta gamma che custodisce.",
     custom_title: "Soluzioni su Misura",
     custom_p: "Trasformiamo la visione del tuo marchio in realtà tattile attraverso la nostra gamma completa di servizi su misura. Dalla progettazione strutturale iniziale alla finitura finale, le nostre solutions personalizzate sono progettate per i marchi che non si accontentano dell'ordinario."
   },
@@ -809,7 +817,9 @@ const translations = {
     under_construction_title: "IN ARBEIT",
     under_construction_subtitle: "Vorbereitung auf Luxus",
     products_title: "Unsere Branchen",
-    products_p: "BLOSBOX fertigt Premium-Verpackungen, die auf die einzigartigen Anforderungen der weltweit prestigeträchtigsten Märkte zugeschnitten sind. Unsere Expertise erstreckt sich über mehrere Luxussektoren und stellt sicher, dass jede von uns hergestellte Box das darin enthaltene Produkt perfekt ergänzt.",
+    products_p1: "BLOSBOX fertigt maßgeschneiderte Luxusboxen und Verpackungen für Marken, die Perfektion verlangen.",
+    products_p2: "Als vertrauensvoller B2B-Partner erstreckt sich unsere Expertise über mehrere Premium-Sektoren und ermöglicht die Herstellung individueller Schmuck-, Uhren-, Kosmetik-, Parfüm- und Schokoladenboxen nach exakten Vorgaben.",
+    products_p3: "Ob strapazierfähige Boxen für die Modebranche oder anspruchsvolle Firmenpräsentboxen – unsere feste Konstruktion und maßgeschneiderten Inlays sorgen dafür, dass jede Box das hochwertige Produkt optimal ergänzt.",
     custom_title: "Sonderlösungen",
     custom_p: "Wir verwandeln die Vision Ihrer Marke durch unser umfassendes Angebot an maßgeschneiderten Dienstleistungen in fühlbare Realität. Vom ersten strukturellen Entwurf bis zur endgültigen, exquisiten Veredelung sind unsere maßgeschneiderten Lösungen für Marken konzipiert, die sich nicht mit dem Gewöhnlichen zufrieden geben."
   },
@@ -971,7 +981,9 @@ const translations = {
     under_construction_title: "IN OPBOUW",
     under_construction_subtitle: "Voorbereiding op Luxe",
     products_title: "Onze Sectoren",
-    products_p: "BLOSBOX produceert luxe verpakkingen die zijn afgestemd op de unieke eisen van 's werelds meest prestigieuze markten. Onze expertise strekt zich uit over meerdere luxesectoren, waardoor we ervoor zorgen dat elke doos die we produceren perfect aansluit bij het product dat erin zit.",
+    products_p1: "BLOSBOX produceert op maat gemaakte luxe dozen en verpakkingen voor merken die perfectie eisen.",
+    products_p2: "Als betrouwbare B2B-partner strekt onze expertise zich uit over meerdere premiumsectoren, waardoor we op maat gemaakte dozen voor sieraden, horloges, cosmetica, parfum en chocolade volgens exacte specificaties kunnen produceren.",
+    products_p3: "Of u nu duurzame dozen voor de mode-industrie of verfijnde zakelijke geschenkdozen nodig heeft, onze stevige constructie en op maat gemaakte inlays zorgen ervoor dat elke doos het hoogwaardige product perfect complementeert.",
     custom_title: "Maatwerkoplossingen",
     custom_p: "We transformeren de visie van uw merk in tastbare realiteit via ons uitgebreide aanbod van maatwerkdiensten. Van het eerste structurele ontwerp tot de uiteindelijke verfijnde afwerking: onze maatwerkoplossingen zijn ontworpen voor merken die weigeren genoegen te nemen met het gewone."
   },
@@ -1131,7 +1143,9 @@ const translations = {
     under_construction_title: "UNDER KONSTRUKTION",
     under_construction_subtitle: "Förbereder för Lyx",
     products_title: "Våra Branscher",
-    products_p: "BLOSBOX tillverkar premiumförpackningar skräddarsydda för de unika kraven på världens mest prestigefyllda marknader. Vår expertis sträcker sig över flera lyxsektorer, vilket säkerställer att varje ask vi tillverkar perfekt kompletterar produkten den innehåller.",
+    products_p1: "BLOSBOX tillverkar skräddarsydda lyxaskar och förpackningar designade för varumärken som kräver perfektion.",
+    products_p2: "Som en pålitlig B2B-partner sträcker sig vår expertis över flera premiumsektorer, vilket gör att vi kan tillverka skräddarsydda smyckes-, klock-, kosmetik-, parfym- och chokladaskar som uppfyller exakta specifikationer.",
+    products_p3: "Oavsett om du behöver hållbara askar för modeindustrin eller sofistikerade företagsgåvoaskar, säkerställer vår styva konstruktion och skräddarsydda inlägg att varje ask perfekt kompletterar den exklusiva produkten den rymmer.",
     custom_title: "Speciallösningar",
     custom_p: "Vi förvandlar ditt varumärkes vision till påtaglig verklighet genom vårt omfattande utbud av skräddarsydda tjänster. Från initial strukturell design till den slutliga utsökta ytbehandlingen är våra skräddarsydda lösningar konstruerade för varumärken som vägrar nöja sig med det vanliga."
   },
@@ -1293,7 +1307,9 @@ const translations = {
     under_construction_title: "ВО ИЗРАБОТКА",
     under_construction_subtitle: "Подготовка за Луксуз",
     products_title: "Нашите Индустрии",
-    products_p: "БЛОСБОКС изработува премиум амбалажа прилагодена на уникатните барања на најпрестижните светски пазари. Нашата експертиза опфаќа повеќе луксузни сектори, осигурувајќи дека секоја кутија што ја произведуваме совршено одговара на производот што го содржи.",
+    products_p1: "BLOSBOX изработува прилагодени луксузни кутии и амбалажа дизајнирани за брендови кои бараат совршенство.",
+    products_p2: "Како доверлив B2B партнер, нашата експертиза опфаќа повеќе премиум сектори, овозможувајќи ни да произведуваме прилагодени кутии за накит, часовници, козметика, парфеми и чоколадо според точни спецификации.",
+    products_p3: "Без разлика дали ви се потребни издржливи кутии за модната индустрија или софистицирани кутии за корпоративни подароци, нашата цврста конструкција и прилагодени влошки гарантираат дека секоја кутија совршено го надополнува врвниот производ што го содржи.",
     custom_title: "Прилагодени Решенија",
     custom_p: "Ја преточуваме визијата на вашиот бренд во опиплива реалност преку нашиот сеопфатен пакет на услуги по мерка. Од почетниот структурен дизајн до конечниот извонреден финиш, нашите прилагодени решенија се создадени за брендови кои одбиваат да се задоволат со обичното."
   }

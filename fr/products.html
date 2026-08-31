@@ -41,24 +41,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css?v=39">
     <style>
-        .hero {
-            padding: 4rem 5% 2rem 5% !important;
+                                .hero {
+            padding: 2.2rem 4% 1.5rem 4% !important;
             height: calc(100vh - 10.5vh - 8vh - 12px) !important;
             overflow-y: auto !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
         .products-container {
             text-align: center;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.1rem;
             align-items: center;
             width: 100%;
+            max-width: 1400px;
         }
         .products-container h1 {
-            font-size: 3.5rem;
+            font-size: 2.3rem;
             color: var(--dark-top);
             margin: 0;
+            line-height: 1.15;
+        }
+        .products-intro-text {
+            font-size: 0.95rem;
+            line-height: 1.55;
+            max-width: 1300px;
+            width: 96%;
+            margin: 0 auto;
+            color: var(--dark-top);
+            font-weight: 300;
+            text-align: center;
+        }
+        .products-intro-text p {
+            max-width: 100% !important;
+            font-size: 0.95rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 0.45rem 0 !important;
+            color: var(--dark-top) !important;
+            font-weight: 300 !important;
+        }
+        .products-intro-text p:last-child {
+            margin-bottom: 0 !important;
         }
         .industries-photos-grid {
             display: flex;
@@ -66,12 +93,12 @@
             gap: 0.6rem;
             justify-content: center;
             width: 100%;
-            margin-top: 1rem;
+            margin-top: 0.4rem;
         }
         .industry-photo-card {
             position: relative;
             flex: 1;
-            height: 180px;
+            height: 175px;
             border-radius: 6px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -111,20 +138,70 @@
         }
 
         @media (max-width: 850px) {
-            .hero {
-                height: auto !important;
-                padding: 3rem 5% !important;
-            }
-            .products-container h1 {
-                font-size: 2.8rem;
-            }
-            .industries-photos-grid {
-                flex-wrap: wrap;
-            }
-            .industry-photo-card {
-                flex: 1 1 40%;
-                height: 150px;
-            }
+                                    .hero {
+            padding: 2.2rem 4% 1.5rem 4% !important;
+            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            overflow-y: auto !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .products-container {
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+        }
+        .products-container h1 {
+            font-size: 2.3rem;
+            color: var(--dark-top);
+            margin: 0;
+            line-height: 1.15;
+        }
+        .products-intro-text {
+            font-size: 0.95rem;
+            line-height: 1.55;
+            max-width: 1300px;
+            width: 96%;
+            margin: 0 auto;
+            color: var(--dark-top);
+            font-weight: 300;
+            text-align: center;
+        }
+        .products-intro-text p {
+            max-width: 100% !important;
+            font-size: 0.95rem !important;
+            line-height: 1.55 !important;
+            margin: 0 0 0.45rem 0 !important;
+            color: var(--dark-top) !important;
+            font-weight: 300 !important;
+        }
+        .products-intro-text p:last-child {
+            margin-bottom: 0 !important;
+        }
+        .industries-photos-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.6rem;
+            justify-content: center;
+            width: 100%;
+            margin-top: 0.4rem;
+        }
+        .industry-photo-card {
+            position: relative;
+            flex: 1;
+            height: 175px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+            display: block;
+        }
         }
     </style>
 
@@ -268,8 +345,10 @@
     <section class="hero">
         <div class="products-container">
             <h1 data-i18n="products_title">Nos Secteurs</h1>
-            <div class="about-text" style="font-size: 1.1rem; line-height: 1.6; max-width: 900px; margin: 0 auto;">
-                <p><span data-i18n="products_p">BLOSBOX fabrique des emballages haut de gamme adaptés aux exigences uniques des marchés les plus prestigieux du monde. Notre expertise s'étend sur plusieurs secteurs du luxe, garantissant que chaque boîte que nous produisons s'accorde parfaitement avec le produit qu'elle contient.</span></p>
+            <div class="products-intro-text">
+                <p><span data-i18n="products_p1">BLOSBOX fabrique des boîtes et emballages de luxe sur mesure, conçus pour les marques qui exigent la perfection.</span></p>
+                <p><span data-i18n="products_p2">En tant que partenaire B2B de confiance, notre expertise s'étend à plusieurs secteurs haut de gamme, nous permettant de fabriquer des coffrets sur mesure pour la bijouterie, l'horlogerie, la cosmétique, les parfums et les chocolats, répondant à des spécifications rigoureuses.</span></p>
+                <p><span data-i18n="products_p3">Que vous ayez besoin de coffrets durables pour l'industrie de la mode ou de coffrets cadeaux d'entreprise sophistiqués, notre construction rigide et nos calages sur mesure garantissent que chaque boîte sublime le produit d'exception qu'elle renferme.</span></p>
             </div>
             
             <!-- Clickable Photos Grid -->
