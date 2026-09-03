@@ -1245,59 +1245,70 @@ a {
    ========================================================================== */
 .jewellery-calc-card {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
     width: 320px;
     max-width: 100%;
-    padding: 0.95rem 1.15rem;
-    border-radius: 12px;
+    height: 40px;
+    padding: 0 0.75rem;
+    border-radius: 8px;
     background: linear-gradient(135deg, #2d2824 0%, #1c1816 100%);
     border: 1.5px solid var(--brown-accent, #a48c77);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.22);
     text-decoration: none;
     cursor: pointer;
     box-sizing: border-box;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-    gap: 0.35rem;
-    margin-bottom: 0.2rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    margin-bottom: 0.1rem;
 }
 .jewellery-calc-card:hover {
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-2px) scale(1.015);
     border-color: #e0c9a6;
-    box-shadow: 0 16px 35px rgba(164, 140, 119, 0.35);
+    box-shadow: 0 10px 22px rgba(164, 140, 119, 0.35);
 }
 .calc-card-badge {
-    display: inline-block;
     background: rgba(164, 140, 119, 0.25);
     color: #e0c9a6;
-    font-size: 0.68rem;
+    font-size: 0.58rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 0.2rem 0.6rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(164, 140, 119, 0.5);
+    padding: 0.18rem 0.35rem;
+    border-radius: 4px;
+    border: 1px solid rgba(164, 140, 119, 0.4);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 .calc-card-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.22rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #ffffff;
-    letter-spacing: 0.5px;
-    line-height: 1.25;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    text-align: center;
 }
-.calc-card-desc {
-    font-size: 0.78rem;
-    color: rgba(245, 240, 235, 0.85);
-    font-family: 'Lato', sans-serif;
-    line-height: 1.35;
+.calc-card-arrow {
+    color: #e0c9a6;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+.jewellery-calc-card:hover .calc-card-arrow {
+    transform: translateX(3px);
 }
 @media (max-width: 900px) {
     .jewellery-calc-card {
         max-width: 400px;
         width: 100%;
-        margin-bottom: 0.7rem;
+        height: 42px;
+        margin-bottom: 0.4rem;
     }
 }
