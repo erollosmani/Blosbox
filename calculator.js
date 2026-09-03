@@ -1726,8 +1726,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUI();
     renderOrderSummary();
 
-    const controlsPanel = document.querySelector('.controls-panel');
-    if (controlsPanel) controlsPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const scrollTarget = document.querySelector('.size-config-group') || document.querySelector('.configurator-wrapper') || document.querySelector('.controls-panel');
+    if (scrollTarget) scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
     showToast(`Loaded ${selectedBox.name} into configurator for editing.`);
   }
 

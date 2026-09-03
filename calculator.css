@@ -2783,15 +2783,108 @@ img.insert-filter-cream {
 }
 
 /* ==========================================================================
-   Mobile & Responsive Adaptations (Mobile-First Polish)
+   Mobile & Responsive Adaptations (Customer Guided Journey)
    ========================================================================== */
 @media (max-width: 1024px) {
   .configurator-wrapper {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
+
+  /* Flatten panel wrappers on mobile to interleave controls & visual blueprints in the exact user-specified order */
+  .controls-panel,
+  .dropdown-form,
+  .visuals-panel,
   .drawings-grid {
-    grid-template-columns: 1fr 1fr;
+    display: contents;
+  }
+
+  /* 0. Panel Header (Title & Subtitle) */
+  .panel-header {
+    order: 1;
+    background: var(--color-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* 1. Step 1: Choose Box Size */
+  .size-config-group {
+    order: 2;
+    background: var(--color-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* 2. Step 2: Preview Technical Drawing of the Box */
+  #card-box-drawing {
+    order: 3;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 3. Step 3: Choose Foam Insert (Options, Colors & Proportional Preview) */
+  #card-insert-drawing {
+    order: 4;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 4. Step 4: Choose Finishing Materials & Preview Texture */
+  .material-config-group {
+    order: 5;
+    background: var(--color-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  #card-material-preview {
+    order: 6;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 5. Step 5: Quantity & Price calculation + Custom Logo Stamping */
+  .price-calc-card {
+    order: 7;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #logo-customization-card {
+    order: 8;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 6. Step 6: Hit Button "ADD BOX TO ORDER" */
+  .config-actions-wrap {
+    order: 9;
+    background: var(--color-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 7. Step 7: Wholesale Volume Discounts */
+  #wholesale-discounts-card {
+    order: 10;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hide redundant visuals header on mobile since each card has its own header */
+  .visuals-header {
+    display: none;
   }
 }
 
@@ -2800,31 +2893,16 @@ img.insert-filter-cream {
     font-size: 14px;
   }
   .main-container {
-    padding: 0.8rem 0.9rem;
+    padding: 0.8rem 0.7rem;
   }
-  .navbar-container {
-    padding: 0.6rem 0.9rem;
-  }
-  .brand-name {
-    font-size: 1.2rem;
-  }
-  .brand-tagline {
-    display: none;
-  }
-  .nav-btn span {
-    display: none;
-  }
-  .nav-btn-primary span {
-    font-size: 0.72rem;
+  .calculator-page-wrapper {
+    padding: 1rem 0.5rem 3rem 0.5rem;
   }
   .controls-panel, .visuals-panel {
-    padding: 1.1rem 1.1rem;
-  }
-  .drawings-grid {
-    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
   }
   .drawing-image-container {
-    height: 170px;
+    height: 180px;
   }
   .gallery-dialog {
     max-height: 98vh;
@@ -2835,6 +2913,18 @@ img.insert-filter-cream {
   .slider-nav-arrow {
     width: 40px;
     height: 48px;
+  }
+  .config-actions-wrap {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .btn-add-to-order {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn-reset-choices {
+    width: 100%;
+    justify-content: center;
   }
 }
 
