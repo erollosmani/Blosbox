@@ -16,8 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Localization Helper
   function getActiveLang() {
+    let stored = null;
+    try { stored = localStorage.getItem('selected_language'); } catch (e) {}
     return (window.i18n && window.i18n.currentLang) ||
            (window.location.pathname.split('/').filter(Boolean).find(p => ['de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk'].includes(p))) ||
+           stored ||
            'en';
   }
 
@@ -617,6 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
           modalAttachmentStatus.classList.remove('empty');
         }
         if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
+        if (btnDownloadModalLogo) btnDownloadModalLogo.style.display = 'inline-flex';
       }
 
       // 7. Order Items
@@ -679,6 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modalAttachmentStatus.classList.remove('empty');
     }
     if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
+    if (btnDownloadModalLogo) btnDownloadModalLogo.style.display = 'inline-flex';
     showToast(`Logo attached: ${file.name}`);
     saveStateToStorage();
   }
@@ -702,6 +707,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modalAttachmentStatus.classList.add('empty');
     }
     if (modalUploadBtnText) modalUploadBtnText.textContent = 'Attach / Upload Logo';
+    if (btnDownloadModalLogo) btnDownloadModalLogo.style.display = 'none';
     showToast('Attached logo file removed.');
     saveStateToStorage();
   }
@@ -718,6 +724,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalSubmitOverlay = document.getElementById('modal-submit-overlay');
   const btnCloseSubmitModal = document.getElementById('btn-close-submit-modal');
   const submitOrderForm = document.getElementById('submit-order-form');
+  const submitModalAlert = document.getElementById('submit-modal-alert');
+  const submitSuccessView = document.getElementById('submit-success-view');
+  const btnSuccessDone = document.getElementById('btn-success-done');
+  const btnSuccessPrint = document.getElementById('btn-success-print');
+  const btnDownloadModalLogo = document.getElementById('btn-download-modal-logo');
   const submitRecapBoxes = document.getElementById('submit-recap-boxes');
   const submitRecapQty = document.getElementById('submit-recap-qty');
   const submitRecapTotal = document.getElementById('submit-recap-total');
@@ -727,6 +738,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitClientCountry = document.getElementById('submit-client-country');
   const submitClientNotes = document.getElementById('submit-client-notes');
   const btnSubmitCopyFallback = document.getElementById('btn-submit-copy-fallback');
+
+  function downloadCurrentLogoFile() {
+    let fileToDownload = currentLogoFile;
+    if (!fileToDownload && savedLogoFileData && savedLogoFileData.dataUrl) {
+      fileToDownload = dataURLtoFile(savedLogoFileData.dataUrl, savedLogoFileData.name);
+    }
+    if (fileToDownload) {
+      const url = URL.createObjectURL(fileToDownload);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileToDownload.name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast(`Downloaded ${fileToDownload.name} to attach to email.`);
+    } else if (savedLogoFileData && savedLogoFileData.dataUrl) {
+      const a = document.createElement('a');
+      a.href = savedLogoFileData.dataUrl;
+      a.download = savedLogoFileData.name || 'blosbox-logo';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast(`Downloaded ${savedLogoFileData.name} to attach to email.`);
+    } else {
+      showToast('No logo file selected to download.');
+    }
+  }
 
   // --- WHOLESALE VOLUME DISCOUNT CALCULATION ---
   function getVolumeDiscount(amount) {
@@ -1931,11 +1970,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (submitRecapQty) submitRecapQty.textContent = `${totalQty.toLocaleString()} pcs`;
     if (submitRecapTotal) submitRecapTotal.textContent = `€${grandTotal.toFixed(2)}`;
 
-    // Update modal attachment status
+    // Reset views
+    if (submitModalAlert) {
+      submitModalAlert.style.display = 'none';
+      submitModalAlert.innerHTML = '';
+      submitModalAlert.className = 'submit-modal-alert';
+    }
+    if (submitSuccessView) {
+      submitSuccessView.style.display = 'none';
+    }
+    if (submitOrderForm) {
+      submitOrderForm.style.display = 'block';
+    }
+
+    // Update modal attachment status and download button
+    const hasLogoFile = Boolean(currentLogoFile || (savedLogoFileData && savedLogoFileData.name));
+    if (btnDownloadModalLogo) {
+      btnDownloadModalLogo.style.display = hasLogoFile ? 'inline-flex' : 'none';
+    }
+
     if (modalAttachmentStatus) {
       const hasNewLogoInOrder = orderItems.some(item => item.isNewLogoMold) || (chkNewLogo && chkNewLogo.checked);
       if (currentLogoFile) {
         modalAttachmentStatus.textContent = `${currentLogoFile.name} (${formatBytes(currentLogoFile.size)}) — ready to send to contact@blosbox.com`;
+        modalAttachmentStatus.classList.remove('empty');
+        if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
+      } else if (savedLogoFileData && savedLogoFileData.name) {
+        modalAttachmentStatus.textContent = `${savedLogoFileData.name} (${formatBytes(savedLogoFileData.size)}) — ready to send to contact@blosbox.com`;
         modalAttachmentStatus.classList.remove('empty');
         if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
       } else if (hasNewLogoInOrder) {
@@ -1979,10 +2040,11 @@ document.addEventListener('DOMContentLoaded', () => {
       text += `====================================\n\n`;
     }
 
-    if (currentLogoFile) {
+    const activeLogoFile = currentLogoFile || (savedLogoFileData && savedLogoFileData.name ? savedLogoFileData : null);
+    if (activeLogoFile) {
       text += `ATTACHED LOGO FOR FOIL STAMPING:\n`;
-      text += `- File Name: ${currentLogoFile.name} (${formatBytes(currentLogoFile.size)})\n`;
-      text += `- Submission: Uploaded and attached to contact@blosbox.com submission\n`;
+      text += `- File Name: ${activeLogoFile.name} (${formatBytes(activeLogoFile.size)})\n`;
+      text += `- Submission: Transmitted with order to contact@blosbox.com\n`;
       text += `====================================\n\n`;
     }
 
@@ -2060,6 +2122,12 @@ document.addEventListener('DOMContentLoaded', () => {
       notes: submitClientNotes ? submitClientNotes.value.trim() : ''
     };
 
+    if (!clientInfo.email) {
+      showToast('Please enter your contact email.');
+      if (submitClientEmail) submitClientEmail.focus();
+      return;
+    }
+
     const fullManifest = generateOrderManifestText(clientInfo);
 
     // Copy to clipboard for guaranteed preservation
@@ -2078,38 +2146,79 @@ document.addEventListener('DOMContentLoaded', () => {
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="spin">
           <circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle>
         </svg>
-        <span>Sending Order & Logo Attachment...</span>
+        <span>${t('calc_submit_btn_sending', 'Sending Order & Logo Attachment...')}</span>
       `;
     }
 
-    let uploadedFileUrl = '';
-    let isServerSubmitted = false;
+    if (submitModalAlert) {
+      submitModalAlert.style.display = 'none';
+      submitModalAlert.innerHTML = '';
+      submitModalAlert.className = 'submit-modal-alert';
+    }
 
-    // Send multipart/form-data with logo attachment to backend API
+    let fileToAttach = currentLogoFile;
+    if (!fileToAttach && savedLogoFileData && savedLogoFileData.dataUrl) {
+      fileToAttach = dataURLtoFile(savedLogoFileData.dataUrl, savedLogoFileData.name);
+    }
+
+    let isDelivered = false;
+    let activationRequired = false;
+
+    // Send multipart/form-data with logo attachment to FormSubmit API
     try {
       const formData = new FormData();
-      formData.append('clientName', clientInfo.name);
-      formData.append('clientEmail', clientInfo.email);
-      formData.append('clientPhone', clientInfo.phone);
-      formData.append('clientCountry', clientInfo.country);
-      formData.append('clientNotes', clientInfo.notes);
-      formData.append('orderManifest', fullManifest);
-      if (currentLogoFile) {
-        formData.append('logoFile', currentLogoFile, currentLogoFile.name);
+      formData.append('name', clientInfo.name);
+      formData.append('email', clientInfo.email);
+      formData.append('phone', clientInfo.phone || 'Not provided');
+      formData.append('delivery_location', clientInfo.country);
+      formData.append('production_notes', clientInfo.notes || 'None');
+      formData.append('order_manifest', fullManifest);
+      formData.append('_subject', `Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})${fileToAttach ? ' + Stamping Mold Logo Attached' : ''}`);
+      formData.append('_replyto', clientInfo.email);
+      formData.append('_template', 'table');
+      formData.append('_captcha', 'false');
+
+      if (fileToAttach) {
+        formData.append('attachment', fileToAttach, fileToAttach.name);
       }
 
-      const response = await fetch('/api/send-order', {
+      // Also fire background notification to local dev_server if running
+      try {
+        const localData = new FormData();
+        localData.append('clientName', clientInfo.name);
+        localData.append('clientEmail', clientInfo.email);
+        localData.append('clientPhone', clientInfo.phone);
+        localData.append('clientCountry', clientInfo.country);
+        localData.append('clientNotes', clientInfo.notes);
+        localData.append('orderManifest', fullManifest);
+        if (fileToAttach) localData.append('logoFile', fileToAttach, fileToAttach.name);
+        fetch('/api/send-order', { method: 'POST', body: localData }).catch(() => {});
+        fetch('http://localhost:8080/api/send-order', { method: 'POST', body: localData }).catch(() => {});
+      } catch (e) {}
+
+      const formSubmitPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
+
+      const response = await Promise.race([
+        formSubmitPromise,
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 15000))
+      ]);
 
       if (response.ok) {
         const result = await response.json();
-        isServerSubmitted = true;
-        if (result.fileUrl) uploadedFileUrl = result.fileUrl;
+        if (result.success === 'true' || result.success === true) {
+          isDelivered = true;
+        } else if (result.message && result.message.toLowerCase().includes('activation')) {
+          activationRequired = true;
+        }
       }
     } catch (err) {
-      console.warn('Direct server submit error, falling back to mailto:', err);
+      console.warn('FormSubmit direct submit note:', err);
     }
 
     // Reset button
@@ -2118,31 +2227,65 @@ document.addEventListener('DOMContentLoaded', () => {
       btnSendEmail.innerHTML = originalBtnHTML;
     }
 
-    // Prepare email client fallback / confirmation
-    let finalBody = fullManifest;
-    if (uploadedFileUrl) {
-      finalBody = `[ATTACHMENT: ${currentLogoFile ? currentLogoFile.name : 'Logo'} uploaded to server and attached for contact@blosbox.com]\n\n` + fullManifest;
+    if (isDelivered) {
+      if (submitOrderForm) submitOrderForm.style.display = 'none';
+      if (submitSuccessView) {
+        submitSuccessView.style.display = 'block';
+        const titleEl = document.getElementById('success-view-title');
+        const descEl = document.getElementById('success-view-desc');
+        const replyEl = document.getElementById('success-view-reply');
+        if (titleEl) titleEl.textContent = t('calc_submit_success_title', 'Order & Logo Attachment Delivered!');
+        if (descEl) {
+          const fileNote = fileToAttach ? ` (${fileToAttach.name})` : '';
+          const baseText = t('calc_submit_success_desc', 'Your packaging specifications and attached logo file have been securely delivered to contact@blosbox.com.');
+          descEl.innerHTML = fileToAttach ? baseText.replace('contact@blosbox.com', `contact@blosbox.com with logo file <strong>${fileToAttach.name}</strong>`) : baseText;
+        }
+        if (replyEl) {
+          replyEl.textContent = t('calc_submit_success_reply', 'Our production team will review your specifications and reply to {email} with your freight timeline.').replace('{email}', clientInfo.email);
+        }
+      }
+      showToast('✓ Order and logo attachment delivered to contact@blosbox.com!');
+      return;
+    }
+
+    // Fallback: Open email client with clear attachment guidance & download button
+    let emailNoticeText = '';
+    if (fileToAttach) {
+      emailNoticeText = `\n\n*** IMPORTANT: PLEASE ATTACH YOUR LOGO FILE (${fileToAttach.name}) TO THIS EMAIL ***\n`;
     }
 
     const recipient = 'contact@blosbox.com';
-    const hasLogoTag = currentLogoFile ? ' + Logo Attached' : '';
+    const hasLogoTag = fileToAttach ? ' + Logo Attachment' : '';
     const subject = encodeURIComponent(`Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})${hasLogoTag}`);
-    const body = encodeURIComponent(finalBody);
-    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    const mailBody = encodeURIComponent(fullManifest + emailNoticeText);
+    const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${mailBody}`;
 
-    if (isServerSubmitted) {
-      const attachMsg = currentLogoFile ? ` with logo file "${currentLogoFile.name}" attached` : '';
-      showToast(`Order${attachMsg} successfully submitted to contact@blosbox.com!`);
-    } else {
-      showToast('Order manifest & specifications prepared for contact@blosbox.com.');
+    if (submitModalAlert) {
+      submitModalAlert.style.display = 'flex';
+      if (activationRequired) {
+        submitModalAlert.className = 'submit-modal-alert warning';
+        submitModalAlert.innerHTML = `
+          <strong>⚠️ ${t('calc_submit_act_title', 'One-Time Activation Required for contact@blosbox.com:')}</strong>
+          <p>${t('calc_submit_act_desc', 'FormSubmit sent an activation email to contact@blosbox.com. Please click "Activate Form" in that email to enable direct automated logo attachments.')}</p>
+          ${fileToAttach ? `<p><strong>📎 Attachment Reminder:</strong> ${t('calc_submit_attach_reminder', 'Please attach your logo file ({file}) to your email draft before clicking Send.').replace('{file}', fileToAttach.name)}</p>` : ''}
+          ${fileToAttach ? `<button type="button" class="btn-download-logo-helper" id="btn-download-alert-logo">📥 ${t('calc_submit_btn_download_logo', 'Download Logo to Attach')}</button>` : ''}
+        `;
+      } else {
+        submitModalAlert.className = 'submit-modal-alert info';
+        submitModalAlert.innerHTML = `
+          <strong>📎 Email Client Opened:</strong>
+          <p>Your order specifications have been loaded into your email client.</p>
+          ${fileToAttach ? `<p><strong>Attachment Required:</strong> ${t('calc_submit_attach_reminder', 'Please attach your logo file ({file}) to your email draft before clicking Send.').replace('{file}', fileToAttach.name)}</p>` : ''}
+          ${fileToAttach ? `<button type="button" class="btn-download-logo-helper" id="btn-download-alert-logo">📥 ${t('calc_submit_btn_download_logo', 'Download Logo to Attach')}</button>` : ''}
+        `;
+      }
+      const btnDlAlert = document.getElementById('btn-download-alert-logo');
+      if (btnDlAlert) btnDlAlert.addEventListener('click', downloadCurrentLogoFile);
     }
 
     // Open user's default email client
     window.location.href = mailtoUrl;
-
-    setTimeout(() => {
-      closeSubmitOrderModal();
-    }, 1500);
+    showToast('Email client draft opened. Please attach your logo file before sending.');
   }
 
   function handleOrderCopyFallback() {
@@ -2156,30 +2299,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fullManifest = generateOrderManifestText(clientInfo);
 
-    // If logo file attached, queue upload to server in background
-    if (currentLogoFile) {
-      try {
-        const formData = new FormData();
-        formData.append('clientName', clientInfo.name);
-        formData.append('clientEmail', clientInfo.email);
-        formData.append('clientPhone', clientInfo.phone);
-        formData.append('clientCountry', clientInfo.country);
-        formData.append('clientNotes', clientInfo.notes);
-        formData.append('orderManifest', fullManifest);
-        formData.append('logoFile', currentLogoFile, currentLogoFile.name);
-        fetch('/api/send-order', { method: 'POST', body: formData }).catch(() => {});
-      } catch (err) {}
+    let fileToAttach = currentLogoFile;
+    if (!fileToAttach && savedLogoFileData && savedLogoFileData.dataUrl) {
+      fileToAttach = dataURLtoFile(savedLogoFileData.dataUrl, savedLogoFileData.name);
+    }
+
+    // Trigger download of logo file so user has it ready
+    if (fileToAttach) {
+      downloadCurrentLogoFile();
     }
 
     navigator.clipboard.writeText(fullManifest).then(() => {
-      showToast('Full order manifest & contact details copied to clipboard!');
+      showToast(fileToAttach ? `Specs copied & ${fileToAttach.name} downloaded! Please attach to webmail.` : 'Full order manifest copied to clipboard!');
       const totalQty = orderItems.reduce((sum, item) => sum + item.qty, 0);
       const subtotal = orderItems.reduce((sum, item) => sum + item.subtotal, 0);
       const discount = getVolumeDiscount(subtotal);
       const grandTotal = subtotal - (subtotal * discount.rate);
 
-      const subject = encodeURIComponent(`Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})`);
-      const body = encodeURIComponent(fullManifest);
+      const hasLogoTag = fileToAttach ? ' + Logo Attached' : '';
+      const subject = encodeURIComponent(`Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})${hasLogoTag}`);
+      let bodyText = fullManifest;
+      if (fileToAttach) {
+        bodyText += `\n\n*** IMPORTANT: PLEASE ATTACH YOUR LOGO FILE (${fileToAttach.name}) TO THIS EMAIL ***\n`;
+      }
+      const body = encodeURIComponent(bodyText);
       window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=contact@blosbox.com&su=${subject}&body=${body}`, '_blank');
     }).catch(() => {
       showToast('Please copy specifications manually.');
@@ -2530,6 +2673,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (submitOrderForm) submitOrderForm.addEventListener('submit', handleOrderSubmit);
     if (btnSubmitCopyFallback) btnSubmitCopyFallback.addEventListener('click', handleOrderCopyFallback);
+    if (btnSuccessDone) btnSuccessDone.addEventListener('click', closeSubmitOrderModal);
+    if (btnSuccessPrint) btnSuccessPrint.addEventListener('click', () => window.print());
+    if (btnDownloadModalLogo) btnDownloadModalLogo.addEventListener('click', downloadCurrentLogoFile);
 
     [submitClientName, submitClientEmail, submitClientPhone, submitClientCountry, submitClientNotes].forEach(inp => {
       if (inp) inp.addEventListener('input', saveStateToStorage);

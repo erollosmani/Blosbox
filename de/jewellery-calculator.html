@@ -66,7 +66,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css?v=41">
-    <link rel="stylesheet" href="../calculator.css?v=7">
+    <link rel="stylesheet" href="../calculator.css?v=8">
 </head>
 <body class="calculator-view-body">
     <!-- SVG Filters for Exact Insert Coloring (#141210 Black, #3E2B22 Dark Brown, #FAF8F5 Cream) -->
@@ -791,11 +791,24 @@
               <span class="attachment-title">📎 Stamping Logo Attachment:</span>
               <span class="attachment-status" id="modal-attachment-status">No logo file selected</span>
             </div>
-            <label class="btn-modal-upload-alt" for="input-modal-logo-file">
-              <input type="file" id="input-modal-logo-file" class="hidden-file-input" accept=".ai,.eps,.pdf,.svg,.png,.jpg,.jpeg">
-              <span id="modal-upload-btn-text">Attach / Change File</span>
-            </label>
+            <div class="attachment-actions-wrap">
+              <button type="button" class="btn-modal-download" id="btn-download-modal-logo" style="display: none;" title="Download logo file to attach">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span data-i18n="calc_submit_btn_download_logo">Download Logo</span>
+              </button>
+              <label class="btn-modal-upload-alt" for="input-modal-logo-file">
+                <input type="file" id="input-modal-logo-file" class="hidden-file-input" accept=".ai,.eps,.pdf,.svg,.png,.jpg,.jpeg">
+                <span id="modal-upload-btn-text">Attach / Change File</span>
+              </label>
+            </div>
           </div>
+
+          <!-- Alert / Activation Notice Container -->
+          <div class="submit-modal-alert" id="submit-modal-alert" style="display: none;"></div>
 
           <div class="submit-modal-trust-note">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -828,6 +841,23 @@
             🔒 Your packaging manifest will be sent directly to <strong>contact@blosbox.com</strong>. Our production team will verify technical parameters and reply promptly with shipping rates and timeline.
           </p>
         </form>
+
+        <!-- Success Confirmation View -->
+        <div class="submit-success-view" id="submit-success-view" style="display: none;">
+          <div class="success-icon-wrap">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 id="success-view-title" data-i18n="calc_submit_success_title">Order & Logo Attachment Delivered!</h3>
+          <p id="success-view-desc" data-i18n="calc_submit_success_desc">Your packaging specifications and attached logo file have been securely delivered to contact@blosbox.com.</p>
+          <p class="success-reply-note" id="success-view-reply" data-i18n="calc_submit_success_reply">Our production team will review your specifications and reply with your freight timeline and production schedule.</p>
+          <div class="success-actions">
+            <button type="button" class="btn-success-done" id="btn-success-done" data-i18n="calc_submit_btn_done">Done</button>
+            <button type="button" class="btn-success-print" id="btn-success-print" data-i18n="calc_btn_print">Print Order</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -867,9 +897,9 @@
         </div>
     </footer>
 
-    <script src="../translations.js?v=44"></script>
+    <script src="../translations.js?v=45"></script>
     <script src="../i18n.js?v=41"></script>
     <script src="../script.js?v=41"></script>
-    <script src="../calculator.js?v=51"></script>
+    <script src="../calculator.js?v=52"></script>
 </body>
 </html>
