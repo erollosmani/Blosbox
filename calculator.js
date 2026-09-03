@@ -1188,6 +1188,10 @@ document.addEventListener('DOMContentLoaded', () => {
       singleMoldFeeRow.style.display = moldFee > 0 ? 'flex' : 'none';
       if (singleMoldFeeAmount) singleMoldFeeAmount.textContent = '+€50.00';
     }
+    const badgeMoldFeeLive = document.getElementById('badge-mold-fee-live');
+    if (badgeMoldFeeLive) {
+      badgeMoldFeeLive.style.display = moldFee > 0 ? 'inline-flex' : 'none';
+    }
 
     toggleLogoUploadVisibility();
 
@@ -2398,6 +2402,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnResetChoices) btnResetChoices.addEventListener('click', () => clearAllChoicesAndOrder(false));
 
     // Custom Logo & Stamping Mold Checkboxes
+    function triggerPriceHighlight() {
+      const priceTarget = document.querySelector('.total-price') || displayTotalPrice;
+      if (priceTarget) {
+        priceTarget.classList.remove('price-pulse-highlight');
+        void priceTarget.offsetWidth;
+        priceTarget.classList.add('price-pulse-highlight');
+      }
+      if (singleMoldFeeRow) {
+        singleMoldFeeRow.classList.remove('price-pulse-highlight');
+        void singleMoldFeeRow.offsetWidth;
+        singleMoldFeeRow.classList.add('price-pulse-highlight');
+      }
+    }
+
     if (chkCustomLogo) {
       chkCustomLogo.addEventListener('change', () => {
         if (!chkCustomLogo.checked && chkNewLogo) {
@@ -2405,6 +2423,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         toggleLogoUploadVisibility();
         updateUI();
+        triggerPriceHighlight();
+
+        // Auto-sync existing order item if user is editing or has 1 box in order
+        if (editingItemId) {
+          const activeItem = orderItems.find(item => item.cartItemId === editingItemId);
+          if (activeItem) {
+            activeItem.hasCustomLogo = chkCustomLogo.checked;
+            activeItem.isNewLogoMold = chkNewLogo ? chkNewLogo.checked : false;
+            activeItem.moldFee = activeItem.isNewLogoMold ? 50.00 : 0;
+            renderOrderSummary();
+          }
+        } else if (orderItems.length === 1) {
+          orderItems[0].hasCustomLogo = chkCustomLogo.checked;
+          orderItems[0].isNewLogoMold = chkNewLogo ? chkNewLogo.checked : false;
+          orderItems[0].moldFee = orderItems[0].isNewLogoMold ? 50.00 : 0;
+          renderOrderSummary();
+        }
       });
     }
 
@@ -2415,6 +2450,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         toggleLogoUploadVisibility();
         updateUI();
+        triggerPriceHighlight();
+
+        // Auto-sync existing order item if user is editing or has 1 box in order
+        if (editingItemId) {
+          const activeItem = orderItems.find(item => item.cartItemId === editingItemId);
+          if (activeItem) {
+            activeItem.hasCustomLogo = true;
+            activeItem.isNewLogoMold = chkNewLogo.checked;
+            activeItem.moldFee = chkNewLogo.checked ? 50.00 : 0;
+            renderOrderSummary();
+          }
+        } else if (orderItems.length === 1) {
+          orderItems[0].hasCustomLogo = true;
+          orderItems[0].isNewLogoMold = chkNewLogo.checked;
+          orderItems[0].moldFee = chkNewLogo.checked ? 50.00 : 0;
+          renderOrderSummary();
+        }
       });
     }
 
