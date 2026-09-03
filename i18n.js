@@ -32,22 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 1. Determine active language (safe URL query param first, then localStorage fallback, default to English)
+    // 1. Determine active language (URL path subfolder first e.g. /fr/, /de/, then query param, then localStorage)
     let activeLang = 'en';
     try {
-        activeLang = getQueryParam('lang');
-        if (!activeLang) {
-            activeLang = getStoredLanguage();
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        const pathLang = pathSegments.find(p => supportedLanguages.includes(p.toLowerCase()));
+        if (pathLang) {
+            activeLang = pathLang.toLowerCase();
+        } else {
+            activeLang = getQueryParam('lang') || getStoredLanguage();
         }
         
         if (!activeLang || !supportedLanguages.includes(activeLang)) {
-            activeLang = 'en'; // Default to English for all first-time visitors
+            activeLang = 'en'; // Default to English for root visitors
         }
         setStoredLanguage(activeLang);
     } catch (e) {
         console.error("Error determining active language:", e);
         activeLang = 'en';
     }
+    
+    // Expose active language globally
+    window.i18n = {
+        get currentLang() { return activeLang; },
+        supportedLanguages: supportedLanguages
+    };
     
     // Clone and mount language selector for mobile view
     try {
@@ -107,6 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.classList.remove('active');
                 if (mobileBtn) mobileBtn.innerHTML = '☰';
             }
+
+            // Dispatch event for dynamic apps like calculator
+            window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: langCode } }));
         } catch (e) {
             console.error("Error inside changeLanguage:", e);
         }

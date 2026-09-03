@@ -65,8 +65,8 @@
     <!-- Modern luxury fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css?v=40">
-    <link rel="stylesheet" href="../calculator.css?v=1">
+    <link rel="stylesheet" href="../styles.css?v=41">
+    <link rel="stylesheet" href="../calculator.css?v=2">
 </head>
 <body class="calculator-view-body">
     <!-- SVG Filters for Exact Insert Coloring (#141210 Black, #3E2B22 Dark Brown, #FAF8F5 Cream) -->
@@ -135,7 +135,7 @@
                 <li class="dropdown lang-dropdown">
                     <a href="#" class="lang-dropdown-trigger">🌐 <span id="activeLangLabel">IT</span> <span class="caret">▾</span></a>
                     <ul class="dropdown-menu lang-dropdown-menu">
-                        <li><a href="../jewellery-calculator.html" class="lang-item" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="..//jewellery-calculator.html" class="lang-item" data-lang="en">🇬🇧 English</a></li>
                         <li><a href="../fr/jewellery-calculator.html" class="lang-item" data-lang="fr">🇫🇷 Français</a></li>
                         <li><a href="../de/jewellery-calculator.html" class="lang-item" data-lang="de">🇩🇪 Deutsch</a></li>
                         <li><a href="jewellery-calculator.html" class="lang-item active" data-lang="it">🇮🇹 Italiano</a></li>
@@ -214,7 +214,7 @@
             <!-- 2. Select finishing material (with Uniform vs Lid & Base toggle) -->
             <div class="form-group material-config-group">
               <div class="material-group-header">
-                <label>2. Select Finishing Material</label>
+                <label data-i18n="calc_step2_label">2. Select Finishing Material</label>
                 <div class="material-mode-toggle">
                   <button type="button" class="mode-btn active" id="btn-mode-uniform" data-i18n="calc_mode_uniform">Uniform</button>
                   <button type="button" class="mode-btn" id="btn-mode-split" data-i18n="calc_mode_split">Lid & Base Mix</button>
@@ -228,11 +228,11 @@
                     <img id="thumb-material-uniform" src="../Size and Material Customization/Black Imitlin.webp" alt="Material Thumb">
                   </div>
                   <div class="pick-info">
-                    <span class="pick-label">Finishing Material</span>
+                    <span class="pick-label" data-i18n="calc_uniform_lbl">Finishing Material</span>
                     <span class="pick-name" id="name-material-uniform">Black Imitlin</span>
                     <span class="pick-tier" id="tier-material-uniform">Textured & Pearl</span>
                   </div>
-                  <div class="pick-action-tag">Browse Gallery ➔</div>
+                  <div class="pick-action-tag" data-i18n="calc_browse_gallery_btn">Browse Gallery ➔</div>
                 </button>
               </div>
 
@@ -245,11 +245,11 @@
                       <img id="thumb-material-lid" src="../Size and Material Customization/Black Carbon.webp" alt="Lid Material">
                     </div>
                     <div class="pick-info">
-                      <span class="pick-label">Lid Material</span>
+                      <span class="pick-label" data-i18n="calc_lid_lbl">Lid Material</span>
                       <span class="pick-name" id="name-material-lid">Black Carbon</span>
                       <span class="pick-tier" id="tier-material-lid">Luxe</span>
                     </div>
-                    <div class="pick-action-tag">Change Lid ➔</div>
+                    <div class="pick-action-tag" data-i18n="calc_change_lid">Change Lid ➔</div>
                   </button>
                 </div>
 
@@ -259,11 +259,11 @@
                       <img id="thumb-material-base" src="../Size and Material Customization/Black Imitlin.webp" alt="Base Material">
                     </div>
                     <div class="pick-info">
-                      <span class="pick-label">Base Material</span>
+                      <span class="pick-label" data-i18n="calc_base_lbl">Base Material</span>
                       <span class="pick-name" id="name-material-base">Black Imitlin</span>
                       <span class="pick-tier" id="tier-material-base">Textured & Pearl</span>
                     </div>
-                    <div class="pick-action-tag">Change Base ➔</div>
+                    <div class="pick-action-tag" data-i18n="calc_change_base">Change Base ➔</div>
                   </button>
                 </div>
 
@@ -284,7 +284,7 @@
               </div>
 
               <div class="calc-row qty-row">
-                <label for="input-qty" class="calc-label">Order Quantity:</label>
+                <label for="input-qty" class="calc-label" data-i18n="calc_order_qty_lbl">Order Quantity:</label>
                 <div class="qty-input-wrap">
                   <input type="number" id="input-qty" min="10" step="10" value="100" class="qty-input">
                   <span class="qty-unit">pcs</span>
@@ -294,17 +294,17 @@
               <div class="calc-divider"></div>
 
               <div class="calc-row discount-row" id="single-discount-row" style="display: none;">
-                <span class="calc-label"><span data-i18n="calc_volume_discount_lbl">Volume Discount:</span> (<span id="single-discount-pct">0%</span>)</span>
+                <span class="calc-label"><span data-i18n="calc_volume_discount_lbl">Volume Discount</span> (<span id="single-discount-pct">0%</span>):</span>
                 <span class="calc-discount-val" id="single-discount-amount">-€0.00</span>
               </div>
 
               <div class="calc-row mold-fee-row" id="single-mold-fee-row" style="display: none;">
-                <span class="calc-label">One-Time Logo Mold Fee:</span>
+                <span class="calc-label" data-i18n="calc_one_time_mold">One-Time Logo Mold Fee:</span>
                 <span class="calc-fee-val" id="single-mold-fee-amount">+€50.00</span>
               </div>
 
               <div class="calc-row total-row">
-                <span class="total-label">Total Estimated Price:</span>
+                <span class="total-label" data-i18n="calc_total_estimated_lbl">Total Estimated Price:</span>
                 <div class="total-price-group">
                   <span class="total-price" id="display-total-price">€50.00</span>
                   <span class="single-savings-tag" id="single-savings-tag" style="display: none;">You save €0.00</span>
@@ -320,7 +320,7 @@
                 <span class="checkbox-custom-indicator"></span>
                 <div class="checkbox-text-wrap">
                   <span class="checkbox-title"><span data-i18n="calc_add_logo_lbl">Add Custom Logo Hot Foil Stamping (Included in unit price)</span></span>
-                  <span class="tag-included">(Included in unit price)</span>
+                  <span class="tag-included" data-i18n="calc_tag_included">(Included in unit price)</span>
                 </div>
               </label>
 
@@ -330,9 +330,9 @@
                   <span class="checkbox-custom-indicator"></span>
                   <div class="sub-checkbox-content">
                     <span class="sub-title"><span data-i18n="calc_new_logo_lbl">This is a new logo (Adds €50 one-time stamping mold fee)</span></span>
-                    <span class="sub-fee">Adds €50 one-time stamping mold fee</span>
-                    <span class="sub-size">(Maximum logo size is 70x50mm)</span>
-                    <span class="sub-email">For more customization feel free to <a href="mailto:order@blosbox.com?subject=Custom Logo & Packaging Inquiry" class="link-custom-email">email us</a></span>
+                    <span class="sub-fee" data-i18n="calc_sub_fee">Adds €50 one-time stamping mold fee</span>
+                    <span class="sub-size" data-i18n="calc_sub_size">(Maximum logo size is 70x50mm)</span>
+                    <span class="sub-email"><span data-i18n="calc_sub_email">For more customization feel free to</span> <a href="mailto:order@blosbox.com?subject=Custom Logo & Packaging Inquiry" class="link-custom-email" data-i18n="calc_email_us">email us</a></span>
                   </div>
                 </label>
               </div>
@@ -340,8 +340,8 @@
               <!-- Logo File Upload for Foil Stamping Mold -->
               <div class="logo-upload-zone" id="logo-upload-zone" style="display: none;">
                 <div class="logo-upload-header">
-                  <span class="upload-label-title">Upload Logo File for Stamping Mold:</span>
-                  <span class="upload-label-formats">Vector (.AI, .EPS, .PDF, .SVG) or high-res .PNG, .JPG (Max 25MB)</span>
+                  <span class="upload-label-title" data-i18n="calc_upload_logo_title">Upload Logo File for Stamping Mold:</span>
+                  <span class="upload-label-formats" data-i18n="calc_upload_logo_formats">Vector (.AI, .EPS, .PDF, .SVG) or high-res .PNG, .JPG (Max 25MB)</span>
                 </div>
 
                 <label class="dropzone-box" id="dropzone-box" for="input-logo-file">
@@ -353,11 +353,11 @@
                         <polyline points="17 8 12 3 7 8"></polyline>
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                       </svg>
-                      <span>Upload Logo File</span>
+                      <span data-i18n="calc_upload_logo_btn">Upload Logo File</span>
                     </div>
                     <div class="dropzone-prompt">
-                      <span class="prompt-main">Click to select file or drag & drop</span>
-                      <span class="prompt-sub">Attached and sent automatically to order@blosbox.com</span>
+                      <span class="prompt-main" data-i18n="calc_upload_drag_drop">Click to select file or drag & drop</span>
+                      <span class="prompt-sub" data-i18n="calc_upload_dest_notice">Attached and sent automatically to order@blosbox.com</span>
                     </div>
                   </div>
                   <div class="dropzone-selected" id="dropzone-selected" style="display: none;">
@@ -437,9 +437,9 @@
                     <label for="select-insert-color" data-i18n="calc_select_color_lbl">SELECT COLOR</label>
                     <div class="select-wrapper mini-select-wrap" id="wrap-select-insert-color">
                       <select id="select-insert-color" class="custom-select mini-select">
-                        <option value="Black" data-hex="#141210">Black</option>
-                        <option value="Dark Brown" data-hex="#3E2B22">Dark Brown</option>
-                        <option value="Very Light Cream" data-hex="#FAF8F5">Very Light Cream</option>
+                        <option value="Black" data-hex="#141210" data-i18n="calc_opt_black">Black</option>
+                        <option value="Dark Brown" data-hex="#3E2B22" data-i18n="calc_opt_dark_brown">Dark Brown</option>
+                        <option value="Very Light Cream" data-hex="#FAF8F5" data-i18n="calc_opt_cream">Very Light Cream</option>
                       </select>
                     </div>
                   </div>
@@ -455,19 +455,19 @@
 
               <div class="drawing-image-container insert-drawing-frame" id="proportional-insert-container" title="Click to pop out full screen">
                 <img id="img-insert-drawing" class="insert-filter-black" src="../Inserts/Insert for Ring boxes.jpg" alt="Insert Technical Drawing">
-                <div class="drawing-overlay">🔍 Click to Expand</div>
+                <div class="drawing-overlay" data-i18n="calc_click_expand">🔍 Click to Expand</div>
               </div>
             </div>
 
             <!-- Material Texture Photo Card -->
             <div class="drawing-box-card" id="card-material-preview">
               <div class="card-caption">
-                <span class="caption-type">Selected Finishing Material(s)</span>
+                <span class="caption-type" data-i18n="calc_material_preview_title">SELECTED FINISHING MATERIAL(S)</span>
                 <span class="caption-detail" id="display-material-preview-name">Black Imitlin</span>
               </div>
               <div class="drawing-image-container material-container" id="material-preview-container" title="Click to browse material gallery">
                 <img id="img-material-preview" src="../Size and Material Customization/Black Imitlin.webp" alt="Finishing Material Texture">
-                <div class="drawing-overlay">🔍 Open Gallery</div>
+                <div class="drawing-overlay" data-i18n="calc_open_gallery">🔍 Open Gallery</div>
               </div>
             </div>
 
@@ -480,7 +480,7 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
-                <h3 class="discounts-title">Wholesale Volume Discounts</h3>
+                <h3 class="discounts-title" data-i18n="calc_discounts_title">Wholesale Volume Discounts</h3>
               </div>
               <span class="discounts-live-tag" id="discounts-live-tag">Tier: 0%</span>
             </div>
@@ -488,22 +488,22 @@
             <div class="discounts-tiers-list">
               <div class="discount-tier-item" id="tier-pill-500" data-threshold="500">
                 <div class="tier-pct">5% OFF</div>
-                <div class="tier-desc">total orders over <strong>€500</strong></div>
+                <div class="tier-desc" data-i18n="calc_tier_desc_5">total orders over <strong>€500</strong></div>
               </div>
 
               <div class="discount-tier-item" id="tier-pill-1000" data-threshold="1000">
                 <div class="tier-pct">10% OFF</div>
-                <div class="tier-desc">total orders over <strong>€1,000</strong></div>
+                <div class="tier-desc" data-i18n="calc_tier_desc_10">total orders over <strong>€1,000</strong></div>
               </div>
 
               <div class="discount-tier-item" id="tier-pill-5000" data-threshold="5000">
                 <div class="tier-pct">15% OFF</div>
-                <div class="tier-desc">total orders over <strong>€5,000</strong></div>
+                <div class="tier-desc" data-i18n="calc_tier_desc_15">total orders over <strong>€5,000</strong></div>
               </div>
             </div>
 
             <div class="discounts-footer-note">
-              <span>(Discounts are calculated automatically based on your grand total)</span>
+              <span data-i18n="calc_discounts_auto_hint">(Discounts are calculated automatically based on your grand total)</span>
             </div>
           </div>
 
@@ -517,8 +517,8 @@
       <section class="order-summary-section" id="order-summary-section">
         <div class="order-summary-header">
           <div class="order-summary-title-wrap">
-            <h2 class="order-summary-title">Your Registered Packaging Order</h2>
-            <p class="order-summary-subtitle">All configured box types and tracked selections.</p>
+            <h2 class="order-summary-title" data-i18n="calc_registered_title">Your Registered Packaging Order</h2>
+            <p class="order-summary-subtitle" data-i18n="calc_registered_sub">All configured box types and tracked selections.</p>
           </div>
           <div class="order-summary-header-actions">
             <div class="order-summary-badge" id="order-items-badge">0 Boxes Added</div>
@@ -536,13 +536,13 @@
           <table class="order-table" id="order-table">
             <thead>
               <tr>
-                <th class="th-box">Box Model & Size</th>
-                <th class="th-material">Finishing Material</th>
-                <th class="th-insert">Insert & Color</th>
-                <th class="th-price">Unit Price</th>
-                <th class="th-qty">Quantity</th>
-                <th class="th-subtotal">Subtotal</th>
-                <th class="th-actions">Actions</th>
+                <th class="th-box" data-i18n="calc_th_box">Box Model & Size</th>
+                <th class="th-material" data-i18n="calc_th_material">Finishing Material</th>
+                <th class="th-insert" data-i18n="calc_th_insert">Insert & Color</th>
+                <th class="th-price" data-i18n="calc_th_unit_price">Unit Price</th>
+                <th class="th-qty" data-i18n="calc_th_quantity">Quantity</th>
+                <th class="th-subtotal" data-i18n="calc_th_subtotal">Subtotal</th>
+                <th class="th-actions" data-i18n="calc_th_actions">Actions</th>
               </tr>
             </thead>
             <tbody id="order-table-body">
@@ -554,8 +554,8 @@
                       <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                       <line x1="12" y1="22.08" x2="12" y2="12"></line>
                     </svg>
-                    <p class="empty-title">No boxes added to your order yet</p>
-                    <p class="empty-desc">Choose a box type and materials above, then click <strong>"+ Add Box to Order"</strong> to track your choices.</p>
+                    <p class="empty-title" data-i18n="calc_empty_lead">No boxes added to your order yet</p>
+                    <p class="empty-desc" data-i18n="calc_empty_hint">Choose a box type and materials above, then click <strong>"+ Add Box to Order"</strong> to track your choices.</p>
                   </div>
                 </td>
               </tr>
@@ -567,12 +567,12 @@
         <div class="order-footer-bar" id="order-footer-bar" style="display: none;">
           <div class="order-footer-totals">
             <div class="footer-stat">
-              <span class="stat-label">Total Box Quantity:</span>
+              <span class="stat-label" data-i18n="calc_stat_qty">Total Box Quantity:</span>
               <span class="stat-value" id="order-grand-qty">0 pcs</span>
             </div>
 
             <div class="footer-stat" id="stat-subtotal-wrap">
-              <span class="stat-label">Order Subtotal:</span>
+              <span class="stat-label" data-i18n="calc_stat_subtotal">Order Subtotal:</span>
               <span class="stat-value" id="order-grand-subtotal">€0.00</span>
             </div>
 
@@ -590,7 +590,7 @@
             </div>
 
             <div class="footer-stat total-stat">
-              <span class="stat-label">Grand Total Order Price:</span>
+              <span class="stat-label" data-i18n="calc_stat_grand_total">Grand Total Order Price:</span>
               <span class="stat-value-price" id="order-grand-total">€0.00</span>
             </div>
           </div>
@@ -603,7 +603,7 @@
                   <line x1="12" y1="16" x2="12" y2="12"></line>
                   <line x1="12" y1="8" x2="12.01" y2="8"></line>
                 </svg>
-                <span>No payment required today. We will review your configuration</span>
+                <span data-i18n="calc_stat_no_payment">No payment required today. We will review your configuration</span>
               </div>
 
               <button type="button" class="btn-order-action btn-submit-order" id="btn-submit-order" title="Submit order to order@blosbox.com for production & shipping timeline">
@@ -611,7 +611,7 @@
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
-                <span>Submit for Shipping & Production Timeline</span>
+                <span data-i18n="calc_btn_submit_order">Submit for Shipping & Production Timeline</span>
               </button>
             </div>
 
@@ -650,7 +650,7 @@
 
         <!-- Target Slot Context Header (e.g. "Selecting Lid Material") -->
         <div class="gallery-slot-bar">
-          <span id="gallery-slot-title">Select Material:</span>
+          <span id="gallery-slot-title" data-i18n="calc_gallery_select_slot">Select Material:</span>
           <span class="gallery-slot-badge" id="gallery-slot-target">Uniform Box</span>
         </div>
 
@@ -699,7 +699,7 @@
 
           <!-- Confirm / Select Button -->
           <button type="button" class="btn-apply-material" id="btn-apply-slide-material">
-            <span>Apply Selected Material</span>
+            <span data-i18n="calc_gallery_apply_btn">Apply Selected Material</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
@@ -715,8 +715,8 @@
       <div class="lightbox-dialog">
         <div class="lightbox-header">
           <div class="lightbox-titles">
-            <h3 id="lightbox-title">Technical CAD Blueprint</h3>
-            <p id="lightbox-subtitle">Precise dimension specifications</p>
+            <h3 id="lightbox-title" data-i18n="calc_lightbox_cad_title">Technical CAD Blueprint</h3>
+            <p id="lightbox-subtitle" data-i18n="calc_lightbox_cad_sub">Precise dimension specifications</p>
           </div>
           <button class="lightbox-close" id="btn-close-lightbox">&times;</button>
         </div>
@@ -734,8 +734,8 @@
         <div class="submit-dialog-header">
           <div class="submit-header-titles">
             <div class="submit-badge">Direct to order@blosbox.com</div>
-            <h3>Submit for Shipping & Production Timeline</h3>
-            <p>Please enter your contact details and shipping location so we can calculate freight costs and assign your production slot.</p>
+            <h3 data-i18n="calc_submit_modal_title">Submit for Shipping & Production Timeline</h3>
+            <p data-i18n="calc_submit_modal_desc">Please enter your contact details and shipping location so we can calculate freight costs and assign your production slot.</p>
           </div>
           <button type="button" class="submit-modal-close" id="btn-close-submit-modal" title="Close">&times;</button>
         </div>
@@ -759,28 +759,28 @@
 
           <div class="submit-fields-grid">
             <div class="form-field-group">
-              <label for="submit-client-name">Company Name / Contact Person <span class="req">*</span></label>
+              <label for="submit-client-name"><span data-i18n="calc_submit_field_client">Company Name / Contact Person</span> <span class="req">*</span></label>
               <input type="text" id="submit-client-name" placeholder="e.g. Maison de Bijoux / Jane Doe" required>
             </div>
 
             <div class="form-field-group">
-              <label for="submit-client-email">Email Address <span class="req">*</span></label>
+              <label for="submit-client-email"><span data-i18n="calc_submit_field_email">Email Address</span> <span class="req">*</span></label>
               <input type="email" id="submit-client-email" placeholder="e.g. purchasing@brand.com" required>
             </div>
 
             <div class="form-field-group">
-              <label for="submit-client-phone">Phone / WhatsApp (Optional)</label>
+              <label for="submit-client-phone" data-i18n="calc_submit_field_phone">Phone / WhatsApp (Optional)</label>
               <input type="tel" id="submit-client-phone" placeholder="+33 6 12 34 56 78">
             </div>
 
             <div class="form-field-group">
-              <label for="submit-client-country">Delivery City & Country <span class="req">*</span></label>
+              <label for="submit-client-country"><span data-i18n="calc_submit_field_country">Delivery City & Country</span> <span class="req">*</span></label>
               <input type="text" id="submit-client-country" placeholder="e.g. Zurich, Switzerland" required>
             </div>
           </div>
 
           <div class="form-field-group full-width">
-            <label for="submit-client-notes">Production & Customization Notes (Optional)</label>
+            <label for="submit-client-notes" data-i18n="calc_submit_field_notes">Production & Customization Notes (Optional)</label>
             <textarea id="submit-client-notes" rows="2" placeholder="e.g. Gold foil logo stamping on lid exterior, need shipment by October..."></textarea>
           </div>
 
@@ -802,7 +802,7 @@
               <line x1="12" y1="16" x2="12" y2="12"></line>
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
-            <span>No payment required today. We will review your configuration</span>
+            <span data-i18n="calc_stat_no_payment">No payment required today. We will review your configuration</span>
           </div>
 
           <div class="submit-dialog-actions">
@@ -811,7 +811,7 @@
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
-              <span>Send Order to order@blosbox.com</span>
+              <span data-i18n="calc_submit_btn_send">Send Order to order@blosbox.com</span>
             </button>
 
             <button type="button" class="btn-submit-copy-fallback" id="btn-submit-copy-fallback" title="Copy formatted order to clipboard and open webmail">
@@ -819,7 +819,7 @@
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
-              <span>Copy Specs & Open Webmail</span>
+              <span data-i18n="calc_submit_btn_copy">Copy Specs & Open Webmail</span>
             </button>
           </div>
 
@@ -866,9 +866,9 @@
         </div>
     </footer>
 
-    <script src="../translations.js?v=40"></script>
-    <script src="../i18n.js?v=40"></script>
-    <script src="../script.js?v=40"></script>
-    <script src="../calculator.js?v=1"></script>
+    <script src="../translations.js?v=41"></script>
+    <script src="../i18n.js?v=41"></script>
+    <script src="../script.js?v=41"></script>
+    <script src="../calculator.js?v=2"></script>
 </body>
 </html>

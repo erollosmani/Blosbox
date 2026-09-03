@@ -14,6 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const isInSubfolder = window.location.pathname.split('/').filter(Boolean).some(p => ['de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk'].includes(p));
   const ASSET_PREFIX = isInSubfolder ? '../' : '';
 
+  // Localization Helper
+  function getActiveLang() {
+    return (window.i18n && window.i18n.currentLang) ||
+           (window.location.pathname.split('/').filter(Boolean).find(p => ['de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk'].includes(p))) ||
+           'en';
+  }
+
+  function t(key, fallback) {
+    const lang = getActiveLang();
+    const trans = (typeof window !== 'undefined' && window.translations) || (typeof translations !== 'undefined' ? translations : null);
+    if (trans && trans[lang] && trans[lang][key]) {
+      return trans[lang][key];
+    }
+    if (trans && trans['en'] && trans['en'][key]) {
+      return trans['en'][key];
+    }
+    return fallback;
+  }
+
+
   function resolveAsset(path) {
     if (!path) return '';
     if (path.startsWith('http') || path.startsWith('/') || path.startsWith('../')) return path;
@@ -731,6 +751,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateUI();
     renderOrderSummary();
     setupEventListeners();
+
+    // Re-render when language changes
+    window.addEventListener('languageChanged', () => {
+      populateBoxSizesDropdown();
+      populateInsertsDropdown();
+      updateUI();
+      renderOrderSummary();
+    });
   }
 
   // --- POPULATE 1: SELECT BOX SIZE ---
@@ -738,9 +766,15 @@ document.addEventListener('DOMContentLoaded', () => {
     selectBoxSize.innerHTML = '';
     const categories = ['Jewellery Ring Boxes', 'Bracelet Box', 'Jewellery Set Boxes', 'Watch Box'];
 
+    const catLabels = {
+      'Jewellery Ring Boxes': t('cat_ring_boxes', 'Jewellery Ring Boxes'),
+      'Bracelet Box': t('cat_bracelet_box', 'Bracelet Box'),
+      'Jewellery Set Boxes': t('cat_set_boxes', 'Jewellery Set Boxes'),
+      'Watch Box': t('cat_watch_box', 'Watch Box')
+    };
     categories.forEach(cat => {
       const group = document.createElement('optgroup');
-      group.label = `── ${cat} ──`;
+      group.label = `── ${catLabels[cat] || cat} ──`;
 
       const boxesInCat = BOX_CATALOG.filter(b => b.category === cat);
       boxesInCat.forEach(box => {
@@ -987,13 +1021,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Set target badge text
     if (targetSlot === 'uniform') {
-      gallerySlotTarget.textContent = 'Uniform Box';
+      gallerySlotTarget.textContent = t('calc_mode_uniform', 'Uniform Box');
       galleryCategory = selectedMaterialUniform.category;
     } else if (targetSlot === 'lid') {
-      gallerySlotTarget.textContent = 'Lid Material';
+      gallerySlotTarget.textContent = t('calc_lid_lbl', 'Lid Material');
       galleryCategory = selectedMaterialLid.category;
     } else if (targetSlot === 'base') {
-      gallerySlotTarget.textContent = 'Base Material';
+      gallerySlotTarget.textContent = t('calc_base_lbl', 'Base Material');
       galleryCategory = selectedMaterialBase.category;
     }
 
@@ -1172,7 +1206,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (singleDiscountAmount) singleDiscountAmount.textContent = `-€${discountAmount.toFixed(2)}`;
       if (singleSavingsTag) {
         singleSavingsTag.style.display = 'inline-block';
-        singleSavingsTag.textContent = `You save €${discountAmount.toFixed(2)}`;
+        singleSavingsTag.textContent = `${t("calc_you_save", "You save")} €${discountAmount.toFixed(2)}`;
       }
       if (displayTotalPrice) displayTotalPrice.textContent = `€${finalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     } else {
@@ -1192,7 +1226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapSelectInsertColor = document.getElementById('wrap-select-insert-color');
 
     if (insertCardTitle) {
-      insertCardTitle.textContent = isWatchBox ? 'UNIQUE WATCH INSERT SPECIFICATION' : 'PROPORTIONAL DIE-CUT FOAM INSERT';
+      insertCardTitle.textContent = isWatchBox ? t('calc_watch_insert_title', 'UNIQUE WATCH INSERT SPECIFICATION') : t('calc_insert_spec_title', 'PROPORTIONAL DIE-CUT FOAM INSERT');
     }
 
     if (isWatchBox) {
@@ -1202,7 +1236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!selectInsertColor.querySelector('option[value="email-discussion"]')) {
           const emailOpt = document.createElement('option');
           emailOpt.value = 'email-discussion';
-          emailOpt.textContent = 'Agreed via Email';
+          emailOpt.textContent = t('calc_agreed_email', 'Agreed via Email');
           selectInsertColor.insertBefore(emailOpt, selectInsertColor.firstChild);
         }
         selectInsertColor.value = 'email-discussion';
@@ -1249,8 +1283,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isSplitMaterialMode) {
       displayMaterialPreviewName.textContent = `${selectedMaterialUniform.name} (${selectedMaterialUniform.category})`;
       materialPreviewContainer.innerHTML = `
-        <img id="img-material-preview" src="${selectedMaterialUniform.file}" alt="${selectedMaterialUniform.name}">
-        <div class="drawing-overlay">🔍 Open Gallery</div>
+        <img id="img-material-preview" src="${resolveAsset(selectedMaterialUniform.file)}" alt="${selectedMaterialUniform.name}">
+        <div class="drawing-overlay">${t("calc_open_gallery", "🔍 Open Gallery")}</div>
       `;
     } else {
       displayMaterialPreviewName.textContent = `Lid: ${selectedMaterialLid.name} | Base: ${selectedMaterialBase.name}`;
@@ -1258,14 +1292,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="split-material-display">
           <div class="split-mat-half">
             <span class="split-mat-label">Lid: ${selectedMaterialLid.name}</span>
-            <img src="${selectedMaterialLid.file}" alt="Lid: ${selectedMaterialLid.name}">
+            <img src="${resolveAsset(selectedMaterialLid.file)}" alt="Lid: ${selectedMaterialLid.name}">
           </div>
           <div class="split-mat-half" style="border-left: 2px solid #A48C77;">
             <span class="split-mat-label">Base: ${selectedMaterialBase.name}</span>
-            <img src="${selectedMaterialBase.file}" alt="Base: ${selectedMaterialBase.name}">
+            <img src="${resolveAsset(selectedMaterialBase.file)}" alt="Base: ${selectedMaterialBase.name}">
           </div>
         </div>
-        <div class="drawing-overlay">🔍 Change Mix</div>
+        <div class="drawing-overlay">${t("calc_change_mix", "🔍 Change Mix")}</div>
       `;
     }
 
@@ -1407,15 +1441,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (discountsLiveTag) {
       if (discount.pct > 0) {
-        discountsLiveTag.textContent = `${discount.pct}% DISCOUNT UNLOCKED!`;
+        discountsLiveTag.textContent = `${discount.pct}% ${t('calc_discount_unlocked', 'DISCOUNT UNLOCKED!')}`;
         discountsLiveTag.classList.add('active-discount');
       } else {
         discountsLiveTag.classList.remove('active-discount');
         if (boxSubtotalTotal > 0 && boxSubtotalTotal < 500) {
           const needed = 500 - boxSubtotalTotal;
-          discountsLiveTag.textContent = `Add €${needed.toFixed(2)} to save 5%`;
+          discountsLiveTag.textContent = `${t('calc_add_prefix', 'Add')} €${needed.toFixed(2)} ${t('calc_to_save_5', 'to save 5%')}`;
         } else {
-          discountsLiveTag.textContent = `Tier: 0%`;
+          discountsLiveTag.textContent = `${t('calc_tier_lbl', 'Tier:')} 0%`;
         }
       }
     }
@@ -1438,7 +1472,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Badge
     if (orderItemsBadge) {
-      orderItemsBadge.textContent = `${orderItems.length} Box Type${orderItems.length > 1 ? 's' : ''} Configured`;
+      orderItemsBadge.textContent = `${orderItems.length} ${t("calc_boxes_count_unit", "Boxes")} Configured`;
     }
 
     // Grand Totals & Discounts in Footer
@@ -1461,7 +1495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statDiscountWrap.style.display = 'flex';
         if (orderDiscountPct) orderDiscountPct.textContent = `${discount.pct}%`;
         if (orderDiscountAmount) orderDiscountAmount.textContent = `-€${discountAmount.toFixed(2)}`;
-        if (orderSavingsBadge) orderSavingsBadge.textContent = `You save €${discountAmount.toFixed(2)}`;
+        if (orderSavingsBadge) orderSavingsBadge.textContent = `${t("calc_you_save", "You save")} €${discountAmount.toFixed(2)}`;
       } else {
         statDiscountWrap.style.display = 'none';
       }
@@ -1482,8 +1516,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
               </svg>
-              <p class="empty-title">No boxes added to your order yet</p>
-              <p class="empty-desc">Choose a box type and materials above, then click <strong>"+ Add Box to Order"</strong> to track your choices.</p>
+              <p class="empty-title">${t("calc_empty_lead", "No boxes added to your order yet")}</p>
+              <p class="empty-desc">${t("calc_empty_hint", "Choose a box type and materials above, then click + Add Box to Order to track your choices.")}</p>
             </div>
           </td>
         </tr>
