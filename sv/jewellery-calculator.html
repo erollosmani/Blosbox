@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYTLZTHLP9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SYTLZTHLP9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../Logo%20FAV%20Icon.webp">
+    <link rel="apple-touch-icon" href="../Logo%20FAV%20Icon.webp">
+
+    <title>Jewellery Box Price Calculator & Packaging Order Form | Blosbox</title>
+    <meta name="description" content="Calculate B2B prices for custom luxury jewellery boxes, select paper wraps, foam inserts, and submit packaging orders.">
+
+    <link rel="canonical" href="https://blosbox.com/sv/jewellery-calculator.html">
+    <link rel="alternate" hreflang="en" href="https://blosbox.com/jewellery-calculator.html">
+    <link rel="alternate" hreflang="de" href="https://blosbox.com/de/jewellery-calculator.html">
+    <link rel="alternate" hreflang="fr" href="https://blosbox.com/fr/jewellery-calculator.html">
+    <link rel="alternate" hreflang="it" href="https://blosbox.com/it/jewellery-calculator.html">
+    <link rel="alternate" hreflang="sv" href="https://blosbox.com/sv/jewellery-calculator.html">
+    <link rel="alternate" hreflang="nl" href="https://blosbox.com/nl/jewellery-calculator.html">
+    <link rel="alternate" hreflang="sq" href="https://blosbox.com/sq/jewellery-calculator.html">
+    <link rel="alternate" hreflang="mk" href="https://blosbox.com/mk/jewellery-calculator.html">
+    <link rel="alternate" hreflang="x-default" href="https://blosbox.com/jewellery-calculator.html">
+
+    <!-- Open Graph & Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Blosbox Luxury Packaging">
+    <meta property="og:url" content="https://blosbox.com/sv/jewellery-calculator.html">
+    <meta property="og:title" content="Jewellery Box Price Calculator & Packaging Order Form | Blosbox">
+    <meta property="og:description" content="Calculate B2B prices for custom luxury jewellery boxes, select paper wraps, foam inserts, and submit packaging orders.">
+    <meta property="og:image" content="https://blosbox.com/combine_these_boxes_202604262144.webp">
+    <meta property="og:locale" content="sv">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jewellery Box Price Calculator & Packaging Order Form | Blosbox">
+    <meta name="twitter:description" content="Calculate B2B prices for custom luxury jewellery boxes, select paper wraps, foam inserts, and submit packaging orders.">
+    <meta name="twitter:image" content="https://blosbox.com/combine_these_boxes_202604262144.webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Blosbox Jewellery Box Price Calculator & Packaging Order Form",
+      "url": "https://blosbox.com/sv/jewellery-calculator.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "description": "Interactive B2B pricing calculator and specification configurator for custom rigid jewellery packaging, ring boxes, set boxes, and foam inserts.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Blosbox Luxury Packaging",
+        "url": "https://blosbox.com",
+        "logo": "https://blosbox.com/Logo.webp"
+      }
+    }
+    </script>
+
+    <!-- Modern luxury fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css?v=40">
+    <link rel="stylesheet" href="../calculator.css?v=1">
+</head>
+<body class="calculator-view-body">
+    <!-- SVG Filters for Exact Insert Coloring (#141210 Black, #3E2B22 Dark Brown, #FAF8F5 Cream) -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Black: Foam #141210 (20, 18, 16), Lines #FFFFFF -->
+        <filter id="insert-filter-black" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="
+            -0.9216 0 0 0 1.0
+            0 -0.9294 0 0 1.0
+            0 0 -0.9373 0 1.0
+            0 0 0 1 0" />
+        </filter>
+
+        <!-- Dark Brown: Foam #3E2B22 (62, 43, 34), Lines #FFFFFF -->
+        <filter id="insert-filter-dark-brown" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="
+            -0.7569 0 0 0 1.0
+            0 -0.8314 0 0 1.0
+            0 0 -0.8667 0 1.0
+            0 0 0 1 0" />
+        </filter>
+
+        <!-- Very Light Cream: Foam #FAF8F5, Lines #302C27 -->
+        <filter id="insert-filter-cream" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="
+            0.7922 0 0 0 0.1882
+            0 0.8000 0 0 0.1725
+            0 0 0.8079 0 0.1529
+            0 0 0 1 0" />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Top dark band: Navigation -->
+    <header class="navbar">
+        <a href="../index.html" class="logo">
+            <img src="../Logo.webp" alt="Blosbox Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="../about.html" data-i18n="nav_about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="../products.html" data-i18n="nav_products">Products / Industries <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../jewellery.html" data-i18n="nav_jewellery">Jewellery</a></li>
+                        <li><a href="../watches.html" data-i18n="nav_watches">Watches</a></li>
+                        <li><a href="../leather.html" data-i18n="nav_leather">Leather Goods</a></li>
+                        <li><a href="../chocolates.html" data-i18n="nav_chocolates">Chocolates</a></li>
+                        <li><a href="../gifts.html" data-i18n="nav_gifts">Corporate Gifts</a></li>
+                        <li><a href="../cosmetics.html" data-i18n="nav_cosmetics">Cosmetics & Fragrance</a></li>
+                        <li><a href="../other.html" data-i18n="nav_other">Other Luxury Markets</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../custom.html" data-i18n="nav_custom">Custom Solutions <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../bespoke.html" data-i18n="nav_bespoke">Bespoke Design & Prototyping</a></li>
+                        <li><a href="../printing.html" data-i18n="nav_printing">Printing, Foil, Embossing</a></li>
+                        <li><a href="../customization.html" data-i18n="nav_customization">Size & Material Customization</a></li>
+                        <li><a href="../jewellery-calculator.html" data-i18n="nav_jewellery_calc">Jewellery Price Calculator</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact Us</a></li>
+                <li class="dropdown lang-dropdown">
+                    <a href="#" class="lang-dropdown-trigger">🌐 <span id="activeLangLabel">SV</span> <span class="caret">▾</span></a>
+                    <ul class="dropdown-menu lang-dropdown-menu">
+                        <li><a href="../jewellery-calculator.html" class="lang-item" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="../fr/jewellery-calculator.html" class="lang-item" data-lang="fr">🇫🇷 Français</a></li>
+                        <li><a href="../de/jewellery-calculator.html" class="lang-item" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="../it/jewellery-calculator.html" class="lang-item" data-lang="it">🇮🇹 Italiano</a></li>
+                        <li><a href="jewellery-calculator.html" class="lang-item active" data-lang="sv">🇸🇪 Svenska</a></li>
+                        <li><a href="../nl/jewellery-calculator.html" class="lang-item" data-lang="nl">🇳🇱 Nederlands</a></li>
+                        <li><a href="../sq/jewellery-calculator.html" class="lang-item" data-lang="sq">🇦🇱 Shqip</a></li>
+                        <li><a href="../mk/jewellery-calculator.html" class="lang-item" data-lang="mk">🇲🇰 Македонски</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">☰</div>
+    </header>
+
+    <!-- Calculator Action Sub-Bar -->
+    <div class="calculator-action-bar">
+        <div class="calc-action-container">
+            <button type="button" class="nav-order-pill" id="nav-order-tracker" title="View order selections" style="display: none;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span id="nav-order-count">0 Boxes</span>
+                <span class="nav-order-divider">•</span>
+                <span id="nav-order-total">€0.00</span>
+            </button>
+
+            <div class="calc-action-btns">
+                <button class="nav-btn" id="btn-copy-specs" title="Copy Complete Order manifest">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span data-i18n="calc_btn_copy_manifest">Copy Complete Order</span>
+                </button>
+                <button class="nav-btn-primary" id="btn-print-specs" title="Print / Save PDF">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    <span data-i18n="calc_btn_print_pdf">Print / Save PDF</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculator Application Body -->
+    <div class="calculator-page-wrapper">
+        <div class="app-layout">
+<main class="main-container">
+      
+      <div class="configurator-wrapper">
+        
+        <!-- Left Column: Dropdown Controls & Specification Panel -->
+        <section class="controls-panel">
+          
+          <div class="panel-header">
+            <h1 class="panel-title" data-i18n="calc_page_title">Price Calculator /<br>Packaging Order Form</h1>
+            <p class="panel-subtitle" data-i18n="calc_page_subtitle">Select box attributes and materials below.</p>
+          </div>
+
+          <form class="dropdown-form" id="config-form" onsubmit="return false;">
+            
+            <!-- 1. Select box size -->
+            <div class="form-group">
+              <label for="select-box-size" data-i18n="calc_step1_label">1. Select Box Size</label>
+              <div class="select-wrapper">
+                <select id="select-box-size" class="custom-select">
+                  <!-- Populated with all 15 box sizes grouped by category -->
+                </select>
+              </div>
+            </div>
+
+            <!-- 2. Select finishing material (with Uniform vs Lid & Base toggle) -->
+            <div class="form-group material-config-group">
+              <div class="material-group-header">
+                <label>2. Select Finishing Material</label>
+                <div class="material-mode-toggle">
+                  <button type="button" class="mode-btn active" id="btn-mode-uniform" data-i18n="calc_mode_uniform">Uniform</button>
+                  <button type="button" class="mode-btn" id="btn-mode-split" data-i18n="calc_mode_split">Lid & Base Mix</button>
+                </div>
+              </div>
+
+              <!-- Uniform Material Selector Card Button -->
+              <div class="material-selector-card" id="wrap-material-uniform">
+                <button type="button" class="material-pick-btn" id="btn-open-gallery-uniform">
+                  <div class="pick-thumb-wrap">
+                    <img id="thumb-material-uniform" src="../Size and Material Customization/Black Imitlin.webp" alt="Material Thumb">
+                  </div>
+                  <div class="pick-info">
+                    <span class="pick-label">Finishing Material</span>
+                    <span class="pick-name" id="name-material-uniform">Black Imitlin</span>
+                    <span class="pick-tier" id="tier-material-uniform">Textured & Pearl</span>
+                  </div>
+                  <div class="pick-action-tag">Browse Gallery ➔</div>
+                </button>
+              </div>
+
+              <!-- Split Lid & Base Material Selector Cards -->
+              <div class="split-materials-wrap" id="wrap-material-split" style="display: none;">
+                
+                <div class="material-selector-card">
+                  <button type="button" class="material-pick-btn" id="btn-open-gallery-lid">
+                    <div class="pick-thumb-wrap">
+                      <img id="thumb-material-lid" src="../Size and Material Customization/Black Carbon.webp" alt="Lid Material">
+                    </div>
+                    <div class="pick-info">
+                      <span class="pick-label">Lid Material</span>
+                      <span class="pick-name" id="name-material-lid">Black Carbon</span>
+                      <span class="pick-tier" id="tier-material-lid">Luxe</span>
+                    </div>
+                    <div class="pick-action-tag">Change Lid ➔</div>
+                  </button>
+                </div>
+
+                <div class="material-selector-card">
+                  <button type="button" class="material-pick-btn" id="btn-open-gallery-base">
+                    <div class="pick-thumb-wrap">
+                      <img id="thumb-material-base" src="../Size and Material Customization/Black Imitlin.webp" alt="Base Material">
+                    </div>
+                    <div class="pick-info">
+                      <span class="pick-label">Base Material</span>
+                      <span class="pick-name" id="name-material-base">Black Imitlin</span>
+                      <span class="pick-tier" id="tier-material-base">Textured & Pearl</span>
+                    </div>
+                    <div class="pick-action-tag">Change Base ➔</div>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 3. Quantity & Pricing Block -->
+            <div class="price-calc-card">
+              
+              <div class="calc-row">
+                <span class="calc-label" data-i18n="calc_material_tier_lbl">Material Tier / Formula:</span>
+                <span class="tier-badge" id="display-material-tier">Textured & Pearl</span>
+              </div>
+
+              <div class="calc-row">
+                <span class="calc-label" data-i18n="calc_unit_price_lbl">Unit Price:</span>
+                <span class="calc-value-price" id="display-unit-price">€0.50</span>
+              </div>
+
+              <div class="calc-row qty-row">
+                <label for="input-qty" class="calc-label">Order Quantity:</label>
+                <div class="qty-input-wrap">
+                  <input type="number" id="input-qty" min="10" step="10" value="100" class="qty-input">
+                  <span class="qty-unit">pcs</span>
+                </div>
+              </div>
+
+              <div class="calc-divider"></div>
+
+              <div class="calc-row discount-row" id="single-discount-row" style="display: none;">
+                <span class="calc-label"><span data-i18n="calc_volume_discount_lbl">Volume Discount:</span> (<span id="single-discount-pct">0%</span>)</span>
+                <span class="calc-discount-val" id="single-discount-amount">-€0.00</span>
+              </div>
+
+              <div class="calc-row mold-fee-row" id="single-mold-fee-row" style="display: none;">
+                <span class="calc-label">One-Time Logo Mold Fee:</span>
+                <span class="calc-fee-val" id="single-mold-fee-amount">+€50.00</span>
+              </div>
+
+              <div class="calc-row total-row">
+                <span class="total-label">Total Estimated Price:</span>
+                <div class="total-price-group">
+                  <span class="total-price" id="display-total-price">€50.00</span>
+                  <span class="single-savings-tag" id="single-savings-tag" style="display: none;">You save €0.00</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Custom Logo Hot Foil Stamping Options -->
+            <div class="logo-customization-card" id="logo-customization-card">
+              <label class="custom-checkbox-row primary-logo-row" for="chk-custom-logo">
+                <input type="checkbox" id="chk-custom-logo" class="luxury-checkbox">
+                <span class="checkbox-custom-indicator"></span>
+                <div class="checkbox-text-wrap">
+                  <span class="checkbox-title"><span data-i18n="calc_add_logo_lbl">Add Custom Logo Hot Foil Stamping (Included in unit price)</span></span>
+                  <span class="tag-included">(Included in unit price)</span>
+                </div>
+              </label>
+
+              <div class="logo-suboptions" id="logo-suboptions">
+                <label class="custom-checkbox-row sub-checkbox-row" for="chk-new-logo">
+                  <input type="checkbox" id="chk-new-logo" class="luxury-checkbox">
+                  <span class="checkbox-custom-indicator"></span>
+                  <div class="sub-checkbox-content">
+                    <span class="sub-title"><span data-i18n="calc_new_logo_lbl">This is a new logo (Adds €50 one-time stamping mold fee)</span></span>
+                    <span class="sub-fee">Adds €50 one-time stamping mold fee</span>
+                    <span class="sub-size">(Maximum logo size is 70x50mm)</span>
+                    <span class="sub-email">For more customization feel free to <a href="mailto:order@blosbox.com?subject=Custom Logo & Packaging Inquiry" class="link-custom-email">email us</a></span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Logo File Upload for Foil Stamping Mold -->
+              <div class="logo-upload-zone" id="logo-upload-zone" style="display: none;">
+                <div class="logo-upload-header">
+                  <span class="upload-label-title">Upload Logo File for Stamping Mold:</span>
+                  <span class="upload-label-formats">Vector (.AI, .EPS, .PDF, .SVG) or high-res .PNG, .JPG (Max 25MB)</span>
+                </div>
+
+                <label class="dropzone-box" id="dropzone-box" for="input-logo-file">
+                  <input type="file" id="input-logo-file" class="hidden-file-input" accept=".ai,.eps,.pdf,.svg,.png,.jpg,.jpeg">
+                  <div class="dropzone-unselected" id="dropzone-unselected">
+                    <div class="btn-upload-action">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                      </svg>
+                      <span>Upload Logo File</span>
+                    </div>
+                    <div class="dropzone-prompt">
+                      <span class="prompt-main">Click to select file or drag & drop</span>
+                      <span class="prompt-sub">Attached and sent automatically to order@blosbox.com</span>
+                    </div>
+                  </div>
+                  <div class="dropzone-selected" id="dropzone-selected" style="display: none;">
+                    <div class="selected-file-meta">
+                      <span class="file-icon-badge">📎</span>
+                      <div class="file-text-col">
+                        <span class="selected-file-name" id="logo-file-name">logo.ai</span>
+                        <span class="selected-file-size" id="logo-file-size">1.2 MB</span>
+                        <span class="selected-file-status">✓ Attached & ready to send to order@blosbox.com</span>
+                      </div>
+                    </div>
+                    <button type="button" class="btn-clear-file" id="btn-clear-logo-file" title="Remove attached logo file">&times;</button>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Action Buttons: Add Configured Box to Order Selection & Clear Choices -->
+            <div class="config-actions-wrap">
+              <button type="button" class="btn-add-to-order" id="btn-add-to-order">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span id="btn-add-text" data-i18n="calc_btn_add_order">+ ADD BOX TO ORDER</span>
+              </button>
+              <button type="button" class="btn-reset-choices" id="btn-reset-choices" title="Reset all current choices and clear selections">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                  <path d="M3 3v5h5"></path>
+                </svg>
+                <span data-i18n="calc_btn_clear_all">CLEAR ALL</span>
+              </button>
+            </div>
+
+          </form>
+
+        </section>
+
+        <!-- Right Column: Visual Technical Drawings & Material Preview -->
+        <section class="visuals-panel">
+          
+          <div class="visuals-header">
+            <h2 class="visuals-title" data-i18n="calc_drawings_heading">Proportional Drawings & Materials</h2>
+            <span class="visuals-model-tag" id="display-active-model-tag">R1 Ring Box (41x49 / 29mm)</span>
+          </div>
+
+          <div class="drawings-grid">
+            
+            <!-- Proportional Vector Line Drawing of Box Size -->
+            <div class="drawing-box-card" id="card-box-drawing">
+              <div class="card-caption">
+                <span class="caption-type" data-i18n="calc_box_drawing_title">PROPORTIONAL BOX LINE DRAWING (NO COLOR)</span>
+                <span class="caption-detail" id="display-box-drawing-name">R1 Ring Box (41 x 49 x 29 mm)</span>
+              </div>
+              <div class="drawing-image-container vector-container" id="proportional-svg-container" title="Click to pop out full screen">
+                <!-- Proportional SVG line drawing rendered here -->
+              </div>
+            </div>
+
+            <!-- <span data-i18n="calc_insert_spec_title">PROPORTIONAL DIE-CUT FOAM INSERT</span> (With Top Side-by-Side Dropdowns) -->
+            <div class="drawing-box-card insert-config-card" id="card-insert-drawing">
+              <div class="insert-card-header">
+                <h3 class="insert-card-title" id="insert-card-title"><span data-i18n="calc_insert_spec_title">PROPORTIONAL DIE-CUT FOAM INSERT</span></h3>
+                
+                <div class="insert-inline-controls" id="insert-inline-controls">
+                  <div class="inline-control-group" id="group-insert-type">
+                    <label for="select-insert-type" data-i18n="calc_select_option_lbl">SELECT OPTION</label>
+                    <div class="select-wrapper mini-select-wrap" id="wrap-select-insert-type">
+                      <select id="select-insert-type" class="custom-select mini-select">
+                        <!-- Populated dynamically based on chosen box -->
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="inline-control-group" id="group-insert-color">
+                    <label for="select-insert-color" data-i18n="calc_select_color_lbl">SELECT COLOR</label>
+                    <div class="select-wrapper mini-select-wrap" id="wrap-select-insert-color">
+                      <select id="select-insert-color" class="custom-select mini-select">
+                        <option value="Black" data-hex="#141210">Black</option>
+                        <option value="Dark Brown" data-hex="#3E2B22">Dark Brown</option>
+                        <option value="Very Light Cream" data-hex="#FAF8F5">Very Light Cream</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="watch-insert-notice" id="watch-insert-notice" style="display: none;">
+                  <span class="notice-icon">💬</span>
+                  <div class="notice-text">
+                    <strong>Unique Watch Insert:</strong> Not a die-cut sponge. Insert specifications (materials, fit & style) will be confirmed directly via email conversation (<a href="mailto:order@blosbox.com?subject=Watch%20Box%20Custom%20Insert%20Inquiry" class="notice-email-link">order@blosbox.com</a>).
+                  </div>
+                </div>
+              </div>
+
+              <div class="drawing-image-container insert-drawing-frame" id="proportional-insert-container" title="Click to pop out full screen">
+                <img id="img-insert-drawing" class="insert-filter-black" src="../Inserts/Insert for Ring boxes.jpg" alt="Insert Technical Drawing">
+                <div class="drawing-overlay">🔍 Click to Expand</div>
+              </div>
+            </div>
+
+            <!-- Material Texture Photo Card -->
+            <div class="drawing-box-card" id="card-material-preview">
+              <div class="card-caption">
+                <span class="caption-type">Selected Finishing Material(s)</span>
+                <span class="caption-detail" id="display-material-preview-name">Black Imitlin</span>
+              </div>
+              <div class="drawing-image-container material-container" id="material-preview-container" title="Click to browse material gallery">
+                <img id="img-material-preview" src="../Size and Material Customization/Black Imitlin.webp" alt="Finishing Material Texture">
+                <div class="drawing-overlay">🔍 Open Gallery</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Wholesale Volume Discounts (Positioned right to Add Box to Order) -->
+          <div class="wholesale-discounts-card" id="wholesale-discounts-card">
+            <div class="discounts-header">
+              <div class="discounts-title-group">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <h3 class="discounts-title">Wholesale Volume Discounts</h3>
+              </div>
+              <span class="discounts-live-tag" id="discounts-live-tag">Tier: 0%</span>
+            </div>
+
+            <div class="discounts-tiers-list">
+              <div class="discount-tier-item" id="tier-pill-500" data-threshold="500">
+                <div class="tier-pct">5% OFF</div>
+                <div class="tier-desc">total orders over <strong>€500</strong></div>
+              </div>
+
+              <div class="discount-tier-item" id="tier-pill-1000" data-threshold="1000">
+                <div class="tier-pct">10% OFF</div>
+                <div class="tier-desc">total orders over <strong>€1,000</strong></div>
+              </div>
+
+              <div class="discount-tier-item" id="tier-pill-5000" data-threshold="5000">
+                <div class="tier-pct">15% OFF</div>
+                <div class="tier-desc">total orders over <strong>€5,000</strong></div>
+              </div>
+            </div>
+
+            <div class="discounts-footer-note">
+              <span>(Discounts are calculated automatically based on your grand total)</span>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+
+      <!-- ==========================================================================
+           REGISTERED ORDER SELECTIONS & SUMMARY TABLE
+           ========================================================================== -->
+      <section class="order-summary-section" id="order-summary-section">
+        <div class="order-summary-header">
+          <div class="order-summary-title-wrap">
+            <h2 class="order-summary-title">Your Registered Packaging Order</h2>
+            <p class="order-summary-subtitle">All configured box types and tracked selections.</p>
+          </div>
+          <div class="order-summary-header-actions">
+            <div class="order-summary-badge" id="order-items-badge">0 Boxes Added</div>
+            <button type="button" class="btn-clear-header" id="btn-clear-header" title="Clear all choices and registered boxes">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+              <span data-i18n="calc_btn_clear_all">CLEAR ALL</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="order-table-wrap">
+          <table class="order-table" id="order-table">
+            <thead>
+              <tr>
+                <th class="th-box">Box Model & Size</th>
+                <th class="th-material">Finishing Material</th>
+                <th class="th-insert">Insert & Color</th>
+                <th class="th-price">Unit Price</th>
+                <th class="th-qty">Quantity</th>
+                <th class="th-subtotal">Subtotal</th>
+                <th class="th-actions">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="order-table-body">
+              <tr class="order-empty-row" id="order-empty-row">
+                <td colspan="7">
+                  <div class="order-empty-state">
+                    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    <p class="empty-title">No boxes added to your order yet</p>
+                    <p class="empty-desc">Choose a box type and materials above, then click <strong>"+ Add Box to Order"</strong> to track your choices.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Order Grand Total & Export Actions Bar -->
+        <div class="order-footer-bar" id="order-footer-bar" style="display: none;">
+          <div class="order-footer-totals">
+            <div class="footer-stat">
+              <span class="stat-label">Total Box Quantity:</span>
+              <span class="stat-value" id="order-grand-qty">0 pcs</span>
+            </div>
+
+            <div class="footer-stat" id="stat-subtotal-wrap">
+              <span class="stat-label">Order Subtotal:</span>
+              <span class="stat-value" id="order-grand-subtotal">€0.00</span>
+            </div>
+
+            <div class="footer-stat savings-stat" id="stat-discount-wrap" style="display: none;">
+              <span class="stat-label">Volume Discount (<span id="order-discount-pct">0%</span>):</span>
+              <div class="discount-side-display">
+                <span class="stat-discount-value" id="order-discount-amount">-€0.00</span>
+                <span class="stat-savings-badge" id="order-savings-badge">You save €0.00</span>
+              </div>
+            </div>
+
+            <div class="footer-stat" id="stat-mold-wrap" style="display: none;">
+              <span class="stat-label">One-Time Logo Mold:</span>
+              <span class="stat-value" id="order-grand-mold">+€50.00</span>
+            </div>
+
+            <div class="footer-stat total-stat">
+              <span class="stat-label">Grand Total Order Price:</span>
+              <span class="stat-value-price" id="order-grand-total">€0.00</span>
+            </div>
+          </div>
+
+          <div class="order-footer-actions">
+            <div class="submit-action-wrapper">
+              <div class="submit-trust-note">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>No payment required today. We will review your configuration</span>
+              </div>
+
+              <button type="button" class="btn-order-action btn-submit-order" id="btn-submit-order" title="Submit order to order@blosbox.com for production & shipping timeline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <span>Submit for Shipping & Production Timeline</span>
+              </button>
+            </div>
+
+            <button type="button" class="btn-order-action btn-clear-order" id="btn-clear-order" title="Clear all registered boxes">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+              <span data-i18n="calc_btn_clear_all">CLEAR ALL</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         POPUP SLIDING PHOTO GALLERY MODAL (Matching Exact User Drawing)
+         ========================================================================== -->
+    <div class="modal-gallery-overlay" id="modal-gallery-overlay">
+      <div class="gallery-dialog">
+        
+        <!-- Top Dark Header with Two Category Tabs (Textured & Pearl vs Luxe) -->
+        <div class="gallery-top-header">
+          <div class="gallery-category-tabs">
+            <button type="button" class="gallery-tab active" id="tab-cat-textured" data-cat="Textured & Pearl">
+              Textured & Pearl
+            </button>
+            <button type="button" class="gallery-tab" id="tab-cat-luxe" data-cat="Luxe">
+              Luxe
+            </button>
+          </div>
+          <button type="button" class="gallery-close-btn" id="btn-close-gallery" title="Close Gallery">&times;</button>
+        </div>
+
+        <!-- Target Slot Context Header (e.g. "Selecting Lid Material") -->
+        <div class="gallery-slot-bar">
+          <span id="gallery-slot-title">Select Material:</span>
+          <span class="gallery-slot-badge" id="gallery-slot-target">Uniform Box</span>
+        </div>
+
+        <!-- Sliding Photo Showcase Carousel -->
+        <div class="gallery-slider-wrapper" id="gallery-slider-container">
+          
+          <!-- Prev Arrow (<) -->
+          <button type="button" class="slider-nav-arrow arrow-prev" id="btn-slide-prev" aria-label="Previous Material">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Main Slide Image Viewport -->
+          <div class="slider-viewport" id="slider-viewport">
+            <div class="slide-content">
+              <div class="slide-image-card">
+                <img id="slide-main-image" src="" alt="Finishing Material Texture">
+              </div>
+              <div class="slide-info-card">
+                <div class="slide-title-group">
+                  <h3 class="slide-material-name" id="slide-material-name">Black Imitlin</h3>
+                  <span class="slide-material-category" id="slide-material-tier">Textured & Pearl</span>
+                </div>
+                <div class="slide-counter" id="slide-counter">1 / 19</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Next Arrow (>) -->
+          <button type="button" class="slider-nav-arrow arrow-next" id="btn-slide-next" aria-label="Next Material">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- Bottom Action Bar with Quick Select & Thumbnails -->
+        <div class="gallery-bottom-bar">
+          
+          <!-- Quick Thumbnails Strip -->
+          <div class="gallery-thumbs-strip" id="gallery-thumbs-strip">
+            <!-- Populated dynamically -->
+          </div>
+
+          <!-- Confirm / Select Button -->
+          <button type="button" class="btn-apply-material" id="btn-apply-slide-material">
+            <span>Apply Selected Material</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Image Lightbox Modal for High-Resolution Blueprint Zoom -->
+    <div class="modal-lightbox" id="modal-lightbox">
+      <div class="lightbox-dialog">
+        <div class="lightbox-header">
+          <div class="lightbox-titles">
+            <h3 id="lightbox-title">Technical CAD Blueprint</h3>
+            <p id="lightbox-subtitle">Precise dimension specifications</p>
+          </div>
+          <button class="lightbox-close" id="btn-close-lightbox">&times;</button>
+        </div>
+        <div class="lightbox-body">
+          <img id="lightbox-img" src="" alt="Zoomed Blueprint">
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         SUBMIT ORDER MODAL (Shipping & Production Timeline)
+         ========================================================================== -->
+    <div class="modal-submit-overlay" id="modal-submit-overlay">
+      <div class="submit-dialog">
+        <div class="submit-dialog-header">
+          <div class="submit-header-titles">
+            <div class="submit-badge">Direct to order@blosbox.com</div>
+            <h3>Submit for Shipping & Production Timeline</h3>
+            <p>Please enter your contact details and shipping location so we can calculate freight costs and assign your production slot.</p>
+          </div>
+          <button type="button" class="submit-modal-close" id="btn-close-submit-modal" title="Close">&times;</button>
+        </div>
+
+        <form class="submit-order-form" id="submit-order-form">
+          <!-- Order Quick Review Box -->
+          <div class="submit-order-recap" id="submit-order-recap">
+            <div class="recap-stat">
+              <span class="recap-label">Configured Boxes:</span>
+              <span class="recap-val" id="submit-recap-boxes">0 types</span>
+            </div>
+            <div class="recap-stat">
+              <span class="recap-label">Total Quantity:</span>
+              <span class="recap-val" id="submit-recap-qty">0 pcs</span>
+            </div>
+            <div class="recap-stat">
+              <span class="recap-label">Estimated Total:</span>
+              <span class="recap-val price-val" id="submit-recap-total">€0.00</span>
+            </div>
+          </div>
+
+          <div class="submit-fields-grid">
+            <div class="form-field-group">
+              <label for="submit-client-name">Company Name / Contact Person <span class="req">*</span></label>
+              <input type="text" id="submit-client-name" placeholder="e.g. Maison de Bijoux / Jane Doe" required>
+            </div>
+
+            <div class="form-field-group">
+              <label for="submit-client-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="submit-client-email" placeholder="e.g. purchasing@brand.com" required>
+            </div>
+
+            <div class="form-field-group">
+              <label for="submit-client-phone">Phone / WhatsApp (Optional)</label>
+              <input type="tel" id="submit-client-phone" placeholder="+33 6 12 34 56 78">
+            </div>
+
+            <div class="form-field-group">
+              <label for="submit-client-country">Delivery City & Country <span class="req">*</span></label>
+              <input type="text" id="submit-client-country" placeholder="e.g. Zurich, Switzerland" required>
+            </div>
+          </div>
+
+          <div class="form-field-group full-width">
+            <label for="submit-client-notes">Production & Customization Notes (Optional)</label>
+            <textarea id="submit-client-notes" rows="2" placeholder="e.g. Gold foil logo stamping on lid exterior, need shipment by October..."></textarea>
+          </div>
+
+          <!-- Uploaded Logo File Status in Modal -->
+          <div class="modal-attachment-row" id="modal-attachment-row">
+            <div class="attachment-label-wrap">
+              <span class="attachment-title">📎 Stamping Logo Attachment:</span>
+              <span class="attachment-status" id="modal-attachment-status">No logo file selected</span>
+            </div>
+            <label class="btn-modal-upload-alt" for="input-modal-logo-file">
+              <input type="file" id="input-modal-logo-file" class="hidden-file-input" accept=".ai,.eps,.pdf,.svg,.png,.jpg,.jpeg">
+              <span id="modal-upload-btn-text">Attach / Change File</span>
+            </label>
+          </div>
+
+          <div class="submit-modal-trust-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>No payment required today. We will review your configuration</span>
+          </div>
+
+          <div class="submit-dialog-actions">
+            <button type="submit" class="btn-submit-send-email" id="btn-send-email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Send Order to order@blosbox.com</span>
+            </button>
+
+            <button type="button" class="btn-submit-copy-fallback" id="btn-submit-copy-fallback" title="Copy formatted order to clipboard and open webmail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Specs & Open Webmail</span>
+            </button>
+          </div>
+
+          <p class="submit-guarantee-note">
+            🔒 Your packaging manifest will be sent directly to <strong>order@blosbox.com</strong>. Our production team will verify technical parameters and reply promptly with shipping rates and timeline.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+        </div>
+    </div>
+
+    <!-- Highlights Band -->
+    <section class="highlights">
+        <div class="kraft-text">
+            <h4 data-i18n="footer_motto_title">Crafting the Unforgettable</h4>
+            <p data-i18n="footer_motto_sub">Where Exceptional Materials Meet Masterful Design</p>
+        </div>
+    </section>
+
+    <!-- Dark bottom band: Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <h3 data-i18n="footer_contact_title">Contact Us</h3>
+                <p>Hoshimin 216-b, Skopje 1000<br>North Macedonia</p>
+                <p>Orders: <a href="mailto:order@blosbox.com">order@blosbox.com</a></p>
+                <p>Inquiries: <a href="mailto:contact@blosbox.com">contact@blosbox.com</a></p>
+                <p>Phone: <a href="tel:+38975222228">+389 75 222228</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/blosbox/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/blospackaging" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/company/blosbox/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="../jewellery.html#quote" class="footer-quote-btn"><i class="fas fa-quote-right"></i> <span data-i18n="get_quote_btn">Get a Quote</span></a>
+            <a href="../Catalogue/BlosBox Catalog.pdf" class="footer-catalog-btn" target="_blank"><i class="fas fa-file-pdf"></i> <span data-i18n="catalog_btn">Catalog</span></a>
+            <p data-i18n="footer_rights">&copy; 2026 Blosbox Luxury Packaging. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../translations.js?v=40"></script>
+    <script src="../i18n.js?v=40"></script>
+    <script src="../script.js?v=40"></script>
+    <script src="../calculator.js?v=1"></script>
+</body>
+</html>

@@ -1238,3 +1238,66 @@ a {
         padding: 1.4rem 1.4rem;
     }
 }
+
+
+/* ==========================================================================
+   Jewellery Page - Calculator CTA Button Card
+   ========================================================================== */
+.jewellery-calc-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+    padding: 0.95rem 1.15rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2d2824 0%, #1c1816 100%);
+    border: 1.5px solid var(--brown-accent, #a48c77);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    gap: 0.35rem;
+    margin-bottom: 0.2rem;
+}
+.jewellery-calc-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #e0c9a6;
+    box-shadow: 0 16px 35px rgba(164, 140, 119, 0.35);
+}
+.calc-card-badge {
+    display: inline-block;
+    background: rgba(164, 140, 119, 0.25);
+    color: #e0c9a6;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(164, 140, 119, 0.5);
+}
+.calc-card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.22rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+}
+.calc-card-desc {
+    font-size: 0.78rem;
+    color: rgba(245, 240, 235, 0.85);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.35;
+}
+@media (max-width: 900px) {
+    .jewellery-calc-card {
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 0.7rem;
+    }
+}

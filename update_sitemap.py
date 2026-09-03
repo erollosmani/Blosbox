@@ -11,6 +11,7 @@ def generate_sitemap():
         ("printing.html", "0.8"),
         ("customization.html", "0.8"),
         ("jewellery.html", "0.9"),
+        ("jewellery-calculator.html", "0.95"),
         ("watches.html", "0.9"),
         ("leather.html", "0.9"),
         ("chocolates.html", "0.9"),
