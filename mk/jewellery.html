@@ -26,27 +26,26 @@
     
     <!-- Swiper JS CSS for 3D Carousel Modal -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../styles.css?v=46">
+    <link rel="stylesheet" href="../styles.css?v=47">
     <style>
         .hero {
             position: relative;
-            padding: 2vh 5% 0 5% !important;
-            height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            padding: 3vh 5% !important;
+            min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
+            height: auto !important;
             display: flex !important;
-            align-items: flex-start !important;
+            align-items: center !important;
             justify-content: center !important;
-            overflow: hidden !important;
             background-color: var(--cream-main);
+            box-sizing: border-box !important;
         }
         .jewellery-split {
             display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 2.5rem;
-            align-items: start;
+            grid-template-columns: 1fr 325px;
+            gap: 3rem;
+            align-items: center;
             width: 100%;
             max-width: 1320px;
-            height: 100%;
-            max-height: 80vh;
             margin: 0 auto;
         }
         .jewellery-text-col {
@@ -54,27 +53,15 @@
             flex-direction: column;
             justify-content: flex-start;
             text-align: left;
-            padding: 0 15px 0 0;
+            padding: 0;
             margin: 0;
-            max-height: 100%;
-            overflow-y: auto;
-        }
-        .jewellery-text-col::-webkit-scrollbar {
-            width: 5px;
-        }
-        .jewellery-text-col::-webkit-scrollbar-thumb {
-            background: rgba(0,0,0,0.18);
-            border-radius: 3px;
-        }
-        .jewellery-text-col::-webkit-scrollbar-thumb:hover {
-            background: var(--brown-accent);
         }
         .jewellery-text-col h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.15rem;
             line-height: 1.25;
             color: var(--dark-top);
-            margin: 0 0 0.8rem 0;
+            margin: 0 0 0.75rem 0;
             padding: 0;
             font-weight: 400;
             letter-spacing: 0;
@@ -82,32 +69,32 @@
         }
         .jewellery-text-col h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.3;
             color: var(--dark-top);
-            margin: 0.8rem 0 0.35rem 0;
+            margin: 0.75rem 0 0.3rem 0;
             padding: 0;
             font-weight: 600;
             text-align: left;
         }
         .jewellery-text-col p {
-            font-size: 0.94rem;
-            line-height: 1.55;
+            font-size: 0.90rem;
+            line-height: 1.52;
             color: var(--dark-top);
-            margin: 0 0 0.75rem 0;
+            margin: 0 0 0.65rem 0;
             padding: 0;
             font-weight: 300;
             text-align: left;
         }
         .jewellery-text-col .cap-intro {
             font-weight: 600;
-            margin-top: 0.4rem;
-            margin-bottom: 0.4rem;
+            margin-top: 0.35rem;
+            margin-bottom: 0.35rem;
         }
         .jewellery-text-col .detail-item {
-            margin-bottom: 0.4rem;
-            font-size: 0.92rem;
-            line-height: 1.5;
+            margin-bottom: 0.35rem;
+            font-size: 0.88rem;
+            line-height: 1.48;
             font-weight: 300;
             color: var(--dark-top);
         }
@@ -118,26 +105,25 @@
         .jewellery-cards-col {
             display: flex;
             flex-direction: column;
-            gap: 0.28rem;
-            justify-content: flex-start;
+            gap: 0.45rem;
+            justify-content: center;
             align-items: flex-end;
             width: 100%;
-            height: 100%;
         }
         .jewellery-vcard {
             position: relative;
-            width: 340px;
+            width: 325px;
             max-width: 100%;
-            height: 72px;
-            border-radius: 12px;
+            height: 100px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
             cursor: pointer;
             transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
         .jewellery-vcard:hover {
-            transform: scale(1.03);
-            box-shadow: 0 16px 35px rgba(0,0,0,0.28);
+            transform: scale(1.025);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.26);
         }
         .jewellery-vcard img {
             width: 100%;
@@ -148,37 +134,113 @@
             transition: transform 0.5s ease;
         }
         .jewellery-vcard:hover img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
         .vcard-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 0.20rem 0.40rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 75%, transparent 100%);
+            padding: 0.35rem 0.6rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 75%, transparent 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #fff;
-            gap: 0.15rem;
+            gap: 0.1rem;
         }
         .vcard-title {
             font-family: 'Playfair Display', serif;
-            font-size: 0.92rem;
+            font-size: 1.05rem;
             font-weight: 600;
             letter-spacing: 1px;
             color: #ffffff;
             text-shadow: 0 1px 3px rgba(0,0,0,0.6);
         }
         .vcard-hint {
-            font-size: 0.50rem;
+            font-size: 0.60rem;
             color: #e0c9a6;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.4px;
             text-transform: uppercase;
             font-weight: 600;
+        }
+
+        /* Direct Specificity for Calculator Button & Note */
+        .jewellery-calc-card {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 325px !important;
+            max-width: 100% !important;
+            height: 50px !important;
+            padding: 0.3rem 0.8rem !important;
+            border-radius: 8px !important;
+            background: #23201d !important;
+            border: 1px solid rgba(164, 140, 119, 0.45) !important;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.22) !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            box-sizing: border-box !important;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease !important;
+            text-align: center !important;
+            flex-shrink: 0 !important;
+            margin-top: 0.15rem !important;
+        }
+        .jewellery-calc-card:hover {
+            transform: translateY(-2px) !important;
+            background: #181513 !important;
+            border-color: #d8be9b !important;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.32) !important;
+        }
+        .calc-btn-title-main {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: 0.96rem !important;
+            font-weight: 600 !important;
+            color: #ffffff !important;
+            letter-spacing: 0.4px !important;
+            line-height: 1.2 !important;
+        }
+        .calc-btn-title-sub {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: 0.84rem !important;
+            font-weight: 500 !important;
+            color: #e5cfb3 !important;
+            letter-spacing: 0.3px !important;
+            line-height: 1.2 !important;
+        }
+        .jewellery-calc-note {
+            width: 325px !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            border: 1px dashed rgba(110, 98, 88, 0.7) !important;
+            border-radius: 5px !important;
+            padding: 0.45rem 0.65rem !important;
+            background: rgba(255, 255, 255, 0.45) !important;
+            font-size: 0.72rem !important;
+            line-height: 1.36 !important;
+            color: #2e2926 !important;
+            text-align: left !important;
+            flex-shrink: 0 !important;
+            margin-top: 0.1rem !important;
+        }
+        .jewellery-calc-note strong {
+            font-weight: 700 !important;
+            color: #1e1b18 !important;
+            display: block !important;
+            margin-bottom: 0.18rem !important;
+            font-size: 0.74rem !important;
+        }
+        .jewellery-calc-note p {
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block !important;
+            font-weight: 400 !important;
+            font-size: 0.72rem !important;
+            line-height: 1.36 !important;
+            color: #2e2926 !important;
         }
 
         /* Full Screen Gallery Popup Modal */
@@ -218,76 +280,67 @@
             letter-spacing: 1.5px;
         }
         .gallery-modal-close {
-            background: rgba(255, 255, 255, 0.15);
+            background: none;
             border: none;
             color: #fff;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.25s ease, transform 0.25s ease;
+            line-height: 1;
+            transition: color 0.25s ease;
         }
         .gallery-modal-close:hover {
-            background: rgba(255, 255, 255, 0.35);
-            transform: scale(1.1);
+            color: var(--brown-accent);
         }
         .gallery-modal-body {
             flex: 1;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding-bottom: 2rem;
+            height: 100%;
+            padding: 1rem 0;
+            box-sizing: border-box;
+            position: relative;
         }
-
-        /* Swiper Styling inside Modal */
         .gallery-modal .swiper {
             width: 100%;
             height: 100%;
-            padding-top: 10px;
-            padding-bottom: 40px;
+            display: flex;
+            align-items: center;
         }
         .gallery-modal .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 75vw;
-            max-width: 1100px;
-            height: 70vh;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80vw;
+            height: 75vh;
+            margin: auto;
         }
         .gallery-modal .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
             .hero {
                 height: auto !important;
-                min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
-                padding: 2vh 5% 0 5% !important;
-                overflow-y: auto !important;
+                padding: 3rem 1.5rem !important;
             }
             .jewellery-split {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
-                max-height: none;
-                height: auto;
+                gap: 2rem;
             }
             .jewellery-cards-col {
                 align-items: center;
             }
-            .jewellery-vcard {
+            .jewellery-vcard,
+            .jewellery-calc-card,
+            .jewellery-calc-note {
                 max-width: 340px;
-                height: 72px;
+                width: 100% !important;
             }
             .gallery-modal-header {
                 padding: 1rem 1.5rem;
@@ -313,79 +366,6 @@
         }
         .swiper-pagination-bullet-active {
             background: var(--brown-accent);
-        }
-    /* Direct Specificity for Calculator Button & Note */
-        .jewellery-calc-card {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
-            align-items: center !important;
-            width: 340px !important;
-            max-width: 100% !important;
-            height: 38px !important;
-            padding: 0.15rem 0.75rem !important;
-            border-radius: 7px !important;
-            background: #252220 !important;
-            border: 1.5px solid var(--brown-accent, #a48c77) !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.18) !important;
-            text-decoration: none !important;
-            cursor: pointer !important;
-            box-sizing: border-box !important;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease !important;
-            text-align: center !important;
-            flex-shrink: 0 !important;
-        }
-        .jewellery-calc-card:hover {
-            transform: translateY(-2px) !important;
-            background: #1a1715 !important;
-            border-color: #d8be9b !important;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.28) !important;
-        }
-        .calc-btn-title-main {
-            font-family: 'Playfair Display', Georgia, serif !important;
-            font-size: 0.86rem !important;
-            font-weight: 600 !important;
-            color: #ffffff !important;
-            letter-spacing: 0.3px !important;
-            line-height: 1.15 !important;
-        }
-        .calc-btn-title-sub {
-            font-family: 'Playfair Display', Georgia, serif !important;
-            font-size: 0.74rem !important;
-            font-weight: 500 !important;
-            color: #e5cfb3 !important;
-            letter-spacing: 0.2px !important;
-            line-height: 1.15 !important;
-        }
-        .jewellery-calc-note {
-            width: 340px !important;
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-            border: 1px dashed rgba(164, 140, 119, 0.75) !important;
-            border-radius: 6px !important;
-            padding: 0.35rem 0.55rem !important;
-            background: rgba(255, 255, 255, 0.65) !important;
-            font-size: 0.64rem !important;
-            line-height: 1.28 !important;
-            color: #3e3835 !important;
-            text-align: left !important;
-            flex-shrink: 0 !important;
-        }
-        .jewellery-calc-note strong {
-            font-weight: 700 !important;
-            color: #26211e !important;
-            display: inline !important;
-            margin-right: 0.25rem !important;
-            font-size: 0.64rem !important;
-        }
-        .jewellery-calc-note p {
-            margin: 0 !important;
-            padding: 0 !important;
-            display: inline !important;
-            font-weight: 400 !important;
-            font-size: 0.64rem !important;
-            line-height: 1.28 !important;
-            color: #3e3835 !important;
         }
     </style>
 
@@ -612,9 +592,9 @@
         </div>
     </footer>
 
-    <script src="../translations.js?v=46"></script>
-    <script src="../i18n.js?v=46"></script>
-    <script src="../script.js?v=46"></script>
+    <script src="../translations.js?v=47"></script>
+    <script src="../i18n.js?v=47"></script>
+    <script src="../script.js?v=47"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
     <script>
