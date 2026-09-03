@@ -613,7 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
           dropzoneUnselected.style.display = 'none';
         }
         if (modalAttachmentStatus) {
-          modalAttachmentStatus.textContent = `${savedLogoFileData.name} (${formatBytes(savedLogoFileData.size)}) — ready to send to order@blosbox.com`;
+          modalAttachmentStatus.textContent = `${savedLogoFileData.name} (${formatBytes(savedLogoFileData.size)}) — ready to send to contact@blosbox.com`;
           modalAttachmentStatus.classList.remove('empty');
         }
         if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoFileName) logoFileName.textContent = file.name;
     if (logoFileSize) logoFileSize.textContent = formatBytes(file.size);
     if (modalAttachmentStatus) {
-      modalAttachmentStatus.textContent = `${file.name} (${formatBytes(file.size)}) — ready to send to order@blosbox.com`;
+      modalAttachmentStatus.textContent = `${file.name} (${formatBytes(file.size)}) — ready to send to contact@blosbox.com`;
       modalAttachmentStatus.classList.remove('empty');
     }
     if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
@@ -713,7 +713,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Submit Order Modal Elements (order@blosbox.com)
+  // Submit Order Modal Elements (contact@blosbox.com)
   const btnSubmitOrder = document.getElementById('btn-submit-order');
   const modalSubmitOverlay = document.getElementById('modal-submit-overlay');
   const btnCloseSubmitModal = document.getElementById('btn-close-submit-modal');
@@ -1908,7 +1908,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
-  // --- SUBMIT ORDER LOGIC (order@blosbox.com) ---
+  // --- SUBMIT ORDER LOGIC (contact@blosbox.com) ---
 
   function openSubmitOrderModal() {
     // If no items registered yet, auto-add current box to order
@@ -1931,7 +1931,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalAttachmentStatus) {
       const hasNewLogoInOrder = orderItems.some(item => item.isNewLogoMold) || (chkNewLogo && chkNewLogo.checked);
       if (currentLogoFile) {
-        modalAttachmentStatus.textContent = `${currentLogoFile.name} (${formatBytes(currentLogoFile.size)}) — ready to send to order@blosbox.com`;
+        modalAttachmentStatus.textContent = `${currentLogoFile.name} (${formatBytes(currentLogoFile.size)}) — ready to send to contact@blosbox.com`;
         modalAttachmentStatus.classList.remove('empty');
         if (modalUploadBtnText) modalUploadBtnText.textContent = 'Change File';
       } else if (hasNewLogoInOrder) {
@@ -1978,7 +1978,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentLogoFile) {
       text += `ATTACHED LOGO FOR FOIL STAMPING:\n`;
       text += `- File Name: ${currentLogoFile.name} (${formatBytes(currentLogoFile.size)})\n`;
-      text += `- Submission: Uploaded and attached to order@blosbox.com submission\n`;
+      text += `- Submission: Uploaded and attached to contact@blosbox.com submission\n`;
       text += `====================================\n\n`;
     }
 
@@ -2117,10 +2117,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prepare email client fallback / confirmation
     let finalBody = fullManifest;
     if (uploadedFileUrl) {
-      finalBody = `[ATTACHMENT: ${currentLogoFile ? currentLogoFile.name : 'Logo'} uploaded to server and attached for order@blosbox.com]\n\n` + fullManifest;
+      finalBody = `[ATTACHMENT: ${currentLogoFile ? currentLogoFile.name : 'Logo'} uploaded to server and attached for contact@blosbox.com]\n\n` + fullManifest;
     }
 
-    const recipient = 'order@blosbox.com';
+    const recipient = 'contact@blosbox.com';
     const hasLogoTag = currentLogoFile ? ' + Logo Attached' : '';
     const subject = encodeURIComponent(`Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})${hasLogoTag}`);
     const body = encodeURIComponent(finalBody);
@@ -2128,9 +2128,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isServerSubmitted) {
       const attachMsg = currentLogoFile ? ` with logo file "${currentLogoFile.name}" attached` : '';
-      showToast(`Order${attachMsg} successfully submitted to order@blosbox.com!`);
+      showToast(`Order${attachMsg} successfully submitted to contact@blosbox.com!`);
     } else {
-      showToast('Order manifest & specifications prepared for order@blosbox.com.');
+      showToast('Order manifest & specifications prepared for contact@blosbox.com.');
     }
 
     // Open user's default email client
@@ -2176,7 +2176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const subject = encodeURIComponent(`Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})`);
       const body = encodeURIComponent(fullManifest);
-      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=order@blosbox.com&su=${subject}&body=${body}`, '_blank');
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=contact@blosbox.com&su=${subject}&body=${body}`, '_blank');
     }).catch(() => {
       showToast('Please copy specifications manually.');
     });
@@ -2468,7 +2468,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Submit Order to order@blosbox.com Actions
+    // Submit Order to contact@blosbox.com Actions
     if (btnSubmitOrder) btnSubmitOrder.addEventListener('click', openSubmitOrderModal);
     if (btnCloseSubmitModal) btnCloseSubmitModal.addEventListener('click', closeSubmitOrderModal);
     if (modalSubmitOverlay) {
