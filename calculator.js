@@ -1087,7 +1087,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (galleryIndex < 0 || galleryIndex >= list.length) galleryIndex = 0;
     const currentMat = list[galleryIndex];
 
-    slideMainImage.src = currentMat.file;
+    slideMainImage.src = resolveAsset(currentMat.file);
     slideMainImage.alt = currentMat.name;
     slideMaterialName.textContent = currentMat.name;
     slideMaterialTier.textContent = currentMat.category;
@@ -1110,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     list.forEach((mat, idx) => {
       const thumb = document.createElement('div');
       thumb.className = `gallery-thumb-item ${idx === galleryIndex ? 'active' : ''}`;
-      thumb.innerHTML = `<img src="${mat.file}" alt="${mat.name}">`;
+      thumb.innerHTML = `<img src="${resolveAsset(mat.file)}" alt="${mat.name}">`;
       thumb.addEventListener('click', () => {
         galleryIndex = idx;
         renderSlide();
