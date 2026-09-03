@@ -26,23 +26,23 @@
     
     <!-- Swiper JS CSS for 3D Carousel Modal -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../styles.css?v=39">
+    <link rel="stylesheet" href="../styles.css?v=46">
     <style>
         .hero {
             position: relative;
-            padding: 0 5% !important;
+            padding: 2vh 5% 0 5% !important;
             height: calc(100vh - 10.5vh - 8vh - 12px) !important;
             display: flex !important;
-            align-items: center !important;
+            align-items: flex-start !important;
             justify-content: center !important;
             overflow: hidden !important;
             background-color: var(--cream-main);
         }
         .jewellery-split {
             display: grid;
-            grid-template-columns: 1fr 320px;
+            grid-template-columns: 1fr 340px;
             gap: 2.5rem;
-            align-items: center;
+            align-items: start;
             width: 100%;
             max-width: 1320px;
             height: 100%;
@@ -118,17 +118,17 @@
         .jewellery-cards-col {
             display: flex;
             flex-direction: column;
-            gap: 0.55rem;
-            justify-content: center;
+            gap: 0.28rem;
+            justify-content: flex-start;
             align-items: flex-end;
             width: 100%;
             height: 100%;
         }
         .jewellery-vcard {
             position: relative;
-            width: 320px;
+            width: 340px;
             max-width: 100%;
-            height: 140px;
+            height: 72px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0,0,0,0.18);
@@ -155,7 +155,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 0.6rem 0.8rem;
+            padding: 0.20rem 0.40rem;
             background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 75%, transparent 100%);
             display: flex;
             flex-direction: column;
@@ -167,14 +167,14 @@
         }
         .vcard-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 0.92rem;
             font-weight: 600;
             letter-spacing: 1px;
             color: #ffffff;
             text-shadow: 0 1px 3px rgba(0,0,0,0.6);
         }
         .vcard-hint {
-            font-size: 0.65rem;
+            font-size: 0.50rem;
             color: #e0c9a6;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -273,7 +273,7 @@
             .hero {
                 height: auto !important;
                 min-height: calc(100vh - 10.5vh - 8vh - 12px) !important;
-                padding: 3rem 5% !important;
+                padding: 2vh 5% 0 5% !important;
                 overflow-y: auto !important;
             }
             .jewellery-split {
@@ -286,8 +286,8 @@
                 align-items: center;
             }
             .jewellery-vcard {
-                max-width: 400px;
-                height: 180px;
+                max-width: 340px;
+                height: 72px;
             }
             .gallery-modal-header {
                 padding: 1rem 1.5rem;
@@ -313,6 +313,79 @@
         }
         .swiper-pagination-bullet-active {
             background: var(--brown-accent);
+        }
+    /* Direct Specificity for Calculator Button & Note */
+        .jewellery-calc-card {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 340px !important;
+            max-width: 100% !important;
+            height: 38px !important;
+            padding: 0.15rem 0.75rem !important;
+            border-radius: 7px !important;
+            background: #252220 !important;
+            border: 1.5px solid var(--brown-accent, #a48c77) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18) !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            box-sizing: border-box !important;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease !important;
+            text-align: center !important;
+            flex-shrink: 0 !important;
+        }
+        .jewellery-calc-card:hover {
+            transform: translateY(-2px) !important;
+            background: #1a1715 !important;
+            border-color: #d8be9b !important;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.28) !important;
+        }
+        .calc-btn-title-main {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: 0.86rem !important;
+            font-weight: 600 !important;
+            color: #ffffff !important;
+            letter-spacing: 0.3px !important;
+            line-height: 1.15 !important;
+        }
+        .calc-btn-title-sub {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            font-size: 0.74rem !important;
+            font-weight: 500 !important;
+            color: #e5cfb3 !important;
+            letter-spacing: 0.2px !important;
+            line-height: 1.15 !important;
+        }
+        .jewellery-calc-note {
+            width: 340px !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            border: 1px dashed rgba(164, 140, 119, 0.75) !important;
+            border-radius: 6px !important;
+            padding: 0.35rem 0.55rem !important;
+            background: rgba(255, 255, 255, 0.65) !important;
+            font-size: 0.64rem !important;
+            line-height: 1.28 !important;
+            color: #3e3835 !important;
+            text-align: left !important;
+            flex-shrink: 0 !important;
+        }
+        .jewellery-calc-note strong {
+            font-weight: 700 !important;
+            color: #26211e !important;
+            display: inline !important;
+            margin-right: 0.25rem !important;
+            font-size: 0.64rem !important;
+        }
+        .jewellery-calc-note p {
+            margin: 0 !important;
+            padding: 0 !important;
+            display: inline !important;
+            font-weight: 400 !important;
+            font-size: 0.64rem !important;
+            line-height: 1.28 !important;
+            color: #3e3835 !important;
         }
     </style>
 
@@ -451,34 +524,39 @@
                 </div>
             </div>
             
-            <div class="jewellery-cards-col">
-                                <!-- Compact Jewellery Price Calculator & Order Form Button -->
-                <a href="jewellery-calculator.html" class="jewellery-calc-card">
-                    <span class="calc-card-badge" data-i18n="jewellery_calc_badge">B2B</span>
-                    <span class="calc-card-title" data-i18n="jewellery_calc_title">⚖️ Price Calculator & Order Form</span>
-                    <span class="calc-card-arrow">&rarr;</span>
-                </a>
-
+                        <div class="jewellery-cards-col">
                 <div class="jewellery-vcard" onclick="openGallery('textured')">
-                    <img src="../Jewellery/and_the_quality_of_the_202607022057.webp" alt="Scatole ed astucci per gioielli di lusso personalizzati">
+                    <img src="../Jewellery/and_the_quality_of_the_202607022057.webp" alt="Custom Luxury Jewellery Box Manufacturer">
                     <div class="vcard-overlay">
-                        <span class="vcard-title" data-i18n="nav_textured">Goffrato</span>
+                        <span class="vcard-title" data-i18n="nav_textured">Textured</span>
                         <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
                     </div>
                 </div>
                 <div class="jewellery-vcard" onclick="openGallery('pearl')">
-                    <img src="../Jewellery/Jewelry_box_with_necklace_inside_202607031850.webp" alt="Scatole ed astucci per gioielli di lusso personalizzati">
+                    <img src="../Jewellery/Jewelry_box_with_necklace_inside_202607031850.webp" alt="Custom Luxury Jewellery Box Manufacturer">
                     <div class="vcard-overlay">
-                        <span class="vcard-title" data-i18n="nav_pearl">Perlato</span>
+                        <span class="vcard-title" data-i18n="nav_pearl">Pearl</span>
                         <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
                     </div>
                 </div>
                 <div class="jewellery-vcard" onclick="openGallery('luxe')">
-                    <img src="../Jewellery/IMG_0297_202607031829.webp" alt="Scatole ed astucci per gioielli di lusso personalizzati">
+                    <img src="../Jewellery/IMG_0297_202607031829.webp" alt="Custom Luxury Jewellery Box Manufacturer">
                     <div class="vcard-overlay">
-                        <span class="vcard-title" data-i18n="nav_luxe">Lusso</span>
+                        <span class="vcard-title" data-i18n="nav_luxe">Luxe</span>
                         <span class="vcard-hint">:: CLICK TO VIEW GALLERY ::</span>
                     </div>
+                </div>
+
+                <!-- Price Calculator & Order Form Button -->
+                <a href="jewellery-calculator.html" class="jewellery-calc-card">
+                    <span class="calc-btn-title-main" data-i18n="jewellery_calc_btn_line1">Price Calculator</span>
+                    <span class="calc-btn-title-sub" data-i18n="jewellery_calc_btn_line2">Order Form</span>
+                </a>
+
+                <!-- Explanation Note -->
+                <div class="jewellery-calc-note">
+                    <strong data-i18n="jewellery_calc_note_title">Note:</strong>
+                    <p data-i18n="jewellery_calc_note_text">All packaging covered by the calculator is made of 1.2 mm thick cardboard, wrapped in luxury paper with a textured, pearlescent, or velvet finish, with the exception of the "RLux Tall Ring box and the Watch box," which are made of 2.5 mm cardboard and also wrapped in luxury paper.</p>
                 </div>
             </div>
         </div>
@@ -534,9 +612,9 @@
         </div>
     </footer>
 
-    <script src="../translations.js?v=39"></script>
-    <script src="../i18n.js?v=39"></script>
-    <script src="../script.js?v=39"></script>
+    <script src="../translations.js?v=46"></script>
+    <script src="../i18n.js?v=46"></script>
+    <script src="../script.js?v=46"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     
     <script>
