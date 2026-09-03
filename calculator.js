@@ -1320,7 +1320,7 @@ document.addEventListener('DOMContentLoaded', () => {
       body.innerHTML = `<div class="vector-lightbox-wrap">${vectorContent}</div>`;
     } else {
       const cls = filterClass ? `class="${filterClass}"` : '';
-      body.innerHTML = `<img id="lightbox-img" ${cls} src="${imgSrc}" alt="${title}">`;
+      body.innerHTML = `<img id="lightbox-img" ${cls} src="${imgSrc}" alt="${title}" style="max-width: 100%; max-height: calc(85vh - 105px); width: auto; height: auto; object-fit: contain; display: block; margin: auto; border-radius: 4px;">`;
     }
 
     if (modalLightbox) {
