@@ -556,7 +556,7 @@ def main():
               <div class="price-header">Luxe Finishes</div>
               <div class="price-amount">{p["price_luxe"]}<span class="price-unit"> / pc</span></div>
             </div>
-            <div class="vol-hint">From 100 pcs • Up to -15% on volume</div>
+            <div class="vol-hint">Up to 15% off order grand total</div>
           </div>
         </div>
         '''
@@ -1065,6 +1065,13 @@ def main():
       color: #9A752B;
       font-weight: 800;
     }}
+    .b2b-item-note {{
+      font-size: 4.5pt;
+      color: #777777;
+      font-style: italic;
+      margin-top: 1.5px;
+      line-height: 1.15;
+    }}
 
     /* =========================================================
        BOTTOM PAPER SHOWCASE: EXACT USER DIAGRAM IMPLEMENTATION
@@ -1413,10 +1420,10 @@ def main():
     <div class="b2b-terms-block">
       <div class="b2b-col">
         <div class="b2b-col-title">Wholesale Volume Discounts</div>
-        <div class="b2b-item">• <strong>100 – 499 pcs:</strong> Base Catalog Rate</div>
-        <div class="b2b-item">• <strong>500 – 999 pcs:</strong> <span class="b2b-discount-highlight">5% Volume Discount</span></div>
-        <div class="b2b-item">• <strong>1€000 – 4,999 pcs:</strong> <span class="b2b-discount-highlight">10% Volume Discount</span></div>
-        <div class="b2b-item">• <strong>5€000+ pcs:</strong> <span class="b2b-discount-highlight">15% Volume Discount</span></div>
+        <div class="b2b-item">• <span class="b2b-discount-highlight">5% OFF:</span> total orders over €500</div>
+        <div class="b2b-item">• <span class="b2b-discount-highlight">10% OFF:</span> total orders over €1,000</div>
+        <div class="b2b-item">• <span class="b2b-discount-highlight">15% OFF:</span> total orders over €5,000</div>
+        <div class="b2b-item-note">*(Discounts calculated automatically on grand total)*</div>
       </div>
       <div class="b2b-col">
         <div class="b2b-col-title">Custom Logo &amp; Hot Stamping</div>
@@ -1427,9 +1434,9 @@ def main():
       </div>
       <div class="b2b-col">
         <div class="b2b-col-title">Material &amp; Packaging Logic</div>
+        <div class="b2b-item">• <strong>Minimum Order:</strong> 100 pcs per model / size</div>
         <div class="b2b-item">• <strong>Inserts Included:</strong> 15mm High-Density Die-Cut Foam</div>
-        <div class="b2b-item">• <strong>Insert Colors:</strong> Black, Dark Brown, or Light Cream</div>
-        <div class="b2b-item">• <strong>Mixed Material Formula:</strong> (Price 1 + Price 2) × 0.55</div>
+        <div class="b2b-item">• <strong>Mixed Material Formula:</strong> (Texture &amp; Pearl + Luxe) × 0.55</div>
         <div class="b2b-item">• <strong>Cardboard:</strong> 1.2mm Rigid (2.5mm for Proposal &amp; Watch)</div>
       </div>
     </div>
