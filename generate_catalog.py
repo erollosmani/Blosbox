@@ -448,9 +448,10 @@ def main():
     def render_bottom_swatch_strip():
         cat1_label_html = '''
         <div class="cat-label-card tp-label-card">
-          <div class="cat-label-badge">CATEGORY ONE</div>
-          <div class="cat-label-title">TEXTURED &amp; PEARL</div>
-          <div class="cat-label-tier">PRICE 1</div>
+          <div class="preview-title-main">Texture</div>
+          <div class="preview-title-amp">&amp;</div>
+          <div class="preview-title-main">Pearl Finishes</div>
+          <div class="preview-title-sub">Preview</div>
         </div>
         '''
 
@@ -470,9 +471,8 @@ def main():
 
         cat2_label_html = '''
         <div class="cat-label-card luxe-label-card">
-          <div class="cat-label-badge">CATEGORY TWO</div>
-          <div class="cat-label-title">LUXE FINISHES</div>
-          <div class="cat-label-tier">PRICE 2</div>
+          <div class="preview-title-main luxe-main">Luxe Finishes</div>
+          <div class="preview-title-sub">Preview</div>
         </div>
         '''
 
@@ -549,14 +549,12 @@ def main():
           <!-- Col 4: Dual Pricing Matching Category Background Colors Exactly -->
           <div class="col-pricing">
             <div class="price-box tp-price">
-              <div class="price-header">TEXTURED &amp; PEARL</div>
+              <div class="price-header">Texture &amp; Pearl Finishes</div>
               <div class="price-amount">{p["price_structured"]}<span class="price-unit"> / pc</span></div>
-              <div class="price-sub">PRICE TIER 1</div>
             </div>
             <div class="price-box luxe-price">
-              <div class="price-header">LUXE FINISHES</div>
+              <div class="price-header">Luxe Finishes</div>
               <div class="price-amount">{p["price_luxe"]}<span class="price-unit"> / pc</span></div>
-              <div class="price-sub">PRICE TIER 2</div>
             </div>
             <div class="vol-hint">From 100 pcs • Up to -15% on volume</div>
           </div>
@@ -611,7 +609,7 @@ def main():
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 16px rgba(0€0€0€0.12);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }}
 
     @media print {{
@@ -805,16 +803,19 @@ def main():
     /* PRODUCT CARD GRID */
     .product-card {{
       display: grid;
-      grid-template-columns: 46mm 39mm 63mm 42mm;
+      grid-template-columns: 38mm 34mm 1fr 39mm;
       background: #FCFCFA;
       border: 1px solid #E5E1D8;
       border-radius: 3.5px;
-      padding: 3.5px 5.5px;
+      padding: 3mm 4mm;
       align-items: center;
-      gap: 5.5px;
+      gap: 3.5mm;
       height: 38mm;
       max-height: 38.5mm;
-      box-shadow: 0 1px 2px rgba(0€0€0€0.02);
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
     }}
 
     .col-label {{
@@ -976,11 +977,15 @@ def main():
       flex-direction: column;
       gap: 2.5px;
       justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
     }}
     .price-box {{
       border-radius: 2.5px;
-      padding: 2px 4px;
+      padding: 2.5px 3.5px;
       text-align: center;
+      width: 100%;
+      box-sizing: border-box;
     }}
     .price-box.tp-price {{
       background: #2D2825;
@@ -993,39 +998,29 @@ def main():
       color: #FFFFFF;
     }}
     .price-header {{
-      font-size: 4.8pt;
+      font-size: 4.4pt;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       text-transform: uppercase;
+      line-height: 1.15;
     }}
     .tp-price .price-header {{
-      color: #E2D9C8;
+      color: #E6DFD3;
     }}
     .luxe-price .price-header {{
-      color: #FFF2E3;
+      color: #FFF4E8;
     }}
     .price-amount {{
-      font-size: 10.2pt;
+      font-size: 10.5pt;
       font-weight: 800;
-      line-height: 1;
-      margin-top: 0.5px;
+      line-height: 1.1;
+      margin-top: 1px;
       color: #FFFFFF;
     }}
     .price-unit {{
       font-size: 5.5pt;
       font-weight: 500;
-      color: rgba(255,255,255€0.85);
-    }}
-    .price-sub {{
-      font-size: 4.3pt;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }}
-    .tp-price .price-sub {{
-      color: #C2B8A8;
-    }}
-    .luxe-price .price-sub {{
-      color: #F3E4D3;
+      color: rgba(255, 255, 255, 0.85);
     }}
     .vol-hint {{
       font-size: 4.6pt;
@@ -1116,49 +1111,53 @@ def main():
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2px 1px;
-      box-shadow: 0 1px 3px rgba(0€0€0€0.18);
+      padding: 1.5px 1px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+      box-sizing: border-box;
+      overflow: hidden;
     }}
     .tp-label-card {{
       height: 18.5mm;
       border: 1.5px solid #FFFFFF;
     }}
     .luxe-label-card {{
-      width: 24mm;
+      width: 25mm;
       height: 20mm;
       flex-shrink: 0;
       border: 1.5px solid #FFFFFF;
     }}
 
-    .cat-label-badge {{
-      font-size: 4.8pt;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: #111111;
-      line-height: 1.1;
-    }}
-    .cat-label-title {{
-      font-size: 4.5pt;
+    .preview-title-main {{
+      font-family: 'Playfair Display', serif;
+      font-size: 4.6pt;
       font-weight: 700;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-      margin-top: 1.5px;
+      color: #1A1715;
       line-height: 1.15;
+      letter-spacing: 0.1px;
     }}
-    .tp-label-card .cat-label-title {{
-      color: #2D2825;
+    .preview-title-main.luxe-main {{
+      font-size: 5.6pt;
+      line-height: 1.2;
     }}
-    .luxe-label-card .cat-label-title {{
-      color: #7D634E;
+    .preview-title-amp {{
+      font-family: 'Playfair Display', serif;
+      font-size: 4.8pt;
+      font-weight: 700;
+      color: #C5A059;
+      line-height: 1;
+      margin: 0.5px 0;
     }}
-    .cat-label-tier {{
-      font-size: 4.2pt;
+    .preview-title-sub {{
+      font-size: 4.0pt;
       font-weight: 800;
       color: #C5A059;
-      margin-top: 1.5px;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
+      margin-top: 1.5px;
+      border-top: 1px solid #ECE7DE;
+      padding-top: 1px;
+      width: 85%;
+      text-align: center;
     }}
 
     /* Swatch Cell in Category 1 */
@@ -1175,7 +1174,7 @@ def main():
       border: 1.5px solid #FFFFFF;
       border-radius: 2px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0€0€0€0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }}
     .swatch-img {{
       width: 100%;
@@ -1215,7 +1214,7 @@ def main():
       border: 1.5px solid #FFFFFF;
       border-radius: 2px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0€0€0€0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }}
     .luxe-img {{
       width: 100%;
