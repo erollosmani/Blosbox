@@ -1428,9 +1428,9 @@ def main():
       <div class="b2b-col">
         <div class="b2b-col-title">Custom Logo &amp; Hot Stamping</div>
         <div class="b2b-item">• <strong>Stamping Mold Fee:</strong> €50 (One-time tooling fee)</div>
+        <div class="b2b-item">• <strong>Maximum Mold Size:</strong> 70x50 mm</div>
         <div class="b2b-item">• <strong>Subsequent Reorders:</strong> Free mold reuse (€0)</div>
-        <div class="b2b-item">• <strong>Finishes:</strong> Gold Foil, Silver, Rose Gold, Gloss/Matte Black, Deboss</div>
-        <div class="b2b-item">• <strong>Logo Position:</strong> Centered on outer lid or inside lid satin</div>
+        <div class="b2b-item">• <strong>Finishes:</strong> Gold Foil, Silver, Rose Gold, Black, Deboss</div>
       </div>
       <div class="b2b-col">
         <div class="b2b-col-title">Material &amp; Packaging Logic</div>
