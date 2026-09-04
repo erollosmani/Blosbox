@@ -50,7 +50,7 @@ def add_asset_prefix(html_content):
     return html_content
 
 def update_hreflang_and_canonical(html_content, lang, filename):
-    base_url = "https://blosbox.com"
+    base_url = "https://www.blosbox.com"
     
     html_content = re.sub(r'<link rel="canonical"[^>]*>', '', html_content)
     html_content = re.sub(r'<link rel="alternate" hreflang="[^"]*"[^>]*>', '', html_content)

@@ -1,7 +1,7 @@
 import os
 
 def generate_sitemap():
-    base_url = "https://blosbox.com"
+    base_url = "https://www.blosbox.com"
     pages = [
         ("index.html", "1.0"),
         ("about.html", "0.8"),
