@@ -2,11 +2,18 @@
 generate_catalog.py
 Builds pricelist-catalog.html and compiles Blosbox-Jewellery-Pricelist.pdf using Headless Chrome/Edge.
 Strictly 4 A4 pages (divisible by 4), ordered from smallest to largest box.
-Features:
-- Large 2-row preview for Textured & Pearl (Price 1)
-- Large 2-row preview for Luxe Finishes (Price 2)
-- High-resolution textures clearly visible when printed
-- Fills the entire free space at the bottom of the page
+
+Matches user drawing:
+- Category 1 (Textured & Pearl): Dark Brown (#2D2825) background container with 2 rows:
+  - Row 1: White "Category 1" label box + 9 large swatch squares
+  - Row 2: 10 large swatch squares (aligned 10-column grid)
+  - Total 19 swatches with white negative text
+- Category 2 (Luxe Finishes): Kraft (#9E826B) background container with 1 row:
+  - White "Category 2" label box + 6 large swatch squares with white negative text
+- Product Cards Price Boxes:
+  - Top Price Box (Textured & Pearl): Dark Brown (#2D2825) background with negative white text
+  - Bottom Price Box (Luxe Finishes): Kraft (#9E826B) background with negative white text
+- Customers instantly connect background colors of the price boxes with the material preview bands!
 """
 
 import os
@@ -400,8 +407,7 @@ def main():
         p["insert_b64"] = get_b64(p["insert_img"], 450)
 
     # 19 Textured & Pearl Swatches
-    # Row 1: 10 swatches
-    swatches_tp_row1 = [
+    swatches_tp_all = [
         {"name": "Black Imitlin", "short": "Black Imitlin", "file": "Size and Material Customization/Black Imitlin.webp"},
         {"name": "Black Leatherlike", "short": "Black Leather", "file": "Size and Material Customization/Black Leatherlike.webp"},
         {"name": "Blue Butterfly", "short": "Blue Butterfly", "file": "Size and Material Customization/Blue Butterfly.webp"},
@@ -412,12 +418,8 @@ def main():
         {"name": "Cream Imitlin", "short": "Cream Imitlin", "file": "Size and Material Customization/Cream Imitlin.webp"},
         {"name": "Cream Leatherlike", "short": "Cream Leather", "file": "Size and Material Customization/Cream Leatherlike.webp"},
         {"name": "Green Leatherlike", "short": "Green Leather", "file": "Size and Material Customization/Green Leatherlike.webp"},
-    ]
-
-    # Row 2: 9 swatches
-    swatches_tp_row2 = [
-        {"name": "Light Green Pearl", "short": "Light Green Pearl", "file": "Size and Material Customization/Light Green Pearl.webp"},
-        {"name": "Light Purple Pearl", "short": "Light Purple Pearl", "file": "Size and Material Customization/Light purple pearl.webp"},
+        {"name": "Light Green Pearl", "short": "Light Green", "file": "Size and Material Customization/Light Green Pearl.webp"},
+        {"name": "Light Purple Pearl", "short": "Light Purple", "file": "Size and Material Customization/Light purple pearl.webp"},
         {"name": "Orange Pearl", "short": "Orange Pearl", "file": "Size and Material Customization/Orange Pearl.webp"},
         {"name": "Red Butterfly", "short": "Red Butterfly", "file": "Size and Material Customization/Red Butterfly.webp"},
         {"name": "Red Leatherlike", "short": "Red Leather", "file": "Size and Material Customization/Red Leatherlike.webp"},
@@ -428,94 +430,86 @@ def main():
     ]
 
     # 6 Luxe Swatches
-    # Row 1: 3 swatches
-    swatches_luxe_row1 = [
-        {"name": "Black Carbon", "desc": "High-Gloss 3D Carbon Fiber Weave", "file": "Size and Material Customization/Black Carbon.webp"},
-        {"name": "Black Velvet", "desc": "Ultra-Plush Deep Matte Black Velvet", "file": "Size and Material Customization/Black Velvet.webp"},
-        {"name": "Brown Velvet", "desc": "Warm Chocolate Rich Suede Velvet", "file": "Size and Material Customization/Brown Velvet.webp"},
-    ]
-
-    # Row 2: 3 swatches
-    swatches_luxe_row2 = [
-        {"name": "Carbon Cream", "desc": "Ivory Textured Technical Carbon Weave", "file": "Size and Material Customization/Carbon Cream.webp"},
-        {"name": "Kraft Velvet", "desc": "Artisanal Natural Kraft Fiber Velvet", "file": "Size and Material Customization/Kraft Velvet.webp"},
-        {"name": "Red Velvet", "desc": "Vibrant Royal Crimson Velvet Nap", "file": "Size and Material Customization/Red Velvet.webp"},
+    swatches_luxe_all = [
+        {"name": "Black Carbon", "desc": "Carbon Fiber Weave", "file": "Size and Material Customization/Black Carbon.webp"},
+        {"name": "Black Velvet", "desc": "Plush Matte Velvet", "file": "Size and Material Customization/Black Velvet.webp"},
+        {"name": "Brown Velvet", "desc": "Chocolate Suede Velvet", "file": "Size and Material Customization/Brown Velvet.webp"},
+        {"name": "Carbon Cream", "desc": "Ivory Carbon Weave", "file": "Size and Material Customization/Carbon Cream.webp"},
+        {"name": "Kraft Velvet", "desc": "Natural Kraft Velvet", "file": "Size and Material Customization/Kraft Velvet.webp"},
+        {"name": "Red Velvet", "desc": "Crimson Royal Velvet", "file": "Size and Material Customization/Red Velvet.webp"},
     ]
 
     print("Pre-encoding paper swatches at high resolution (300px) for crisp printing...")
-    for s in swatches_tp_row1 + swatches_tp_row2:
+    for s in swatches_tp_all:
         s["b64"] = get_b64(s["file"], 280, 92)
 
-    for s in swatches_luxe_row1 + swatches_luxe_row2:
+    for s in swatches_luxe_all:
         s["b64"] = get_b64(s["file"], 360, 92)
 
-    # Helper to render the 4-row (2 rows TP + 2 rows Luxe) bottom paper showcase
+    # Helper to render the user-requested bottom showcase:
+    # - Category 1: Dark Brown (#2D2825) with 2 rows (Row 1: Label + 9 swatches, Row 2: 10 swatches)
+    # - Category 2: Kraft (#9E826B) with 1 row (Label + 6 large swatches)
     def render_bottom_swatch_strip():
-        # TP Row 1 (10 swatches)
-        tp1_html = "".join([
-            f'''<div class="swatch-card tp-card" title="{s['name']}">
-                <div class="swatch-img-box"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
-                <div class="swatch-name">{s['short']}</div>
-            </div>''' for s in swatches_tp_row1
+        # Category 1 Label Box (White card)
+        cat1_label_html = '''
+        <div class="cat-label-card tp-label-card">
+          <div class="cat-label-badge">CATEGORY ONE</div>
+          <div class="cat-label-title">TEXTURED &amp; PEARL</div>
+          <div class="cat-label-tier">PRICE 1</div>
+        </div>
+        '''
+
+        # Row 1 swatches (9 items)
+        tp_row1_html = "".join([
+            f'''<div class="swatch-cell" title="{s['name']}">
+                <div class="swatch-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
+                <div class="swatch-name-neg">{s['short']}</div>
+            </div>''' for s in swatches_tp_all[0:9]
         ])
 
-        # TP Row 2 (9 swatches)
-        tp2_html = "".join([
-            f'''<div class="swatch-card tp-card" title="{s['name']}">
-                <div class="swatch-img-box"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
-                <div class="swatch-name">{s['short']}</div>
-            </div>''' for s in swatches_tp_row2
+        # Row 2 swatches (10 items)
+        tp_row2_html = "".join([
+            f'''<div class="swatch-cell" title="{s['name']}">
+                <div class="swatch-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
+                <div class="swatch-name-neg">{s['short']}</div>
+            </div>''' for s in swatches_tp_all[9:19]
         ])
 
-        # Luxe Row 1 (3 swatches)
-        luxe1_html = "".join([
-            f'''<div class="luxe-tile" title="{s['name']}">
-                <div class="luxe-img-box"><img src="{s['b64']}" alt="{s['name']}" class="luxe-img"></div>
-                <div class="luxe-info">
-                  <div class="luxe-title">{s['name']}</div>
-                  <div class="luxe-desc">{s['desc']}</div>
-                </div>
-            </div>''' for s in swatches_luxe_row1
-        ])
+        # Category 2 Label Box (White card)
+        cat2_label_html = '''
+        <div class="cat-label-card luxe-label-card">
+          <div class="cat-label-badge">CATEGORY TWO</div>
+          <div class="cat-label-title">LUXE FINISHES</div>
+          <div class="cat-label-tier">PRICE 2</div>
+        </div>
+        '''
 
-        # Luxe Row 2 (3 swatches)
-        luxe2_html = "".join([
-            f'''<div class="luxe-tile" title="{s['name']}">
-                <div class="luxe-img-box"><img src="{s['b64']}" alt="{s['name']}" class="luxe-img"></div>
-                <div class="luxe-info">
-                  <div class="luxe-title">{s['name']}</div>
-                  <div class="luxe-desc">{s['desc']}</div>
-                </div>
-            </div>''' for s in swatches_luxe_row2
+        # Luxe row swatches (6 large items)
+        luxe_swatches_html = "".join([
+            f'''<div class="luxe-swatch-cell" title="{s['name']}">
+                <div class="luxe-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="luxe-img"></div>
+                <div class="luxe-name-neg">{s['name']}</div>
+            </div>''' for s in swatches_luxe_all
         ])
 
         return f'''
         <div class="bottom-paper-showcase">
-          <!-- CATEGORY 1: TEXTURED & PEARL (2 ROWS) -->
-          <div class="cat-block tp-cat-block">
-            <div class="cat-header-row tp-header">
-              <span class="cat-title">TEXTURED & PEARL FINISHES</span>
-              <span class="cat-badge tp-badge">PRICE 1 — STANDARD INCLUDED (19 FINISHES)</span>
+          <!-- CATEGORY 1: DARK BROWN CONTAINER (#2D2825) - 2 ROWS -->
+          <div class="cat-band tp-band">
+            <div class="tp-row tp-row-top">
+              {cat1_label_html}
+              {tp_row1_html}
             </div>
-            <div class="swatches-grid-row tp-grid-10">
-              {tp1_html}
-            </div>
-            <div class="swatches-grid-row tp-grid-9">
-              {tp2_html}
+            <div class="tp-row tp-row-bottom">
+              {tp_row2_html}
             </div>
           </div>
 
-          <!-- CATEGORY 2: LUXE FINISHES (2 ROWS) -->
-          <div class="cat-block luxe-cat-block">
-            <div class="cat-header-row luxe-header">
-              <span class="cat-title">LUXE FINISHES COLLECTION</span>
-              <span class="cat-badge luxe-badge">PRICE 2 — PREMIUM VELLUM, VELVET & CARBON (6 LUXURY FINISHES)</span>
-            </div>
-            <div class="luxe-grid-row">
-              {luxe1_html}
-            </div>
-            <div class="luxe-grid-row">
-              {luxe2_html}
+          <!-- CATEGORY 2: KRAFT CONTAINER (#9E826B) - 1 ROW -->
+          <div class="cat-band luxe-band">
+            <div class="luxe-single-row">
+              {cat2_label_html}
+              {luxe_swatches_html}
             </div>
           </div>
         </div>
@@ -561,17 +555,17 @@ def main():
             <div class="insert-specs-note">Includes 15mm Die-Cut Velvet-Top Foam (Black, Dark Brown, Cream)</div>
           </div>
 
-          <!-- Col 4: Dual Pricing (Price 1 vs Price 2) -->
+          <!-- Col 4: Dual Pricing Matching Category Background Colors -->
           <div class="col-pricing">
             <div class="price-box tp-price">
-              <div class="price-header">TEXTURED & PEARL</div>
+              <div class="price-header">TEXTURED &amp; PEARL</div>
               <div class="price-amount">{p["price_structured"]}<span class="price-unit"> / pc</span></div>
-              <div class="price-sub">Price Tier 1</div>
+              <div class="price-sub">PRICE TIER 1</div>
             </div>
             <div class="price-box luxe-price">
               <div class="price-header">LUXE FINISHES</div>
               <div class="price-amount">{p["price_luxe"]}<span class="price-unit"> / pc</span></div>
-              <div class="price-sub">Price Tier 2</div>
+              <div class="price-sub">PRICE TIER 2</div>
             </div>
             <div class="vol-hint">From 100 pcs • Up to -15% on volume</div>
           </div>
@@ -619,7 +613,7 @@ def main():
       height: 297mm;
       margin: 0 auto 20px auto;
       background: #FFFFFF;
-      padding: 7mm 11mm 5mm 11mm;
+      padding: 6mm 10mm 4.5mm 10mm;
       page-break-after: always;
       position: relative;
       overflow: hidden;
@@ -647,9 +641,9 @@ def main():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 5px;
+      padding-bottom: 4px;
       border-bottom: 2px solid #C5A059;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }}
     .brand-left {{
       display: flex;
@@ -657,7 +651,7 @@ def main():
       gap: 10px;
     }}
     .brand-logo {{
-      height: 32px;
+      height: 30px;
       width: auto;
       object-fit: contain;
     }}
@@ -667,14 +661,14 @@ def main():
     }}
     .brand-main-title {{
       font-family: 'Cinzel', serif;
-      font-size: 13.5pt;
+      font-size: 13pt;
       font-weight: 700;
       letter-spacing: 1.2px;
       color: #111111;
       line-height: 1.1;
     }}
     .brand-sub-title {{
-      font-size: 7pt;
+      font-size: 6.8pt;
       font-weight: 600;
       letter-spacing: 1.5px;
       color: #A67C37;
@@ -688,15 +682,15 @@ def main():
       display: inline-block;
       background: #111111;
       color: #F4EBD9;
-      font-size: 7pt;
+      font-size: 6.8pt;
       font-weight: 700;
       letter-spacing: 0.8px;
-      padding: 2.5px 8px;
+      padding: 2px 8px;
       border-radius: 3px;
       text-transform: uppercase;
     }}
     .catalog-date {{
-      font-size: 6.5pt;
+      font-size: 6.2pt;
       color: #777777;
       margin-top: 2px;
       font-weight: 500;
@@ -707,9 +701,9 @@ def main():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 4px;
+      padding-bottom: 3.5px;
       border-bottom: 1.5px solid #C5A059;
-      margin-bottom: 4px;
+      margin-bottom: 3.5px;
     }}
     .running-left {{
       display: flex;
@@ -717,18 +711,18 @@ def main():
       gap: 7px;
     }}
     .running-logo {{
-      height: 20px;
+      height: 19px;
       width: auto;
     }}
     .running-title {{
       font-family: 'Cinzel', serif;
-      font-size: 8.5pt;
+      font-size: 8.2pt;
       font-weight: 700;
       letter-spacing: 0.8px;
       color: #111111;
     }}
     .running-cat {{
-      font-size: 7pt;
+      font-size: 6.8pt;
       color: #A67C37;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -743,19 +737,19 @@ def main():
       background: #F9F7F2;
       border: 1px solid #EAE2D2;
       border-left: 3px solid #C5A059;
-      padding: 2.5px 7px;
-      margin-bottom: 4px;
+      padding: 2px 7px;
+      margin-bottom: 3.5px;
       border-radius: 2px;
     }}
     .banner-text {{
-      font-size: 7pt;
+      font-size: 6.8pt;
       font-weight: 700;
       color: #333333;
       letter-spacing: 0.4px;
       text-transform: uppercase;
     }}
     .banner-badge {{
-      font-size: 6pt;
+      font-size: 5.8pt;
       background: #EAE2D2;
       color: #555555;
       padding: 1px 5px;
@@ -767,29 +761,29 @@ def main():
     .products-container {{
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 3px;
     }}
 
     /* PRODUCT CARD GRID */
     .product-card {{
       display: grid;
-      grid-template-columns: 46mm 39mm 61mm 42mm;
+      grid-template-columns: 46mm 39mm 63mm 42mm;
       background: #FCFCFA;
       border: 1px solid #E5E1D8;
       border-radius: 3.5px;
-      padding: 4px 6px;
+      padding: 3.5px 5.5px;
       align-items: center;
-      gap: 6px;
-      height: 38.5mm;
-      max-height: 39mm;
+      gap: 5.5px;
+      height: 38mm;
+      max-height: 38.5mm;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }}
 
     .col-label {{
-      font-size: 5pt;
+      font-size: 4.8pt;
       font-weight: 700;
       color: #888888;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 1px;
     }}
@@ -808,7 +802,7 @@ def main():
     }}
     .drawing-svg-box {{
       width: 100%;
-      height: 26mm;
+      height: 25.5mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -816,11 +810,11 @@ def main():
     .box-svg {{
       width: 100%;
       height: 100%;
-      max-height: 26mm;
+      max-height: 25.5mm;
     }}
     .drawing-img-box {{
       width: 100%;
-      height: 26mm;
+      height: 25.5mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -828,11 +822,11 @@ def main():
     }}
     .blueprint-img {{
       max-width: 100%;
-      max-height: 26mm;
+      max-height: 25.5mm;
       object-fit: contain;
     }}
     .size-callout {{
-      font-size: 6pt;
+      font-size: 5.8pt;
       font-weight: 700;
       color: #222222;
       margin-top: 0px;
@@ -853,7 +847,7 @@ def main():
     }}
     .insert-img-wrap {{
       width: 100%;
-      height: 25.5mm;
+      height: 25mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -863,11 +857,11 @@ def main():
     }}
     .insert-img {{
       max-width: 95%;
-      max-height: 25.5mm;
+      max-height: 25mm;
       object-fit: contain;
     }}
     .insert-caption {{
-      font-size: 5pt;
+      font-size: 4.8pt;
       color: #555555;
       text-align: center;
       margin-top: 1px;
@@ -887,13 +881,13 @@ def main():
     }}
     .product-name {{
       font-family: 'Cinzel', serif;
-      font-size: 8.8pt;
+      font-size: 8.6pt;
       font-weight: 700;
       color: #111111;
       line-height: 1.15;
     }}
     .product-structure {{
-      font-size: 6pt;
+      font-size: 5.8pt;
       color: #777777;
       margin-top: 1.5px;
       text-transform: uppercase;
@@ -901,7 +895,7 @@ def main():
       font-weight: 500;
     }}
     .product-dims-text {{
-      font-size: 6.5pt;
+      font-size: 6.4pt;
       color: #333333;
       margin-top: 2px;
     }}
@@ -910,8 +904,8 @@ def main():
     }}
     .thickness-badge {{
       display: inline-block;
-      margin-top: 3px;
-      font-size: 6pt;
+      margin-top: 2.5px;
+      font-size: 5.8pt;
       font-weight: 700;
       color: #2D3748;
       background: #EDF2F7;
@@ -928,13 +922,17 @@ def main():
       font-weight: 800;
     }}
     .insert-specs-note {{
-      font-size: 5pt;
+      font-size: 4.8pt;
       color: #666666;
-      margin-top: 2.5px;
+      margin-top: 2px;
       line-height: 1.2;
     }}
 
-    /* Col 4: Pricing */
+    /* =========================================================
+       Col 4: Pricing Matching Category Background Colors Exactly
+       - Category 1 Price: Dark Brown (#2D2825) with Negative White Text
+       - Category 2 Price: Kraft (#9E826B) with Negative White Text
+       ========================================================= */
     .col-pricing {{
       display: flex;
       flex-direction: column;
@@ -943,55 +941,56 @@ def main():
     }}
     .price-box {{
       border-radius: 2.5px;
-      padding: 2.5px 4px;
+      padding: 2px 4px;
       text-align: center;
-      border: 1px solid transparent;
     }}
     .price-box.tp-price {{
-      background: #F4F4F2;
-      border-color: #DCD9D0;
+      background: #2D2825;
+      border: 1px solid #1A1614;
+      color: #FFFFFF;
     }}
     .price-box.luxe-price {{
-      background: #FFFDF7;
-      border-color: #E2D1A6;
+      background: #9E826B;
+      border: 1px solid #856B54;
+      color: #FFFFFF;
     }}
     .price-header {{
-      font-size: 5pt;
+      font-size: 4.8pt;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }}
     .tp-price .price-header {{
-      color: #444444;
+      color: #E2D9C8;
     }}
     .luxe-price .price-header {{
-      color: #9A752B;
+      color: #FFF2E3;
     }}
     .price-amount {{
-      font-size: 10pt;
+      font-size: 10.2pt;
       font-weight: 800;
       line-height: 1;
       margin-top: 0.5px;
-    }}
-    .tp-price .price-amount {{
-      color: #1A1A1A;
-    }}
-    .luxe-price .price-amount {{
-      color: #9A752B;
+      color: #FFFFFF;
     }}
     .price-unit {{
       font-size: 5.5pt;
       font-weight: 500;
-      color: #666666;
+      color: rgba(255,255,255,0.85);
     }}
     .price-sub {{
-      font-size: 4.5pt;
-      color: #888888;
+      font-size: 4.3pt;
       text-transform: uppercase;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
+    }}
+    .tp-price .price-sub {{
+      color: #C2B8A8;
+    }}
+    .luxe-price .price-sub {{
+      color: #F3E4D3;
     }}
     .vol-hint {{
-      font-size: 4.8pt;
+      font-size: 4.6pt;
       color: #777777;
       text-align: center;
       margin-top: 0.5px;
@@ -1007,11 +1006,11 @@ def main():
       border: 1px solid #E8DFD0;
       border-left: 3px solid #C5A059;
       border-radius: 3px;
-      padding: 4px 7px;
-      margin-bottom: 3.5px;
+      padding: 3.5px 7px;
+      margin-bottom: 3px;
     }}
     .b2b-col-title {{
-      font-size: 6pt;
+      font-size: 5.8pt;
       font-weight: 800;
       color: #111111;
       letter-spacing: 0.4px;
@@ -1021,7 +1020,7 @@ def main():
       padding-bottom: 1.5px;
     }}
     .b2b-item {{
-      font-size: 5.4pt;
+      font-size: 5.2pt;
       color: #333333;
       margin-bottom: 1.5px;
       line-height: 1.2;
@@ -1035,99 +1034,111 @@ def main():
     }}
 
     /* =========================================================
-       BOTTOM PAPER SHOWCASE: EXPANDED 2 ROWS FOR EACH CATEGORY
+       BOTTOM PAPER SHOWCASE: EXACT USER DIAGRAM IMPLEMENTATION
+       - Category 1 Band: Dark Brown (#2D2825) with 2 rows of swatches
+       - Category 2 Band: Kraft (#9E826B) with 1 row of swatches
+       - White label boxes & white frames with negative text
        ========================================================= */
     .bottom-paper-showcase {{
-      margin-top: 4px;
-      border: 1.5px solid #D6CEBE;
-      border-radius: 4px;
-      background: #FFFFFF;
-      padding: 4px 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }}
-
-    .cat-block {{
+      margin-top: 3.5px;
       display: flex;
       flex-direction: column;
       gap: 2.5px;
     }}
 
-    .cat-header-row {{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5px 5px;
-      border-radius: 2px;
+    .cat-band {{
+      border-radius: 3.5px;
+      padding: 3.5px 4.5px;
     }}
-    .tp-header {{
-      background: #F0ECE4;
-      border-left: 3px solid #666666;
+    .tp-band {{
+      background: #2D2825;
+      border: 1px solid #1A1614;
     }}
-    .luxe-header {{
-      background: #FAF3E6;
-      border-left: 3px solid #C5A059;
+    .luxe-band {{
+      background: #9E826B;
+      border: 1px solid #856B54;
     }}
 
-    .cat-title {{
-      font-size: 5.8pt;
+    /* Category 1: 10 Columns Grid for Both Rows */
+    .tp-row {{
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 3px;
+      align-items: center;
+    }}
+    .tp-row-top {{
+      margin-bottom: 2.5px;
+    }}
+
+    /* White Category Label Box (matching user drawing) */
+    .cat-label-card {{
+      background: #FFFFFF;
+      border-radius: 2.5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2px 1px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    }}
+    .tp-label-card {{
+      height: 18.5mm;
+      border: 1.5px solid #FFFFFF;
+    }}
+    .luxe-label-card {{
+      width: 24mm;
+      height: 20mm;
+      flex-shrink: 0;
+      border: 1.5px solid #FFFFFF;
+    }}
+
+    .cat-label-badge {{
+      font-size: 4.8pt;
       font-weight: 800;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      color: #111111;
+      line-height: 1.1;
     }}
-    .tp-header .cat-title {{
-      color: #222222;
-    }}
-    .luxe-header .cat-title {{
-      color: #9A752B;
-    }}
-
-    .cat-badge {{
-      font-size: 5pt;
+    .cat-label-title {{
+      font-size: 4.5pt;
       font-weight: 700;
       letter-spacing: 0.3px;
       text-transform: uppercase;
+      margin-top: 1.5px;
+      line-height: 1.15;
     }}
-    .tp-badge {{
-      color: #555555;
+    .tp-label-card .cat-label-title {{
+      color: #2D2825;
     }}
-    .luxe-badge {{
-      color: #8C6A24;
+    .luxe-label-card .cat-label-title {{
+      color: #7D634E;
     }}
-
-    /* Swatches Grid Rows */
-    .swatches-grid-row {{
-      display: grid;
-      gap: 2.5px;
-    }}
-    .tp-grid-10 {{
-      grid-template-columns: repeat(10, 1fr);
-    }}
-    .tp-grid-9 {{
-      grid-template-columns: repeat(9, 1fr);
+    .cat-label-tier {{
+      font-size: 4.2pt;
+      font-weight: 800;
+      color: #C5A059;
+      margin-top: 1.5px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
     }}
 
-    .swatch-card {{
+    /* Swatch Cell in Category 1 */
+    .swatch-cell {{
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: #FAFAF8;
-      border: 1px solid #DDD8CC;
-      border-radius: 2.5px;
-      padding: 2px 1.5px;
       text-align: center;
     }}
-    .swatch-img-box {{
+    .swatch-img-frame {{
       width: 100%;
-      height: 13.5mm;
+      height: 13mm;
+      background: #FFFFFF;
+      border: 1.5px solid #FFFFFF;
       border-radius: 2px;
       overflow: hidden;
-      background: #EBEBEB;
-      border: 1px solid #CCC7BA;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }}
     .swatch-img {{
       width: 100%;
@@ -1135,11 +1146,11 @@ def main():
       object-fit: cover;
       display: block;
     }}
-    .swatch-name {{
-      font-size: 4.3pt;
+    .swatch-name-neg {{
+      font-size: 4.1pt;
       font-weight: 600;
-      color: #222222;
-      margin-top: 1.5px;
+      color: #FFFFFF;
+      margin-top: 1px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1147,29 +1158,27 @@ def main():
       letter-spacing: -0.1px;
     }}
 
-    /* Luxe Grid Rows (3 large luxury cards per row) */
-    .luxe-grid-row {{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3.5px;
-    }}
-    .luxe-tile {{
+    /* Category 2 Luxe Single Row Layout */
+    .luxe-single-row {{
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: #FFFDF9;
-      border: 1px solid #E2D1A6;
-      border-radius: 3px;
-      padding: 2.5px 5px;
+      gap: 4px;
     }}
-    .luxe-img-box {{
-      width: 25mm;
-      height: 12.5mm;
-      flex-shrink: 0;
+    .luxe-swatch-cell {{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      text-align: center;
+    }}
+    .luxe-img-frame {{
+      width: 100%;
+      height: 14mm;
+      background: #FFFFFF;
+      border: 1.5px solid #FFFFFF;
       border-radius: 2px;
       overflow: hidden;
-      border: 1px solid #D6C294;
-      background: #111111;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }}
     .luxe-img {{
       width: 100%;
@@ -1177,25 +1186,16 @@ def main():
       object-fit: cover;
       display: block;
     }}
-    .luxe-info {{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
-    }}
-    .luxe-title {{
-      font-family: 'Cinzel', serif;
-      font-size: 6.5pt;
-      font-weight: 700;
-      color: #9A752B;
-      letter-spacing: 0.3px;
-      line-height: 1.1;
-    }}
-    .luxe-desc {{
+    .luxe-name-neg {{
       font-size: 4.8pt;
-      color: #555555;
-      margin-top: 1px;
-      line-height: 1.15;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 1.5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      letter-spacing: 0.1px;
     }}
 
     /* FOOTER */
@@ -1205,8 +1205,8 @@ def main():
       align-items: center;
       padding-top: 3px;
       border-top: 1px solid #E5E1D8;
-      margin-top: 3px;
-      font-size: 5.5pt;
+      margin-top: 2.5px;
+      font-size: 5.2pt;
       color: #777777;
     }}
     .footer-left {{
@@ -1252,7 +1252,7 @@ def main():
       {p1_cards}
     </div>
 
-    <!-- Bottom Swatches Showcase: 2 Rows TP + 2 Rows Luxe -->
+    <!-- Bottom Swatches Showcase: Category 1 (Dark Brown 2 Rows) & Category 2 (Kraft 1 Row) -->
     {bottom_swatches}
 
     <!-- Footer -->
