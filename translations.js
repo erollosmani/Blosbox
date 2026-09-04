@@ -1,5 +1,6 @@
 const translations = {
   en: {
+    jewellery_photo_galleries: "PHOTO GALLERIES",
     floating_pdf_badge: "PDF CATALOGUE",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Price Calculator",
@@ -347,6 +348,7 @@ const translations = {
   },
   
   fr: {
+    jewellery_photo_galleries: "GALERIES PHOTOS",
     floating_pdf_badge: "CATALOGUE PDF",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Calculateur de Prix",
@@ -689,6 +691,7 @@ const translations = {
   },
   
   sq: {
+    jewellery_photo_galleries: "GALERITË E FOTOVE",
     floating_pdf_badge: "KATALOGU PDF",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Kalkulatori i Çmimeve",
@@ -1031,6 +1034,7 @@ const translations = {
   },
   
   it: {
+    jewellery_photo_galleries: "GALLERIE FOTOGRAFICHE",
     floating_pdf_badge: "CATALOGO PDF",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Calcolatore Prezzi",
@@ -1373,6 +1377,7 @@ const translations = {
   },
   
   de: {
+    jewellery_photo_galleries: "FOTOGALERIEN",
     floating_pdf_badge: "PDF KATALOG",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Preisrechner",
@@ -1715,6 +1720,7 @@ const translations = {
   },
   
   nl: {
+    jewellery_photo_galleries: "FOTOGALERIJEN",
     floating_pdf_badge: "PDF CATALOGUS",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Prijsberekening",
@@ -2057,6 +2063,7 @@ const translations = {
   },
   
   sv: {
+    jewellery_photo_galleries: "FOTOGALLERIER",
     floating_pdf_badge: "PDF-KATALOG",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Priskalkylator",
@@ -2397,6 +2404,7 @@ const translations = {
   },
   
   mk: {
+    jewellery_photo_galleries: "ФОТО ГАЛЕРИИ",
     floating_pdf_badge: "PDF КАТАЛОГ",
     floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Калкулатор на цени",
