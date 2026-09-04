@@ -2309,28 +2309,25 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('http://localhost:8080/api/send-order', { method: 'POST', body: localData }).catch(() => {});
       } catch (e) {}
 
-      // Primary: FormSubmit AJAX endpoint (official endpoint for fetch / XMLHttpRequest with multipart FormData)
+      // Primary: FormSubmit standard multipart endpoint (proven to deliver genuine binary email attachments)
       let response = null;
       try {
-        const ajaxPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
+        const directPromise = fetch('https://formsubmit.co/contact@blosbox.com', {
           method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: formData
         });
         response = await Promise.race([
-          ajaxPromise,
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000))
+          directPromise,
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 15000))
         ]);
       } catch (err) {
-        console.warn('FormSubmit AJAX endpoint note:', err);
+        console.warn('FormSubmit direct endpoint note:', err);
       }
 
-      // Fallback: standard endpoint if ajax endpoint failed
+      // Fallback: AJAX endpoint if standard endpoint failed
       if (!response || !response.ok) {
         try {
-          const directPromise = fetch('https://formsubmit.co/contact@blosbox.com', {
+          const ajaxPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
             method: 'POST',
             body: formData,
             headers: {
@@ -2338,27 +2335,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
           response = await Promise.race([
-            directPromise,
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000))
+            ajaxPromise,
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 15000))
           ]);
         } catch (err) {
-          console.warn('FormSubmit direct endpoint note:', err);
+          console.warn('FormSubmit fallback note:', err);
         }
       }
 
       if (response && response.ok) {
-        try {
-          const result = await response.json();
-          if (result.success === 'true' || result.success === true) {
-            isDelivered = true;
-          } else if (result.message && result.message.toLowerCase().includes('activation')) {
-            activationRequired = true;
-          } else {
-            isDelivered = true;
-          }
-        } catch (e) {
-          isDelivered = true;
-        }
+        isDelivered = true;
       }
     } catch (err) {
       console.warn('FormSubmit direct submit note:', err);
