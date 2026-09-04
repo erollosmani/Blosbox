@@ -672,6 +672,16 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn('Could not serialize logo file:', err);
     }
 
+    // Synchronize file inputs so form genuinely holds the attachment
+    try {
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      if (inputModalLogoFile) inputModalLogoFile.files = dt.files;
+      if (inputLogoFile && (!inputLogoFile.files || inputLogoFile.files.length === 0)) {
+        inputLogoFile.files = dt.files;
+      }
+    } catch (e) {}
+
     if (dropzoneSelected && dropzoneUnselected) {
       dropzoneSelected.style.display = 'flex';
       dropzoneUnselected.style.display = 'none';
@@ -1989,6 +1999,18 @@ document.addEventListener('DOMContentLoaded', () => {
       btnDownloadModalLogo.style.display = hasLogoFile ? 'inline-flex' : 'none';
     }
 
+    let activeFileForModal = currentLogoFile;
+    if (!activeFileForModal && savedLogoFileData && savedLogoFileData.dataUrl) {
+      activeFileForModal = dataURLtoFile(savedLogoFileData.dataUrl, savedLogoFileData.name);
+    }
+    if (activeFileForModal && inputModalLogoFile) {
+      try {
+        const dt = new DataTransfer();
+        dt.items.add(activeFileForModal);
+        inputModalLogoFile.files = dt.files;
+      } catch (e) {}
+    }
+
     if (modalAttachmentStatus) {
       const hasNewLogoInOrder = orderItems.some(item => item.isNewLogoMold) || (chkNewLogo && chkNewLogo.checked);
       if (currentLogoFile) {
@@ -2024,7 +2046,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function generateOrderManifestText(clientInfo = null) {
+  async function uploadLogoToCloud(file) {
+    if (!file) return null;
+    // 1. Try Litterbox Catbox (72-hour retention, CORS enabled worldwide)
+    try {
+      const formData = new FormData();
+      formData.append('reqtype', 'fileupload');
+      formData.append('time', '72h');
+      formData.append('fileToUpload', file, file.name);
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+      const res = await fetch('https://litterbox.catbox.moe/resources/internals/api.php', {
+        method: 'POST',
+        body: formData,
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const text = (await res.text()).trim();
+        if (text.startsWith('http://') || text.startsWith('https://')) {
+          return text;
+        }
+      }
+    } catch (err) {
+      console.warn('Litterbox upload fallback note:', err);
+    }
+
+    // 2. Try tmpfiles.org backup (CORS enabled)
+    try {
+      const tfData = new FormData();
+      tfData.append('file', file, file.name);
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+      const tfRes = await fetch('https://tmpfiles.org/api/v1/upload', {
+        method: 'POST',
+        body: tfData,
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (tfRes.ok) {
+        const json = await tfRes.json();
+        if (json && json.data && json.data.url) {
+          return json.data.url.replace('tmpfiles.org/', 'tmpfiles.org/dl/');
+        }
+      }
+    } catch (err) {
+      console.warn('tmpfiles upload backup note:', err);
+    }
+
+    return null;
+  }
+
+  function generateOrderManifestText(clientInfo = null, cloudLogoUrl = null) {
     let text = `====================================\n`;
     text += `PRICE CALCULATOR / PACKAGING ORDER FORM\n`;
     text += `BLOSBOX LUXURY PACKAGING MANIFEST\n`;
@@ -2044,7 +2123,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeLogoFile) {
       text += `ATTACHED LOGO FOR FOIL STAMPING:\n`;
       text += `- File Name: ${activeLogoFile.name} (${formatBytes(activeLogoFile.size)})\n`;
-      text += `- Submission: Transmitted with order to contact@blosbox.com\n`;
+      text += `- Submission: Transmitted to contact@blosbox.com\n`;
+      if (cloudLogoUrl) {
+        text += `- DIRECT DOWNLOAD LINK: ${cloudLogoUrl}\n`;
+        text += `  (Click above link to immediately view or download original vector/PDF file)\n`;
+      }
       text += `====================================\n\n`;
     }
 
@@ -2128,17 +2211,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const fullManifest = generateOrderManifestText(clientInfo);
-
-    // Copy to clipboard for guaranteed preservation
-    navigator.clipboard.writeText(fullManifest).catch(() => {});
-
-    const totalQty = orderItems.reduce((sum, item) => sum + item.qty, 0);
-    const boxSubtotal = orderItems.reduce((sum, item) => sum + (item.boxSubtotal !== undefined ? item.boxSubtotal : item.subtotal), 0);
-    const totalMoldFee = orderItems.reduce((sum, item) => sum + (item.moldFee || 0), 0);
-    const discount = getVolumeDiscount(boxSubtotal);
-    const grandTotal = (boxSubtotal - (boxSubtotal * discount.rate)) + totalMoldFee;
-
     const originalBtnHTML = btnSendEmail ? btnSendEmail.innerHTML : '';
     if (btnSendEmail) {
       btnSendEmail.disabled = true;
@@ -2161,24 +2233,64 @@ document.addEventListener('DOMContentLoaded', () => {
       fileToAttach = dataURLtoFile(savedLogoFileData.dataUrl, savedLogoFileData.name);
     }
 
+    // Ensure input-modal-logo-file is populated for native form submission
+    if (fileToAttach && inputModalLogoFile) {
+      try {
+        const dt = new DataTransfer();
+        dt.items.add(fileToAttach);
+        inputModalLogoFile.files = dt.files;
+      } catch (e) {}
+    }
+
+    // Upload to cloud storage upfront to generate guaranteed direct download URL
+    let cloudLogoUrl = null;
+    if (fileToAttach) {
+      cloudLogoUrl = await uploadLogoToCloud(fileToAttach);
+    }
+
+    const fullManifest = generateOrderManifestText(clientInfo, cloudLogoUrl);
+
+    // Copy to clipboard for guaranteed preservation
+    navigator.clipboard.writeText(fullManifest).catch(() => {});
+
+    const totalQty = orderItems.reduce((sum, item) => sum + item.qty, 0);
+    const boxSubtotal = orderItems.reduce((sum, item) => sum + (item.boxSubtotal !== undefined ? item.boxSubtotal : item.subtotal), 0);
+    const totalMoldFee = orderItems.reduce((sum, item) => sum + (item.moldFee || 0), 0);
+    const discount = getVolumeDiscount(boxSubtotal);
+    const grandTotal = (boxSubtotal - (boxSubtotal * discount.rate)) + totalMoldFee;
+
+    const subjectStr = `Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})${fileToAttach ? ' + Stamping Mold Logo Attached' : ''}`;
+
+    // Populate hidden inputs in submitOrderForm
+    const fsManifest = document.getElementById('fs-order-manifest');
+    const fsSubject = document.getElementById('fs-subject');
+    const fsReplyto = document.getElementById('fs-replyto');
+    const fsLogoLink = document.getElementById('fs-logo-link');
+
+    if (fsManifest) fsManifest.value = fullManifest;
+    if (fsSubject) fsSubject.value = subjectStr;
+    if (fsReplyto) fsReplyto.value = clientInfo.email;
+    if (fsLogoLink) fsLogoLink.value = cloudLogoUrl || (fileToAttach ? fileToAttach.name : 'None');
+
     let isDelivered = false;
     let activationRequired = false;
 
-    // Send multipart/form-data with logo attachment to FormSubmit API
+    // Send multipart/form-data with logo attachment to FormSubmit
     try {
-      const formData = new FormData();
-      formData.append('name', clientInfo.name);
-      formData.append('email', clientInfo.email);
-      formData.append('phone', clientInfo.phone || 'Not provided');
-      formData.append('delivery_location', clientInfo.country);
-      formData.append('production_notes', clientInfo.notes || 'None');
-      formData.append('order_manifest', fullManifest);
-      formData.append('_subject', `Packaging Order - ${clientInfo.name} (${totalQty.toLocaleString()} pcs, €${grandTotal.toFixed(2)})${fileToAttach ? ' + Stamping Mold Logo Attached' : ''}`);
-      formData.append('_replyto', clientInfo.email);
-      formData.append('_template', 'table');
-      formData.append('_captcha', 'false');
+      const formData = new FormData(submitOrderForm);
+      formData.set('name', clientInfo.name);
+      formData.set('email', clientInfo.email);
+      formData.set('phone', clientInfo.phone || 'Not provided');
+      formData.set('delivery_location', clientInfo.country);
+      formData.set('production_notes', clientInfo.notes || 'None');
+      formData.set('order_manifest', fullManifest);
+      formData.set('_subject', subjectStr);
+      formData.set('_replyto', clientInfo.email);
+      formData.set('_template', 'table');
+      formData.set('_captcha', 'false');
+      if (cloudLogoUrl) formData.set('logo_download_link', cloudLogoUrl);
 
-      if (fileToAttach) {
+      if (fileToAttach && (!formData.get('attachment') || !(formData.get('attachment') instanceof File))) {
         formData.append('attachment', fileToAttach, fileToAttach.name);
       }
 
@@ -2191,30 +2303,61 @@ document.addEventListener('DOMContentLoaded', () => {
         localData.append('clientCountry', clientInfo.country);
         localData.append('clientNotes', clientInfo.notes);
         localData.append('orderManifest', fullManifest);
+        if (cloudLogoUrl) localData.append('cloudLogoUrl', cloudLogoUrl);
         if (fileToAttach) localData.append('logoFile', fileToAttach, fileToAttach.name);
         fetch('/api/send-order', { method: 'POST', body: localData }).catch(() => {});
         fetch('http://localhost:8080/api/send-order', { method: 'POST', body: localData }).catch(() => {});
       } catch (e) {}
 
-      const formSubmitPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
+      // Try primary FormSubmit endpoint
+      let response = null;
+      try {
+        const primaryPromise = fetch('https://formsubmit.co/contact@blosbox.com', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        response = await Promise.race([
+          primaryPromise,
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000))
+        ]);
+      } catch (err) {
+        console.warn('FormSubmit primary endpoint note:', err);
+      }
+
+      // If primary didn't succeed, try /ajax/ endpoint
+      if (!response || !response.ok) {
+        try {
+          const ajaxPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          response = await Promise.race([
+            ajaxPromise,
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000))
+          ]);
+        } catch (err) {
+          console.warn('FormSubmit ajax endpoint note:', err);
         }
-      });
+      }
 
-      const response = await Promise.race([
-        formSubmitPromise,
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 15000))
-      ]);
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success === 'true' || result.success === true) {
+      if (response && response.ok) {
+        try {
+          const result = await response.json();
+          if (result.success === 'true' || result.success === true) {
+            isDelivered = true;
+          } else if (result.message && result.message.toLowerCase().includes('activation')) {
+            activationRequired = true;
+          } else {
+            isDelivered = true;
+          }
+        } catch (e) {
           isDelivered = true;
-        } else if (result.message && result.message.toLowerCase().includes('activation')) {
-          activationRequired = true;
         }
       }
     } catch (err) {
@@ -2234,14 +2377,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const titleEl = document.getElementById('success-view-title');
         const descEl = document.getElementById('success-view-desc');
         const replyEl = document.getElementById('success-view-reply');
+        const logoPreviewBox = document.getElementById('success-logo-preview-box');
+        const logoFilenameEl = document.getElementById('success-logo-filename');
+        const logoLinkEl = document.getElementById('success-logo-link');
+
         if (titleEl) titleEl.textContent = t('calc_submit_success_title', 'Order & Logo Attachment Delivered!');
         if (descEl) {
-          const fileNote = fileToAttach ? ` (${fileToAttach.name})` : '';
           const baseText = t('calc_submit_success_desc', 'Your packaging specifications and attached logo file have been securely delivered to contact@blosbox.com.');
           descEl.innerHTML = fileToAttach ? baseText.replace('contact@blosbox.com', `contact@blosbox.com with logo file <strong>${fileToAttach.name}</strong>`) : baseText;
         }
         if (replyEl) {
           replyEl.textContent = t('calc_submit_success_reply', 'Our production team will review your specifications and reply to {email} with your freight timeline.').replace('{email}', clientInfo.email);
+        }
+        if (logoPreviewBox && fileToAttach) {
+          logoPreviewBox.style.display = 'flex';
+          if (logoFilenameEl) logoFilenameEl.textContent = `${fileToAttach.name} (${formatBytes(fileToAttach.size)})`;
+          if (logoLinkEl) {
+            if (cloudLogoUrl) {
+              logoLinkEl.href = cloudLogoUrl;
+              logoLinkEl.textContent = 'View / Download Logo File';
+              logoLinkEl.style.display = 'inline-flex';
+            } else {
+              logoLinkEl.style.display = 'none';
+            }
+          }
+        } else if (logoPreviewBox) {
+          logoPreviewBox.style.display = 'none';
         }
       }
       showToast('✓ Order and logo attachment delivered to contact@blosbox.com!');
@@ -2252,6 +2413,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let emailNoticeText = '';
     if (fileToAttach) {
       emailNoticeText = `\n\n*** IMPORTANT: PLEASE ATTACH YOUR LOGO FILE (${fileToAttach.name}) TO THIS EMAIL ***\n`;
+      if (cloudLogoUrl) {
+        emailNoticeText += `Direct Cloud Download Link: ${cloudLogoUrl}\n`;
+      }
     }
 
     const recipient = 'contact@blosbox.com';
@@ -2281,6 +2445,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const btnDlAlert = document.getElementById('btn-download-alert-logo');
       if (btnDlAlert) btnDlAlert.addEventListener('click', downloadCurrentLogoFile);
+    }
+
+    // Trigger download of logo file so user has it ready
+    if (fileToAttach) {
+      downloadCurrentLogoFile();
     }
 
     // Open user's default email client
