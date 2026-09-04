@@ -2290,8 +2290,8 @@ document.addEventListener('DOMContentLoaded', () => {
       formData.set('_captcha', 'false');
       if (cloudLogoUrl) formData.set('logo_download_link', cloudLogoUrl);
 
-      if (fileToAttach && (!formData.get('attachment') || !(formData.get('attachment') instanceof File))) {
-        formData.append('attachment', fileToAttach, fileToAttach.name);
+      if (fileToAttach) {
+        formData.set('attachment', fileToAttach, fileToAttach.name);
       }
 
       // Also fire background notification to local dev_server if running
@@ -2309,10 +2309,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('http://localhost:8080/api/send-order', { method: 'POST', body: localData }).catch(() => {});
       } catch (e) {}
 
-      // Try primary FormSubmit endpoint
+      // Primary: FormSubmit AJAX endpoint (official endpoint for fetch / XMLHttpRequest with multipart FormData)
       let response = null;
       try {
-        const primaryPromise = fetch('https://formsubmit.co/contact@blosbox.com', {
+        const ajaxPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
           method: 'POST',
           body: formData,
           headers: {
@@ -2320,17 +2320,17 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
         response = await Promise.race([
-          primaryPromise,
+          ajaxPromise,
           new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000))
         ]);
       } catch (err) {
-        console.warn('FormSubmit primary endpoint note:', err);
+        console.warn('FormSubmit AJAX endpoint note:', err);
       }
 
-      // If primary didn't succeed, try /ajax/ endpoint
+      // Fallback: standard endpoint if ajax endpoint failed
       if (!response || !response.ok) {
         try {
-          const ajaxPromise = fetch('https://formsubmit.co/ajax/contact@blosbox.com', {
+          const directPromise = fetch('https://formsubmit.co/contact@blosbox.com', {
             method: 'POST',
             body: formData,
             headers: {
@@ -2338,11 +2338,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
           response = await Promise.race([
-            ajaxPromise,
+            directPromise,
             new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000))
           ]);
         } catch (err) {
-          console.warn('FormSubmit ajax endpoint note:', err);
+          console.warn('FormSubmit direct endpoint note:', err);
         }
       }
 
