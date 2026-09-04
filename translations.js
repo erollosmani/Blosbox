@@ -5,12 +5,7 @@ const translations = {
     jewellery_calc_btn_line1: "Price Calculator",
     jewellery_calc_btn_line2: "Order Form",
     jewellery_calc_note_title: "Note:",
-    jewellery_calc_note_text: "All packaging covered by the calculator is made of 1.2 mm thick cardboard, wrapped in luxury paper with a textured, pearlescent, or velvet finish, with the exception of the \"RLux Tall Ring box and the Watch box,\" which are made of 2.5 mm cardboard and also wrapped in luxury paper.",
-
-    jewellery_calc_btn_line1: "Price Calculator",
-    jewellery_calc_btn_line2: "Order Form",
-    jewellery_calc_note_title: "Note:",
-    jewellery_calc_note_text: "All packaging covered by the calculator is made of 1.2 mm thick cardboard, wrapped in luxury paper with a textured, pearlescent, or velvet finish, with the exception of the \"RLux Tall Ring box and the Watch box,\" which are made of 2.5 mm cardboard and also wrapped in luxury paper.",
+    jewellery_calc_note_text: "All packaging covered by the calculator is made of 1.2 mm thick cardboard, wrapped in luxury paper with a textured, pearlescent, or velvet finish, with the exception of the \"Proposal Ring Box (70 x 70 / 78) and the Watch box,\" which are made of 2.5 mm cardboard and also wrapped in luxury paper.",
 
     calc_discount_unlocked: "DISCOUNT UNLOCKED!",
     calc_add_prefix: "Add",
@@ -699,7 +694,7 @@ const translations = {
     jewellery_calc_btn_line1: "Kalkulatori i Çmimeve",
     jewellery_calc_btn_line2: "Formulari i Porosisë",
     jewellery_calc_note_title: "Shënim:",
-    jewellery_calc_note_text: "Të gjitha paketimet e përfshira në kalkulator janë të prodhuara nga karton i fortë me trashësi 1.2 mm, të veshura me letër luksoze me sipërfaqe me teksturë, perle ose kadifeje, me përjashtim të kutisë \"RLux Kutia e Lartë për Unazë dhe Kutia për Sahat\", të cilat prodhohen nga karton 2.5 mm dhe gjithashtu vishen me letër luksoze.",
+    jewellery_calc_note_text: "Të gjitha paketimet e përfshira në kalkulator janë të prodhuara nga karton i fortë me trashësi 1.2 mm, të veshura me letër luksoze me sipërfaqe me teksturë, perle ose kadifeje, me përjashtim të kutisë \"Kutia për Propozim (70 x 70 / 78) dhe Kutia për Sahat\", të cilat prodhohen nga karton 2.5 mm dhe gjithashtu vishen me letër luksoze.",
 
     calc_discount_unlocked: "ZBRITJE E ZBLLOKUAR!",
     calc_add_prefix: "Shto",
@@ -1041,7 +1036,7 @@ const translations = {
     jewellery_calc_btn_line1: "Calcolatore Prezzi",
     jewellery_calc_btn_line2: "Modulo d'Ordine",
     jewellery_calc_note_title: "Nota:",
-    jewellery_calc_note_text: "Tutti gli imballaggi inclusi nel calcolatore sono realizzati in cartone rigido da 1,2 mm di spessore, rivestito con carta di lusso con finitura goffrata, perlata o vellutata, ad eccezione della \"Scatola Anello Alta RLux e della Scatola Orologio\", realizzate in cartone da 2,5 mm e anch'esse rivestite con carta di lusso.",
+    jewellery_calc_note_text: "Tutti gli imballaggi inclusi nel calcolatore sono realizzati in cartone rigido da 1,2 mm di spessore, rivestito con carta di lusso con finitura goffrata, perlata o vellutata, ad eccezione della \"Scatola Anello da Proposta (70 x 70 / 78) e della Scatola Orologio\", realizzate in cartone da 2,5 mm e anch'esse rivestite con carta di lusso.",
 
     calc_discount_unlocked: "SCONTO SBLOCCATO!",
     calc_add_prefix: "Aggiungi",
@@ -1725,7 +1720,7 @@ const translations = {
     jewellery_calc_btn_line1: "Prijsberekening",
     jewellery_calc_btn_line2: "Bestelformulier",
     jewellery_calc_note_title: "Opmerking:",
-    jewellery_calc_note_text: "Alle verpakkingen die door de calculator worden gedekt, zijn gemaakt van 1,2 mm dik karton, omhuld met luxepapier met een gestructureerde, parelmoer- of fluwelen afwerking, met uitzondering van de \"RLux Hoge Ringdoos en de Horlogedoos\", die zijn gemaakt van 2,5 mm karton en eveneens zijn omhuld met luxepapier.",
+    jewellery_calc_note_text: "Alle verpakkingen die door de calculator worden gedekt, zijn gemaakt van 1,2 mm dik karton, omhuld met luxepapier met een gestructureerde, parelmoer- of fluwelen afwerking, met uitzondering van de \"Aanzoeksringdoos (70 x 70 / 78) en de Horlogedoos\", die zijn gemaakt van 2,5 mm karton en eveneens zijn omhuld met luxepapier.",
 
     calc_discount_unlocked: "KORTING ONTGRENDELD!",
     calc_add_prefix: "Voeg",
@@ -2067,7 +2062,7 @@ const translations = {
     jewellery_calc_btn_line1: "Priskalkylator",
     jewellery_calc_btn_line2: "Beställningsformulär",
     jewellery_calc_note_title: "Obs:",
-    jewellery_calc_note_text: "Alla förpackningar som omfattas av kalkylatorn är tillverkade av 1,2 mm tjock kartong, klädd i lyxpapper med strukturerad, pärlemorskimrande eller sammetsliknande yta, med undantag för \"RLux Hög Ringask och Klockasken\", vilka är tillverkade av 2,5 mm kartong och även de klädda i lyxpapper.",
+    jewellery_calc_note_text: "Alla förpackningar som omfattas av kalkylatorn är tillverkade av 1,2 mm tjock kartong, klädd i lyxpapper med strukturerad, pärlemorskimrande eller sammetsliknande yta, med undantag för \"Frieri Ringask (70 x 70 / 78) och Klockasken\", vilka är tillverkade av 2,5 mm kartong och även de klädda i lyxpapper.",
 
     calc_discount_unlocked: "RABATT UPPLÅST!",
     calc_add_prefix: "Lägg till",
