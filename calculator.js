@@ -873,7 +873,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderProportionalLineDrawing(box) {
     if (box.id === 'watch-box') {
       proportionalSvgContainer.innerHTML = `
-        <img src="Watch box tecnical drawing.jpg" alt="Watch Box Technical Drawing" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; display: block; border-radius: 2px;">
+        <img src="${resolveAsset('Watch box tecnical drawing.jpg')}" alt="Watch Box Technical Drawing" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; display: block; border-radius: 2px;">
+      `;
+      return;
+    }
+
+    if (box.id === 'rlux') {
+      proportionalSvgContainer.innerHTML = `
+        <img src="${resolveAsset('Proposal ring box tecnical drawing.jpg')}" alt="Proposal Ring Box Technical Drawing" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; display: block; border-radius: 2px;">
       `;
       return;
     }
@@ -2637,6 +2644,14 @@ document.addEventListener('DOMContentLoaded', () => {
           `${selectedBox.name} — Technical Drawing`,
           `Authentic Technical Blueprint: 100 x 100 mm / Base: 25 mm / Lid: 84 mm`,
           'Watch box tecnical drawing.jpg',
+          false,
+          null
+        );
+      } else if (selectedBox.id === 'rlux') {
+        openLightbox(
+          `${selectedBox.name} — Technical Drawing`,
+          `Authentic Architectural Blueprint: Base 70 x 70 mm / Rim 18 mm / Shoulder 30 mm / Lid 60 mm / Total 78 mm`,
+          'Proposal ring box tecnical drawing.jpg',
           false,
           null
         );
