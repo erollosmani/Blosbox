@@ -1,7 +1,7 @@
 const translations = {
   en: {
     floating_pdf_badge: "PDF CATALOGUE",
-    floating_pdf_title: "Pricelist & Technical Specs",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Price Calculator",
     jewellery_calc_btn_line2: "Order Form",
     jewellery_calc_note_title: "Note:",
@@ -353,7 +353,7 @@ const translations = {
   
   fr: {
     floating_pdf_badge: "CATALOGUE PDF",
-    floating_pdf_title: "Liste de Prix & Fiches Techniques",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Calculateur de Prix",
     jewellery_calc_btn_line2: "Formulaire de Commande",
     jewellery_calc_note_title: "Remarque :",
@@ -695,7 +695,7 @@ const translations = {
   
   sq: {
     floating_pdf_badge: "KATALOGU PDF",
-    floating_pdf_title: "Çmimet & Specifikimet Teknike",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Kalkulatori i Çmimeve",
     jewellery_calc_btn_line2: "Formulari i Porosisë",
     jewellery_calc_note_title: "Shënim:",
@@ -1037,7 +1037,7 @@ const translations = {
   
   it: {
     floating_pdf_badge: "CATALOGO PDF",
-    floating_pdf_title: "Listino Prezzi & Specifiche Tecniche",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Calcolatore Prezzi",
     jewellery_calc_btn_line2: "Modulo d'Ordine",
     jewellery_calc_note_title: "Nota:",
@@ -1379,7 +1379,7 @@ const translations = {
   
   de: {
     floating_pdf_badge: "PDF KATALOG",
-    floating_pdf_title: "Preisliste & Technische Daten",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Preisrechner",
     jewellery_calc_btn_line2: "Bestellformular",
     jewellery_calc_note_title: "Hinweis:",
@@ -1721,7 +1721,7 @@ const translations = {
   
   nl: {
     floating_pdf_badge: "PDF CATALOGUS",
-    floating_pdf_title: "Prijslijst & Technische Specificaties",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Prijsberekening",
     jewellery_calc_btn_line2: "Bestelformulier",
     jewellery_calc_note_title: "Opmerking:",
@@ -2063,7 +2063,7 @@ const translations = {
   
   sv: {
     floating_pdf_badge: "PDF-KATALOG",
-    floating_pdf_title: "Prislista & Tekniska Specifikationer",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Priskalkylator",
     jewellery_calc_btn_line2: "Beställningsformulär",
     jewellery_calc_note_title: "Obs:",
@@ -2403,7 +2403,7 @@ const translations = {
   
   mk: {
     floating_pdf_badge: "PDF КАТАЛОГ",
-    floating_pdf_title: "Ценовник & Технички Спецификации",
+    floating_pdf_title: "Jewellery & Watch Box Pricelist",
     jewellery_calc_btn_line1: "Калкулатор на цени",
     jewellery_calc_btn_line2: "Формулар за нарачка",
     jewellery_calc_note_title: "Забелешка:",

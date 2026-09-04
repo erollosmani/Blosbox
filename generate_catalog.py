@@ -3,17 +3,13 @@ generate_catalog.py
 Builds pricelist-catalog.html and compiles Blosbox-Jewellery-Pricelist.pdf using Headless Chrome/Edge.
 Strictly 4 A4 pages (divisible by 4), ordered from smallest to largest box.
 
-Matches user drawing:
-- Category 1 (Textured & Pearl): Dark Brown (#2D2825) background container with 2 rows:
-  - Row 1: White "Category 1" label box + 9 large swatch squares
-  - Row 2: 10 large swatch squares (aligned 10-column grid)
-  - Total 19 swatches with white negative text
-- Category 2 (Luxe Finishes): Kraft (#9E826B) background container with 1 row:
-  - White "Category 2" label box + 6 large swatch squares with white negative text
-- Product Cards Price Boxes:
-  - Top Price Box (Textured & Pearl): Dark Brown (#2D2825) background with negative white text
-  - Bottom Price Box (Luxe Finishes): Kraft (#9E826B) background with negative white text
-- Customers instantly connect background colors of the price boxes with the material preview bands!
+Specifications:
+- Catalog Name: "Jewellery & Watch Box Pricelist"
+- Header on EVERY page corresponds to website header style (#302C27 dark band, gold accents, white text, Blosbox logo)
+- Displays "Jewellery & Watch Box Pricelist" in the header of every page
+- Category 1 (Textured & Pearl): Dark Brown (#2D2825) 2-row swatch showcase
+- Category 2 (Luxe Finishes): Kraft (#9E826B) 1-row swatch showcase
+- Product cards pricing boxes match category background colors with negative white text
 """
 
 import os
@@ -177,7 +173,7 @@ def generate_box_svg(width, length, height, box_id):
 
 def main():
     print("Pre-encoding logo and blueprints...")
-    logo_b64 = get_b64("Logo.png", 350)
+    logo_b64 = get_b64("Logo.png", 500)
     proposal_box_drawing_b64 = get_b64("Proposal ring box tecnical drawing.jpg", 600)
     watch_box_drawing_b64 = get_b64("Watch box tecnical drawing.jpg", 600)
 
@@ -450,7 +446,6 @@ def main():
     # - Category 1: Dark Brown (#2D2825) with 2 rows (Row 1: Label + 9 swatches, Row 2: 10 swatches)
     # - Category 2: Kraft (#9E826B) with 1 row (Label + 6 large swatches)
     def render_bottom_swatch_strip():
-        # Category 1 Label Box (White card)
         cat1_label_html = '''
         <div class="cat-label-card tp-label-card">
           <div class="cat-label-badge">CATEGORY ONE</div>
@@ -459,7 +454,6 @@ def main():
         </div>
         '''
 
-        # Row 1 swatches (9 items)
         tp_row1_html = "".join([
             f'''<div class="swatch-cell" title="{s['name']}">
                 <div class="swatch-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
@@ -467,7 +461,6 @@ def main():
             </div>''' for s in swatches_tp_all[0:9]
         ])
 
-        # Row 2 swatches (10 items)
         tp_row2_html = "".join([
             f'''<div class="swatch-cell" title="{s['name']}">
                 <div class="swatch-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
@@ -475,7 +468,6 @@ def main():
             </div>''' for s in swatches_tp_all[9:19]
         ])
 
-        # Category 2 Label Box (White card)
         cat2_label_html = '''
         <div class="cat-label-card luxe-label-card">
           <div class="cat-label-badge">CATEGORY TWO</div>
@@ -484,7 +476,6 @@ def main():
         </div>
         '''
 
-        # Luxe row swatches (6 large items)
         luxe_swatches_html = "".join([
             f'''<div class="luxe-swatch-cell" title="{s['name']}">
                 <div class="luxe-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="luxe-img"></div>
@@ -555,7 +546,7 @@ def main():
             <div class="insert-specs-note">Includes 15mm Die-Cut Velvet-Top Foam (Black, Dark Brown, Cream)</div>
           </div>
 
-          <!-- Col 4: Dual Pricing Matching Category Background Colors -->
+          <!-- Col 4: Dual Pricing Matching Category Background Colors Exactly -->
           <div class="col-pricing">
             <div class="price-box tp-price">
               <div class="price-header">TEXTURED &amp; PEARL</div>
@@ -584,10 +575,10 @@ def main():
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blosbox Luxury Jewellery Boxes - B2B Wholesale Pricelist & Technical Catalogue</title>
+  <title>Jewellery &amp; Watch Box Pricelist | Blosbox Luxury Packaging</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2•family=Playfair+Display:ital,wght@0€500;0,600;0,700;1,400&family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Global Page Geometry for A4 Print */
     @page {{
@@ -613,14 +604,14 @@ def main():
       height: 297mm;
       margin: 0 auto 20px auto;
       background: #FFFFFF;
-      padding: 6mm 10mm 4.5mm 10mm;
+      padding: 5.5mm 10mm 4.5mm 10mm;
       page-break-after: always;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 16px rgba(0€0€0€0.12);
     }}
 
     @media print {{
@@ -636,97 +627,144 @@ def main():
       }}
     }}
 
-    /* HEADER STYLES */
-    .master-header {{
+    /* =========================================================
+       WEBSITE-CORRESPONDING HEADER DESIGN (#302C27 Top Band)
+       Exact dark top band matching the Blosbox website navbar
+       ========================================================= */
+    .website-style-header {{
+      background: #302C27;
+      color: #F9F7F3;
+      border-radius: 4px;
+      padding: 3.5mm 7mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 4px;
       border-bottom: 2px solid #C5A059;
-      margin-bottom: 4px;
+      margin-bottom: 3.5mm;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.22);
     }}
-    .brand-left {{
+
+    .header-brand-group {{
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }}
-    .brand-logo {{
+    .header-logo {{
       height: 30px;
       width: auto;
       object-fit: contain;
     }}
-    .brand-title-group {{
+    .header-brand-divider {{
+      width: 1.5px;
+      height: 24px;
+      background: rgba(197, 160, 89, 0.45);
+    }}
+    .header-text-group {{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }}
+    .header-main-title {{
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 14.5pt;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }}
+    .header-sub-title {{
+      font-family: 'Outfit', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: #C5A059;
+      text-transform: uppercase;
+      margin-top: 1.5px;
+    }}
+
+    .header-meta-group {{
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }}
+    .header-badge {{
+      display: inline-block;
+      background: #443F38;
+      border: 1px solid #C5A059;
+      color: #F4EBD9;
+      font-size: 6.5pt;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 2.5px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }}
+    .header-url {{
+      font-size: 6.5pt;
+      color: #C5A059;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }}
+
+    .header-brand-group {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }}
+    .header-logo {{
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+    }}
+    .header-text-group {{
       display: flex;
       flex-direction: column;
     }}
-    .brand-main-title {{
-      font-family: 'Cinzel', serif;
-      font-size: 13pt;
+    .header-main-title {{
+      font-family: 'Playfair Display', serif;
+      font-size: 13.5pt;
       font-weight: 700;
-      letter-spacing: 1.2px;
-      color: #111111;
+      letter-spacing: 0.8px;
+      color: #FFFFFF;
       line-height: 1.1;
     }}
-    .brand-sub-title {{
-      font-size: 6.8pt;
+    .header-sub-title {{
+      font-size: 6.5pt;
       font-weight: 600;
-      letter-spacing: 1.5px;
-      color: #A67C37;
+      letter-spacing: 1.6px;
+      color: #C5A059;
       text-transform: uppercase;
-      margin-top: 1px;
+      margin-top: 1.5px;
     }}
-    .brand-right {{
+
+    .header-meta-group {{
       text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }}
-    .catalog-pill {{
+    .header-badge {{
       display: inline-block;
-      background: #111111;
+      background: #443F38;
+      border: 1px solid #C5A059;
       color: #F4EBD9;
-      font-size: 6.8pt;
+      font-size: 6.5pt;
       font-weight: 700;
       letter-spacing: 0.8px;
       padding: 2px 8px;
       border-radius: 3px;
       text-transform: uppercase;
     }}
-    .catalog-date {{
-      font-size: 6.2pt;
-      color: #777777;
+    .header-url {{
+      font-size: 6pt;
+      color: #C5A059;
       margin-top: 2px;
       font-weight: 500;
-    }}
-
-    /* Sub-header on pages 2, 3, 4 */
-    .running-header {{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 3.5px;
-      border-bottom: 1.5px solid #C5A059;
-      margin-bottom: 3.5px;
-    }}
-    .running-left {{
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }}
-    .running-logo {{
-      height: 19px;
-      width: auto;
-    }}
-    .running-title {{
-      font-family: 'Cinzel', serif;
-      font-size: 8.2pt;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      color: #111111;
-    }}
-    .running-cat {{
-      font-size: 6.8pt;
-      color: #A67C37;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      letter-spacing: 0.4px;
     }}
 
     /* SECTION BANNER */
@@ -776,7 +814,7 @@ def main():
       gap: 5.5px;
       height: 38mm;
       max-height: 38.5mm;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      box-shadow: 0 1px 2px rgba(0€0€0€0.02);
     }}
 
     .col-label {{
@@ -880,8 +918,8 @@ def main():
       padding-left: 2px;
     }}
     .product-name {{
-      font-family: 'Cinzel', serif;
-      font-size: 8.6pt;
+      font-family: 'Playfair Display', serif;
+      font-size: 8.8pt;
       font-weight: 700;
       color: #111111;
       line-height: 1.15;
@@ -976,7 +1014,7 @@ def main():
     .price-unit {{
       font-size: 5.5pt;
       font-weight: 500;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255€0.85);
     }}
     .price-sub {{
       font-size: 4.3pt;
@@ -1037,7 +1075,6 @@ def main():
        BOTTOM PAPER SHOWCASE: EXACT USER DIAGRAM IMPLEMENTATION
        - Category 1 Band: Dark Brown (#2D2825) with 2 rows of swatches
        - Category 2 Band: Kraft (#9E826B) with 1 row of swatches
-       - White label boxes & white frames with negative text
        ========================================================= */
     .bottom-paper-showcase {{
       margin-top: 3.5px;
@@ -1080,7 +1117,7 @@ def main():
       justify-content: center;
       text-align: center;
       padding: 2px 1px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+      box-shadow: 0 1px 3px rgba(0€0€0€0.18);
     }}
     .tp-label-card {{
       height: 18.5mm;
@@ -1138,7 +1175,7 @@ def main():
       border: 1.5px solid #FFFFFF;
       border-radius: 2px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: 0 1px 3px rgba(0€0€0€0.2);
     }}
     .swatch-img {{
       width: 100%;
@@ -1178,7 +1215,7 @@ def main():
       border: 1.5px solid #FFFFFF;
       border-radius: 2px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      box-shadow: 0 1px 3px rgba(0€0€0€0.2);
     }}
     .luxe-img {{
       width: 100%;
@@ -1203,7 +1240,7 @@ def main():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 3px;
+      padding-top: 2.5px;
       border-top: 1px solid #E5E1D8;
       margin-top: 2.5px;
       font-size: 5.2pt;
@@ -1226,24 +1263,25 @@ def main():
 
   <!-- ==================== PAGE 1 OF 4 ==================== -->
   <div class="page" id="page-1">
-    <!-- Header -->
-    <header class="master-header">
-      <div class="brand-left">
-        <img src="{logo_b64}" alt="Blosbox Logo" class="brand-logo">
-        <div class="brand-title-group">
-          <div class="brand-main-title">BLOSBOX LUXURY PACKAGING</div>
-          <div class="brand-sub-title">B2B Wholesale Pricelist & Technical Catalogue</div>
+    <!-- Header: Website dark band #302C27 with "Jewellery & Watch Box Pricelist" -->
+    <header class="website-style-header">
+      <div class="header-brand-group">
+        <img src="{logo_b64}" alt="Blosbox Logo" class="header-logo">
+        <div class="header-brand-divider"></div>
+        <div class="header-text-group">
+          <div class="header-main-title">Jewellery &amp; Watch Box Pricelist</div>
+          <div class="header-sub-title">Blosbox Luxury Packaging • B2B Wholesale Catalogue</div>
         </div>
       </div>
-      <div class="brand-right">
-        <div class="catalog-pill">Official 2026 Price Index</div>
-        <div class="catalog-date">Order Online: www.blosbox.com</div>
+      <div class="header-meta-group">
+        <div class="header-badge">Edition 2026 • Page 1 of 4</div>
+        <div class="header-url">www.blosbox.com</div>
       </div>
     </header>
 
     <!-- Sub-banner -->
     <div class="section-banner">
-      <span class="banner-text">Part 1: Jewellery Ring & Proposal Boxes (Smallest to Largest)</span>
+      <span class="banner-text">Part 1: Jewellery Ring &amp; Proposal Boxes (Smallest to Largest)</span>
       <span class="banner-badge">Page 1 of 4 • Rigid Box Architecture</span>
     </div>
 
@@ -1257,7 +1295,7 @@ def main():
 
     <!-- Footer -->
     <footer class="master-footer">
-      <div class="footer-left">Blosbox Luxury Packaging • Premium Jewellery Box Manufacturer</div>
+      <div class="footer-left">Blosbox Luxury Packaging • Premium Jewellery &amp; Watch Box Manufacturer</div>
       <div class="footer-center">Direct Inquiries: info@blosbox.com • Orders: orders@blosbox.com</div>
       <div class="footer-right">Page 1 of 4</div>
     </footer>
@@ -1265,18 +1303,25 @@ def main():
 
   <!-- ==================== PAGE 2 OF 4 ==================== -->
   <div class="page" id="page-2">
-    <!-- Running Header -->
-    <header class="running-header">
-      <div class="running-left">
-        <img src="{logo_b64}" alt="Blosbox" class="running-logo">
-        <span class="running-title">BLOSBOX LUXURY PACKAGING</span>
+    <!-- Header: Website dark band #302C27 with "Jewellery & Watch Box Pricelist" -->
+    <header class="website-style-header">
+      <div class="header-brand-group">
+        <img src="{logo_b64}" alt="Blosbox Logo" class="header-logo">
+        <div class="header-brand-divider"></div>
+        <div class="header-text-group">
+          <div class="header-main-title">Jewellery &amp; Watch Box Pricelist</div>
+          <div class="header-sub-title">Blosbox Luxury Packaging • B2B Wholesale Catalogue</div>
+        </div>
       </div>
-      <div class="running-cat">Part 2: Bracelet & Small Presentation Sets</div>
+      <div class="header-meta-group">
+        <div class="header-badge">Edition 2026 • Page 2 of 4</div>
+        <div class="header-url">www.blosbox.com</div>
+      </div>
     </header>
 
     <!-- Sub-banner -->
     <div class="section-banner">
-      <span class="banner-text">Part 2: Long Bracelet & Small Set Presentations</span>
+      <span class="banner-text">Part 2: Long Bracelet &amp; Small Set Presentations</span>
       <span class="banner-badge">Page 2 of 4 • Precision Rigid Architecture</span>
     </div>
 
@@ -1290,7 +1335,7 @@ def main():
 
     <!-- Footer -->
     <footer class="master-footer">
-      <div class="footer-left">Blosbox Luxury Packaging • Premium Jewellery Box Manufacturer</div>
+      <div class="footer-left">Blosbox Luxury Packaging • Premium Jewellery &amp; Watch Box Manufacturer</div>
       <div class="footer-center">Direct Inquiries: info@blosbox.com • Orders: orders@blosbox.com</div>
       <div class="footer-right">Page 2 of 4</div>
     </footer>
@@ -1298,18 +1343,25 @@ def main():
 
   <!-- ==================== PAGE 3 OF 4 ==================== -->
   <div class="page" id="page-3">
-    <!-- Running Header -->
-    <header class="running-header">
-      <div class="running-left">
-        <img src="{logo_b64}" alt="Blosbox" class="running-logo">
-        <span class="running-title">BLOSBOX LUXURY PACKAGING</span>
+    <!-- Header: Website dark band #302C27 with "Jewellery & Watch Box Pricelist" -->
+    <header class="website-style-header">
+      <div class="header-brand-group">
+        <img src="{logo_b64}" alt="Blosbox Logo" class="header-logo">
+        <div class="header-brand-divider"></div>
+        <div class="header-text-group">
+          <div class="header-main-title">Jewellery &amp; Watch Box Pricelist</div>
+          <div class="header-sub-title">Blosbox Luxury Packaging • B2B Wholesale Catalogue</div>
+        </div>
       </div>
-      <div class="running-cat">Part 3: Medium & Large Presentation Suites</div>
+      <div class="header-meta-group">
+        <div class="header-badge">Edition 2026 • Page 3 of 4</div>
+        <div class="header-url">www.blosbox.com</div>
+      </div>
     </header>
 
     <!-- Sub-banner -->
     <div class="section-banner">
-      <span class="banner-text">Part 3: Middle & Large Set Presentation Suites</span>
+      <span class="banner-text">Part 3: Middle &amp; Large Set Presentation Suites</span>
       <span class="banner-badge">Page 3 of 4 • Master Craftsmanship</span>
     </div>
 
@@ -1323,7 +1375,7 @@ def main():
 
     <!-- Footer -->
     <footer class="master-footer">
-      <div class="footer-left">Blosbox Luxury Packaging • Premium Jewellery Box Manufacturer</div>
+      <div class="footer-left">Blosbox Luxury Packaging • Premium Jewellery &amp; Watch Box Manufacturer</div>
       <div class="footer-center">Direct Inquiries: info@blosbox.com • Orders: orders@blosbox.com</div>
       <div class="footer-right">Page 3 of 4</div>
     </footer>
@@ -1331,18 +1383,25 @@ def main():
 
   <!-- ==================== PAGE 4 OF 4 ==================== -->
   <div class="page" id="page-4">
-    <!-- Running Header -->
-    <header class="running-header">
-      <div class="running-left">
-        <img src="{logo_b64}" alt="Blosbox" class="running-logo">
-        <span class="running-title">BLOSBOX LUXURY PACKAGING</span>
+    <!-- Header: Website dark band #302C27 with "Jewellery & Watch Box Pricelist" -->
+    <header class="website-style-header">
+      <div class="header-brand-group">
+        <img src="{logo_b64}" alt="Blosbox Logo" class="header-logo">
+        <div class="header-brand-divider"></div>
+        <div class="header-text-group">
+          <div class="header-main-title">Jewellery &amp; Watch Box Pricelist</div>
+          <div class="header-sub-title">Blosbox Luxury Packaging • B2B Wholesale Catalogue</div>
+        </div>
       </div>
-      <div class="running-cat">Part 4: Master Suites, Watch Box & B2B Wholesale Terms</div>
+      <div class="header-meta-group">
+        <div class="header-badge">Edition 2026 • Page 4 of 4</div>
+        <div class="header-url">www.blosbox.com</div>
+      </div>
     </header>
 
     <!-- Sub-banner -->
     <div class="section-banner">
-      <span class="banner-text">Part 4: Grand Statement Sets & Horology Architecture</span>
+      <span class="banner-text">Part 4: Grand Statement Sets &amp; Horology Architecture</span>
       <span class="banner-badge">Page 4 of 4 • Complete Technical Overview</span>
     </div>
 
@@ -1357,22 +1416,22 @@ def main():
         <div class="b2b-col-title">Wholesale Volume Discounts</div>
         <div class="b2b-item">• <strong>100 – 499 pcs:</strong> Base Catalog Rate</div>
         <div class="b2b-item">• <strong>500 – 999 pcs:</strong> <span class="b2b-discount-highlight">5% Volume Discount</span></div>
-        <div class="b2b-item">• <strong>1,000 – 4,999 pcs:</strong> <span class="b2b-discount-highlight">10% Volume Discount</span></div>
-        <div class="b2b-item">• <strong>5,000+ pcs:</strong> <span class="b2b-discount-highlight">15% Volume Discount</span></div>
+        <div class="b2b-item">• <strong>1€000 – 4,999 pcs:</strong> <span class="b2b-discount-highlight">10% Volume Discount</span></div>
+        <div class="b2b-item">• <strong>5€000+ pcs:</strong> <span class="b2b-discount-highlight">15% Volume Discount</span></div>
       </div>
       <div class="b2b-col">
-        <div class="b2b-col-title">Custom Logo & Hot Stamping</div>
+        <div class="b2b-col-title">Custom Logo &amp; Hot Stamping</div>
         <div class="b2b-item">• <strong>Stamping Mold Fee:</strong> €50 (One-time tooling fee)</div>
         <div class="b2b-item">• <strong>Subsequent Reorders:</strong> Free mold reuse (€0)</div>
         <div class="b2b-item">• <strong>Finishes:</strong> Gold Foil, Silver, Rose Gold, Gloss/Matte Black, Deboss</div>
         <div class="b2b-item">• <strong>Logo Position:</strong> Centered on outer lid or inside lid satin</div>
       </div>
       <div class="b2b-col">
-        <div class="b2b-col-title">Material & Packaging Logic</div>
+        <div class="b2b-col-title">Material &amp; Packaging Logic</div>
         <div class="b2b-item">• <strong>Inserts Included:</strong> 15mm High-Density Die-Cut Foam</div>
         <div class="b2b-item">• <strong>Insert Colors:</strong> Black, Dark Brown, or Light Cream</div>
         <div class="b2b-item">• <strong>Mixed Material Formula:</strong> (Price 1 + Price 2) × 0.55</div>
-        <div class="b2b-item">• <strong>Cardboard:</strong> 1.2mm Rigid (2.5mm for Proposal & Watch)</div>
+        <div class="b2b-item">• <strong>Cardboard:</strong> 1.2mm Rigid (2.5mm for Proposal &amp; Watch)</div>
       </div>
     </div>
 
