@@ -2,6 +2,11 @@
 generate_catalog.py
 Builds pricelist-catalog.html and compiles Blosbox-Jewellery-Pricelist.pdf using Headless Chrome/Edge.
 Strictly 4 A4 pages (divisible by 4), ordered from smallest to largest box.
+Features:
+- Large 2-row preview for Textured & Pearl (Price 1)
+- Large 2-row preview for Luxe Finishes (Price 2)
+- High-resolution textures clearly visible when printed
+- Fills the entire free space at the bottom of the page
 """
 
 import os
@@ -13,7 +18,7 @@ from PIL import Image
 
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-def get_b64(rel_path, max_dim=600, quality=85):
+def get_b64(rel_path, max_dim=600, quality=90):
     abs_path = os.path.join(WORKSPACE_DIR, rel_path)
     if not os.path.exists(abs_path):
         print(f"Warning: File not found: {abs_path}")
@@ -47,14 +52,14 @@ def generate_box_svg(width, length, height, box_id):
     projH = (W + L) * sin30 + H
 
     # Scaling so the 3D wireframe box fits with ample clearance for outside dimensions
-    scale = min(230.0 / projW, 130.0 / projH)
+    scale = min(220.0 / projW, 120.0 / projH)
 
     sW = W * scale
     sL = L * scale
     sH = H * scale
 
     p2x = 160.0
-    p2y = 80.0
+    p2y = 75.0
 
     p3x = p2x - sW * cos30
     p3y = p2y - sW * sin30
@@ -82,33 +87,33 @@ def generate_box_svg(width, length, height, box_id):
     elif box_id == 'watch-box':
         lidRatio = 85.0 / 110.0
 
-    lidH = max(sH * lidRatio, 6.0)
+    lidH = max(sH * lidRatio, 5.0)
     l3x, l3y = p3x, p3y + lidH
     l2x, l2y = p2x, p2y + lidH
     l1x, l1y = p1x, p1y + lidH
 
     # Dimensions lines
-    distLeft = 28.0
+    distLeft = 26.0
     nLx = -sin30
     nLy = cos30
     dimLx1 = b3x + nLx * distLeft
     dimLy1 = b3y + nLy * distLeft
     dimLx2 = b2x + nLx * distLeft
     dimLy2 = b2y + nLy * distLeft
-    textLx = (dimLx1 + dimLx2) / 2.0 + nLx * 16.0
-    textLy = (dimLy1 + dimLy2) / 2.0 + nLy * 16.0 + 4.0
+    textLx = (dimLx1 + dimLx2) / 2.0 + nLx * 15.0
+    textLy = (dimLy1 + dimLy2) / 2.0 + nLy * 15.0 + 4.0
 
-    distRight = 28.0
+    distRight = 26.0
     nRx = sin30
     nRy = cos30
     dimRx1 = b2x + nRx * distRight
     dimRy1 = b2y + nRy * distRight
     dimRx2 = b1x + nRx * distRight
     dimRy2 = b1y + nRy * distRight
-    textRx = (dimRx1 + dimRx2) / 2.0 + nRx * 16.0
-    textRy = (dimRy1 + dimRy2) / 2.0 + nRx * 16.0 + 4.0
+    textRx = (dimRx1 + dimRx2) / 2.0 + nRx * 15.0
+    textRy = (dimRy1 + dimRy2) / 2.0 + nRx * 15.0 + 4.0
 
-    distH = 26.0
+    distH = 24.0
     dimHx = p1x + distH
     dimHy1 = p1y
     dimHy2 = b1y
@@ -118,19 +123,19 @@ def generate_box_svg(width, length, height, box_id):
     allX = [
         p0x, p1x, p2x, p3x, b1x, b2x, b3x,
         dimLx1, dimLx2, dimRx1, dimRx2, dimHx,
-        textLx - 24.0, textLx + 24.0,
-        textRx - 24.0, textRx + 24.0,
-        textHx, textHx + 40.0
+        textLx - 22.0, textLx + 22.0,
+        textRx - 22.0, textRx + 22.0,
+        textHx, textHx + 38.0
     ]
     allY = [
         p0y, p1y, p2y, p3y, b1y, b2y, b3y,
         dimLy1, dimLy2, dimRy1, dimRy2, dimHy1, dimHy2,
-        textLy - 12.0, textLy + 6.0,
-        textRy - 12.0, textRy + 6.0,
-        textHy - 12.0, textHy + 6.0
+        textLy - 11.0, textLy + 5.0,
+        textRy - 11.0, textRy + 5.0,
+        textHy - 11.0, textHy + 5.0
     ]
 
-    pad = 12.0
+    pad = 10.0
     minX = math.floor(min(allX) - pad)
     maxX = math.ceil(max(allX) + pad)
     minY = math.floor(min(allY) - pad)
@@ -166,8 +171,8 @@ def generate_box_svg(width, length, height, box_id):
 def main():
     print("Pre-encoding logo and blueprints...")
     logo_b64 = get_b64("Logo.png", 350)
-    proposal_box_drawing_b64 = get_b64("Proposal ring box tecnical drawing.jpg", 700)
-    watch_box_drawing_b64 = get_b64("Watch box tecnical drawing.jpg", 700)
+    proposal_box_drawing_b64 = get_b64("Proposal ring box tecnical drawing.jpg", 600)
+    watch_box_drawing_b64 = get_b64("Watch box tecnical drawing.jpg", 600)
 
     # 15 Products ordered from Smallest to Largest Box
     products = [
@@ -358,7 +363,7 @@ def main():
             "is_heavy": False,
             "structure": "Deep XL Luxury Rigid Presentation Casket",
             "insert_img": "Inserts/Insert for XL set.jpg",
-            "insert_name": "High-Volume Haute Parure Foam Insert"
+            "insert_name": "High-Volume Statement Foam Insert"
         },
         {
             "id": "large-xxs-set",
@@ -392,91 +397,131 @@ def main():
 
     print("Pre-encoding insert images...")
     for p in products:
-        p["insert_b64"] = get_b64(p["insert_img"], 500)
+        p["insert_b64"] = get_b64(p["insert_img"], 450)
 
     # 19 Textured & Pearl Swatches
-    swatches_textured_pearl = [
-        {"name": "Black Imitlin", "file": "Size and Material Customization/Black Imitlin.webp"},
-        {"name": "Black Leatherlike", "file": "Size and Material Customization/Black Leatherlike.webp"},
-        {"name": "Blue Butterfly", "file": "Size and Material Customization/Blue Butterfly.webp"},
-        {"name": "Caramel Pearl", "file": "Size and Material Customization/Caramel Pearl.webp"},
-        {"name": "Castano Imitlin", "file": "Size and Material Customization/Castano Imitlin.webp"},
-        {"name": "Castano Leatherlike", "file": "Size and Material Customization/Castano Leatherlike.webp"},
-        {"name": "Castano Pearl", "file": "Size and Material Customization/Castano Pearl.webp"},
-        {"name": "Cream Imitlin", "file": "Size and Material Customization/Cream Imitlin.webp"},
-        {"name": "Cream Leatherlike", "file": "Size and Material Customization/Cream Leatherlike.webp"},
-        {"name": "Green Leatherlike", "file": "Size and Material Customization/Green Leatherlike.webp"},
-        {"name": "Light Green Pearl", "file": "Size and Material Customization/Light Green Pearl.webp"},
-        {"name": "Light Purple Pearl", "file": "Size and Material Customization/Light purple pearl.webp"},
-        {"name": "Orange Pearl", "file": "Size and Material Customization/Orange Pearl.webp"},
-        {"name": "Red Butterfly", "file": "Size and Material Customization/Red Butterfly.webp"},
-        {"name": "Red Leatherlike", "file": "Size and Material Customization/Red Leatherlike.webp"},
-        {"name": "Teal Pearl", "file": "Size and Material Customization/Teal Pearl.webp"},
-        {"name": "White Diamond", "file": "Size and Material Customization/White Diamond.webp"},
-        {"name": "White Imitlin", "file": "Size and Material Customization/White Imitlin.webp"},
-        {"name": "White Leatherlike", "file": "Size and Material Customization/White Leatherlike.webp"},
+    # Row 1: 10 swatches
+    swatches_tp_row1 = [
+        {"name": "Black Imitlin", "short": "Black Imitlin", "file": "Size and Material Customization/Black Imitlin.webp"},
+        {"name": "Black Leatherlike", "short": "Black Leather", "file": "Size and Material Customization/Black Leatherlike.webp"},
+        {"name": "Blue Butterfly", "short": "Blue Butterfly", "file": "Size and Material Customization/Blue Butterfly.webp"},
+        {"name": "Caramel Pearl", "short": "Caramel Pearl", "file": "Size and Material Customization/Caramel Pearl.webp"},
+        {"name": "Castano Imitlin", "short": "Castano Imitlin", "file": "Size and Material Customization/Castano Imitlin.webp"},
+        {"name": "Castano Leatherlike", "short": "Castano Leather", "file": "Size and Material Customization/Castano Leatherlike.webp"},
+        {"name": "Castano Pearl", "short": "Castano Pearl", "file": "Size and Material Customization/Castano Pearl.webp"},
+        {"name": "Cream Imitlin", "short": "Cream Imitlin", "file": "Size and Material Customization/Cream Imitlin.webp"},
+        {"name": "Cream Leatherlike", "short": "Cream Leather", "file": "Size and Material Customization/Cream Leatherlike.webp"},
+        {"name": "Green Leatherlike", "short": "Green Leather", "file": "Size and Material Customization/Green Leatherlike.webp"},
+    ]
+
+    # Row 2: 9 swatches
+    swatches_tp_row2 = [
+        {"name": "Light Green Pearl", "short": "Light Green Pearl", "file": "Size and Material Customization/Light Green Pearl.webp"},
+        {"name": "Light Purple Pearl", "short": "Light Purple Pearl", "file": "Size and Material Customization/Light purple pearl.webp"},
+        {"name": "Orange Pearl", "short": "Orange Pearl", "file": "Size and Material Customization/Orange Pearl.webp"},
+        {"name": "Red Butterfly", "short": "Red Butterfly", "file": "Size and Material Customization/Red Butterfly.webp"},
+        {"name": "Red Leatherlike", "short": "Red Leather", "file": "Size and Material Customization/Red Leatherlike.webp"},
+        {"name": "Teal Pearl", "short": "Teal Pearl", "file": "Size and Material Customization/Teal Pearl.webp"},
+        {"name": "White Diamond", "short": "White Diamond", "file": "Size and Material Customization/White Diamond.webp"},
+        {"name": "White Imitlin", "short": "White Imitlin", "file": "Size and Material Customization/White Imitlin.webp"},
+        {"name": "White Leatherlike", "short": "White Leather", "file": "Size and Material Customization/White Leatherlike.webp"},
     ]
 
     # 6 Luxe Swatches
-    swatches_luxe = [
-        {"name": "Black Carbon", "file": "Size and Material Customization/Black Carbon.webp"},
-        {"name": "Black Velvet", "file": "Size and Material Customization/Black Velvet.webp"},
-        {"name": "Brown Velvet", "file": "Size and Material Customization/Brown Velvet.webp"},
-        {"name": "Carbon Cream", "file": "Size and Material Customization/Carbon Cream.webp"},
-        {"name": "Kraft Velvet", "file": "Size and Material Customization/Kraft Velvet.webp"},
-        {"name": "Red Velvet", "file": "Size and Material Customization/Red Velvet.webp"},
+    # Row 1: 3 swatches
+    swatches_luxe_row1 = [
+        {"name": "Black Carbon", "desc": "High-Gloss 3D Carbon Fiber Weave", "file": "Size and Material Customization/Black Carbon.webp"},
+        {"name": "Black Velvet", "desc": "Ultra-Plush Deep Matte Black Velvet", "file": "Size and Material Customization/Black Velvet.webp"},
+        {"name": "Brown Velvet", "desc": "Warm Chocolate Rich Suede Velvet", "file": "Size and Material Customization/Brown Velvet.webp"},
     ]
 
-    print("Pre-encoding paper swatches...")
-    for s in swatches_textured_pearl:
-        s["b64"] = get_b64(s["file"], 120, 80)
+    # Row 2: 3 swatches
+    swatches_luxe_row2 = [
+        {"name": "Carbon Cream", "desc": "Ivory Textured Technical Carbon Weave", "file": "Size and Material Customization/Carbon Cream.webp"},
+        {"name": "Kraft Velvet", "desc": "Artisanal Natural Kraft Fiber Velvet", "file": "Size and Material Customization/Kraft Velvet.webp"},
+        {"name": "Red Velvet", "desc": "Vibrant Royal Crimson Velvet Nap", "file": "Size and Material Customization/Red Velvet.webp"},
+    ]
 
-    for s in swatches_luxe:
-        s["b64"] = get_b64(s["file"], 120, 80)
+    print("Pre-encoding paper swatches at high resolution (300px) for crisp printing...")
+    for s in swatches_tp_row1 + swatches_tp_row2:
+        s["b64"] = get_b64(s["file"], 280, 92)
 
-    # Helper to render the 2-row bottom paper strip
+    for s in swatches_luxe_row1 + swatches_luxe_row2:
+        s["b64"] = get_b64(s["file"], 360, 92)
+
+    # Helper to render the 4-row (2 rows TP + 2 rows Luxe) bottom paper showcase
     def render_bottom_swatch_strip():
-        # Row 1: 19 Textured & Pearl
-        tp_chips_html = "".join([
-            f'''<div class="swatch-item" title="{s['name']}">
-                <img src="{s['b64']}" alt="{s['name']}" class="swatch-img">
-                <span class="swatch-label">{s['name']}</span>
-            </div>''' for s in swatches_textured_pearl
+        # TP Row 1 (10 swatches)
+        tp1_html = "".join([
+            f'''<div class="swatch-card tp-card" title="{s['name']}">
+                <div class="swatch-img-box"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
+                <div class="swatch-name">{s['short']}</div>
+            </div>''' for s in swatches_tp_row1
         ])
 
-        # Row 2: 6 Luxe
-        luxe_chips_html = "".join([
-            f'''<div class="swatch-item luxe-item" title="{s['name']}">
-                <img src="{s['b64']}" alt="{s['name']}" class="swatch-img">
-                <span class="swatch-label">{s['name']}</span>
-            </div>''' for s in swatches_luxe
+        # TP Row 2 (9 swatches)
+        tp2_html = "".join([
+            f'''<div class="swatch-card tp-card" title="{s['name']}">
+                <div class="swatch-img-box"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
+                <div class="swatch-name">{s['short']}</div>
+            </div>''' for s in swatches_tp_row2
+        ])
+
+        # Luxe Row 1 (3 swatches)
+        luxe1_html = "".join([
+            f'''<div class="luxe-tile" title="{s['name']}">
+                <div class="luxe-img-box"><img src="{s['b64']}" alt="{s['name']}" class="luxe-img"></div>
+                <div class="luxe-info">
+                  <div class="luxe-title">{s['name']}</div>
+                  <div class="luxe-desc">{s['desc']}</div>
+                </div>
+            </div>''' for s in swatches_luxe_row1
+        ])
+
+        # Luxe Row 2 (3 swatches)
+        luxe2_html = "".join([
+            f'''<div class="luxe-tile" title="{s['name']}">
+                <div class="luxe-img-box"><img src="{s['b64']}" alt="{s['name']}" class="luxe-img"></div>
+                <div class="luxe-info">
+                  <div class="luxe-title">{s['name']}</div>
+                  <div class="luxe-desc">{s['desc']}</div>
+                </div>
+            </div>''' for s in swatches_luxe_row2
         ])
 
         return f'''
-        <div class="bottom-paper-strip">
-          <div class="swatch-row tp-row">
-            <div class="swatch-row-tag tp-tag">
-              <span class="tag-title">TEXTURED & PEARL</span>
-              <span class="tag-price">PRICE 1</span>
+        <div class="bottom-paper-showcase">
+          <!-- CATEGORY 1: TEXTURED & PEARL (2 ROWS) -->
+          <div class="cat-block tp-cat-block">
+            <div class="cat-header-row tp-header">
+              <span class="cat-title">TEXTURED & PEARL FINISHES</span>
+              <span class="cat-badge tp-badge">PRICE 1 — STANDARD INCLUDED (19 FINISHES)</span>
             </div>
-            <div class="swatch-chips-container">
-              {tp_chips_html}
+            <div class="swatches-grid-row tp-grid-10">
+              {tp1_html}
+            </div>
+            <div class="swatches-grid-row tp-grid-9">
+              {tp2_html}
             </div>
           </div>
-          <div class="swatch-row luxe-row">
-            <div class="swatch-row-tag luxe-tag">
-              <span class="tag-title">LUXE FINISHES</span>
-              <span class="tag-price">PRICE 2</span>
+
+          <!-- CATEGORY 2: LUXE FINISHES (2 ROWS) -->
+          <div class="cat-block luxe-cat-block">
+            <div class="cat-header-row luxe-header">
+              <span class="cat-title">LUXE FINISHES COLLECTION</span>
+              <span class="cat-badge luxe-badge">PRICE 2 — PREMIUM VELLUM, VELVET & CARBON (6 LUXURY FINISHES)</span>
             </div>
-            <div class="swatch-chips-container">
-              {luxe_chips_html}
+            <div class="luxe-grid-row">
+              {luxe1_html}
+            </div>
+            <div class="luxe-grid-row">
+              {luxe2_html}
             </div>
           </div>
         </div>
         '''
 
     def render_product_card(p):
-        is_blueprint_box = (p["id"] in ("rlux", "watch-box"))
         if p["id"] == "rlux":
             drawing_html = f'''<div class="drawing-img-box"><img src="{proposal_box_drawing_b64}" alt="Proposal Box Technical Drawing" class="blueprint-img"></div>'''
         elif p["id"] == "watch-box":
@@ -534,7 +579,6 @@ def main():
         '''
 
     # Build the 4 Pages
-    # Page 1: Boxes 0 to 3 (R1, R2, R3, Proposal Ring Box)
     p1_cards = "".join([render_product_card(p) for p in products[0:4]])
     p2_cards = "".join([render_product_card(p) for p in products[4:8]])
     p3_cards = "".join([render_product_card(p) for p in products[8:12]])
@@ -564,7 +608,7 @@ def main():
     body {{
       margin: 0;
       padding: 0;
-      background: #EAEAE6;
+      background: #E8E6E1;
       font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: #1A1A1A;
       -webkit-font-smoothing: antialiased;
@@ -575,7 +619,7 @@ def main():
       height: 297mm;
       margin: 0 auto 20px auto;
       background: #FFFFFF;
-      padding: 10mm 12mm 8mm 12mm;
+      padding: 7mm 11mm 5mm 11mm;
       page-break-after: always;
       position: relative;
       overflow: hidden;
@@ -603,17 +647,17 @@ def main():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 7px;
+      padding-bottom: 5px;
       border-bottom: 2px solid #C5A059;
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }}
     .brand-left {{
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }}
     .brand-logo {{
-      height: 38px;
+      height: 32px;
       width: auto;
       object-fit: contain;
     }}
@@ -623,19 +667,19 @@ def main():
     }}
     .brand-main-title {{
       font-family: 'Cinzel', serif;
-      font-size: 15pt;
+      font-size: 13.5pt;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       color: #111111;
       line-height: 1.1;
     }}
     .brand-sub-title {{
-      font-size: 7.5pt;
-      font-weight: 500;
-      letter-spacing: 2px;
+      font-size: 7pt;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       color: #A67C37;
       text-transform: uppercase;
-      margin-top: 2px;
+      margin-top: 1px;
     }}
     .brand-right {{
       text-align: right;
@@ -644,17 +688,17 @@ def main():
       display: inline-block;
       background: #111111;
       color: #F4EBD9;
-      font-size: 7.5pt;
+      font-size: 7pt;
       font-weight: 700;
-      letter-spacing: 1px;
-      padding: 3px 9px;
+      letter-spacing: 0.8px;
+      padding: 2.5px 8px;
       border-radius: 3px;
       text-transform: uppercase;
     }}
     .catalog-date {{
-      font-size: 7pt;
+      font-size: 6.5pt;
       color: #777777;
-      margin-top: 3px;
+      margin-top: 2px;
       font-weight: 500;
     }}
 
@@ -663,28 +707,28 @@ def main():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 5px;
+      padding-bottom: 4px;
       border-bottom: 1.5px solid #C5A059;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }}
     .running-left {{
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
     }}
     .running-logo {{
-      height: 22px;
+      height: 20px;
       width: auto;
     }}
     .running-title {{
       font-family: 'Cinzel', serif;
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: #111111;
     }}
     .running-cat {{
-      font-size: 7.5pt;
+      font-size: 7pt;
       color: #A67C37;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -699,22 +743,22 @@ def main():
       background: #F9F7F2;
       border: 1px solid #EAE2D2;
       border-left: 3px solid #C5A059;
-      padding: 3px 8px;
-      margin-bottom: 7px;
+      padding: 2.5px 7px;
+      margin-bottom: 4px;
       border-radius: 2px;
     }}
     .banner-text {{
-      font-size: 7.5pt;
+      font-size: 7pt;
       font-weight: 700;
       color: #333333;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
     }}
     .banner-badge {{
-      font-size: 6.5pt;
+      font-size: 6pt;
       background: #EAE2D2;
       color: #555555;
-      padding: 1px 6px;
+      padding: 1px 5px;
       border-radius: 2px;
       font-weight: 600;
     }}
@@ -723,32 +767,31 @@ def main():
     .products-container {{
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      flex: 1;
+      gap: 3.5px;
     }}
 
     /* PRODUCT CARD GRID */
     .product-card {{
       display: grid;
-      grid-template-columns: 46mm 40mm 58mm 42mm;
+      grid-template-columns: 46mm 39mm 61mm 42mm;
       background: #FCFCFA;
       border: 1px solid #E5E1D8;
-      border-radius: 4px;
-      padding: 5px 7px;
+      border-radius: 3.5px;
+      padding: 4px 6px;
       align-items: center;
-      gap: 8px;
-      min-height: 48mm;
-      max-height: 50mm;
+      gap: 6px;
+      height: 38.5mm;
+      max-height: 39mm;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }}
 
     .col-label {{
-      font-size: 5.5pt;
+      font-size: 5pt;
       font-weight: 700;
       color: #888888;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }}
 
     /* Col 1: Drawing */
@@ -760,12 +803,12 @@ def main():
       height: 100%;
       background: #FFFFFF;
       border: 1px solid #ECEAE4;
-      border-radius: 3px;
-      padding: 2px;
+      border-radius: 2.5px;
+      padding: 1px;
     }}
     .drawing-svg-box {{
       width: 100%;
-      height: 34mm;
+      height: 26mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -773,11 +816,11 @@ def main():
     .box-svg {{
       width: 100%;
       height: 100%;
-      max-height: 34mm;
+      max-height: 26mm;
     }}
     .drawing-img-box {{
       width: 100%;
-      height: 34mm;
+      height: 26mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -785,14 +828,14 @@ def main():
     }}
     .blueprint-img {{
       max-width: 100%;
-      max-height: 34mm;
+      max-height: 26mm;
       object-fit: contain;
     }}
     .size-callout {{
-      font-size: 6.5pt;
+      font-size: 6pt;
       font-weight: 700;
       color: #222222;
-      margin-top: 1px;
+      margin-top: 0px;
       letter-spacing: 0.2px;
     }}
 
@@ -805,12 +848,12 @@ def main():
       height: 100%;
       background: #FFFFFF;
       border: 1px solid #ECEAE4;
-      border-radius: 3px;
-      padding: 2px;
+      border-radius: 2.5px;
+      padding: 1px;
     }}
     .insert-img-wrap {{
       width: 100%;
-      height: 33mm;
+      height: 25.5mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -820,18 +863,18 @@ def main():
     }}
     .insert-img {{
       max-width: 95%;
-      max-height: 33mm;
+      max-height: 25.5mm;
       object-fit: contain;
     }}
     .insert-caption {{
-      font-size: 5.5pt;
+      font-size: 5pt;
       color: #555555;
       text-align: center;
-      margin-top: 2px;
+      margin-top: 1px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: 38mm;
+      width: 37mm;
       font-weight: 500;
     }}
 
@@ -844,39 +887,39 @@ def main():
     }}
     .product-name {{
       font-family: 'Cinzel', serif;
-      font-size: 9.5pt;
+      font-size: 8.8pt;
       font-weight: 700;
       color: #111111;
       line-height: 1.15;
     }}
     .product-structure {{
-      font-size: 6.5pt;
+      font-size: 6pt;
       color: #777777;
-      margin-top: 2px;
+      margin-top: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       font-weight: 500;
     }}
     .product-dims-text {{
-      font-size: 7pt;
+      font-size: 6.5pt;
       color: #333333;
-      margin-top: 3px;
+      margin-top: 2px;
     }}
     .product-dims-text strong {{
       color: #111111;
     }}
     .thickness-badge {{
       display: inline-block;
-      margin-top: 4px;
-      font-size: 6.5pt;
+      margin-top: 3px;
+      font-size: 6pt;
       font-weight: 700;
       color: #2D3748;
       background: #EDF2F7;
       border: 1px solid #CBD5E0;
-      padding: 2px 6px;
-      border-radius: 3px;
+      padding: 1.5px 5px;
+      border-radius: 2.5px;
       width: fit-content;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }}
     .thickness-badge.heavy-duty {{
       background: #FEF3C7;
@@ -885,9 +928,9 @@ def main():
       font-weight: 800;
     }}
     .insert-specs-note {{
-      font-size: 5.5pt;
+      font-size: 5pt;
       color: #666666;
-      margin-top: 4px;
+      margin-top: 2.5px;
       line-height: 1.2;
     }}
 
@@ -895,12 +938,12 @@ def main():
     .col-pricing {{
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2.5px;
       justify-content: center;
     }}
     .price-box {{
-      border-radius: 3px;
-      padding: 3px 5px;
+      border-radius: 2.5px;
+      padding: 2.5px 4px;
       text-align: center;
       border: 1px solid transparent;
     }}
@@ -913,9 +956,9 @@ def main():
       border-color: #E2D1A6;
     }}
     .price-header {{
-      font-size: 5.5pt;
+      font-size: 5pt;
       font-weight: 700;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }}
     .tp-price .price-header {{
@@ -925,10 +968,10 @@ def main():
       color: #9A752B;
     }}
     .price-amount {{
-      font-size: 11pt;
+      font-size: 10pt;
       font-weight: 800;
       line-height: 1;
-      margin-top: 1px;
+      margin-top: 0.5px;
     }}
     .tp-price .price-amount {{
       color: #1A1A1A;
@@ -937,21 +980,21 @@ def main():
       color: #9A752B;
     }}
     .price-unit {{
-      font-size: 6.5pt;
+      font-size: 5.5pt;
       font-weight: 500;
       color: #666666;
     }}
     .price-sub {{
-      font-size: 5pt;
+      font-size: 4.5pt;
       color: #888888;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }}
     .vol-hint {{
-      font-size: 5.2pt;
+      font-size: 4.8pt;
       color: #777777;
       text-align: center;
-      margin-top: 1px;
+      margin-top: 0.5px;
       font-weight: 500;
     }}
 
@@ -959,29 +1002,29 @@ def main():
     .b2b-terms-block {{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 7px;
+      gap: 6px;
       background: #FBF9F5;
       border: 1px solid #E8DFD0;
       border-left: 3px solid #C5A059;
       border-radius: 3px;
-      padding: 6px 9px;
-      margin-bottom: 6px;
+      padding: 4px 7px;
+      margin-bottom: 3.5px;
     }}
     .b2b-col-title {{
-      font-size: 6.5pt;
+      font-size: 6pt;
       font-weight: 800;
       color: #111111;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       border-bottom: 1px solid #E2D9C8;
-      padding-bottom: 2px;
+      padding-bottom: 1.5px;
     }}
     .b2b-item {{
-      font-size: 6pt;
+      font-size: 5.4pt;
       color: #333333;
-      margin-bottom: 2px;
-      line-height: 1.25;
+      margin-bottom: 1.5px;
+      line-height: 1.2;
     }}
     .b2b-item strong {{
       color: #111111;
@@ -991,96 +1034,168 @@ def main():
       font-weight: 800;
     }}
 
-    /* BOTTOM PAPER STRIP (EXACT USER REQUIREMENT) */
-    .bottom-paper-strip {{
-      margin-top: 6px;
-      border: 1px solid #E5E1D8;
+    /* =========================================================
+       BOTTOM PAPER SHOWCASE: EXPANDED 2 ROWS FOR EACH CATEGORY
+       ========================================================= */
+    .bottom-paper-showcase {{
+      margin-top: 4px;
+      border: 1.5px solid #D6CEBE;
       border-radius: 4px;
       background: #FFFFFF;
       padding: 4px 6px;
-    }}
-    .swatch-row {{
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }}
-    .swatch-row.tp-row {{
-      padding-bottom: 3px;
-      border-bottom: 1px dashed #E2DCCF;
-      margin-bottom: 3px;
-    }}
-    .swatch-row-tag {{
       display: flex;
       flex-direction: column;
-      width: 32mm;
-      flex-shrink: 0;
+      gap: 4px;
+    }}
+
+    .cat-block {{
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }}
+
+    .cat-header-row {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5px 5px;
       border-radius: 2px;
-      padding: 2px 4px;
-      text-align: center;
     }}
-    .tp-tag {{
-      background: #F2F0EB;
-      border: 1px solid #DCD7CB;
+    .tp-header {{
+      background: #F0ECE4;
+      border-left: 3px solid #666666;
     }}
-    .luxe-tag {{
+    .luxe-header {{
       background: #FAF3E6;
-      border: 1px solid #E6D5B3;
+      border-left: 3px solid #C5A059;
     }}
-    .swatch-row-tag .tag-title {{
-      font-size: 5.5pt;
+
+    .cat-title {{
+      font-size: 5.8pt;
       font-weight: 800;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }}
-    .tp-tag .tag-title {{
+    .tp-header .cat-title {{
       color: #222222;
     }}
-    .luxe-tag .tag-title {{
+    .luxe-header .cat-title {{
       color: #9A752B;
     }}
-    .swatch-row-tag .tag-price {{
+
+    .cat-badge {{
       font-size: 5pt;
-      font-weight: 600;
-      color: #666666;
+      font-weight: 700;
+      letter-spacing: 0.3px;
       text-transform: uppercase;
     }}
-    .swatch-chips-container {{
-      display: flex;
-      flex: 1;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2px;
+    .tp-badge {{
+      color: #555555;
     }}
-    .swatch-item {{
+    .luxe-badge {{
+      color: #8C6A24;
+    }}
+
+    /* Swatches Grid Rows */
+    .swatches-grid-row {{
+      display: grid;
+      gap: 2.5px;
+    }}
+    .tp-grid-10 {{
+      grid-template-columns: repeat(10, 1fr);
+    }}
+    .tp-grid-9 {{
+      grid-template-columns: repeat(9, 1fr);
+    }}
+
+    .swatch-card {{
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 7.6mm;
+      background: #FAFAF8;
+      border: 1px solid #DDD8CC;
+      border-radius: 2.5px;
+      padding: 2px 1.5px;
       text-align: center;
     }}
-    .luxe-item {{
-      width: 23mm;
+    .swatch-img-box {{
+      width: 100%;
+      height: 13.5mm;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #EBEBEB;
+      border: 1px solid #CCC7BA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }}
     .swatch-img {{
-      width: 7.2mm;
-      height: 7.2mm;
-      border-radius: 2px;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border: 1px solid #DCD7CB;
+      display: block;
     }}
-    .luxe-item .swatch-img {{
-      width: 22mm;
-      height: 6.8mm;
-    }}
-    .swatch-label {{
-      font-size: 4pt;
-      color: #555555;
-      margin-top: 1px;
+    .swatch-name {{
+      font-size: 4.3pt;
+      font-weight: 600;
+      color: #222222;
+      margin-top: 1.5px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: 100%;
-      font-weight: 500;
+      letter-spacing: -0.1px;
+    }}
+
+    /* Luxe Grid Rows (3 large luxury cards per row) */
+    .luxe-grid-row {{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5px;
+    }}
+    .luxe-tile {{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFDF9;
+      border: 1px solid #E2D1A6;
+      border-radius: 3px;
+      padding: 2.5px 5px;
+    }}
+    .luxe-img-box {{
+      width: 25mm;
+      height: 12.5mm;
+      flex-shrink: 0;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid #D6C294;
+      background: #111111;
+    }}
+    .luxe-img {{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }}
+    .luxe-info {{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }}
+    .luxe-title {{
+      font-family: 'Cinzel', serif;
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: #9A752B;
+      letter-spacing: 0.3px;
+      line-height: 1.1;
+    }}
+    .luxe-desc {{
+      font-size: 4.8pt;
+      color: #555555;
+      margin-top: 1px;
+      line-height: 1.15;
     }}
 
     /* FOOTER */
@@ -1088,10 +1203,10 @@ def main():
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 4px;
+      padding-top: 3px;
       border-top: 1px solid #E5E1D8;
-      margin-top: 4px;
-      font-size: 6pt;
+      margin-top: 3px;
+      font-size: 5.5pt;
       color: #777777;
     }}
     .footer-left {{
@@ -1137,7 +1252,7 @@ def main():
       {p1_cards}
     </div>
 
-    <!-- Bottom Swatches Strip (Row 1: Textured & Pearl, Row 2: Luxe) -->
+    <!-- Bottom Swatches Showcase: 2 Rows TP + 2 Rows Luxe -->
     {bottom_swatches}
 
     <!-- Footer -->
@@ -1170,7 +1285,7 @@ def main():
       {p2_cards}
     </div>
 
-    <!-- Bottom Swatches Strip -->
+    <!-- Bottom Swatches Showcase -->
     {bottom_swatches}
 
     <!-- Footer -->
@@ -1203,7 +1318,7 @@ def main():
       {p3_cards}
     </div>
 
-    <!-- Bottom Swatches Strip -->
+    <!-- Bottom Swatches Showcase -->
     {bottom_swatches}
 
     <!-- Footer -->
@@ -1261,7 +1376,7 @@ def main():
       </div>
     </div>
 
-    <!-- Bottom Swatches Strip -->
+    <!-- Bottom Swatches Showcase -->
     {bottom_swatches}
 
     <!-- Footer -->
