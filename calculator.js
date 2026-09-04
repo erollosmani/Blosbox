@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: 'rlux',
-      name: 'RLux Tall Ring Box',
+      name: 'Proposal Ring Box (70 x 70 / 78)',
       category: 'Jewellery Ring Boxes',
       width: 70,
       length: 70,
@@ -103,9 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
       size: '70 x 70 / 78 mm',
       priceStructured: 5.00,
       priceLuxe: 7.30,
-      structure: 'RLux Luxury Elevated Architecture',
+      structure: 'Proposal Ring Luxury Elevated Architecture',
       inserts: [
-        { id: 'rlux-format', name: 'RLux Tall Insert Format', type: 'ring-standard', file: 'Inserts/Insert for RLux Tall.jpg' }
+        { id: 'rlux-format', name: 'Proposal Ring Insert Format', type: 'ring-standard', file: 'Inserts/Insert for RLux Tall.jpg' }
       ]
     },
 

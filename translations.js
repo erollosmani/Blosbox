@@ -353,7 +353,7 @@ const translations = {
     jewellery_calc_btn_line1: "Calculateur de Prix",
     jewellery_calc_btn_line2: "Formulaire de Commande",
     jewellery_calc_note_title: "Remarque :",
-    jewellery_calc_note_text: "Tous les emballages couverts par le calculateur sont fabriqués en carton rigide de 1,2 mm d'épaisseur, habillé de papier de luxe avec une finition texturée, nacrée ou veloutée, à l'exception de la « Boîte Bague Haute RLux et la Boîte Montre », qui sont fabriquées en carton de 2,5 mm et également habillées de papier de luxe.",
+    jewellery_calc_note_text: "Tous les emballages couverts par le calculateur sont fabriqués en carton rigide de 1,2 mm d'épaisseur, habillé de papier de luxe avec une finition texturée, nacrée ou veloutée, à l'exception de la « Boîte Bague Proposal Ring Box (70 x 70 / 78) et la Boîte Montre », qui sont fabriquées en carton de 2,5 mm et également habillées de papier de luxe.",
 
     calc_discount_unlocked: "REMISE DÉBLOQUÉE !",
     calc_add_prefix: "Ajoutez",
@@ -1373,7 +1373,7 @@ const translations = {
     jewellery_calc_btn_line1: "Preisrechner",
     jewellery_calc_btn_line2: "Bestellformular",
     jewellery_calc_note_title: "Hinweis:",
-    jewellery_calc_note_text: "Alle vom Rechner erfassten Verpackungen bestehen aus 1,2 mm starkem Karton, bezogen mit Luxuspapier mit strukturierter, perlmuttartiger oder samtiger Oberfläche, mit Ausnahme der „RLux Hohe Ringschachtel und der Uhrenschachtel“, die aus 2,5 mm starkem Karton gefertigt und ebenfalls mit Luxuspapier bezogen sind.",
+    jewellery_calc_note_text: "Alle vom Rechner erfassten Verpackungen bestehen aus 1,2 mm starkem Karton, bezogen mit Luxuspapier mit strukturierter, perlmuttartiger oder samtiger Oberfläche, mit Ausnahme der „Proposal Ring Box (70 x 70 / 78) und der Uhrenschachtel“, die aus 2,5 mm starkem Karton gefertigt und ebenfalls mit Luxuspapier bezogen sind.",
 
     calc_discount_unlocked: "RABATT FREIGESCHALTET!",
     calc_add_prefix: "Noch",
@@ -2391,7 +2391,7 @@ const translations = {
     jewellery_calc_btn_line1: "Калкулатор на цени",
     jewellery_calc_btn_line2: "Формулар за нарачка",
     jewellery_calc_note_title: "Забелешка:",
-    jewellery_calc_note_text: "Сите пакувања опфатени со калкулаторот се изработени од цврст картон со дебелина од 1,2 mm, обложени со луксузна хартија со текстуриран, бисерен или кадифен финиш, со исклучок на „RLux Висока кутија за прстен и Кутијата за часовник“, кои се изработени од картон со дебелина од 2,5 mm и исто така обложени со луксузна хартија.",
+    jewellery_calc_note_text: "Сите пакувања опфатени со калкулаторот се изработени од цврст картон со дебелина од 1,2 mm, обложени со луксузна хартија со текстуриран, бисерен или кадифен финиш, со исклучок на „Proposal Ring Box (70 x 70 / 78) и Кутијата за часовник“, кои се изработени од картон со дебелина од 2,5 mm и исто така обложени со луксузна хартија.",
 
     calc_discount_unlocked: "ПОПУСТОТ Е ОТКЛУЧЕН!",
     calc_add_prefix: "Додај",
