@@ -871,6 +871,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- RENDER PROPORTIONAL VECTOR LINE DRAWING (MATCHING EXACT USER SAMPLE) ---
   function renderProportionalLineDrawing(box) {
+    if (box.id === 'r3') {
+      proportionalSvgContainer.innerHTML = `
+        <img src="${resolveAsset('R3 Ring Box technical drawing.jpg')}" alt="R3 Ring Box Technical Drawing" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; display: block; border-radius: 2px;">
+      `;
+      return;
+    }
+
     if (box.id === 'watch-box') {
       proportionalSvgContainer.innerHTML = `
         <img src="${resolveAsset('Watch box tecnical drawing.jpg')}" alt="Watch Box Technical Drawing" style="width: 100%; height: 100%; object-fit: contain; background: #FFFFFF; display: block; border-radius: 2px;">

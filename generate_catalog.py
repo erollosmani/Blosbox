@@ -174,6 +174,7 @@ def generate_box_svg(width, length, height, box_id):
 def main():
     print("Pre-encoding logo and blueprints...")
     logo_b64 = get_b64("Logo.png", 500)
+    r3_box_drawing_b64 = get_b64("R3 Ring Box technical drawing.jpg", 600)
     proposal_box_drawing_b64 = get_b64("Proposal ring box tecnical drawing.jpg", 600)
     watch_box_drawing_b64 = get_b64("Watch box tecnical drawing.jpg", 600)
 
@@ -507,7 +508,9 @@ def main():
         '''
 
     def render_product_card(p):
-        if p["id"] == "rlux":
+        if p["id"] == "r3":
+            drawing_html = f'''<div class="drawing-img-box"><img src="{r3_box_drawing_b64}" alt="R3 Ring Box Technical Drawing" class="blueprint-img"></div>'''
+        elif p["id"] == "rlux":
             drawing_html = f'''<div class="drawing-img-box"><img src="{proposal_box_drawing_b64}" alt="Proposal Box Technical Drawing" class="blueprint-img"></div>'''
         elif p["id"] == "watch-box":
             drawing_html = f'''<div class="drawing-img-box"><img src="{watch_box_drawing_b64}" alt="Watch Box Technical Drawing" class="blueprint-img"></div>'''
