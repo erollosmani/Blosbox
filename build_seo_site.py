@@ -134,7 +134,7 @@ def main():
     translations = parse_translations_js(translations_file)
     print("Parsed translations for languages:", list(translations.keys()))
     
-    html_files = [f for f in os.listdir(root_dir) if f.endswith('.html') and not f.startswith('.')]
+    html_files = [f for f in os.listdir(root_dir) if f.endswith('.html') and not f.startswith('.') and f not in ['404.html', 'pricelist-catalog.html']]
     
     # 1. First, update root HTML files with clean canonical & hreflang tags
     for filename in html_files:
