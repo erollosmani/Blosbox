@@ -47,6 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
             activeLang = 'en'; // Default to English for root visitors
         }
         setStoredLanguage(activeLang);
+
+        // Clean up legacy ?lang= URL parameter from address bar so clean canonical URLs are shared & indexed
+        try {
+            if (window.location.search && getQueryParam('lang') && window.history && window.history.replaceState) {
+                const url = new URL(window.location.href);
+                url.searchParams.delete('lang');
+                const cleanUrl = url.pathname + (url.search ? url.search : '') + url.hash;
+                window.history.replaceState(null, '', cleanUrl);
+            }
+        } catch (e) {
+            // Silently absorb any history API errors in restricted frames
+        }
     } catch (e) {
         console.error("Error determining active language:", e);
         activeLang = 'en';
