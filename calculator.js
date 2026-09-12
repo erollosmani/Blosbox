@@ -1145,6 +1145,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSlide();
   }
 
+  function updateTierPillClass(el, category) {
+    if (!el || !category) return;
+    el.classList.remove('tier-textured', 'tier-luxe', 'tier-mixed');
+    if (category.includes('Textured & Pearl') && !category.includes('Mixed')) {
+      el.classList.add('tier-textured');
+    } else if (category.includes('Luxe') && !category.includes('Mixed')) {
+      el.classList.add('tier-luxe');
+    } else if (category.includes('Mixed')) {
+      el.classList.add('tier-mixed');
+    }
+  }
+
   function renderSlide() {
     const list = getFilteredGalleryMaterials();
     if (galleryIndex < 0 || galleryIndex >= list.length) galleryIndex = 0;
@@ -1154,6 +1166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slideMainImage.alt = currentMat.name;
     slideMaterialName.textContent = currentMat.name;
     slideMaterialTier.textContent = currentMat.category;
+    updateTierPillClass(slideMaterialTier, currentMat.category);
     slideCounter.textContent = `${galleryIndex + 1} / ${list.length}`;
 
     // Highlight thumbnail in strip
@@ -1264,7 +1277,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalPrice = (boxSubtotal - discountAmount) + moldFee;
     const baseTotalWithMold = boxSubtotal + moldFee;
 
-    if (displayMaterialTier) displayMaterialTier.textContent = priceInfo.tierLabel;
+    if (displayMaterialTier) {
+      displayMaterialTier.textContent = priceInfo.tierLabel;
+      updateTierPillClass(displayMaterialTier, priceInfo.tierLabel);
+    }
     if (displayUnitPrice) displayUnitPrice.textContent = `€${priceInfo.unitPrice.toFixed(2)}`;
 
     if (discount.pct > 0) {
@@ -1336,15 +1352,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Update Form Material Pickers
     if (thumbMaterialUniform) thumbMaterialUniform.src = resolveAsset(selectedMaterialUniform.file);
     if (nameMaterialUniform) nameMaterialUniform.textContent = selectedMaterialUniform.name;
-    if (tierMaterialUniform) tierMaterialUniform.textContent = selectedMaterialUniform.category;
+    if (tierMaterialUniform) {
+      tierMaterialUniform.textContent = selectedMaterialUniform.category;
+      updateTierPillClass(tierMaterialUniform, selectedMaterialUniform.category);
+    }
 
     if (thumbMaterialLid) thumbMaterialLid.src = resolveAsset(selectedMaterialLid.file);
     if (nameMaterialLid) nameMaterialLid.textContent = selectedMaterialLid.name;
-    if (tierMaterialLid) tierMaterialLid.textContent = selectedMaterialLid.category;
+    if (tierMaterialLid) {
+      tierMaterialLid.textContent = selectedMaterialLid.category;
+      updateTierPillClass(tierMaterialLid, selectedMaterialLid.category);
+    }
 
     if (thumbMaterialBase) thumbMaterialBase.src = resolveAsset(selectedMaterialBase.file);
     if (nameMaterialBase) nameMaterialBase.textContent = selectedMaterialBase.name;
-    if (tierMaterialBase) tierMaterialBase.textContent = selectedMaterialBase.category;
+    if (tierMaterialBase) {
+      tierMaterialBase.textContent = selectedMaterialBase.category;
+      updateTierPillClass(tierMaterialBase, selectedMaterialBase.category);
+    }
 
     // 5. Update Finishing Material Preview Visual Card
     if (!isSplitMaterialMode) {

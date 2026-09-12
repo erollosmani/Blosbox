@@ -444,15 +444,17 @@ def main():
         s["b64"] = get_b64(s["file"], 360, 92)
 
     # Helper to render the user-requested bottom showcase:
-    # - Category 1: Dark Brown (#2D2825) with 2 rows (Row 1: Label + 9 swatches, Row 2: 10 swatches)
-    # - Category 2: Kraft (#9E826B) with 1 row (Label + 6 large swatches)
+    # - Category 1: Dark Brown (#2D2825) with 2 rows (Full-height colored label on left + 19 swatches in 2 rows)
+    # - Category 2: Kraft (#9E826B) with 1 row (Colored label on left + 6 large swatches)
     def render_bottom_swatch_strip():
         cat1_label_html = '''
         <div class="cat-label-card tp-label-card">
+          <div class="cat-pill-tag tp-tag">MAIN CATEGORY 1</div>
           <div class="preview-title-main">Texture</div>
           <div class="preview-title-amp">&amp;</div>
           <div class="preview-title-main">Pearl Finishes</div>
-          <div class="preview-title-sub">Preview</div>
+          <div class="preview-divider"></div>
+          <div class="preview-title-sub">PREVIEW</div>
         </div>
         '''
 
@@ -460,20 +462,22 @@ def main():
             f'''<div class="swatch-cell" title="{s['name']}">
                 <div class="swatch-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
                 <div class="swatch-name-neg">{s['short']}</div>
-            </div>''' for s in swatches_tp_all[0:9]
+            </div>''' for s in swatches_tp_all[0:10]
         ])
 
         tp_row2_html = "".join([
             f'''<div class="swatch-cell" title="{s['name']}">
                 <div class="swatch-img-frame"><img src="{s['b64']}" alt="{s['name']}" class="swatch-img"></div>
                 <div class="swatch-name-neg">{s['short']}</div>
-            </div>''' for s in swatches_tp_all[9:19]
+            </div>''' for s in swatches_tp_all[10:19]
         ])
 
         cat2_label_html = '''
         <div class="cat-label-card luxe-label-card">
+          <div class="cat-pill-tag luxe-tag">MAIN CATEGORY 2</div>
           <div class="preview-title-main luxe-main">Luxe Finishes</div>
-          <div class="preview-title-sub">Preview</div>
+          <div class="preview-divider luxe-divider"></div>
+          <div class="preview-title-sub luxe-sub">PREVIEW</div>
         </div>
         '''
 
@@ -486,14 +490,14 @@ def main():
 
         return f'''
         <div class="bottom-paper-showcase">
-          <!-- CATEGORY 1: DARK BROWN CONTAINER (#2D2825) - 2 ROWS -->
+          <!-- CATEGORY 1: DARK BROWN CONTAINER (#2D2825) - 2 ROWS WITH FULL-HEIGHT LEFT LABEL -->
           <div class="cat-band tp-band">
-            <div class="tp-row tp-row-top">
+            <div class="tp-flex-container">
               {cat1_label_html}
-              {tp_row1_html}
-            </div>
-            <div class="tp-row tp-row-bottom">
-              {tp_row2_html}
+              <div class="tp-swatches-grid">
+                <div class="tp-swatch-row">{tp_row1_html}</div>
+                <div class="tp-swatch-row">{tp_row2_html}</div>
+              </div>
             </div>
           </div>
 
@@ -1101,73 +1105,141 @@ def main():
       border: 1px solid #856B54;
     }}
 
-    /* Category 1: 10 Columns Grid for Both Rows */
-    .tp-row {{
+    /* Category 1: 2-Row Layout with Full-Height Left Label Card */
+    .tp-flex-container {{
+      display: flex;
+      align-items: stretch;
+      gap: 3.5mm;
+    }}
+    .tp-swatches-grid {{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2mm;
+      justify-content: space-between;
+    }}
+    .tp-swatch-row {{
       display: grid;
       grid-template-columns: repeat(10, 1fr);
-      gap: 3px;
+      gap: 2.5mm;
       align-items: center;
     }}
-    .tp-row-top {{
-      margin-bottom: 2.5px;
-    }}
 
-    /* White Category Label Box (matching user drawing) */
+    /* Category Label Cards - Matching Exact Colored Price Guidance from Top Product Cards */
     .cat-label-card {{
-      background: #FFFFFF;
-      border-radius: 2.5px;
+      border-radius: 3px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1.5px 1px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
       box-sizing: border-box;
       overflow: hidden;
+      flex-shrink: 0;
     }}
     .tp-label-card {{
-      height: 18.5mm;
-      border: 1.5px solid #FFFFFF;
+      width: 24mm;
+      background: #141210;
+      border: 2px solid #FFFFFF;
+      padding: 2.2mm 1.2mm;
     }}
     .luxe-label-card {{
-      width: 25mm;
-      height: 20mm;
-      flex-shrink: 0;
-      border: 1.5px solid #FFFFFF;
+      width: 24mm;
+      height: 19.5mm;
+      background: #A0856E;
+      border: 2px solid #FFFFFF;
+      padding: 1.2mm 1.2mm;
     }}
 
-    .preview-title-main {{
-      font-family: 'Playfair Display', serif;
-      font-size: 4.6pt;
+    /* Prominent Category Identifier Tags */
+    .cat-pill-tag {{
+      font-family: 'Outfit', sans-serif;
+      font-size: 4.8pt;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      line-height: 1;
+    }}
+    .tp-tag {{
+      color: #D4AF37;
+      background: rgba(212, 175, 55, 0.15);
+      border: 0.5px solid rgba(212, 175, 55, 0.4);
+      padding: 1px 3.5px;
+      border-radius: 2px;
+    }}
+    .luxe-tag {{
+      color: #241D18;
+      background: rgba(36, 29, 24, 0.12);
+      border: 0.5px solid rgba(36, 29, 24, 0.3);
+      padding: 1px 3.5px;
+      border-radius: 2px;
+      margin-bottom: 1px;
+    }}
+
+    /* Prominent Bold Typography on Category 1 Card */
+    .tp-label-card .preview-title-main {{
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.2pt;
       font-weight: 700;
-      color: #1A1715;
-      line-height: 1.15;
+      color: #FFFFFF;
+      line-height: 1.12;
       letter-spacing: 0.1px;
     }}
-    .preview-title-main.luxe-main {{
-      font-size: 5.6pt;
-      line-height: 1.2;
-    }}
-    .preview-title-amp {{
-      font-family: 'Playfair Display', serif;
-      font-size: 4.8pt;
+    .tp-label-card .preview-title-amp {{
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 7.8pt;
       font-weight: 700;
       color: #C5A059;
       line-height: 1;
-      margin: 0.5px 0;
+      margin: 0.6px 0;
     }}
-    .preview-title-sub {{
-      font-size: 4.0pt;
+    .tp-label-card .preview-divider {{
+      width: 80%;
+      height: 1px;
+      background: rgba(197, 160, 89, 0.5);
+      margin: 2.5px auto 2px auto;
+    }}
+    .tp-label-card .preview-title-sub {{
+      font-family: 'Outfit', sans-serif;
+      font-size: 4.8pt;
       font-weight: 800;
       color: #C5A059;
-      letter-spacing: 0.6px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      margin-top: 1.5px;
-      border-top: 1px solid #ECE7DE;
-      padding-top: 1px;
-      width: 85%;
-      text-align: center;
+      margin: 0;
+      border: none;
+      padding: 0;
+      width: 100%;
+    }}
+
+    /* Prominent Bold Typography on Category 2 Card */
+    .luxe-label-card .preview-title-main.luxe-main {{
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: #241D18;
+      line-height: 1.12;
+      letter-spacing: 0.1px;
+    }}
+    .luxe-label-card .preview-divider {{
+      width: 80%;
+      height: 1px;
+      background: rgba(36, 29, 24, 0.35);
+      margin: 2px auto 1.5px auto;
+    }}
+    .luxe-label-card .preview-title-sub {{
+      font-family: 'Outfit', sans-serif;
+      font-size: 4.8pt;
+      font-weight: 800;
+      color: #59402D;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin: 0;
+      border: none;
+      padding: 0;
+      width: 100%;
     }}
 
     /* Swatch Cell in Category 1 */
@@ -1208,7 +1280,7 @@ def main():
     .luxe-single-row {{
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3.5mm;
     }}
     .luxe-swatch-cell {{
       display: flex;
