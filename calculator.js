@@ -1604,8 +1604,8 @@ document.addEventListener('DOMContentLoaded', () => {
         materialHTML = `
           <div class="order-material-cell">
             <div class="order-material-thumbs">
-              <img src="${item.materialConfig.lid.file}" alt="Lid" class="order-thumb-mini" title="Lid: ${item.materialConfig.lid.name}">
-              <img src="${item.materialConfig.base.file}" alt="Base" class="order-thumb-mini" title="Base: ${item.materialConfig.base.name}">
+              <img src="${resolveAsset(item.materialConfig.lid.file)}" alt="Lid" class="order-thumb-mini" title="Lid: ${item.materialConfig.lid.name}">
+              <img src="${resolveAsset(item.materialConfig.base.file)}" alt="Base" class="order-thumb-mini" title="Base: ${item.materialConfig.base.name}">
             </div>
             <div class="order-material-text">
               <span class="order-material-name">Lid: ${item.materialConfig.lid.name}</span>
@@ -1618,7 +1618,7 @@ document.addEventListener('DOMContentLoaded', () => {
         materialHTML = `
           <div class="order-material-cell">
             <div class="order-material-thumbs">
-              <img src="${item.materialConfig.uniform.file}" alt="${item.materialConfig.uniform.name}" class="order-thumb-mini">
+              <img src="${resolveAsset(item.materialConfig.uniform.file)}" alt="${item.materialConfig.uniform.name}" class="order-thumb-mini">
             </div>
             <div class="order-material-text">
               <span class="order-material-name">${item.materialConfig.uniform.name}</span>

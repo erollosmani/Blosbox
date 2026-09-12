@@ -269,8 +269,51 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } catch (err) {}
             });
+
+            // Keep hrefs pointing accurately
+            updateLanguageDropdownHrefs();
         } catch (e) {
             console.error("Error updating language selector UI:", e);
+        }
+    }
+
+    // 3b. Update language dropdown URLs to prevent broken nested paths
+    function updateLanguageDropdownHrefs() {
+        try {
+            const pathSegments = window.location.pathname.split('/').filter(Boolean);
+            const pathLang = pathSegments.find(p => supportedLanguages.includes(p.toLowerCase()));
+            const isSubfolder = Boolean(pathLang);
+            
+            let currentFilename = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : 'index.html';
+            if (!currentFilename.endsWith('.html')) {
+                currentFilename = 'index.html';
+            }
+
+            const langItems = document.querySelectorAll('.lang-item');
+            langItems.forEach(item => {
+                const targetLang = item.getAttribute('data-lang');
+                if (!targetLang) return;
+
+                let targetHref = '';
+                if (isSubfolder) {
+                    if (targetLang === 'en') {
+                        targetHref = `../${currentFilename}`;
+                    } else if (targetLang === pathLang.toLowerCase()) {
+                        targetHref = currentFilename;
+                    } else {
+                        targetHref = `../${targetLang}/${currentFilename}`;
+                    }
+                } else {
+                    if (targetLang === 'en') {
+                        targetHref = currentFilename;
+                    } else {
+                        targetHref = `${targetLang}/${currentFilename}`;
+                    }
+                }
+                item.setAttribute('href', targetHref);
+            });
+        } catch (e) {
+            console.error("Error updating language dropdown hrefs:", e);
         }
     }
     
@@ -334,6 +377,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLanguageSelectorUI(activeLang);
     } catch (e) {
         console.error("Initial updateLanguageSelectorUI failed:", e);
+    }
+    
+    try {
+        updateLanguageDropdownHrefs();
+    } catch (e) {
+        console.error("Initial updateLanguageDropdownHrefs failed:", e);
     }
     
     try {
