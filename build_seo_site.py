@@ -8,22 +8,26 @@ def parse_translations_js(filepath):
     languages = ['en', 'fr', 'de', 'it', 'sv', 'nl', 'sq', 'mk']
     translations_dict = {lang: {} for lang in languages}
     
-    for lang in languages:
-        pattern = r'\b' + lang + r'\s*:\s*\{([^}]+)\}'
-        match = re.search(pattern, content, re.DOTALL)
-        if match:
-            block = match.group(1)
-            kv_pattern = r'([a-zA-Z0-9_]+)\s*:\s*(?:"((?:[^"\\]|\\.)*)"|\'((?:[^\'\\]|\\.)*)\')'
-            for kv in re.finditer(kv_pattern, block):
-                key = kv.group(1)
-                val = kv.group(2) if kv.group(2) is not None else kv.group(3)
-                val = val.replace('\\"', '"').replace("\\'", "'")
-                translations_dict[lang][key] = val
+    lang_starts = list(re.finditer(r'^\s*([a-z]{2})\s*:\s*\{', content, re.MULTILINE))
+    for i, m in enumerate(lang_starts):
+        lang = m.group(1)
+        if lang not in languages:
+            continue
+        start_pos = m.end()
+        end_pos = lang_starts[i+1].start() if i + 1 < len(lang_starts) else content.rfind('};')
+        block = content[start_pos:end_pos]
+        
+        kv_pattern = r'([a-zA-Z0-9_]+)\s*:\s*(?:"((?:[^"\\]|\\.)*)"|\'((?:[^\'\\]|\\.)*)\')'
+        for kv in re.finditer(kv_pattern, block):
+            key = kv.group(1)
+            val = kv.group(2) if kv.group(2) is not None else kv.group(3)
+            val = val.replace('\\"', '"').replace("\\'", "'")
+            translations_dict[lang][key] = val
                 
     return translations_dict
 
 def get_page_key(filename):
-    raw_key = filename.replace('.html', '').lower()
+    raw_key = filename.replace('.html', '').lower().replace('-', '_')
     return 'home' if raw_key == 'index' else raw_key
 
 def add_asset_prefix(html_content):
@@ -72,7 +76,7 @@ def add_asset_prefix(html_content):
         'Printing Foil Embossing', 'Printing%20Foil%20Embossing',
         'Bespoke design & prototyping', 'Bespoke%20design%20%26%20prototyping',
         'Size and Material Customization', 'Size%20and%20Material%20Customization',
-        'Other', 'Inserts', 'About Us', 'About%20Us'
+        'Other', 'Inserts', 'About Us', 'About%20Us', 'Insights'
     ]
     for d in dirs:
         html_content = re.sub(r'src="' + d + r'/', r'src="../' + d + r'/', html_content)

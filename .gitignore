@@ -6,6 +6,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# IDE/Editor config
-.vscode/
-.idea/
+# Python bytecode cache
+__pycache__/
+*.pyc

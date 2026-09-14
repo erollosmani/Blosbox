@@ -1570,6 +1570,230 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/cosmetics.html"/>
   </url>
   <url>
+    <loc>https://www.blosbox.com/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/de/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/fr/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/it/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/sv/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/nl/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/sq/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/mk/insights.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/insights.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/insights.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
+    <loc>https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.blosbox.com/it/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.blosbox.com/sv/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.blosbox.com/nl/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://www.blosbox.com/sq/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/custom-proposal-diamond-ring-box.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/custom-proposal-diamond-ring-box.html"/>
+  </url>
+  <url>
     <loc>https://www.blosbox.com/other.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

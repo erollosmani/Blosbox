@@ -17,6 +17,8 @@ def generate_sitemap():
         ("chocolates.html", "0.9"),
         ("gifts.html", "0.9"),
         ("cosmetics.html", "0.9"),
+        ("insights.html", "0.85"),
+        ("custom-proposal-diamond-ring-box.html", "0.90"),
         ("other.html", "0.7")
     ]
     
