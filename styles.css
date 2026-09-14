@@ -1788,6 +1788,56 @@ a {
     background: rgba(255,255,255,0.08);
 }
 
+/* Insights Empty State */
+.insights-empty-state {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 4.5rem 2rem;
+    text-align: center;
+    border: 1px dashed rgba(164, 140, 119, 0.4);
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 30px rgba(48, 44, 39, 0.04);
+}
+
+.insights-empty-state .empty-icon {
+    font-size: 2.8rem;
+    color: var(--brown-accent);
+    margin-bottom: 1.2rem;
+    opacity: 0.85;
+}
+
+.insights-empty-state h3 {
+    font-size: 1.8rem;
+    color: var(--dark-top);
+    margin-bottom: 0.75rem;
+}
+
+.insights-empty-state p {
+    font-size: 1.05rem;
+    color: #6a625b;
+    max-width: 540px;
+    margin: 0 auto 1.8rem auto;
+    line-height: 1.6;
+}
+
+.insights-empty-reset-btn {
+    background: var(--dark-top);
+    color: var(--text-light);
+    border: 1px solid var(--dark-top);
+    padding: 0.6rem 1.6rem;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.insights-empty-reset-btn:hover {
+    background: var(--brown-accent);
+    border-color: var(--brown-accent);
+    transform: translateY(-2px);
+}
+
 @media (max-width: 1024px) {
     .insights-grid {
         grid-template-columns: repeat(2, 1fr);

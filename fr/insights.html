@@ -132,6 +132,17 @@
     
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     <link rel="canonical" href="https://www.blosbox.com/fr/insights.html">
     <link rel="alternate" hreflang="en" href="https://www.blosbox.com/insights.html">
     <link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/insights.html">
@@ -207,22 +218,22 @@
 
             <!-- Category Filter Pills -->
             <nav class="insights-filters" aria-label="Insight Categories">
-                <a href="#all" class="filter-pill active" data-i18n="insights_filter_all">Tous les articles</a>
-                <a href="#releases" class="filter-pill" data-i18n="insights_filter_releases">Nouveaux Produits</a>
-                <a href="#case-studies" class="filter-pill" data-i18n="insights_filter_case_studies">Études de Cas</a>
-                <a href="#craft" class="filter-pill" data-i18n="insights_filter_craft">Matériaux & Artisanat</a>
-                <a href="#guides" class="filter-pill" data-i18n="insights_filter_guides">Guides de Design</a>
+                <a href="#all" class="filter-pill active" data-filter="all" data-i18n="insights_filter_all">Tous les articles</a>
+                <a href="#releases" class="filter-pill" data-filter="releases" data-i18n="insights_filter_releases">Nouveaux Produits</a>
+                <a href="#case-studies" class="filter-pill" data-filter="case-studies" data-i18n="insights_filter_case_studies">Études de Cas</a>
+                <a href="#craft" class="filter-pill" data-filter="craft" data-i18n="insights_filter_craft">Matériaux & Artisanat</a>
+                <a href="#guides" class="filter-pill" data-filter="guides" data-i18n="insights_filter_guides">Guides de Design</a>
             </nav>
 
             <!-- FEATURED INSIGHT: Proposal Diamond Ring Box -->
-            <article class="insights-featured" id="proposal-ring-box">
+            <article class="insights-featured" id="proposal-ring-box" data-category="releases">
                 <div class="insights-featured-img-wrap">
                     <img src="../Insights/luxury-custom-proposal-diamond-ring-box-blosbox.jpg" alt="Luxury Custom Proposal Diamond Ring Box Handcrafted by Blosbox" loading="eager">
                 </div>
                 <div class="insights-featured-content">
                     <div class="insights-meta">
-                        <span class="insights-badge" data-i18n="insights_featured_badge">À la une</span>
-                        <span class="insights-date">Jewellery & Diamond Presentation</span>
+                        <span class="insights-badge" data-i18n="insights_filter_releases">Nouveaux Produits</span>
+                        <span class="insights-date">September 2026</span>
                     </div>
                     <h2>Redefining the Reveal – Introducing Our Premium Proposal Diamond Ring Box</h2>
                     
@@ -242,6 +253,14 @@
                     </div>
                 </div>
             </article>
+
+            <!-- Insights Empty State -->
+            <div id="insights-empty-state" class="insights-empty-state" style="display: none;">
+                <div class="empty-icon"><i class="fas fa-compass-drafting"></i></div>
+                <h3 data-i18n="insights_empty_title">Articles en Préparation</h3>
+                <p data-i18n="insights_empty_text">Nous préparons de nouvelles études et publications pour cette catégorie. Découvrez nos derniers lancements ci-dessous.</p>
+                <button type="button" class="insights-empty-reset-btn" id="reset-filter-btn" data-i18n="insights_filter_all">Tous les articles</button>
+            </div>
 
             <!-- Luxury B2B Conversion CTA Band -->
             <section class="insights-cta-band">

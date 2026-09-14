@@ -360,3 +360,55 @@ function handleSwipeGesture() {
     if (touchEndX < touchStartX - swipeThreshold) navigateLightbox(1);
     else if (touchEndX > touchStartX + swipeThreshold) navigateLightbox(-1);
 }
+
+// Insights Category Filter Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const filterPills = document.querySelectorAll('.insights-filters .filter-pill');
+    const articles = document.querySelectorAll('.insights-featured, .insight-card');
+    const emptyState = document.getElementById('insights-empty-state');
+    const resetBtn = document.getElementById('reset-filter-btn');
+    
+    function applyFilter(filter) {
+        filterPills.forEach(p => {
+            const pFilter = p.getAttribute('data-filter') || p.getAttribute('href')?.replace('#', '') || 'all';
+            if (pFilter === filter) {
+                p.classList.add('active');
+            } else {
+                p.classList.remove('active');
+            }
+        });
+        
+        let visibleCount = 0;
+        articles.forEach(art => {
+            const catAttr = art.getAttribute('data-category') || '';
+            const categories = catAttr.split(/\s+/).filter(Boolean);
+            if (filter === 'all' || categories.includes(filter)) {
+                art.style.display = '';
+                visibleCount++;
+            } else {
+                art.style.display = 'none';
+            }
+        });
+        
+        if (emptyState) {
+            emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+    }
+
+    if (filterPills.length && articles.length) {
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filter = pill.getAttribute('data-filter') || pill.getAttribute('href')?.replace('#', '') || 'all';
+                applyFilter(filter);
+            });
+        });
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            applyFilter('all');
+        });
+    }
+});
