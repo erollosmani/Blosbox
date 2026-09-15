@@ -108,6 +108,13 @@ def update_hreflang_and_canonical(html_content, lang, filename):
     
     hreflang_str = "\n    " + "\n    ".join(hreflangs) + "\n"
 
+    # Insert prominently near top of head right after meta description (best practice for Googlebot)
+    desc_match = re.search(r'(<meta\s+name=["\']description["\'][^>]*>)', html_content, re.IGNORECASE)
+    if desc_match:
+        html_content = html_content[:desc_match.end()] + hreflang_str + html_content[desc_match.end():]
+    else:
+        html_content = html_content.replace('</head>', f'{hreflang_str}</head>')
+
     # Clean up any accumulated multiple blank lines inside <head>
     head_match = re.search(r'(<head[^>]*>)(.*?)(</head>)', html_content, flags=re.DOTALL)
     if head_match:
@@ -115,7 +122,6 @@ def update_hreflang_and_canonical(html_content, lang, filename):
         cleaned_head_inner = re.sub(r'\n[ \t]*\n([ \t]*\n)+', '\n\n', head_inner)
         html_content = html_content[:head_match.start(2)] + cleaned_head_inner + html_content[head_match.end(2):]
 
-    html_content = html_content.replace('</head>', f'{hreflang_str}</head>')
     return html_content
 
 def pre_render_html(base_html, lang, lang_dict, filename):
