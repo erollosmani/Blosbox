@@ -88,8 +88,8 @@ def add_asset_prefix(html_content):
 def update_hreflang_and_canonical(html_content, lang, filename):
     base_url = "https://www.blosbox.com"
     
-    html_content = re.sub(r'<link rel="canonical"[^>]*>', '', html_content)
-    html_content = re.sub(r'<link rel="alternate" hreflang="[^"]*"[^>]*>', '', html_content)
+    html_content = re.sub(r'^[ \t]*<link rel="canonical"[^>]*>\r?\n?', '', html_content, flags=re.MULTILINE)
+    html_content = re.sub(r'^[ \t]*<link rel="alternate" hreflang="[^"]*"[^>]*>\r?\n?', '', html_content, flags=re.MULTILINE)
     
     canonical_url = f"{base_url}/{filename}" if lang == 'en' else f"{base_url}/{lang}/{filename}"
     
@@ -107,6 +107,14 @@ def update_hreflang_and_canonical(html_content, lang, filename):
     ]
     
     hreflang_str = "\n    " + "\n    ".join(hreflangs) + "\n"
+
+    # Clean up any accumulated multiple blank lines inside <head>
+    head_match = re.search(r'(<head[^>]*>)(.*?)(</head>)', html_content, flags=re.DOTALL)
+    if head_match:
+        head_inner = head_match.group(2)
+        cleaned_head_inner = re.sub(r'\n[ \t]*\n([ \t]*\n)+', '\n\n', head_inner)
+        html_content = html_content[:head_match.start(2)] + cleaned_head_inner + html_content[head_match.end(2):]
+
     html_content = html_content.replace('</head>', f'{hreflang_str}</head>')
     return html_content
 
@@ -115,19 +123,30 @@ def pre_render_html(base_html, lang, lang_dict, filename):
     page_key = get_page_key(filename)
     
     content = re.sub(r'<html lang="[^"]*"', f'<html lang="{lang}"', content)
+
+    locales = {
+        'en': 'en_US', 'de': 'de_DE', 'fr': 'fr_FR', 'it': 'it_IT',
+        'sv': 'sv_SE', 'nl': 'nl_NL', 'sq': 'sq_AL', 'mk': 'mk_MK'
+    }
+    target_locale = locales.get(lang, 'en_US')
+    content = re.sub(r'<meta property="og:locale" content="[^"]*"', f'<meta property="og:locale" content="{target_locale}"', content)
+    
+    base_url = "https://www.blosbox.com"
+    page_url = f"{base_url}/{filename}" if lang == 'en' else f"{base_url}/{lang}/{filename}"
+    content = re.sub(r'<meta property="og:url" content="[^"]*"', f'<meta property="og:url" content="{page_url}"', content)
     
     title_key = f'meta_title_{page_key}'
     if title_key in lang_dict:
         content = re.sub(r'<title>.*?</title>', f'<title>{lang_dict[title_key]}</title>', content, flags=re.DOTALL)
+        content = re.sub(r'<meta property="og:title" content="[^"]*"', f'<meta property="og:title" content="{lang_dict[title_key]}"', content)
+        content = re.sub(r'<meta name="twitter:title" content="[^"]*"', f'<meta name="twitter:title" content="{lang_dict[title_key]}"', content)
         
     desc_key = f'meta_desc_{page_key}'
     if desc_key in lang_dict:
         meta_desc_val = lang_dict[desc_key]
         content = re.sub(r'<meta name="description" content="[^"]*"', f'<meta name="description" content="{meta_desc_val}"', content)
         content = re.sub(r'<meta property="og:description" content="[^"]*"', f'<meta property="og:description" content="{meta_desc_val}"', content)
-        
-    if title_key in lang_dict:
-        content = re.sub(r'<meta property="og:title" content="[^"]*"', f'<meta property="og:title" content="{lang_dict[title_key]}"', content)
+        content = re.sub(r'<meta name="twitter:description" content="[^"]*"', f'<meta name="twitter:description" content="{meta_desc_val}"', content)
 
     def replace_i18n_node(match):
         full_tag = match.group(0)
