@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /pricelist-catalog.html
+Disallow: /zohoverify/
+Disallow: /under-construction.html
 
 Sitemap: https://www.blosbox.com/sitemap.xml

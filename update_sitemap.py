@@ -29,19 +29,27 @@ def generate_sitemap():
     xml.append('        xmlns:xhtml="http://www.w3.org/1999/xhtml">')
     
     for filename, priority in pages:
-        # Default English URL
         for lang in languages:
-            url_loc = f"{base_url}/{filename}" if lang == "en" else f"{base_url}/{lang}/{filename}"
+            if filename == "index.html":
+                url_loc = f"{base_url}/" if lang == "en" else f"{base_url}/{lang}/"
+                en_loc = f"{base_url}/"
+                default_loc = f"{base_url}/"
+            else:
+                url_loc = f"{base_url}/{filename}" if lang == "en" else f"{base_url}/{lang}/{filename}"
+                en_loc = f"{base_url}/{filename}"
+                default_loc = f"{base_url}/{filename}"
+            
             xml.append('  <url>')
             xml.append(f'    <loc>{url_loc}</loc>')
             xml.append('    <changefreq>weekly</changefreq>')
             xml.append(f'    <priority>{priority}</priority>')
             
             # Hreflang links
-            xml.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{base_url}/{filename}"/>')
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{en_loc}"/>')
             for l in ["de", "fr", "it", "sv", "nl", "sq", "mk"]:
-                xml.append(f'    <xhtml:link rel="alternate" hreflang="{l}" href="{base_url}/{l}/{filename}"/>')
-            xml.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{base_url}/{filename}"/>')
+                lang_href = f"{base_url}/{l}/" if filename == "index.html" else f"{base_url}/{l}/{filename}"
+                xml.append(f'    <xhtml:link rel="alternate" hreflang="{l}" href="{lang_href}"/>')
+            xml.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{default_loc}"/>')
             xml.append('  </url>')
             
     xml.append('</urlset>')

@@ -91,19 +91,40 @@ def update_hreflang_and_canonical(html_content, lang, filename):
     html_content = re.sub(r'^[ \t]*<link rel="canonical"[^>]*>\r?\n?', '', html_content, flags=re.MULTILINE)
     html_content = re.sub(r'^[ \t]*<link rel="alternate" hreflang="[^"]*"[^>]*>\r?\n?', '', html_content, flags=re.MULTILINE)
     
-    canonical_url = f"{base_url}/{filename}" if lang == 'en' else f"{base_url}/{lang}/{filename}"
+    if filename == 'index.html':
+        canonical_url = f"{base_url}/" if lang == 'en' else f"{base_url}/{lang}/"
+        en_url = f"{base_url}/"
+        de_url = f"{base_url}/de/"
+        fr_url = f"{base_url}/fr/"
+        it_url = f"{base_url}/it/"
+        sv_url = f"{base_url}/sv/"
+        nl_url = f"{base_url}/nl/"
+        sq_url = f"{base_url}/sq/"
+        mk_url = f"{base_url}/mk/"
+        x_default = f"{base_url}/"
+    else:
+        canonical_url = f"{base_url}/{filename}" if lang == 'en' else f"{base_url}/{lang}/{filename}"
+        en_url = f"{base_url}/{filename}"
+        de_url = f"{base_url}/de/{filename}"
+        fr_url = f"{base_url}/fr/{filename}"
+        it_url = f"{base_url}/it/{filename}"
+        sv_url = f"{base_url}/sv/{filename}"
+        nl_url = f"{base_url}/nl/{filename}"
+        sq_url = f"{base_url}/sq/{filename}"
+        mk_url = f"{base_url}/mk/{filename}"
+        x_default = f"{base_url}/{filename}"
     
     hreflangs = [
         f'<link rel="canonical" href="{canonical_url}">',
-        f'<link rel="alternate" hreflang="en" href="{base_url}/{filename}">',
-        f'<link rel="alternate" hreflang="de" href="{base_url}/de/{filename}">',
-        f'<link rel="alternate" hreflang="fr" href="{base_url}/fr/{filename}">',
-        f'<link rel="alternate" hreflang="it" href="{base_url}/it/{filename}">',
-        f'<link rel="alternate" hreflang="sv" href="{base_url}/sv/{filename}">',
-        f'<link rel="alternate" hreflang="nl" href="{base_url}/nl/{filename}">',
-        f'<link rel="alternate" hreflang="sq" href="{base_url}/sq/{filename}">',
-        f'<link rel="alternate" hreflang="mk" href="{base_url}/mk/{filename}">',
-        f'<link rel="alternate" hreflang="x-default" href="{base_url}/{filename}">'
+        f'<link rel="alternate" hreflang="en" href="{en_url}">',
+        f'<link rel="alternate" hreflang="de" href="{de_url}">',
+        f'<link rel="alternate" hreflang="fr" href="{fr_url}">',
+        f'<link rel="alternate" hreflang="it" href="{it_url}">',
+        f'<link rel="alternate" hreflang="sv" href="{sv_url}">',
+        f'<link rel="alternate" hreflang="nl" href="{nl_url}">',
+        f'<link rel="alternate" hreflang="sq" href="{sq_url}">',
+        f'<link rel="alternate" hreflang="mk" href="{mk_url}">',
+        f'<link rel="alternate" hreflang="x-default" href="{x_default}">'
     ]
     
     hreflang_str = "\n    " + "\n    ".join(hreflangs) + "\n"
@@ -138,7 +159,10 @@ def pre_render_html(base_html, lang, lang_dict, filename):
     content = re.sub(r'<meta property="og:locale" content="[^"]*"', f'<meta property="og:locale" content="{target_locale}"', content)
     
     base_url = "https://www.blosbox.com"
-    page_url = f"{base_url}/{filename}" if lang == 'en' else f"{base_url}/{lang}/{filename}"
+    if filename == 'index.html':
+        page_url = f"{base_url}/" if lang == 'en' else f"{base_url}/{lang}/"
+    else:
+        page_url = f"{base_url}/{filename}" if lang == 'en' else f"{base_url}/{lang}/{filename}"
     content = re.sub(r'<meta property="og:url" content="[^"]*"', f'<meta property="og:url" content="{page_url}"', content)
     
     title_key = f'meta_title_{page_key}'
@@ -224,6 +248,70 @@ def update_language_dropdown(html_content, current_lang, filename):
     html_content = re.sub(pattern, rf'\1{new_menu_inner}\3', html_content, flags=re.DOTALL)
     return html_content
 
+def generate_redirect_stubs(root_dir):
+    redirect_map = [
+        ('luxe.html', 'customization.html', 'Size & Material Customization'),
+        ('pearl.html', 'customization.html', 'Size & Material Customization'),
+        ('textured.html', 'customization.html', 'Size & Material Customization'),
+        ('fashion.html', 'products.html', 'Products & Collections'),
+        ('electronics.html', 'products.html', 'Products & Collections'),
+        ('under-construction.html', '', 'Blosbox Luxury Packaging')
+    ]
+    
+    languages = ['en', 'de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk']
+    base_url = "https://www.blosbox.com"
+    
+    for filename, target_rel, title in redirect_map:
+        for lang in languages:
+            if lang == 'en':
+                dest_dir = root_dir
+                target_url = f"{base_url}/{target_rel}" if target_rel else f"{base_url}/"
+            else:
+                dest_dir = os.path.join(root_dir, lang)
+                os.makedirs(dest_dir, exist_ok=True)
+                target_url = f"{base_url}/{lang}/{target_rel}" if target_rel else f"{base_url}/{lang}/"
+            
+            stub_content = f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; url={target_url}">
+    <link rel="canonical" href="{target_url}">
+    <title>Redirecting - Blosbox Luxury Packaging</title>
+    <script>
+        window.location.replace("{target_url}" + window.location.search + window.location.hash);
+    </script>
+    <style>
+        body {{
+            font-family: 'Playfair Display', serif, system-ui;
+            background-color: #f7f4ee;
+            color: #2b2725;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }}
+        a {{
+            color: #8c6d46;
+            text-decoration: underline;
+        }}
+    </style>
+</head>
+<body>
+    <div>
+        <p>Redirecting to <a href="{target_url}">{title}</a>...</p>
+    </div>
+</body>
+</html>
+"""
+            out_path = os.path.join(dest_dir, filename)
+            with open(out_path, 'w', encoding='utf-8') as f:
+                f.write(stub_content)
+    print(f"Generated clean SEO redirect stubs across all 8 languages for legacy URLs ({len(redirect_map)} stubs x {len(languages)} langs = {len(redirect_map)*len(languages)} files)")
+
 def main():
     root_dir = 'c:/Blosbox antigravity'
     translations_file = os.path.join(root_dir, 'translations.js')
@@ -231,7 +319,11 @@ def main():
     translations = parse_translations_js(translations_file)
     print("Parsed translations for languages:", list(translations.keys()))
     
-    html_files = [f for f in os.listdir(root_dir) if f.endswith('.html') and not f.startswith('.') and f not in ['404.html', 'pricelist-catalog.html']]
+    exclude_files = [
+        '404.html', 'pricelist-catalog.html', 'under-construction.html',
+        'luxe.html', 'pearl.html', 'textured.html', 'electronics.html', 'fashion.html'
+    ]
+    html_files = [f for f in os.listdir(root_dir) if f.endswith('.html') and not f.startswith('.') and f not in exclude_files]
     
     # 1. First, update root HTML files with clean canonical & hreflang tags
     for filename in html_files:
@@ -267,6 +359,9 @@ def main():
                 f.write(rendered_html)
                 
         print(f"Generated static subfolder: /{lang}/ ({len(html_files)} pages)")
+
+    # 3. Generate clean, SEO-compliant redirect stubs for legacy deleted URLs
+    generate_redirect_stubs(root_dir)
 
 if __name__ == '__main__':
     main()
