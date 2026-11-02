@@ -18,6 +18,7 @@ def generate_sitemap():
         ("gifts.html", "0.9"),
         ("cosmetics.html", "0.9"),
         ("insights.html", "0.85"),
+        ("custom-oversized-luxury-award-boxes-case-study.html", "0.90"),
         ("custom-proposal-diamond-ring-box.html", "0.90"),
         ("other.html", "0.7")
     ]

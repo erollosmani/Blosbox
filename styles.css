@@ -2121,3 +2121,164 @@ a {
     }
 }
 
+
+/* ==========================================================================
+   Case Study Dark Table, Photo Showcase Grid & Feature Lists
+   ========================================================================== */
+.article-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2.2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article-feature-list li {
+    position: relative;
+    padding: 1.1rem 1.4rem 1.1rem 2.6rem;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(164, 140, 119, 0.22);
+    box-shadow: 0 4px 14px rgba(48, 44, 39, 0.04);
+    line-height: 1.65;
+    font-size: 1.04rem;
+    color: #2e2924;
+}
+
+.article-feature-list li::before {
+    content: "◆";
+    position: absolute;
+    left: 1.1rem;
+    top: 1.15rem;
+    color: #C5A059;
+    font-size: 0.85rem;
+}
+
+.article-feature-list li strong {
+    color: var(--dark-top);
+}
+
+/* Dark Comparison Table (Matches Screenshot Layout) */
+.article-dark-table-wrap {
+    background: #0d0d0d;
+    border-radius: 12px;
+    padding: 2rem 1.5rem 2.2rem 1.5rem;
+    margin: 2.5rem 0 3rem 0;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    overflow-x: auto;
+}
+
+.article-dark-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: separate;
+    border-spacing: 24px 0;
+    color: #e8e6e3;
+    font-family: var(--font-body);
+    text-align: left;
+}
+
+.article-dark-table thead th {
+    font-weight: 400;
+    font-size: 0.96rem;
+    color: #e8e6e3;
+    padding: 0.5rem 0 1.1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    vertical-align: top;
+    line-height: 1.45;
+    width: 25%;
+}
+
+.article-dark-table tbody td {
+    padding: 1.35rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    vertical-align: top;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    color: #dcd9d4;
+}
+
+.article-dark-table tbody tr:last-child td {
+    border-bottom: none;
+    padding-bottom: 0.4rem;
+}
+
+.article-dark-table tbody td:first-child {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Article 2-Column Photo Showcase Grid */
+.article-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    margin: 2.8rem 0;
+}
+
+.article-photo-card {
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(48, 44, 39, 0.11);
+    border: 1px solid rgba(164, 140, 119, 0.3);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-photo-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #1a1816;
+    aspect-ratio: 16 / 10;
+}
+
+.article-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.article-photo-card:hover img,
+.article-hero-figure:hover img.article-zoomable {
+    transform: scale(1.03);
+}
+
+.article-hero-figure img.article-zoomable {
+    cursor: zoom-in;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.article-photo-card figcaption {
+    font-size: 0.85rem;
+    color: #7a7068;
+    padding: 0.85rem 1.2rem;
+    text-align: center;
+    background: #faf7f2;
+    font-style: italic;
+    border-top: 1px solid rgba(164, 140, 119, 0.15);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .article-photo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .article-dark-table-wrap {
+        padding: 1.2rem 0.6rem;
+    }
+    .article-dark-table {
+        border-spacing: 16px 0;
+        min-width: 580px;
+    }
+}

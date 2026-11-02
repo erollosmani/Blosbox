@@ -145,13 +145,13 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 function openLightbox(src) {
-    // 1. Automatically collect original gallery images inside Swiper (excluding duplicates)
-    const imgElements = Array.from(document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) img'));
+    // 1. Automatically collect original gallery images inside Swiper or Article zoomable figures
+    const imgElements = Array.from(document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) img, img.article-zoomable'));
     const swiperImages = imgElements.map(img => img.src);
     
     if (swiperImages.length > 0 && (swiperImages.includes(src) || swiperImages.some(i => i.endsWith(src.substring(src.lastIndexOf('/')))))) {
         lb_images = swiperImages;
-    } else if (!lb_images || lb_images.length === 0) {
+    } else {
         lb_images = [src];
     }
     

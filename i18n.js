@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!path || path === '' || path === '/') {
                 path = 'index.html';
             }
-            const rawKey = path.replace('.html', '') || 'home';
+            const rawKey = path.replace('.html', '').replace(/-/g, '_') || 'home';
             const pageKey = (rawKey === 'index') ? 'home' : rawKey;
             
             // 1. Dynamic Page Title
