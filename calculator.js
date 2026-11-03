@@ -263,6 +263,23 @@ document.addEventListener('DOMContentLoaded', () => {
       inserts: [
         { id: 'opt1', name: 'Jewellery Set Die-Cut Insert', type: 'set-type1', file: 'Inserts/Insert for XXL set.jpg' }
       ]
+    },
+
+    // Watch Box
+    {
+      id: 'watch-box',
+      name: 'Watch Box',
+      category: 'Watch Box',
+      width: 100,
+      length: 100,
+      height: 110,
+      size: '100 x 100 / 110 mm',
+      priceStructured: 16.00,
+      priceLuxe: 18.00,
+      structure: 'Watch Box High-Tower Architecture',
+      inserts: [
+        { id: 'opt1', name: 'Curved Foam Watch Pillow / Holder', type: 'watch-pillow', file: 'Inserts/insert watch box.jpg' }
+      ]
     }
   ];
 
@@ -796,7 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- POPULATE 1: SELECT BOX SIZE ---
   function populateBoxSizesDropdown() {
     selectBoxSize.innerHTML = '';
-    const categories = ['Jewellery Ring Boxes', 'Bracelet Box', 'Jewellery Set Boxes'];
+    const categories = ['Jewellery Ring Boxes', 'Bracelet Box', 'Jewellery Set Boxes', 'Watch Box'];
 
     const catLabels = {
       'Jewellery Ring Boxes': t('cat_ring_boxes', 'Jewellery Ring Boxes'),
