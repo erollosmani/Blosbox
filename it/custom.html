@@ -33,9 +33,9 @@
     <link rel="icon" type="image/png" href="../Logo%20FAV%20Icon.webp">
     <link rel="apple-touch-icon" href="../Logo%20FAV%20Icon.webp">
 
-    <title>Blosbox | Custom Solutions</title>
+    <title>Packaging di Lusso Su Misura & Produzione Scatole Rigide | Blosbox</title>
 
-    <meta name="description" content="Blosbox Luxury Rigid Box Packaging Manufacturer">
+    <meta name="description" content="Trasforma la visione del tuo brand in realtà tattile. Scatole rigide personalizzate, inserti in spugna laminata, stampa a caldo e ingegneria packaging B2B in Europa.">
     <link rel="canonical" href="https://www.blosbox.com/it/custom.html">
     <link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html">
     <link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html">
@@ -52,18 +52,145 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css?v=39">
     <style>
-        .industries-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+        .hero.custom-hub-hero {
+            padding: 2rem 4% 2.2rem 4% !important;
+            overflow-y: auto !important;
+            text-align: center;
+            display: flex !important;
+            align-items: center;
             justify-content: center;
-            width: 100%;
         }
-        @media (min-width: 851px) {
-            .hero h1 {
-                font-size: 3.5rem;
-                margin-bottom: 1.5rem;
-                color: var(--dark-top);
+        .custom-hub-container {
+            max-width: 1320px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .custom-hub-header h1 {
+            font-size: 2.55rem;
+            line-height: 1.18;
+            margin-bottom: 0.8rem;
+            color: var(--dark-top);
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+        }
+        .custom-hub-intro {
+            max-width: 1080px;
+            margin: 0 auto;
+            font-size: 1.06rem;
+            line-height: 1.65;
+            color: #3d3731;
+            font-weight: 400;
+        }
+        .custom-inline-link {
+            color: #1E1B18;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: var(--brown-accent);
+            text-underline-offset: 3px;
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        }
+        .custom-inline-link:hover {
+            color: #7c624b;
+            text-decoration-color: #1E1B18;
+        }
+        /* 3 Core Customization Pillars Grid */
+        .custom-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+            text-align: left;
+        }
+        .custom-pillar-card {
+            background: #FAF6F0;
+            border: 1px solid rgba(164, 140, 119, 0.32);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 24px rgba(48, 44, 39, 0.07);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .custom-pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 34px rgba(48, 44, 39, 0.14);
+            border-color: var(--brown-accent);
+        }
+        .custom-pillar-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #221f1c;
+            display: block;
+        }
+        .custom-pillar-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+        .custom-pillar-card:hover .custom-pillar-img-wrap img {
+            transform: scale(1.04);
+        }
+        .custom-pillar-body {
+            padding: 1.25rem 1.4rem 1.4rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .custom-pillar-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: #7c624b;
+            margin-bottom: 0.35rem;
+            display: block;
+        }
+        .custom-pillar-body h2 {
+            font-size: 1.38rem;
+            line-height: 1.25;
+            color: var(--dark-top);
+            margin-bottom: 0.65rem;
+            font-family: var(--font-heading);
+        }
+        .custom-pillar-body p {
+            font-size: 0.94rem;
+            line-height: 1.58;
+            color: #4A443D;
+            margin-bottom: 1.1rem;
+            max-width: none;
+            flex: 1;
+        }
+        .custom-pillar-cta {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--dark-top);
+            padding-top: 0.7rem;
+            border-top: 1px solid rgba(164, 140, 119, 0.25);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+        .custom-pillar-card:hover .custom-pillar-cta {
+            color: #7c624b;
+            padding-left: 4px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero.custom-hub-hero {
+                display: block !important;
+            }
+            .custom-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .custom-hub-header h1 {
+                font-size: 2.05rem;
             }
         }
     </style>
@@ -72,36 +199,79 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Blosbox Luxury Packaging">
     <meta property="og:url" content="https://www.blosbox.com/it/custom.html">
-    <meta property="og:title" content="Blosbox | Custom Solutions">
-    <meta property="og:description" content="Blosbox Luxury Rigid Box Packaging Manufacturer">
-    <meta property="og:image" content="https://www.blosbox.com/Bespoke/bespoke%20craftmanship.webp">
+    <meta property="og:title" content="Packaging di Lusso Su Misura & Produzione Scatole Rigide | Blosbox">
+    <meta property="og:description" content="Trasforma la visione del tuo brand in realtà tattile. Scatole rigide personalizzate, inserti in spugna laminata, stampa a caldo e ingegneria packaging B2B in Europa.">
+    <meta property="og:image" content="https://www.blosbox.com/Bespoke%20design%20%26%20prototyping/bespoke_design_and_prototyping.jpeg">
     <meta property="og:locale" content="it_IT">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blosbox | Custom Solutions">
-    <meta name="twitter:description" content="Blosbox Luxury Rigid Box Packaging Manufacturer">
-    <meta name="twitter:image" content="https://www.blosbox.com/Bespoke/bespoke%20craftmanship.webp">
-    <!-- Schema.org Category Structured Data -->
+    <meta name="twitter:title" content="Packaging di Lusso Su Misura & Produzione Scatole Rigide | Blosbox">
+    <meta name="twitter:description" content="Trasforma la visione del tuo brand in realtà tattile. Scatole rigide personalizzate, inserti in spugna laminata, stampa a caldo e ingegneria packaging B2B in Europa.">
+    <meta name="twitter:image" content="https://www.blosbox.com/Bespoke%20design%20%26%20prototyping/bespoke_design_and_prototyping.jpeg">
+
+    <!-- Schema.org Structured Data (Service + LocalBusiness/Manufacturer) -->
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Blosbox | Custom Solutions",
-    "description": "Blosbox Luxury Rigid Box Packaging Manufacturer",
-    "image": "https://www.blosbox.com/Bespoke/bespoke%20craftmanship.webp",
-    "url": "https://www.blosbox.com/custom.html",
-    "manufacturer": {
-        "@type": "Organization",
-        "name": "Blosbox Luxury Packaging",
-        "url": "https://www.blosbox.com",
-        "logo": "https://www.blosbox.com/Logo.webp"
-    },
-    "brand": {
-        "@type": "Brand",
-        "name": "Blosbox"
-    }
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "https://www.blosbox.com/custom.html#service",
+            "name": "Bespoke Luxury Packaging & Custom Rigid Box Manufacturing",
+            "serviceType": "Custom Rigid Box Manufacturing, Structural CAD Prototyping, Hot Foil Stamping & Custom Foam Inserts",
+            "description": "End-to-end European B2B custom rigid box manufacturing in Skopje, including 1.2mm-3mm V-grooved greyboard engineering, Heidelberg hot foil stamping, blind debossing, and precision die-cut fabric-laminated foam inserts.",
+            "image": "https://www.blosbox.com/Bespoke%20design%20%26%20prototyping/bespoke_design_and_prototyping.jpeg",
+            "url": "https://www.blosbox.com/custom.html",
+            "provider": {
+                "@type": "Organization",
+                "@id": "https://www.blosbox.com/#organization",
+                "name": "Blosbox Luxury Packaging",
+                "url": "https://www.blosbox.com/",
+                "logo": "https://www.blosbox.com/Logo.webp",
+                "telephone": "+38975222228",
+                "email": "contact@blosbox.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Hoshimin 216-b",
+                    "addressLocality": "Skopje",
+                    "postalCode": "1000",
+                    "addressCountry": "MK"
+                }
+            },
+            "areaServed": "Europe",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Custom Luxury Packaging Capabilities",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Structural Design & CAD Prototyping",
+                            "url": "https://www.blosbox.com/bespoke.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Print Finishing, Hot Foil Stamping & Embossing",
+                            "url": "https://www.blosbox.com/printing.html"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Size, Wrapping Material & Custom Foam Insert Customization",
+                            "url": "https://www.blosbox.com/customization.html"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
 }
     </script>
-
 </head>
 <body>
     
@@ -154,18 +324,60 @@
         <div class="mobile-menu-btn">☰</div>
     </header>
 
-    <!-- Large cream band: Hero Section -->
-    <section class="hero" >
-        <div class="about-content" style="max-width: 900px; text-align: center; margin: 0 auto;">
-            <h1 data-i18n="custom_title">Soluzioni su Misura</h1>
-            <div class="about-text" style="font-size: 1.2rem; line-height: 1.7; color: var(--dark-top);">
-                <p><span data-i18n="custom_p">Trasformiamo la visione del tuo marchio in realtà tattile attraverso la nostra gamma completa di servizi su misura. Dalla progettazione strutturale iniziale alla finitura finale, le nostre solutions personalizzate sono progettate per i marchi che non si accontentano dell'ordinario.</span></p>
+    <!-- Large cream band: Custom Solutions Hub Section -->
+    <section class="hero custom-hub-hero">
+        <div class="custom-hub-container">
+            <!-- SEO H1 & Contextual Intro -->
+            <div class="custom-hub-header">
+                <h1 data-i18n="custom_title">Packaging di Lusso Su Misura & Produzione Scatole Rigide</h1>
+                <div class="custom-hub-intro" data-i18n="custom_p">Dal nostro stabilimento europeo di Skopje — che unisce l’80% di precisione automatizzata a finiture artigianali ed elevata capacità produttiva settimanale B2B — progettiamo scatole rigide su misura per <a href="jewellery.html" class="custom-inline-link">gioielleria</a>, <a href="watches.html" class="custom-inline-link">orologeria</a>, <a href="cosmetics.html" class="custom-inline-link">cosmetici e profumi</a>, <a href="chocolates.html" class="custom-inline-link">cioccolato d’autore</a>, <a href="gifts.html" class="custom-inline-link">regali aziendali, istituzionali e diplomatici</a> e <a href="leather.html" class="custom-inline-link">pelletteria di lusso</a>.</div>
+            </div>
+
+            <!-- 3 Core Customization Pillars (H2 + Visual Cards) -->
+            <div class="custom-pillars-grid">
+                <!-- Pillar 1: Structural Design & Prototyping -->
+                <article class="custom-pillar-card">
+                    <a href="bespoke.html" class="custom-pillar-img-wrap">
+                        <img src="../Bespoke%20design%20%26%20prototyping/bespoke_design_and_prototyping.webp" alt="Custom rigid box structural engineering and CAD prototyping at Blosbox" loading="eager">
+                    </a>
+                    <div class="custom-pillar-body">
+                        <span class="custom-pillar-badge" data-i18n="custom_pil1_badge">PILASTRO 01 · INGEGNERIA STRUTTURALE</span>
+                        <h2><a href="bespoke.html" data-i18n="custom_pil1_title">Design Strutturale & Prototipazione CAD</a></h2>
+                        <p data-i18n="custom_pil1_desc">Realizzate in cartone rigido ad alta densità da 1,2 mm a 3,0 mm con fresatura V-groove per angoli architettonici a 90°. Campionatura su misura per astucci a cerniera, scatole con spalla, chiusure magnetiche a libro, cassetti e cofanetti premio fuori misura.</p>
+                        <a href="bespoke.html" class="custom-pillar-cta" data-i18n="custom_pil1_cta">Scopri il Design Strutturale →</a>
+                    </div>
+                </article>
+
+                <!-- Pillar 2: Print Finishing, Hot Foil & Embossing -->
+                <article class="custom-pillar-card">
+                    <a href="printing.html" class="custom-pillar-img-wrap">
+                        <img src="../Printing%20Foil%20Embossing/Printing%20foil%20embossing.webp" alt="Heidelberg platen press gold hot foil stamping and blind debossing on luxury rigid boxes" loading="lazy">
+                    </a>
+                    <div class="custom-pillar-body">
+                        <span class="custom-pillar-badge" data-i18n="custom_pil2_badge">PILASTRO 02 · NOBILITAZIONE DI STAMPA</span>
+                        <h2><a href="printing.html" data-i18n="custom_pil2_title">Stampa a Caldo, Foil Metallico & Goffratura</a></h2>
+                        <p data-i18n="custom_pil2_desc">Lavorazione interna su platine Heidelberg con stampa a caldo in lamina d’oro, argento, oro rosa, cromo e pigmenti, debossing profondo a secco, rilievo multilivello ed emblemi metallici tagliati al plotter e termopressati.</p>
+                        <a href="printing.html" class="custom-pillar-cta" data-i18n="custom_pil2_cta">Scopri Stampa & Lamina a Caldo →</a>
+                    </div>
+                </article>
+
+                <!-- Pillar 3: Materials, Sizes & Custom Foam Inserts -->
+                <article class="custom-pillar-card">
+                    <a href="customization.html" class="custom-pillar-img-wrap">
+                        <img src="../Size%20and%20Material%20Customization/Black%20Leatherlike.webp" alt="Luxury rigid box wrapping materials, velvet, leatherette, and custom die-cut foam inserts" loading="lazy">
+                    </a>
+                    <div class="custom-pillar-body">
+                        <span class="custom-pillar-badge" data-i18n="custom_pil3_badge">PILASTRO 03 · MATERIALI & INTERNI</span>
+                        <h2><a href="customization.html" data-i18n="custom_pil3_title">Materiali, Formati & Inserti in Spugna Su Misura</a></h2>
+                        <p data-i18n="custom_pil3_desc">Oltre 50 rivestimenti europei selezionati — carte telate, perlate, soft-touch opache, similpelle italiana e velluto — abbinati a inserti fustellati su misura in EVA o spugna ad alta densità laminati in velluto o raso.</p>
+                        <a href="customization.html" class="custom-pillar-cta" data-i18n="custom_pil3_cta">Scopri Materiali & Inserti →</a>
+                    </div>
+                </article>
             </div>
         </div>
+    </section>
 
-</section>
-
-    <!-- Muted brown band: Highlights / Features -->
+    <!-- Muted brown band: Highlights / Quick Links -->
     <section class="highlights">
         <div class="industries-grid" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; width: 100%;">
             <a href="bespoke.html" class="btn-primary" data-i18n="nav_bespoke" style="padding: 0.5rem 1rem; font-size: 0.8rem; flex: 1; white-space: nowrap;">Design su Misura & Prototipia</a>
@@ -196,10 +408,9 @@
         </div>
     </footer>
 
-    <script src="../translations.js?v=39"></script>
+    <script src="../translations.js?v=41"></script>
     <script src="../i18n.js?v=39"></script>
     <script src="../script.js?v=55"></script>
 
 </body>
 </html>
-
