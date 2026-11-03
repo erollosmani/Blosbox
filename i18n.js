@@ -295,20 +295,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!targetLang) return;
 
                 let targetHref = '';
+                const isLocalFile = window.location.protocol === 'file:';
                 if (currentFilename === 'index.html') {
                     if (isSubfolder) {
                         if (targetLang === 'en') {
-                            targetHref = '../';
+                            targetHref = isLocalFile ? '../index.html' : '../';
                         } else if (targetLang === pathLang.toLowerCase()) {
-                            targetHref = './';
+                            targetHref = isLocalFile ? 'index.html' : './';
                         } else {
-                            targetHref = `../${targetLang}/`;
+                            targetHref = isLocalFile ? `../${targetLang}/index.html` : `../${targetLang}/`;
                         }
                     } else {
                         if (targetLang === 'en') {
-                            targetHref = './';
+                            targetHref = isLocalFile ? 'index.html' : './';
                         } else {
-                            targetHref = `${targetLang}/`;
+                            targetHref = isLocalFile ? `${targetLang}/index.html` : `${targetLang}/`;
                         }
                     }
                 } else if (isSubfolder) {
