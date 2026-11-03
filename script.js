@@ -151,7 +151,7 @@ function openLightbox(src) {
     
     if (swiperImages.length > 0 && (swiperImages.includes(src) || swiperImages.some(i => i.endsWith(src.substring(src.lastIndexOf('/')))))) {
         lb_images = swiperImages;
-    } else {
+    } else if (!lb_images || lb_images.length === 0) {
         lb_images = [src];
     }
     
