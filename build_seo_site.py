@@ -255,7 +255,9 @@ def generate_redirect_stubs(root_dir):
         ('textured.html', 'customization.html', 'Size & Material Customization'),
         ('fashion.html', 'products.html', 'Products & Collections'),
         ('electronics.html', 'products.html', 'Products & Collections'),
-        ('under-construction.html', '', 'Blosbox Luxury Packaging')
+        ('under-construction.html', '', 'Blosbox Luxury Packaging'),
+        ('projects.html', 'insights.html', 'Insights & Case Studies'),
+        ('industries/other-luxury-markets/index.html', 'other.html', 'Other Luxury Markets')
     ]
     
     languages = ['en', 'de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk']
@@ -308,6 +310,7 @@ def generate_redirect_stubs(root_dir):
 </html>
 """
             out_path = os.path.join(dest_dir, filename)
+            os.makedirs(os.path.dirname(out_path), exist_ok=True)
             with open(out_path, 'w', encoding='utf-8') as f:
                 f.write(stub_content)
     print(f"Generated clean SEO redirect stubs across all 8 languages for legacy URLs ({len(redirect_map)} stubs x {len(languages)} langs = {len(redirect_map)*len(languages)} files)")
@@ -321,7 +324,7 @@ def main():
     
     exclude_files = [
         '404.html', 'pricelist-catalog.html', 'under-construction.html',
-        'luxe.html', 'pearl.html', 'textured.html', 'electronics.html', 'fashion.html'
+        'luxe.html', 'pearl.html', 'textured.html', 'electronics.html', 'fashion.html', 'projects.html'
     ]
     html_files = [f for f in os.listdir(root_dir) if f.endswith('.html') and not f.startswith('.') and f not in exclude_files]
     
