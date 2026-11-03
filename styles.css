@@ -2282,3 +2282,52 @@ a {
         min-width: 580px;
     }
 }
+
+/* ==========================================================================
+   Homepage SEO Semantic Headings & Contextual Inline Links
+   ========================================================================== */
+.hero-info-panel h1.hero-seo-h1 {
+    font-family: var(--font-heading);
+    font-size: 1.02rem !important;
+    line-height: 1.32 !important;
+    font-weight: 700 !important;
+    color: #1a1613 !important;
+    margin: 0 0 0.55rem 0 !important;
+    padding-bottom: 0.45rem !important;
+    border-bottom: 1px solid rgba(140, 109, 70, 0.25);
+    letter-spacing: 0.2px;
+}
+
+.hero-cat-item h2.hero-cat-heading {
+    display: inline !important;
+    font-family: var(--font-body) !important;
+    font-size: 0.91rem !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    color: #1a1613 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero-cat-heading a.hero-cat-link {
+    color: #1a1613 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+.hero-cat-heading a.hero-cat-link:hover {
+    color: #8c6d46 !important;
+    text-decoration: underline !important;
+}
+
+.hero-inline-link {
+    color: inherit !important;
+    text-decoration: underline !important;
+    text-decoration-color: rgba(140, 109, 70, 0.45) !important;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.hero-inline-link:hover {
+    color: #8c6d46 !important;
+    text-decoration-color: #8c6d46 !important;
+}

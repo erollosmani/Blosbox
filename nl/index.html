@@ -33,6 +33,9 @@
     <link rel="icon" type="image/png" href="../Logo%20FAV%20Icon.webp">
     <link rel="apple-touch-icon" href="../Logo%20FAV%20Icon.webp">
 
+    <!-- Preload Hero LCP Image for Core Web Vitals -->
+    <link rel="preload" as="image" href="../BlosBox%20Handcrafting.webp" type="image/webp" fetchpriority="high">
+
     <title>Blosbox | Fabrikant van Luxe Verpakkingen en Stevige Dozen</title>
 
     <meta name="description" content="Blosbox produceert hoogwaardige magnetische luxe dozen en kartonnen verpakkingen voor sieraden, horloges, cosmetica, chocolade en relatiegeschenken.">
@@ -47,68 +50,129 @@
     <link rel="alternate" hreflang="mk" href="https://www.blosbox.com/mk/">
     <link rel="alternate" hreflang="x-default" href="https://www.blosbox.com/">
 
-    <!-- Schema.org Manufacturer & Organization Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Blosbox Luxury Packaging",
-      "url": "https://www.blosbox.com/",
-      "logo": "https://www.blosbox.com/Logo.webp",
-      "description": "Blosbox produces Quality Rigid Boxes and Cardboard Luxury Packaging. Custom luxury boxes for jewellery, watches, cosmetics, chocolates & corporate gifts.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Hoshimin 216-b",
-        "addressLocality": "Skopje",
-        "postalCode": "1000",
-        "addressCountry": "MK"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+38975222228",
-        "contactType": "sales",
-        "email": "contact@blosbox.com"
-      },
-      "sameAs": [
-        "https://www.instagram.com/blosbox/",
-        "https://www.facebook.com/blospackaging",
-        "https://www.linkedin.com/company/blosbox/"
-      ]
-    }
-    </script>
     <!-- Modern luxury fonts: Playfair Display for headings, Lato for clean body text -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css?v=39">
+    <link rel="stylesheet" href="../styles.css?v=40">
 
-    <!-- Schema.org Manufacturer & Organization Structured Data -->
+    <!-- Schema.org Unified WebSite, Organization & Manufacturer Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Manufacturer",
-      "name": "Blosbox",
-      "url": "https://www.blosbox.com",
-      "logo": "https://www.blosbox.com/Logo.webp",
-      "image": "https://www.blosbox.com/Blosbox%20main.webp",
-      "description": "Blosbox produces Quality Rigid Boxes, Cardboard Luxury Packaging, Jewellery Boxes, Watch Boxes, Chocolate Gift Packaging, Leather Goods Boxes, Cosmetic & Fragrance Packaging, and Corporate Gift Boxes.",
-      "keywords": ["Luxury packaging", "Luxury box", "Quality Luxury packaging", "Quality Luxury boxes", "Jewellery packaging", "Jewellery box", "Yewellery packaging", "Yewellery box", "Packaging for watches", "Watch box", "Chocolate gift packaging", "Chocolate gift box", "Rigid Boxes", "Quality Rigid Boxes", "Leather Goods Packaging", "Leather Goods boxes", "Cosmetic packaging", "Cosmetic boxes", "Fragrance packaging", "Fragrance boxes", "Corporate Gift packaging", "Corporate Gift boxes", "Coorporate Gift packaging", "Coorporate Gift boxes", "Cardboard Luxury packaging", "Cardboard Luxury boxes"],
-      "knowsLanguage": ["en", "fr", "de", "it", "sv", "nl", "sq", "mk"],
-      "areaServed": [
-        { "@type": "Country", "name": "Germany" },
-        { "@type": "Country", "name": "France" },
-        { "@type": "Country", "name": "Italy" },
-        { "@type": "Country", "name": "Netherlands" },
-        { "@type": "Country", "name": "Sweden" },
-        { "@type": "Country", "name": "Switzerland" },
-        { "@type": "Country", "name": "United Kingdom" },
-        { "@type": "Country", "name": "Albania" },
-        { "@type": "Country", "name": "North Macedonia" }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "French", "German", "Italian", "Dutch", "Swedish", "Albanian", "Macedonian"]
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.blosbox.com/#website",
+          "url": "https://www.blosbox.com/",
+          "name": "Blosbox Luxury Packaging",
+          "description": "Custom Luxury Rigid Boxes and Bespoke Cardboard Packaging Manufacturer in Europe.",
+          "publisher": {
+            "@id": "https://www.blosbox.com/#organization"
+          },
+          "inLanguage": ["en", "de", "fr", "it", "sv", "nl", "sq", "mk"]
+        },
+        {
+          "@type": ["Organization", "Manufacturer"],
+          "@id": "https://www.blosbox.com/#organization",
+          "name": "Blosbox Luxury Packaging",
+          "alternateName": "Blosbox",
+          "url": "https://www.blosbox.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.blosbox.com/Logo.webp"
+          },
+          "image": "https://www.blosbox.com/Blosbox%20main.webp",
+          "description": "Blosbox produces Quality Rigid Boxes, Cardboard Luxury Packaging, Jewellery Boxes, Watch Boxes, Chocolate Gift Packaging, Leather Goods Boxes, Cosmetic & Fragrance Packaging, and Corporate Gift Boxes.",
+          "keywords": ["Luxury packaging", "Luxury box", "Quality Luxury packaging", "Quality Luxury boxes", "Jewellery packaging", "Jewellery box", "Packaging for watches", "Watch box", "Chocolate gift packaging", "Chocolate gift box", "Rigid Boxes", "Quality Rigid Boxes", "Leather Goods Packaging", "Leather Goods boxes", "Cosmetic packaging", "Cosmetic boxes", "Fragrance packaging", "Fragrance boxes", "Corporate Gift packaging", "Corporate Gift boxes", "Cardboard Luxury packaging", "Cardboard Luxury boxes"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hoshimin 216-b",
+            "addressLocality": "Skopje",
+            "postalCode": "1000",
+            "addressCountry": "MK"
+          },
+          "knowsLanguage": ["en", "fr", "de", "it", "sv", "nl", "sq", "mk"],
+          "areaServed": [
+            { "@type": "Country", "name": "Germany" },
+            { "@type": "Country", "name": "France" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Country", "name": "Netherlands" },
+            { "@type": "Country", "name": "Sweden" },
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "United Kingdom" },
+            { "@type": "Country", "name": "Albania" },
+            { "@type": "Country", "name": "North Macedonia" }
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+38975222228",
+              "contactType": "sales",
+              "email": "contact@blosbox.com",
+              "availableLanguage": ["English", "French", "German", "Italian", "Dutch", "Swedish", "Albanian", "Macedonian"]
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/blosbox/",
+            "https://www.facebook.com/blospackaging",
+            "https://www.linkedin.com/company/blosbox/"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Custom Luxury Rigid Packaging Collections",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Jewellery & Ring Boxes",
+                  "url": "https://www.blosbox.com/jewellery.html"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Luxury Watch Boxes",
+                  "url": "https://www.blosbox.com/watches.html"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cosmetic & Fragrance Rigid Boxes",
+                  "url": "https://www.blosbox.com/cosmetics.html"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Artisan Chocolate Gift Packaging",
+                  "url": "https://www.blosbox.com/chocolates.html"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Corporate Gift & Award Presentation Boxes",
+                  "url": "https://www.blosbox.com/gifts.html"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Leather Goods Packaging",
+                  "url": "https://www.blosbox.com/leather.html"
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
     </script>
 
@@ -167,14 +231,14 @@
                 <li class="dropdown lang-dropdown">
                     <a href="#" class="lang-dropdown-trigger">🌐 <span id="activeLangLabel">NL</span> <span class="caret">▾</span></a>
                     <ul class="dropdown-menu lang-dropdown-menu">
-                        <li><a href="../index.html" class="lang-item" data-lang="en">🇬🇧 English</a></li>
-                        <li><a href="../fr/index.html" class="lang-item" data-lang="fr">🇫🇷 Français</a></li>
-                        <li><a href="../de/index.html" class="lang-item" data-lang="de">🇩🇪 Deutsch</a></li>
-                        <li><a href="../it/index.html" class="lang-item" data-lang="it">🇮🇹 Italiano</a></li>
-                        <li><a href="../sv/index.html" class="lang-item" data-lang="sv">🇸🇪 Svenska</a></li>
-                        <li><a href="index.html" class="lang-item active" data-lang="nl">🇳🇱 Nederlands</a></li>
-                        <li><a href="../sq/index.html" class="lang-item" data-lang="sq">🇦🇱 Shqip</a></li>
-                        <li><a href="../mk/index.html" class="lang-item" data-lang="mk">🇲🇰 Македонски</a></li>
+                        <li><a href="../" class="lang-item" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="../fr/" class="lang-item" data-lang="fr">🇫🇷 Français</a></li>
+                        <li><a href="../de/" class="lang-item" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="../it/" class="lang-item" data-lang="it">🇮🇹 Italiano</a></li>
+                        <li><a href="../sv/" class="lang-item" data-lang="sv">🇸🇪 Svenska</a></li>
+                        <li><a href="./" class="lang-item active" data-lang="nl">🇳🇱 Nederlands</a></li>
+                        <li><a href="../sq/" class="lang-item" data-lang="sq">🇦🇱 Shqip</a></li>
+                        <li><a href="../mk/" class="lang-item" data-lang="mk">🇲🇰 Македонски</a></li>
                     </ul>
                 </li>
             </ul>
@@ -187,26 +251,27 @@
         <div class="hero-promo-text" data-i18n="hero_promo">Probeer voordat u koopt<br>Ontvang gratis monsters</div>
         
         <div class="hero-info-panel">
-            <p class="hero-intro" data-i18n="hero_intro_text">Bij <strong>Blosbox</strong> zijn we gespecialiseerd in de kunst van het presenteren. Wij ontwerpen en produceren hoogwaardige rigid luxury boxes (rigide luxe dozen) en geschenkverpakkingen op maat van de unieke identiteit van uw merk. Van stoffen schuiminlays tot luxe buitenafwerkingen, onze oplossingen verhogen de uitpakervaring voor elke klant.</p>
+            <h1 class="hero-seo-h1" data-i18n="hero_seo_h1">Fabrikant van Op Maat Gemaakte Luxe Harde Dozen & Verpakkingen</h1>
+            <p class="hero-intro" data-i18n="hero_intro_text">Bij <strong>Blosbox</strong> zijn we gespecialiseerd in de kunst van het presenteren. Wij ontwerpen en produceren hoogwaardige <a href="custom.html" class="hero-inline-link">luxe harde dozen (rigid boxes)</a> en geschenkdozen op maat voor uw merk. Van <a href="bespoke.html" class="hero-inline-link">met stof gelamineerde schuiminserts</a> tot <a href="customization.html" class="hero-inline-link">exclusieve buitenbekleding</a>, onze oplossingen tillen de uitpakervaring naar een hoger niveau.</p>
             
             <div class="hero-cat-item">
-                <a href="jewellery.html" class="hero-cat-link"><strong data-i18n="hero_cat1_title">Sieraden & Horloges: </strong></a>
-                <span data-i18n="hero_cat1_text">Exclusieve sieradenverpakkingen, op maat gemaakte sieradendozen en premium horlogedozen ontworpen voor optimale veiligheid en weergave.</span>
+                <h2 class="hero-cat-heading" data-i18n="hero_cat1_title"><a href="jewellery.html" class="hero-cat-link">Sieraden</a> & <a href="watches.html" class="hero-cat-link">Horloges</a>: </h2>
+                <span data-i18n="hero_cat1_text">Exclusieve <a href="jewellery.html" class="hero-inline-link">sieradenverpakkingen</a>, <a href="jewellery.html" class="hero-inline-link">op maat gemaakte sieradendozen</a> en premium <a href="watches.html" class="hero-inline-link">horlogedozen</a> ontworpen voor optimale veiligheid en presentatie.</span>
             </div>
             
             <div class="hero-cat-item">
-                <a href="cosmetics.html" class="hero-cat-link"><strong data-i18n="hero_cat2_title">Cosmetica & Parfums: </strong></a>
-                <span data-i18n="hero_cat2_text">Geavanceerde verpakkingen voor cosmetica en parfumerie die de unieke kwaliteit van het product weerspiegelen.</span>
+                <h2 class="hero-cat-heading" data-i18n="hero_cat2_title"><a href="cosmetics.html" class="hero-cat-link">Cosmetica & Parfums</a>: </h2>
+                <span data-i18n="hero_cat2_text">Verfijnde <a href="cosmetics.html" class="hero-inline-link">verpakkingen voor cosmetica en parfumerie</a> die de unieke kwaliteit van het product weerspiegelen.</span>
             </div>
             
             <div class="hero-cat-item">
-                <a href="chocolates.html" class="hero-cat-link"><strong data-i18n="hero_cat3_title">Ambachtelijke Chocolaterie: </strong></a>
-                <span data-i18n="hero_cat3_text">Op maat gemaakte chocoladeverpakkingen en elegante geschenkdozen voor uw verfijnde creaties.</span>
+                <h2 class="hero-cat-heading" data-i18n="hero_cat3_title"><a href="chocolates.html" class="hero-cat-link">Ambachtelijke Chocolaterie</a>: </h2>
+                <span data-i18n="hero_cat3_text">Op maat gemaakte <a href="chocolates.html" class="hero-inline-link">chocoladeverpakkingen</a> en elegante geschenkdozen voor uw verfijnde creaties.</span>
             </div>
             
             <div class="hero-cat-item">
-                <a href="leather.html" class="hero-cat-link"><strong data-i18n="hero_cat4_title">Relatiegeschenken & Lederwaren: </strong></a>
-                <span data-i18n="hero_cat4_text">Hoogwaardige relatiegeschenkverpakkingen en op maat gemaakte verpakkingen voor lederwaren voor een blijvende professionele indruk.</span>
+                <h2 class="hero-cat-heading" data-i18n="hero_cat4_title"><a href="gifts.html" class="hero-cat-link">Relatiegeschenken</a> & <a href="leather.html" class="hero-cat-link">Lederwaren</a>: </h2>
+                <span data-i18n="hero_cat4_text">Hoogwaardige <a href="gifts.html" class="hero-inline-link">relatiegeschenkverpakkingen</a> en op maat gemaakte <a href="leather.html" class="hero-inline-link">verpakkingen voor lederwaren</a> voor een blijvende professionele indruk.</span>
             </div>
         </div>
     </section>
@@ -241,8 +306,8 @@
         </div>
     </footer>
 
-    <script src="../translations.js?v=39"></script>
-    <script src="../i18n.js?v=39"></script>
+    <script src="../translations.js?v=40"></script>
+    <script src="../i18n.js?v=40"></script>
     <script src="../script.js?v=55"></script>
 </body>
 </html>

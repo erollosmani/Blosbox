@@ -295,7 +295,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!targetLang) return;
 
                 let targetHref = '';
-                if (isSubfolder) {
+                if (currentFilename === 'index.html') {
+                    if (isSubfolder) {
+                        if (targetLang === 'en') {
+                            targetHref = '../';
+                        } else if (targetLang === pathLang.toLowerCase()) {
+                            targetHref = './';
+                        } else {
+                            targetHref = `../${targetLang}/`;
+                        }
+                    } else {
+                        if (targetLang === 'en') {
+                            targetHref = './';
+                        } else {
+                            targetHref = `${targetLang}/`;
+                        }
+                    }
+                } else if (isSubfolder) {
                     if (targetLang === 'en') {
                         targetHref = `../${currentFilename}`;
                     } else if (targetLang === pathLang.toLowerCase()) {

@@ -49,6 +49,7 @@ def add_asset_prefix(html_content):
     html_content = re.sub(r'src="Blosbox%20main\.(jpeg|jpg|webp)"', r'src="../Blosbox%20main.webp"', html_content)
     html_content = re.sub(r'src="Blosbox main\.(jpeg|jpg|webp)"', r'src="../Blosbox main.webp"', html_content)
     html_content = re.sub(r'src="BlosBox%20Handcrafting\.(jpeg|jpg|webp)"', r'src="../BlosBox%20Handcrafting.webp"', html_content)
+    html_content = re.sub(r'href="BlosBox%20Handcrafting\.(jpeg|jpg|webp)"', r'href="../BlosBox%20Handcrafting.webp"', html_content)
     html_content = re.sub(r'src="BlosBox Handcrafting\.(jpeg|jpg|webp)"', r'src="../BlosBox Handcrafting.webp"', html_content)
     
     root_assets = [
@@ -230,15 +231,26 @@ def update_language_dropdown(html_content, current_lang, filename):
     
     items = []
     for code, label in lang_names:
-        if current_lang == 'en':
-            href = filename if code == 'en' else f"{code}/{filename}"
-        else:
-            if code == 'en':
-                href = f"../{filename}"
-            elif code == current_lang:
-                href = filename
+        if filename == 'index.html':
+            if current_lang == 'en':
+                href = "./" if code == 'en' else f"{code}/"
             else:
-                href = f"../{code}/{filename}"
+                if code == 'en':
+                    href = "../"
+                elif code == current_lang:
+                    href = "./"
+                else:
+                    href = f"../{code}/"
+        else:
+            if current_lang == 'en':
+                href = filename if code == 'en' else f"{code}/{filename}"
+            else:
+                if code == 'en':
+                    href = f"../{filename}"
+                elif code == current_lang:
+                    href = filename
+                else:
+                    href = f"../{code}/{filename}"
         active_cls = " active" if code == current_lang else ""
         items.append(f'<li><a href="{href}" class="lang-item{active_cls}" data-lang="{code}">{label}</a></li>')
     
