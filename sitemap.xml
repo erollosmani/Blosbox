@@ -228,7 +228,7 @@
   <url>
     <loc>https://www.blosbox.com/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -242,7 +242,7 @@
   <url>
     <loc>https://www.blosbox.com/de/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -256,7 +256,7 @@
   <url>
     <loc>https://www.blosbox.com/fr/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -270,7 +270,7 @@
   <url>
     <loc>https://www.blosbox.com/it/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -284,7 +284,7 @@
   <url>
     <loc>https://www.blosbox.com/sv/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -298,7 +298,7 @@
   <url>
     <loc>https://www.blosbox.com/nl/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -312,7 +312,7 @@
   <url>
     <loc>https://www.blosbox.com/sq/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -326,7 +326,7 @@
   <url>
     <loc>https://www.blosbox.com/mk/products.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/products.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/products.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/products.html"/>
@@ -340,7 +340,7 @@
   <url>
     <loc>https://www.blosbox.com/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -354,7 +354,7 @@
   <url>
     <loc>https://www.blosbox.com/de/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -368,7 +368,7 @@
   <url>
     <loc>https://www.blosbox.com/fr/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -382,7 +382,7 @@
   <url>
     <loc>https://www.blosbox.com/it/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -396,7 +396,7 @@
   <url>
     <loc>https://www.blosbox.com/sv/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -410,7 +410,7 @@
   <url>
     <loc>https://www.blosbox.com/nl/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -424,7 +424,7 @@
   <url>
     <loc>https://www.blosbox.com/sq/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -438,7 +438,7 @@
   <url>
     <loc>https://www.blosbox.com/mk/custom.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/custom.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/custom.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/custom.html"/>
@@ -452,7 +452,7 @@
   <url>
     <loc>https://www.blosbox.com/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -466,7 +466,7 @@
   <url>
     <loc>https://www.blosbox.com/de/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -480,7 +480,7 @@
   <url>
     <loc>https://www.blosbox.com/fr/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -494,7 +494,7 @@
   <url>
     <loc>https://www.blosbox.com/it/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -508,7 +508,7 @@
   <url>
     <loc>https://www.blosbox.com/sv/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -522,7 +522,7 @@
   <url>
     <loc>https://www.blosbox.com/nl/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -536,7 +536,7 @@
   <url>
     <loc>https://www.blosbox.com/sq/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -550,7 +550,7 @@
   <url>
     <loc>https://www.blosbox.com/mk/bespoke.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/bespoke.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/bespoke.html"/>
@@ -564,7 +564,7 @@
   <url>
     <loc>https://www.blosbox.com/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -578,7 +578,7 @@
   <url>
     <loc>https://www.blosbox.com/de/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -592,7 +592,7 @@
   <url>
     <loc>https://www.blosbox.com/fr/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -606,7 +606,7 @@
   <url>
     <loc>https://www.blosbox.com/it/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -620,7 +620,7 @@
   <url>
     <loc>https://www.blosbox.com/sv/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -634,7 +634,7 @@
   <url>
     <loc>https://www.blosbox.com/nl/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -648,7 +648,7 @@
   <url>
     <loc>https://www.blosbox.com/sq/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -662,7 +662,7 @@
   <url>
     <loc>https://www.blosbox.com/mk/printing.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/printing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/printing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/printing.html"/>
@@ -676,7 +676,7 @@
   <url>
     <loc>https://www.blosbox.com/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -690,7 +690,7 @@
   <url>
     <loc>https://www.blosbox.com/de/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -704,7 +704,7 @@
   <url>
     <loc>https://www.blosbox.com/fr/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -718,7 +718,7 @@
   <url>
     <loc>https://www.blosbox.com/it/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -732,7 +732,7 @@
   <url>
     <loc>https://www.blosbox.com/sv/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -746,7 +746,7 @@
   <url>
     <loc>https://www.blosbox.com/nl/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -760,7 +760,7 @@
   <url>
     <loc>https://www.blosbox.com/sq/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -774,7 +774,7 @@
   <url>
     <loc>https://www.blosbox.com/mk/customization.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/customization.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/customization.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/customization.html"/>
@@ -1908,7 +1908,7 @@
   <url>
     <loc>https://www.blosbox.com/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -1922,7 +1922,7 @@
   <url>
     <loc>https://www.blosbox.com/de/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -1936,7 +1936,7 @@
   <url>
     <loc>https://www.blosbox.com/fr/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -1950,7 +1950,7 @@
   <url>
     <loc>https://www.blosbox.com/it/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -1964,7 +1964,7 @@
   <url>
     <loc>https://www.blosbox.com/sv/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -1978,7 +1978,7 @@
   <url>
     <loc>https://www.blosbox.com/nl/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -1992,7 +1992,7 @@
   <url>
     <loc>https://www.blosbox.com/sq/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>
@@ -2006,7 +2006,7 @@
   <url>
     <loc>https://www.blosbox.com/mk/other.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.blosbox.com/other.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.blosbox.com/de/other.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.blosbox.com/fr/other.html"/>

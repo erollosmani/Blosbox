@@ -5,11 +5,11 @@ def generate_sitemap():
     pages = [
         ("index.html", "1.0"),
         ("about.html", "0.8"),
-        ("products.html", "0.8"),
-        ("custom.html", "0.8"),
-        ("bespoke.html", "0.8"),
-        ("printing.html", "0.8"),
-        ("customization.html", "0.8"),
+        ("products.html", "0.85"),
+        ("custom.html", "0.9"),
+        ("bespoke.html", "0.85"),
+        ("printing.html", "0.85"),
+        ("customization.html", "0.85"),
         ("jewellery.html", "0.9"),
         ("jewellery-calculator.html", "0.95"),
         ("watches.html", "0.9"),
@@ -20,7 +20,7 @@ def generate_sitemap():
         ("insights.html", "0.85"),
         ("custom-oversized-luxury-award-boxes-case-study.html", "0.90"),
         ("custom-proposal-diamond-ring-box.html", "0.90"),
-        ("other.html", "0.7")
+        ("other.html", "0.85")
     ]
     
     languages = ["en", "de", "fr", "it", "sv", "nl", "sq", "mk"]
