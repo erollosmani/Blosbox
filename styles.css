@@ -2331,3 +2331,87 @@ a {
     color: #8c6d46 !important;
     text-decoration-color: #8c6d46 !important;
 }
+
+
+/* ==========================================================================
+   B2B Technical Specifications Grid (Industry Category Pages)
+   ========================================================================== */
+.b2b-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 1.15rem;
+    padding-top: 0.95rem;
+    border-top: 1px solid rgba(164, 140, 119, 0.35);
+    text-align: left;
+}
+
+.b2b-spec-item {
+    background: rgba(255, 255, 255, 0.48);
+    border: 1px solid rgba(164, 140, 119, 0.28);
+    border-left: 3px solid var(--brown-accent, #A48C77);
+    border-radius: 5px;
+    padding: 0.55rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+}
+
+.b2b-spec-label {
+    font-family: var(--font-body);
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: #7a5c3e !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+}
+
+.b2b-spec-value {
+    font-family: var(--font-body);
+    font-size: 0.8rem !important;
+    font-weight: 400 !important;
+    color: var(--dark-top, #302C27) !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+}
+
+/* Stacked variant inside Jewellery Right Actions Column */
+.jewellery-actions-col .b2b-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.48rem;
+    margin: 0.25rem 0;
+    padding-top: 0;
+    border-top: none;
+    width: 100%;
+}
+
+.jewellery-actions-col .b2b-spec-item {
+    padding: 0.42rem 0.75rem;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(164, 140, 119, 0.28);
+    border-left: 3px solid var(--brown-accent, #A48C77);
+    border-radius: 4px;
+    gap: 0.1rem;
+}
+
+.jewellery-actions-col .b2b-spec-label {
+    font-size: 0.68rem !important;
+    color: #2e2926 !important;
+    text-transform: none !important;
+    letter-spacing: 0.2px !important;
+    font-weight: 700 !important;
+}
+
+.jewellery-actions-col .b2b-spec-value {
+    font-size: 0.73rem !important;
+    line-height: 1.28 !important;
+    color: #2e2926 !important;
+}
+
+@media (max-width: 640px) {
+    .b2b-specs-grid {
+        grid-template-columns: 1fr;
+    }
+}
