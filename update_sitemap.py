@@ -1,7 +1,9 @@
 import os
+import datetime
 
 def generate_sitemap():
     base_url = "https://www.blosbox.com"
+    today = datetime.date.today().isoformat()
     pages = [
         ("index.html", "1.0"),
         ("about.html", "0.8"),
@@ -42,6 +44,7 @@ def generate_sitemap():
             
             xml.append('  <url>')
             xml.append(f'    <loc>{url_loc}</loc>')
+            xml.append(f'    <lastmod>{today}</lastmod>')
             xml.append('    <changefreq>weekly</changefreq>')
             xml.append(f'    <priority>{priority}</priority>')
             
@@ -59,7 +62,7 @@ def generate_sitemap():
     with open(sitemap_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(xml) + '\n')
         
-    print(f"Generated comprehensive sitemap.xml with {len(pages) * len(languages)} URL entries")
+    print(f"Generated comprehensive sitemap.xml with {len(pages) * len(languages)} URL entries (lastmod: {today})")
 
 if __name__ == '__main__':
     generate_sitemap()
