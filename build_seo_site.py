@@ -269,7 +269,11 @@ def generate_redirect_stubs(root_dir):
         ('electronics.html', 'products.html', 'Products & Collections'),
         ('under-construction.html', '', 'Blosbox Luxury Packaging'),
         ('projects.html', 'insights.html', 'Insights & Case Studies'),
-        ('industries/other-luxury-markets/index.html', 'other.html', 'Other Luxury Markets')
+        ('industries/other-luxury-markets/index.html', 'other.html', 'Other Luxury Markets'),
+        ('custom-solutions/index.html', 'custom.html', 'Custom Solutions'),
+        ('custom-solutions/printing-foil-embossing/index.html', 'printing.html', 'Printing, Foil, Embossing'),
+        ('custom-solutions/bespoke-design-prototyping/index.html', 'bespoke.html', 'Bespoke Design & Prototyping'),
+        ('custom-solutions/size-material-customization/index.html', 'customization.html', 'Size & Material Customization')
     ]
     
     languages = ['en', 'de', 'fr', 'it', 'sv', 'nl', 'sq', 'mk']
@@ -294,7 +298,7 @@ def generate_redirect_stubs(root_dir):
     <link rel="canonical" href="{target_url}">
     <title>Redirecting - Blosbox Luxury Packaging</title>
     <script>
-        window.location.replace("{target_url}" + window.location.search + window.location.hash);
+        window.location.replace("{target_url}" + window.location.hash);
     </script>
     <style>
         body {{
