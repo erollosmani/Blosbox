@@ -179,6 +179,54 @@ def pre_render_html(base_html, lang, lang_dict, filename):
         content = re.sub(r'<meta property="og:description" content="[^"]*"', f'<meta property="og:description" content="{meta_desc_val}"', content)
         content = re.sub(r'<meta name="twitter:description" content="[^"]*"', f'<meta name="twitter:description" content="{meta_desc_val}"', content)
 
+    # Localize Schema.org JSON-LD structured data so localized pages don't point to English URL/title/description
+    if lang != 'en':
+        import json
+        en_page_url = f"{base_url}/" if filename == 'index.html' else f"{base_url}/{filename}"
+
+        def localize_jsonld(match):
+            open_tag, raw_json, close_tag = match.group(1), match.group(2), match.group(3)
+            try:
+                data = json.loads(raw_json)
+            except Exception:
+                return match.group(0)
+
+            def update_entity(ent):
+                if not isinstance(ent, dict):
+                    return
+                etype = ent.get("@type", "")
+                if ent.get("url") == en_page_url and etype not in ("Organization", "Brand"):
+                    ent["url"] = page_url
+                if ent.get("@id") == en_page_url:
+                    ent["@id"] = page_url
+                if isinstance(ent.get("mainEntityOfPage"), dict):
+                    if ent["mainEntityOfPage"].get("@id") == en_page_url:
+                        ent["mainEntityOfPage"]["@id"] = page_url
+                if etype in ("Product", "Service", "Article", "WebPage", "CollectionPage", "AboutPage", "WebApplication"):
+                    if title_key in lang_dict:
+                        if "headline" in ent:
+                            ent["headline"] = lang_dict[title_key]
+                        if "name" in ent:
+                            ent["name"] = lang_dict[title_key]
+                    if desc_key in lang_dict and "description" in ent:
+                        ent["description"] = lang_dict[desc_key]
+                    ent["inLanguage"] = lang
+
+            if "@graph" in data and isinstance(data["@graph"], list):
+                for item in data["@graph"]:
+                    update_entity(item)
+            else:
+                update_entity(data)
+
+            return f"{open_tag}\n{json.dumps(data, ensure_ascii=False, indent=4)}\n    {close_tag}"
+
+        content = re.sub(
+            r'(<script\s+type=["\']application/ld\+json["\'][^>]*>)(.*?)(</script>)',
+            localize_jsonld,
+            content,
+            flags=re.DOTALL
+        )
+
     def replace_i18n_node(match):
         full_tag = match.group(0)
         tag_name = match.group(1)
