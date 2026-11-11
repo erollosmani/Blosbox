@@ -2415,3 +2415,37 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* Ensure upgraded H1 on category split pages keeps the exact 1.4rem visual size */
+.watches-text h1,
+.leather-text h1,
+.chocolates-text h1,
+.gifts-text h1,
+.cosmetics-text h1,
+.other-text h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.25 !important;
+    color: var(--dark-top) !important;
+}
+
+.about-seo-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    color: var(--dark-top);
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto 1.1rem auto;
+    line-height: 1.3;
+}
+
+.calc-pallet-note {
+    margin-top: 0.55rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(164, 140, 119, 0.35);
+    font-size: 0.74rem;
+    line-height: 1.38;
+    color: #4a4039;
+    text-align: left;
+}
